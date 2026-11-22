@@ -43,7 +43,7 @@ export default function ArtZoom({ src, alt, color }: { src?: string; alt: string
     <>
       <button ref={btn} className="ep-art" onClick={() => src && setOpen(true)} aria-label={`Enlarge ${alt} artwork`} style={{ background: color }}>
         {src && <img src={src} alt={alt} fetchPriority="high"
-          srcSet={src.startsWith("/images/art/") && src.endsWith(".webp") ? `${src.replace(".webp", "-450.webp")} 450w, ${src} 900w` : undefined}
+          srcSet={src.startsWith("/images/art/") && src.endsWith(".webp") ? `${src.replace(".webp", "-450.webp")} 450w, ${src.replace(".webp", "-700.webp")} 700w, ${src} 900w` : undefined}
           sizes="(max-width: 767px) 100vw, 448px" />}
       </button>
       {open && src && (

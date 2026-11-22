@@ -14,7 +14,7 @@ export default function EpisodeCard({ ep }: { ep: Episode }) {
     <article className="ep-card">
       <div className="ep-card__art"><EpisodeArt ep={ep} /></div>
       <div className="ep-card__head">
-        <h3 className="t-h3 ep-card__title"><Link href={`/episodes/${ep.slug}`}>{ep.title}</Link></h3>
+        <h3 className="t-h3 ep-card__title"><Link prefetch={false} href={`/episodes/${ep.slug}`}>{ep.title}</Link></h3>
         <div className="t-label ep-card__meta">
           {ep.isNew && <span>New release ·</span>}<time dateTime={ep.date}>{formatDate(ep.date)}</time>
         </div>
@@ -25,7 +25,7 @@ export default function EpisodeCard({ ep }: { ep: Episode }) {
           {ep.spotify && <a className="icon-btn" href={ep.spotify} target="_blank" rel="noreferrer" aria-label={`${ep.title} on Spotify`}><SpotifyIcon /></a>}
           {ep.apple && <a className="icon-btn" href={ep.apple} target="_blank" rel="noreferrer" aria-label={`${ep.title} on Apple Podcasts`}><PodcastIcon /></a>}
         </div>
-        <Link href={`/episodes/${ep.slug}`} className="play-pill" aria-label={`Play ${ep.title}`}>
+        <Link prefetch={false} href={`/episodes/${ep.slug}`} className="play-pill" aria-label={`Play ${ep.title}`}>
           <PlayIcon /><span className="play-pill__time t-label"><span>{ep.duration}</span></span>
         </Link>
       </div>

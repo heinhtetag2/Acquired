@@ -16,6 +16,9 @@ export default function EpisodeOverlays({ ep }: { ep: Episode }) {
   const [open, setOpen] = useState<Panel>("");
   const [drawer, setDrawer] = useState<"" | "chapters" | "sections">("");
   const lastFocus = useRef<HTMLElement | null>(null);
+  // Companion pages are only fetched once the modal has been opened (they'd otherwise compete with the hero art).
+  const [companionSeen, setCompanionSeen] = useState(false);
+  useEffect(() => { if (open === "companion") setCompanionSeen(true); }, [open]);
 
   useEffect(() => {
     const sync = () => {
@@ -86,7 +89,7 @@ export default function EpisodeOverlays({ ep }: { ep: Episode }) {
           <button className="btn btn--cream modal__close" onClick={close}>close</button>
           <div className="modal__panel" role="dialog" aria-modal="true" aria-labelledby="companion-h">
             <div className="modal__gallery">
-              {(ep.companion.pages ?? ep.artifacts ?? []).map((s, i) => <div key={s} className={`modal__page ${i < 2 ? "is-full" : ""}`}><img src={s} alt={`Companion page ${i + 1}`} loading="lazy" /></div>)}
+              {companionSeen && (ep.companion.pages ?? ep.artifacts ?? []).map((s, i) => <div key={s} className={`modal__page ${i < 2 ? "is-full" : ""}`}><img src={s} alt={`Companion page ${i + 1}`} loading="lazy" /></div>)}
             </div>
             <div>
               <div id="companion-h" className="t-label-lg muted">{ep.companion.title}</div>

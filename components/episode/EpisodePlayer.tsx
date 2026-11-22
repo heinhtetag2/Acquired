@@ -18,7 +18,7 @@ export default function EpisodePlayer({ ep, autoPlay }: { ep: Episode; autoPlay?
   const [time, setTime] = useState(0);
   const [dur, setDur] = useState(ep.durationSec ?? 0);
   const [speed, setSpeed] = useState(0);
-  const [min, setMin] = useState(false);
+  const [min, setMin] = useState<boolean | null>(null); // null = not hydrated; CSS picks the default by width
   const [userToggled, setUserToggled] = useState(false);
   const [popup, setPopup] = useState(false);
 
@@ -28,7 +28,7 @@ export default function EpisodePlayer({ ep, autoPlay }: { ep: Episode; autoPlay?
       const saved = JSON.parse(localStorage.getItem(KEY) || "{}")[ep.slug];
       if (saved && audio.current) { audio.current.currentTime = saved; setTime(saved); }
     } catch {}
-    if (window.matchMedia("(max-width: 991px)").matches) setMin(true);
+    setMin(window.matchMedia("(max-width: 991px)").matches);
     if (autoPlay) audio.current?.play().catch(() => {});
   }, [ep.slug, autoPlay]);
 
@@ -71,7 +71,7 @@ export default function EpisodePlayer({ ep, autoPlay }: { ep: Episode; autoPlay?
   const first = useRef(true);
   useEffect(() => {
     const el = player.current; if (!el) return;
-    if (first.current) { first.current = false; return; }
+    if (first.current || min === null) { if (min !== null) first.current = false; return; }
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const d = cssNum("--gsap-player-dur", 0.25);
     const from = el.dataset.h ? parseFloat(el.dataset.h) : el.offsetHeight;
@@ -94,7 +94,7 @@ export default function EpisodePlayer({ ep, autoPlay }: { ep: Episode; autoPlay?
   const art = ep.image ?? ep.cover;
 
   return (
-    <div className={`player-wrap ${min || popup ? "is-minimized" : ""} ${popup ? "is-popup-open" : ""}`}>
+    <div className={`player-wrap ${min === null && !popup ? "is-auto" : min || popup ? "is-minimized" : ""} ${popup ? "is-popup-open" : ""}`}>
       <div ref={player} className="player" role="region" aria-label="Episode player">
         {ep.audioSrc && (
           <audio ref={audio} src={ep.audioSrc} preload="none"

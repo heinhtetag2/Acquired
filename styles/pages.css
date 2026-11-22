@@ -41,7 +41,8 @@
 
 /* wsj */
 .wsj { padding-left: var(--page-pad); padding-right: var(--page-pad); }
-.wsj-wordmark { font-family: var(--font-serif); font-size-adjust: var(--adjust-serif); font-size: 17px; line-height: 18px; letter-spacing: .02em; text-transform: uppercase; font-weight: 700; }
+.wsj-wordmark { height: 18px; aspect-ratio: 783 / 69; background: var(--c-ink-60); mask: url(/images/press/wsj-wordmark.svg) center / contain no-repeat; } /* live svg 204×18, 182×16 ≤767 */
+.wsj__form { width: 100%; max-width: var(--w-lg); }
 .wsj__rule { height: 1px; background: var(--c-ink-10); }
 .wsj__list { max-width: var(--w-3xl); margin: 0 auto; padding: var(--space-sm) 0; display: flex; flex-direction: column; }
 .wsj-item { position: relative; display: flex; align-items: center; gap: var(--space-sm); padding: var(--space-sm); border: 1px solid transparent; border-bottom-color: var(--c-ink-10); border-radius: var(--r-sm); transition: background-color var(--dur-base); }
@@ -56,6 +57,7 @@
   .wsj-item__img { width: 100%; aspect-ratio: 1; border-radius: 3px; }
   .wsj-item__body { padding: 0 0 var(--space-sm); }
   .wsj .t-h1 { font-size: var(--text-5xl); }
+  .wsj-wordmark { height: 16px; }
 }
 
 /* press */
@@ -210,3 +212,4 @@
 }
 @media (max-width: 991px) { .aud-stat { padding: var(--space-sm) var(--space-xs); } .aud-stat__label { line-height: 1; } }
 @media (max-width: 991px) { .acq2-desc--lp { -webkit-line-clamp: 2; } }
+@media (max-width: 991px) { .artifacts__head .t-label { line-height: 22px; } }

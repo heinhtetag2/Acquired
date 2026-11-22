@@ -1,10 +1,11 @@
 "use client";
+import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import PlaylistPage from "./PlaylistPage";
-import type { EpisodeLite as Episode } from "@/lib/content";
 
-/** Reads ?q= on the client; the server-rendered fallback is the unfiltered list, so the page paints without waiting for JS. */
-export default function PlaylistQuery(props: { title: string; episodes: Episode[]; eyebrow?: string }) {
+/** Leaf that reads ?q= and reports it up. It sits in its own Suspense boundary (fallback null), so the
+ *  server-rendered list hydrates in place instead of being re-created on the client. */
+export default function PlaylistQuery({ onQuery }: { onQuery: (q: string) => void }) {
   const q = useSearchParams().get("q") ?? "";
-  return <PlaylistPage {...props} query={q} />;
+  useEffect(() => onQuery(q), [q, onQuery]);
+  return null;
 }

@@ -11,13 +11,13 @@ export default function WsjPage() {
       <main id="main" className="page wsj" data-theme="light-fill">
         <div className="spacer-2xl" />
         <div className="page-head">
-          <div className="wsj-wordmark" aria-label="The Wall Street Journal">The Wall Street Journal</div>
+          <div className="wsj-wordmark" role="img" aria-label="The Wall Street Journal" />
           <div className="spacer-2xs" />
           <h1 className="t-h1" style={{ lineHeight: 1 }}>The Acquired Column</h1>
           <div className="spacer-4xs" />
           <p className="t-body-140">Ben and David write a column on every new episode. Sign up to receive a gift link to each one.</p>
           <div className="spacer-base" />
-          <div className="narrow" style={{ padding: 0 }}><EmailForm id="wsj-email" cta="send me the column" /></div>
+          <div className="wsj__form"><EmailForm id="wsj-email" cta="send me the column" /></div>
         </div>
         <div className="spacer-2xl" />
         <div className="wsj__rule" />

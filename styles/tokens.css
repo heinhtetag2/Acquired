@@ -184,7 +184,6 @@
 /* breakpoints: tablet ≤991, mobile-landscape ≤767, mobile ≤479 (Webflow) */
 @media (max-width: 991px) {
   :root {
-    --text-base: 17px;
     --text-6xl: 40px;
     --space-sm: 1.25rem;
     --space-base: 1.5rem;
@@ -253,11 +252,11 @@
   --footer-img-h: 110%;
 }
 @media (max-width: 991px) {
-  :root { --footer-console-pad: 48px 40px 32px; --testimonial-gap: 40px; }
+  :root { --footer-console-pad: 48px 40px 32px; --testimonial-gap: 40px; --press-pad-top: 72px; --press-pad-bottom: 80px; }
 }
 @media (max-width: 767px) {
   :root {
-    --nav-pad-x: 12px; --nav-pad-y: 11px; --card-art: 75px; --card-pad: 20px; --press-pad-top: 48px; --press-pad-bottom: 48px;
+    --nav-pad-x: 12px; --nav-pad-y: 11px; --card-art: 75px; --card-pad: 20px; --press-pad-top: 36px; --press-pad-bottom: 64px;
     --footer-console-pad: 40px 20px 32px; --testimonial-gap: 32px; --cta-offset: 20px;
   }
 }
@@ -288,8 +287,7 @@
   --ep-col-gap: 96px;
   --ep-top: 64px;
   --ep-icon-btn-w: 106px;
-  --ep-artifact-w: 156px;
-  --ep-artifact-h: 194px;
+  --ep-artifact-basis: 27%; /* live: flex item 27% of the strip, aspect 4/5 at every width */
   --ep-list-indent: 32px;
   --player-w: 512px;
   --player-min-h: 75px;
@@ -312,7 +310,7 @@
 }
 @media (max-width: 1279px) { :root { --ep-left-w: 384px; --ep-right-w: 432px; --ep-col-gap: 80px; --player-w: 448px; --slider-item-max: 307px; } }
 @media (max-width: 991px)  { :root { --ep-left-w: 320px; --ep-right-w: 320px; --ep-col-gap: 64px; --ep-top: 40px; } }
-@media (max-width: 767px)  { :root { --ep-left-w: 100%; --ep-right-w: 100%; --ep-col-gap: 0px; --ep-top: 0px; --player-w: calc(100vw - 24px); --player-inset: 12px; --slider-item-max: 234px; --slider-item-w: 60vw; --ep-artifact-w: 97px; --ep-artifact-h: 121px; } }
+@media (max-width: 767px)  { :root { --ep-left-w: 100%; --ep-right-w: 100%; --ep-col-gap: 0px; --ep-top: 0px; --player-w: calc(100vw - 24px); --player-inset: 12px; --slider-item-max: 234px; --slider-item-w: 60vw; } }
 
 /* ---------- playlist (episodes list / features / industry) ---------- */
 :root {
@@ -326,6 +324,7 @@
   --pl-skim-art: 75px;
   --pl-skim-pad: 16px;
   --pl-title: var(--text-2xl);
+  --ep-card-title: var(--text-2xl); /* live .discover-link: 24, 22 at ≤479 */
   --dur-sidebar: 0.42s;
 }
 @media (max-width: 1279px) { :root { --pl-main-pad: 40px; } }
@@ -370,3 +369,8 @@
 /* ---------- font-size-adjust: scale stand-ins to the live cap heights (Founders .63, Reckless .67) ---------- */
 :root { --adjust-display: cap-height 0.63; --adjust-serif: cap-height 0.67; --adjust-body: cap-height 0.67; --font-logo: var(--ff-logo), Arial, sans-serif; }
 @media (max-width: 767px) { :root { --logo-w: 112px; --logo-h: 14px; } }
+
+/* measured (scripts/live-scale.mjs): body text stays 18px until ≤767, text-lg 19px on phones */
+@media (max-width: 767px) { :root { --text-base: 17px; --text-lg: 19px; } }
+
+@media (max-width: 479px) { :root { --ep-card-title: 22px; } }

@@ -7,8 +7,9 @@ function Presenting({ ep, className }: { ep: Episode; className: string }) {
   if (!ep.presentedBy) return null;
   return (
     <div className={`ep-presenting ${className}`}>
-      <a href={ep.presentedBy.href} target="_blank" rel="noreferrer" className="sierra">
-        <small>Presented by</small><span>✳ {ep.presentedBy.label}</span>
+      <a href={ep.presentedBy.href} target="_blank" rel="noreferrer" className="ep-presenting__link">
+        <span className="t-label-xs">Presented by</span>
+        <span className="ep-presenting__logo" role="img" aria-label={ep.presentedBy.label} />
       </a>
     </div>
   );
@@ -73,7 +74,7 @@ export default function EpisodeHero({ ep }: { ep: Episode }) {
               <ArrowUpRight width={16} height={16} />
             </div>
             <div className="ep-artifacts__strip" tabIndex={0} role="region" aria-label="Episode artifacts">
-              {ep.artifacts.map((src) => <div key={src} className="ep-artifacts__frame"><img src={src} alt="" loading="lazy" /></div>)}
+              {ep.artifacts.map((src) => <div key={src} className="ep-artifacts__frame"><img src={src} alt="" loading="lazy" fetchPriority="low" /></div>)}
             </div>
           </div>
         )}

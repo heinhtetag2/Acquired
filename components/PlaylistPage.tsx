@@ -1,16 +1,18 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
 import { formatDate, site } from "@/lib/site";
 import type { EpisodeLite as Episode } from "@/lib/content";
 import { ArrowUpRight, MenuIcon, PlayIcon, PauseIcon, SpotifyIcon, PodcastIcon, VideoIcon } from "./Icons";
 import EpisodePlayer from "./episode/EpisodePlayer";
+import PlaylistQuery from "./PlaylistQuery";
 
 const VIEW_KEY = "acqPlaylistView";
 
-export default function PlaylistPage({ title, episodes, eyebrow, query = "" }: { title: string; episodes: Episode[]; eyebrow?: string; query?: string }) {
+export default function PlaylistPage({ title, episodes, eyebrow }: { title: string; episodes: Episode[]; eyebrow?: string }) {
   const pathname = usePathname();
+  const [query, setQuery] = useState("");
   const q = query.trim().toLowerCase();
   const [skim, setSkim] = useState(false);
   const [sidebar, setSidebar] = useState(false);
@@ -43,6 +45,7 @@ export default function PlaylistPage({ title, episodes, eyebrow, query = "" }: {
 
   return (
     <div className="pl">
+      <Suspense fallback={null}><PlaylistQuery onQuery={setQuery} /></Suspense>
       <div className="pl-nav-band" data-theme="playlist" aria-hidden />
       <div className="pl-bar">
         <button className="icon-btn" aria-expanded={sidebar} aria-controls="pl-sidebar" onClick={() => setSidebar(!sidebar)}><MenuIcon /><span className="sr-only">Filters</span></button>
@@ -56,7 +59,7 @@ export default function PlaylistPage({ title, episodes, eyebrow, query = "" }: {
               <div className="pl-group__head t-label">{g.heading}</div>
               {gi === 0 && <Link href="/episodes" className="pl-link" aria-current={pathname === "/episodes" ? "page" : undefined}>all episodes</Link>}
               {g.links.filter((l) => l.href !== "/episodes").map((l) => (
-                <Link key={l.href} href={l.href} className="pl-link" aria-current={pathname === l.href ? "page" : undefined}>
+                <Link prefetch={false} key={l.href} href={l.href} className="pl-link" aria-current={pathname === l.href ? "page" : undefined}>
                   {l.label}{l.href === "/acq2" && <ArrowUpRight />}
                 </Link>
               ))}
@@ -93,7 +96,7 @@ export default function PlaylistPage({ title, episodes, eyebrow, query = "" }: {
             const isCur = current?.slug === ep.slug;
             return (
               <article key={ep.slug} className="pl-row">
-                <Link href={`/episodes/${ep.slug}`} className="pl-row__link"><span className="sr-only">{ep.title}</span></Link>
+                <Link prefetch={false} href={`/episodes/${ep.slug}`} className="pl-row__link"><span className="sr-only">{ep.title}</span></Link>
                 <div className="pl-art pl-art--desktop">{art && <img src={art} alt="" loading="lazy" />}</div>
                 <div className="pl-body">
                   <div className="pl-headrow">
@@ -116,7 +119,7 @@ export default function PlaylistPage({ title, episodes, eyebrow, query = "" }: {
                 {ep.audioSrc ? (
                   <button className="pl-play" aria-pressed={isCur} onClick={() => play(ep)} aria-label={`Play ${ep.title}`}>{isCur ? <PauseIcon /> : <PlayIcon />}</button>
                 ) : (
-                  <Link className="pl-play" href={`/episodes/${ep.slug}`} aria-label={`Open ${ep.title}`}><PlayIcon /></Link>
+                  <Link prefetch={false} className="pl-play" href={`/episodes/${ep.slug}`} aria-label={`Open ${ep.title}`}><PlayIcon /></Link>
                 )}
               </article>
             );

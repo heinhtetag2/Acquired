@@ -160,18 +160,23 @@ export default function HeroWall({ episodes }: { episodes: Episode[] }) {
         <div ref={scrimRef} className="hero__scrim" aria-hidden />
         <div className="hero__wrap">
           <div ref={gridRef} className="hero__grid" onPointerEnter={(e) => warmRecords(e.currentTarget)} onFocus={(e) => warmRecords(e.currentTarget)}>
-            {episodes.map((ep) => (
-              <div key={ep.slug} className="hero__item" style={{ ["--rec" as string]: ep.color }}>
+            {episodes.map((ep, i) => {
+              // SSR the live positions so hydration never moves the grid (layout() re-applies the same values).
+              const d = DESKTOP_VISIBLE[i], m = MOBILE_VISIBLE[i];
+              const pos = { ["--dr" as string]: d?.[0], ["--dc" as string]: d?.[1], ["--mr" as string]: m?.[0], ["--mc" as string]: m?.[1] };
+              return (
+              <div key={ep.slug} className="hero__item" data-d={d ? undefined : "off"} data-m={m ? undefined : "off"} style={{ ["--rec" as string]: ep.color, ...pos }}>
                 <div className="hero__record" aria-hidden>{ep.vinyl && <img data-src={ep.vinyl} alt="" />}</div>
                 <div className="hero__cover" style={{ background: ep.color }}>
                   {ep.cover ? <img src={ep.cover} alt="" decoding="async" /> : <div className="hero__cover-art" aria-hidden>{ep.title}</div>}
-                  <Link href={`/episodes/${ep.slug}`} className="hero__open" onClick={(e) => {
+                  <Link prefetch={false} href={`/episodes/${ep.slug}`} className="hero__open" onClick={(e) => {
                     if (e.metaKey || e.ctrlKey || e.shiftKey || !ep.vinyl || document.documentElement.classList.contains("acq-home-intro")) return;
                     e.preventDefault(); vinylRef.current?.open(ep, e.currentTarget.parentElement as HTMLElement);
                   }}><span className="sr-only">{ep.title}</span></Link>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
         <HeroVinyl ref={vinylRef} grid={gridRef} scrim={scrimRef} cta={ctaRef} wash={washRef} />
