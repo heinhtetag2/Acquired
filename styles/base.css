@@ -1,0 +1,30 @@
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font-family: var(--font-body); font-size-adjust: var(--adjust-body); font-size: var(--text-base); line-height: var(--lh-none); letter-spacing: var(--track-body);
+}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+img { display: block; max-width: 100%; }
+h1, h2, h3, h4, p { margin: 0; font-weight: 400; }
+:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* typography utilities (all token-based) */
+.t-body { font-family: var(--font-body); font-size-adjust: var(--adjust-body); font-size: var(--text-base); line-height: var(--lh-body); letter-spacing: var(--track-body); }
+.t-body-140 { font-family: var(--font-body); font-size-adjust: var(--adjust-body); font-size: var(--text-base); line-height: var(--lh-140); letter-spacing: var(--track-body); }
+.t-body-sm { font-family: var(--font-body); font-size-adjust: var(--adjust-body); font-size: var(--text-sm); line-height: var(--lh-140); letter-spacing: var(--track-body); }
+.t-body-xs { font-family: var(--font-body); font-size-adjust: var(--adjust-body); font-size: var(--text-xs); line-height: var(--lh-140); letter-spacing: var(--track-body); }
+.t-serif { font-family: var(--font-serif); font-size-adjust: var(--adjust-serif); text-transform: uppercase; letter-spacing: var(--track-body); }
+.t-h1 { font-family: var(--font-serif); font-size-adjust: var(--adjust-serif); text-transform: uppercase; letter-spacing: var(--track-body); font-size: var(--text-6xl); line-height: var(--lh-tight); }
+.t-h2 { font-family: var(--font-serif); font-size-adjust: var(--adjust-serif); text-transform: uppercase; letter-spacing: var(--track-body); font-size: var(--text-4xl); line-height: var(--lh-snug); }
+.t-h3 { font-family: var(--font-serif); font-size-adjust: var(--adjust-serif); text-transform: uppercase; letter-spacing: var(--track-body); font-size: var(--text-2xl); line-height: var(--lh-snug); }
+.t-label { font-family: var(--font-display); font-size-adjust: var(--adjust-display); text-transform: uppercase; letter-spacing: var(--track-display); font-size: var(--text-sm); line-height: var(--lh-none); }
+.t-label-lg { font-family: var(--font-display); font-size-adjust: var(--adjust-display); text-transform: uppercase; letter-spacing: var(--track-display); font-size: var(--text-base); line-height: var(--lh-none); }
+.t-label-xs { font-family: var(--font-display); font-size-adjust: var(--adjust-display); text-transform: uppercase; letter-spacing: var(--track-display); font-size: var(--text-xs); line-height: var(--lh-none); }
+.muted { color: var(--fg-muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}

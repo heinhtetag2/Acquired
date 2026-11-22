@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" height="400" viewBox="0 0 400 400" width="400">
+  <rect fill="#9146FF" height="400" width="400"/>
+<g id="logo">
+<path d="M251.25 195.358L230.75 213.929H210.25L192.313 230.179V213.929H169.25V144.286H251.25V195.358Z" fill="#9146FF" id="Vector"/>
+<g id="Layer_1-2">
+<path d="M164.125 135L138.5 158.214V241.786H169.25V265L194.875 241.786H215.375L261.5 200V135H164.125ZM251.25 195.357L230.75 213.929H210.25L192.312 230.179V213.929H169.25V144.286H251.25V195.357Z" fill="#FFFCF5" id="Vector_2"/>
+<path d="M235.875 160.536H225.625V188.393H235.875V160.536Z" fill="#FFFCF5" id="Vector_3"/>
+<path d="M207.688 160.536H197.438V188.393H207.688V160.536Z" fill="#FFFCF5" id="Vector_4"/>
+</g>
+</g>
+</svg>

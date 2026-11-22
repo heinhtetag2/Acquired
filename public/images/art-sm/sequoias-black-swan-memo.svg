@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" height="400" viewBox="0 0 400 400" width="400">
+  <rect fill="#1B1915" height="400" width="400"/>
+<g id="logo">
+<path clip-rule="evenodd" d="M230 170H260V140H230V170Z" fill="#FCF7F0" fill-rule="evenodd" id="Fill-1"/>
+<path clip-rule="evenodd" d="M140 140V248.75L155 233.839V140H140Z" fill="#FCF7F0" fill-rule="evenodd" id="Fill-2"/>
+<path clip-rule="evenodd" d="M166.162 245L151.25 260H260V245H166.162Z" fill="#FCF7F0" fill-rule="evenodd" id="Fill-3"/>
+<path clip-rule="evenodd" d="M170 140V218.75L185 203.873V140H170Z" fill="#FCF7F0" fill-rule="evenodd" id="Fill-4"/>
+<path clip-rule="evenodd" d="M196.129 215L181.25 230H260V215H196.129Z" fill="#FCF7F0" fill-rule="evenodd" id="Fill-5"/>
+<path clip-rule="evenodd" d="M200 140V188.75L215 173.946V140H200Z" fill="#FCF7F0" fill-rule="evenodd" id="Fill-6"/>
+<path clip-rule="evenodd" d="M226.055 185L211.25 200H260V185H226.055Z" fill="#FCF7F0" fill-rule="evenodd" id="Fill-7"/>
+</g>
+</svg>

@@ -1,0 +1,473 @@
+{
+ "heroOrder": [
+  "seinfeld",
+  "costco",
+  "the-mark-zuckerberg-interview",
+  "vanguard",
+  "starbucks-with-howard-schultz",
+  "disney-the-renaissance-and-the-empire",
+  "charlie-munger",
+  "rolex",
+  "hermes",
+  "the-jamie-dimon-interview",
+  "google",
+  "home-depot",
+  "formula-1",
+  "tsmc-founder-morris-chang",
+  "visa",
+  "the-nfl",
+  "trader-joes",
+  "jensen-huang"
+ ],
+ "latest": [
+  "seinfeld",
+  "home-depot",
+  "disney-the-renaissance-and-the-empire"
+ ],
+ "menu": [
+  {
+   "label": "Home",
+   "href": "/"
+  },
+  {
+   "label": "Episodes",
+   "href": "/episodes"
+  },
+  {
+   "label": "Artifacts",
+   "href": "/artifacts"
+  },
+  {
+   "label": "Library",
+   "href": "/library"
+  },
+  {
+   "label": "Email Archive",
+   "href": "/email"
+  },
+  {
+   "label": "About",
+   "href": "/about"
+  },
+  {
+   "label": "Sponsor",
+   "href": "/sponsor"
+  }
+ ],
+ "listen": [
+  {
+   "label": "Spotify",
+   "href": "https://open.spotify.com/show/7Fj0XEuUQLUqoMZQdsLXqp",
+   "icon": "spotify",
+   "primary": true
+  },
+  {
+   "label": "Apple Podcasts",
+   "href": "https://podcasts.apple.com/us/podcast/acquired/id1050462261",
+   "icon": "apple",
+   "primary": true
+  },
+  {
+   "label": "YouTube",
+   "href": "https://www.youtube.com/@AcquiredFM",
+   "icon": "youtube"
+  },
+  {
+   "label": "Overcast",
+   "href": "https://overcast.fm/itunes1050462261/acquired",
+   "icon": "overcast"
+  },
+  {
+   "label": "Pocket Casts",
+   "href": "https://pocketcasts.com/podcast/acquired/eed80bc0-599b-0133-cb25-0d11918ab357",
+   "icon": "pocketcasts"
+  }
+ ],
+ "press": [
+  {
+   "quote": "The Acquired Podcast:\nScaling the Mic (HBS Case)",
+   "logo": "HBS",
+   "logoSrc": "/images/press/hbs.svg",
+   "logoAlt": "Harvard Business School",
+   "logoW": 84,
+   "href": "https://www.hbs.edu/faculty/Pages/item.aspx?num=68094",
+   "isLink": true
+  },
+  {
+   "quote": "“Placeholder press quote of roughly the same length as the original.”",
+   "logo": "WSJ",
+   "logoSrc": "/images/press/wsj.svg",
+   "logoAlt": "The Wall Street Journal",
+   "logoW": 64
+  },
+  {
+   "quote": "“Placeholder press quote — paste the real one into content/site.json.”",
+   "logo": "The Times",
+   "logoSrc": "/images/press/the-times.svg",
+   "logoAlt": "The Times",
+   "logoW": 120
+  }
+ ],
+ "testimonials": [
+  {
+   "name": "Listener One",
+   "role": "Role, Company",
+   "quote": "Placeholder testimonial, one line."
+  },
+  {
+   "name": "Listener Two",
+   "role": "Role, Company",
+   "quote": "Placeholder testimonial that runs to about five lines in total, so the first page of the carousel has the same height as the live one. Paste the real quotes into content/site.json to replace these placeholders."
+  },
+  {
+   "name": "Listener Three",
+   "role": "Role, Company",
+   "quote": "Placeholder testimonial that wraps onto a second line here."
+  },
+  {
+   "name": "Listener Four",
+   "role": "Role, Company",
+   "quote": "Placeholder testimonial for the second page of the carousel, about three lines long in total."
+  },
+  {
+   "name": "Listener Five",
+   "role": "Role, Company",
+   "quote": "Placeholder testimonial, four lines long, so the second page has a different height from the first one."
+  },
+  {
+   "name": "Listener Six",
+   "role": "Role, Company",
+   "quote": "Short placeholder testimonial."
+  }
+ ],
+ "footer": [
+  {
+   "heading": "The Show",
+   "links": [
+    {
+     "label": "Acquired",
+     "href": "/episodes"
+    },
+    {
+     "label": "ACQ2 Show",
+     "href": "/acq2"
+    },
+    {
+     "label": "About",
+     "href": "/about"
+    }
+   ]
+  },
+  {
+   "heading": "More Acquired",
+   "links": [
+    {
+     "label": "Library",
+     "href": "/library"
+    },
+    {
+     "label": "Artifacts",
+     "href": "/artifacts"
+    },
+    {
+     "label": "Email Archive",
+     "href": "/email"
+    },
+    {
+     "label": "Acquired in the WSJ",
+     "href": "/wsj"
+    },
+    {
+     "label": "Sponsor",
+     "href": "/sponsor",
+     "external": true
+    },
+    {
+     "label": "Merch",
+     "href": "https://acquired.fm/store",
+     "external": true
+    }
+   ]
+  },
+  {
+   "heading": "Community",
+   "links": [
+    {
+     "label": "Slack",
+     "href": "/slack",
+     "external": true
+    },
+    {
+     "label": "X.com",
+     "href": "https://x.com/AcquiredFM",
+     "external": true
+    },
+    {
+     "label": "YouTube",
+     "href": "https://www.youtube.com/@AcquiredFM",
+     "external": true
+    },
+    {
+     "label": "LinkedIn",
+     "href": "https://www.linkedin.com/company/acquired-fm/",
+     "external": true
+    },
+    {
+     "label": "Contact",
+     "href": "mailto:hello@acquired.fm",
+     "external": true
+    },
+    {
+     "label": "Press",
+     "href": "/press"
+    }
+   ]
+  }
+ ],
+ "sidebar": [
+  {
+   "heading": "Features",
+   "links": [
+    {
+     "label": "all episodes",
+     "href": "/episodes"
+    },
+    {
+     "label": "Must-Listen",
+     "href": "/features/must-listen"
+    },
+    {
+     "label": "Niche Gems",
+     "href": "/features/niche-gems"
+    },
+    {
+     "label": "Interviews",
+     "href": "/features/interviews"
+    },
+    {
+     "label": "acq2",
+     "href": "/acq2"
+    }
+   ]
+  },
+  {
+   "heading": "Industry",
+   "links": [
+    {
+     "label": "Software",
+     "href": "/industry/software"
+    },
+    {
+     "label": "Luxury",
+     "href": "/industry/luxury"
+    },
+    {
+     "label": "Finance",
+     "href": "/industry/finance"
+    },
+    {
+     "label": "Social Media",
+     "href": "/industry/social-media"
+    },
+    {
+     "label": "VC/Investing",
+     "href": "/industry/vc-investing"
+    },
+    {
+     "label": "Sports",
+     "href": "/industry/sports"
+    },
+    {
+     "label": "Fintech",
+     "href": "/industry/fintech"
+    },
+    {
+     "label": "Semiconductors",
+     "href": "/industry/semiconductors"
+    },
+    {
+     "label": "E-commerce",
+     "href": "/industry/e-commerce"
+    },
+    {
+     "label": "Gaming",
+     "href": "/industry/gaming"
+    },
+    {
+     "label": "Media/Entertainment",
+     "href": "/industry/media-entertainment"
+    },
+    {
+     "label": "Retail",
+     "href": "/industry/retail"
+    },
+    {
+     "label": "Food",
+     "href": "/industry/food"
+    },
+    {
+     "label": "Crypto/Web3",
+     "href": "/industry/crypto-web3"
+    },
+    {
+     "label": "Transportation",
+     "href": "/industry/transportation"
+    },
+    {
+     "label": "Health",
+     "href": "/industry/health"
+    },
+    {
+     "label": "Energy",
+     "href": "/industry/energy"
+    }
+   ]
+  },
+  {
+   "heading": "Series",
+   "links": [
+    {
+     "label": "Disney",
+     "href": "/series/disney"
+    },
+    {
+     "label": "Nvidia",
+     "href": "/series/nvidia"
+    },
+    {
+     "label": "Alphabet/Google",
+     "href": "/series/alphabet"
+    },
+    {
+     "label": "Meta",
+     "href": "/series/meta"
+    },
+    {
+     "label": "Microsoft",
+     "href": "/series/microsoft"
+    },
+    {
+     "label": "Apple",
+     "href": "/series/apple"
+    },
+    {
+     "label": "Berkshire Hathaway",
+     "href": "/series/berkshire-hathaway"
+    },
+    {
+     "label": "Amazon",
+     "href": "/series/amazon"
+    },
+    {
+     "label": "TSMC",
+     "href": "/series/tsmc"
+    },
+    {
+     "label": "Sequoia Capital",
+     "href": "/series/sequoia-capital"
+    },
+    {
+     "label": "Benchmark",
+     "href": "/series/benchmark"
+    },
+    {
+     "label": "Andreessen Horowitz",
+     "href": "/series/andreessen-horowitz"
+    },
+    {
+     "label": "Starbucks",
+     "href": "/series/starbucks"
+    },
+    {
+     "label": "Nintendo",
+     "href": "/series/nintendo"
+    }
+   ]
+  },
+  {
+   "heading": "Seasons",
+   "links": [
+    {
+     "label": "Fall 2026",
+     "href": "/season/fall-2026"
+    },
+    {
+     "label": "Spring 2026",
+     "href": "/season/spring-2026"
+    },
+    {
+     "label": "Fall 2025",
+     "href": "/season/fall-2025"
+    },
+    {
+     "label": "Summer 2025",
+     "href": "/season/summer-2025"
+    },
+    {
+     "label": "Spring 2025",
+     "href": "/season/spring-2025"
+    },
+    {
+     "label": "Fall 2024",
+     "href": "/season/fall-2024"
+    },
+    {
+     "label": "Season 14",
+     "href": "/season/14"
+    },
+    {
+     "label": "Season 13",
+     "href": "/season/13"
+    },
+    {
+     "label": "Season 12",
+     "href": "/season/12"
+    },
+    {
+     "label": "Season 11",
+     "href": "/season/11"
+    },
+    {
+     "label": "Season 10",
+     "href": "/season/10"
+    },
+    {
+     "label": "Season 9",
+     "href": "/season/9"
+    },
+    {
+     "label": "Season 8",
+     "href": "/season/8"
+    },
+    {
+     "label": "Season 7",
+     "href": "/season/7"
+    },
+    {
+     "label": "Season 6",
+     "href": "/season/6"
+    },
+    {
+     "label": "Season 5",
+     "href": "/season/5"
+    },
+    {
+     "label": "Season 4",
+     "href": "/season/4"
+    },
+    {
+     "label": "Season 3",
+     "href": "/season/3"
+    },
+    {
+     "label": "Season 2",
+     "href": "/season/2"
+    },
+    {
+     "label": "Season 1",
+     "href": "/season/1"
+    }
+   ]
+  }
+ ]
+}

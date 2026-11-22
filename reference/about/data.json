@@ -1,0 +1,184 @@
+{
+ "rows": [
+  {
+   "label": "CEO / President",
+   "value": "14%",
+   "w": 850,
+   "wrap": 850,
+   "bg": "rgb(215, 243, 241)"
+  },
+  {
+   "label": "Engineering",
+   "value": "14%",
+   "w": 850,
+   "wrap": 850,
+   "bg": "rgb(215, 243, 241)"
+  },
+  {
+   "label": "Product",
+   "value": "9%",
+   "w": 546.421875,
+   "wrap": 850,
+   "bg": "rgb(181, 230, 227)"
+  },
+  {
+   "label": "Investor",
+   "value": "9%",
+   "w": 546.421875,
+   "wrap": 850,
+   "bg": "rgb(181, 230, 227)"
+  },
+  {
+   "label": "Sales / Business Development",
+   "value": "8%",
+   "w": 485.703125,
+   "wrap": 850,
+   "bg": "rgb(144, 213, 210)"
+  },
+  {
+   "label": "Finance / Accounting",
+   "value": "7%",
+   "w": 425,
+   "wrap": 850,
+   "bg": "rgb(99, 191, 188)"
+  },
+  {
+   "label": "Strategy / Corp Dev",
+   "value": "6%",
+   "w": 364.28125,
+   "wrap": 850,
+   "bg": "rgb(60, 167, 163)"
+  },
+  {
+   "label": "Operations",
+   "value": "6%",
+   "w": 364.28125,
+   "wrap": 850,
+   "bg": "rgb(60, 167, 163)"
+  },
+  {
+   "label": "Consulting",
+   "value": "6%",
+   "w": 364.28125,
+   "wrap": 850,
+   "bg": "rgb(43, 143, 139)"
+  },
+  {
+   "label": "Student",
+   "value": "5%",
+   "w": 303.5625,
+   "wrap": 850,
+   "bg": "rgb(33, 123, 120)"
+  },
+  {
+   "label": "Marketing",
+   "value": "4%",
+   "w": 242.84375,
+   "wrap": 850,
+   "bg": "rgb(24, 102, 98)"
+  },
+  {
+   "label": "Other",
+   "value": "12%",
+   "w": 728.5625,
+   "wrap": 850,
+   "bg": "rgb(16, 79, 76)"
+  }
+ ],
+ "geo": [
+  {
+   "value": "72%",
+   "w": 867.46875,
+   "bg": "rgb(215, 243, 241)",
+   "t": "all"
+  },
+  {
+   "value": "11%",
+   "w": 132.53125,
+   "bg": "rgb(144, 213, 210)",
+   "t": "all"
+  },
+  {
+   "value": "10%",
+   "w": 120.484375,
+   "bg": "rgb(60, 167, 163)",
+   "t": "all"
+  },
+  {
+   "value": "7%",
+   "w": 84.34375,
+   "bg": "rgb(33, 123, 120)",
+   "t": "all"
+  }
+ ],
+ "partners": [],
+ "imgs": [
+  {
+   "alt": "Seinfeld",
+   "src": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_seinfeld/xs",
+   "cls": ""
+  },
+  {
+   "alt": "The Home Depot",
+   "src": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_home-depot/xs",
+   "cls": ""
+  },
+  {
+   "alt": "Disney: The Renaissance and the Empire",
+   "src": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_disney-the-renaissance-and-the-empire/xs",
+   "cls": ""
+  },
+  {
+   "alt": "The Walt Disney Company",
+   "src": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_the-walt-disney-company/xs",
+   "cls": ""
+  },
+  {
+   "alt": "Seinfeld Email Preview",
+   "src": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/artifacts/seinfeld/original-pilot_still/w=900",
+   "cls": ""
+  },
+  {
+   "alt": "Ben and David",
+   "src": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/about_ben-david-laugh/lg",
+   "cls": "no-mobile"
+  },
+  {
+   "alt": "Ben and David",
+   "src": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/about_ben-david-mobile/main",
+   "cls": ""
+  },
+  {
+   "alt": "Acquired Soundtrack Vinyl",
+   "src": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/vinyl_acquired/w=300",
+   "cls": ""
+  },
+  {
+   "alt": "2025 Radio City",
+   "src": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/2025-nvidia-ben-david/feature",
+   "cls": ""
+  },
+  {
+   "alt": "Ben Gilbert, Acquired Host",
+   "src": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/ben-radio-city/lg",
+   "cls": ""
+  },
+  {
+   "alt": "David Rosenthal, Acquired Host",
+   "src": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/david-radio-city/lg",
+   "cls": ""
+  },
+  {
+   "alt": "Ben and David Armchair Expert",
+   "src": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/footer_main/w=1500",
+   "cls": ""
+  },
+  {
+   "alt": "Ben and David Armchair Expert",
+   "src": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/footer_main/w=1500",
+   "cls": ""
+  }
+ ],
+ "audHead": "THE AUDIENCE\nAcquired is the #1 technology podcast on Apple and Spotify. Each episode reaches over 1 million listeners.\n76%\nTECH, FINANCE & INVESTING\nThe decision-makers in high-growth industries.\n71%\nFOUNDERS & ASPIRING FOUNDERS\n20% current founders, 11% former founders, and 40% aspiring founders.\n",
+ "fillT": "all"
+}

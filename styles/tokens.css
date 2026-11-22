@@ -1,0 +1,372 @@
+/* Design tokens — generated from reference/design-spec.md. Components must use only these. */
+:root {
+  /* ---------- colour: root palette ---------- */
+  --c-ink: #1b1915;
+  --c-cream: #fffcf5;
+  --c-paper: #f7f2eb;
+  --c-neutral-white: #fffefd;
+  --c-teal-1000: #0c3b3a;
+  --c-teal-100: #d7f3f1;
+  --c-teal-200: #b5e6e3;
+  --c-teal-300: #90d5d2;
+  --c-teal-400: #63bfbc;
+  --c-teal-500: #3ca7a3;
+  --c-teal-600: #2b8f8b;
+  --c-teal-700: #217b78;
+  --c-teal-800: #186662;
+  --c-teal-900: #104f4c;
+  --c-accent: #28f1c0;
+  --c-accent-hi: #28ffcb;
+  --c-accent-lo: #17cb9f;
+  --c-charcoal: #333333;
+  --c-white: #ffffff;
+
+  /* ink / cream alpha steps (color-mix, as the live site) */
+  --c-ink-3: color-mix(in srgb, var(--c-ink) 3%, transparent);
+  --c-ink-5: color-mix(in srgb, var(--c-ink) 5%, transparent);
+  --c-ink-7: color-mix(in srgb, var(--c-ink) 7%, transparent);
+  --c-ink-10: color-mix(in srgb, var(--c-ink) 10%, transparent);
+  --c-ink-20: color-mix(in srgb, var(--c-ink) 20%, transparent);
+  --c-ink-30: color-mix(in srgb, var(--c-ink) 30%, transparent);
+  --c-ink-50: color-mix(in srgb, var(--c-ink) 50%, transparent);
+  --c-ink-60: color-mix(in srgb, var(--c-ink) 60%, transparent);
+  --c-ink-70: color-mix(in srgb, var(--c-ink) 70%, transparent);
+  --c-cream-3: color-mix(in srgb, var(--c-cream) 3%, transparent);
+  --c-cream-5: color-mix(in srgb, var(--c-cream) 5%, transparent);
+  --c-cream-7: color-mix(in srgb, var(--c-cream) 7%, transparent);
+  --c-cream-10: color-mix(in srgb, var(--c-cream) 10%, transparent);
+  --c-cream-50: color-mix(in srgb, var(--c-cream) 50%, transparent);
+  --c-cream-60: color-mix(in srgb, var(--c-cream) 60%, transparent);
+  --c-cream-70: color-mix(in srgb, var(--c-cream) 70%, transparent);
+  --c-teal-1000-40: color-mix(in srgb, var(--c-teal-1000) 40%, transparent);
+  --c-teal-1000-90: color-mix(in srgb, var(--c-teal-1000) 90%, transparent);
+
+  /* hero scrim stops */
+  --shadow-deep: 11, 11, 12;
+  --shadow-mid: 24, 25, 27;
+  --shadow-soft: 42, 39, 36;
+
+  /* ---------- semantic theme (overridden by .theme-dark) ---------- */
+  --bg: var(--c-cream);
+  --fg: var(--c-ink);
+  --fg-3: var(--c-ink-3);
+  --fg-5: var(--c-ink-5);
+  --fg-7: var(--c-ink-7);
+  --fg-10: var(--c-ink-10);
+  --fg-20: var(--c-ink-20);
+  --fg-30: var(--c-ink-30);
+  --fg-50: var(--c-ink-50);
+  --fg-muted: var(--c-ink-60);
+  --fg-70: var(--c-ink-70);
+  --btn-fill: var(--c-teal-1000);
+  --btn-text: var(--c-cream);
+  --accent: var(--c-accent);
+
+  /* ---------- fonts ---------- */
+  --font-body: var(--ff-body), "Reckless Standard S", "Times New Roman", serif;
+  --font-serif: var(--ff-serif), "Reckless Condensed M", "Times New Roman", serif;
+  --font-display: var(--ff-display), "Founders Grotesk Condensed", Tahoma, sans-serif;
+  --font-sans: var(--ff-sans), Geist, Arial, sans-serif;
+
+  --track-body: 0.01em;
+  --track-display: 0.03em;
+  --lh-body: 1.45;
+  --lh-140: 1.4;
+  --lh-snug: 1.2;
+  --lh-tight: 1.1;
+  --lh-none: 1;
+
+  /* type scale (desktop) */
+  --text-3xs: 10px;
+  --text-2xs: 12px;
+  --text-xs: 14px;
+  --text-sm: 16px;
+  --text-base: 18px;
+  --text-lg: 20px;
+  --text-xl: 22px;
+  --text-2xl: 24px;
+  --text-3xl: 28px;
+  --text-4xl: 32px;
+  --text-5xl: 40px;
+  --text-6xl: 48px;
+  --text-7xl: 64px;
+
+  /* ---------- spacing ---------- */
+  --space-none: 0rem;
+  --space-4xs: 0.25rem;
+  --space-3xs: 0.5rem;
+  --space-2xs: 0.75rem;
+  --space-xs: 1rem;
+  --space-sm: 1.5rem;
+  --space-base: 2rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 5rem;
+  --space-3xl: 6rem;
+  --space-4xl: 8rem;
+  --page-pad: 96px;
+
+  /* ---------- widths ---------- */
+  --w-3xs: 256px;
+  --w-2xs: 288px;
+  --w-xs: 320px;
+  --w-sm: 384px;
+  --w-base: 448px;
+  --w-lg: 512px;
+  --w-xl: 576px;
+  --w-2xl: 672px;
+  --w-3xl: 768px;
+  --w-4xl: 896px;
+  --w-5xl: 1024px;
+  --w-6xl: 1280px;
+  --w-7xl: 1440px;
+
+  /* ---------- component sizes ---------- */
+  --h-nav: 80px;
+  --btn-h: 50px;
+  --btn-pad-x: 20px;
+  --btn-gap: 6px;
+  --btn-lg-h: 56px;
+  --icon-btn: 50px;
+  --input-h: 56px;
+
+  /* ---------- radii ---------- */
+  --r-3xs: 2px;
+  --r-2xs: 4px;
+  --r-xs: 6px;
+  --r-sm: 8px;
+  --r-base: 12px;
+  --r-lg: 16px;
+  --r-xl: 18px;
+  --r-full: 1000px;
+
+  --blur-base: 6px;
+  --blur-lg: 12px;
+
+  /* ---------- shadows ---------- */
+  --shadow-cta: 2px 2px 32px 0 rgba(0, 0, 0, 0.1);
+  --shadow-cta-mobile: 0 -2px 32px 0 rgba(0, 0, 0, 0.1);
+
+  /* ---------- z-index ---------- */
+  --z-hero: 0;
+  --z-content: 11;
+  --z-cta: 20;
+  --z-nav: 30;
+  --z-popup: 40;
+
+  /* ---------- motion ---------- */
+  --ease-out-soft: cubic-bezier(0.2, 0.8, 0.2, 1); /* --ease */
+  --ease-popup: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-input: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --ease-press: cubic-bezier(0.37, 0, 0.63, 1);
+  --ease-fade: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 0.2s;
+  --dur-popup: 0.22s;
+  --dur-link: 0.32s;
+  --dur-base: 0.4s;
+  --dur-pill: 0.45s;
+  --dur-hover-card: 0.52s;
+  --dur-media: 0.6s;
+
+  /* GSAP values (read by lib/motion.ts) */
+  --gsap-intro-dur: 0.7;
+  --gsap-intro-stagger: 0.055;
+  --gsap-settle-dur: 0.42;
+  --gsap-scroll-cta-dur: 1.6;
+
+  /* hero grid */
+  --hero-inset-x: clamp(20px, 2.2vw, 40px);
+  --hero-gap: clamp(16px, 2vw, 28px);
+  --hero-peep: 28%;
+  --hero-cover-shift: -18%;
+}
+
+/* breakpoints: tablet ≤991, mobile-landscape ≤767, mobile ≤479 (Webflow) */
+@media (max-width: 991px) {
+  :root {
+    --text-base: 17px;
+    --text-6xl: 40px;
+    --space-sm: 1.25rem;
+    --space-base: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 2.5rem;
+    --space-2xl: 4rem;
+    --space-3xl: 5rem;
+    --space-4xl: 7rem;
+    --page-pad: 40px;
+  }
+}
+@media (max-width: 767px) {
+  :root {
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+    --space-4xl: 6rem;
+    --page-pad: 20px;
+    --h-nav: 72px;
+  }
+}
+
+.theme-dark {
+  --bg: var(--c-teal-1000);
+  --fg: var(--c-cream);
+  --fg-3: var(--c-cream-3);
+  --fg-5: var(--c-cream-5);
+  --fg-10: var(--c-cream-10);
+  --fg-50: var(--c-cream-50);
+  --fg-muted: var(--c-cream-60);
+  --fg-70: var(--c-cream-70);
+  --btn-fill: var(--c-cream);
+  --btn-text: var(--c-ink);
+}
+
+/* ---------- component metrics (measured, see design-spec §5) ---------- */
+:root {
+  --nav-pad-x: 16px;
+  --nav-pad-y: 15px;
+  --logo-w: 128px;
+  --logo-h: 16px;
+  --search-w: 446px;
+  --menu-pop-inset: 16px;
+  --menu-pop-top: 76px;
+  --menu-cta-w: 448px;
+  --listen-w: 320px;
+  --photo-inset: 8px;
+  --press-pad-top: 88px;
+  --press-pad-bottom: 96px;
+  --press-side: 40px;
+  --press-logo-h: 44px;
+  --card-art: 190px;
+  --card-pad: 24px;
+  --card-col-gap: 16px;
+  --list-w: 768px;
+  --testimonial-gap: 64px;
+  --footer-console-pad: 64px 96px 40px;
+  --footer-col-w: 216px;
+  --footer-blob: 864px;
+  --cta-w: 448px;
+  --cta-offset: 24px;
+  --sierra-h: 40px;
+  /* live: hero photo is 120% of module height, shifted up 10% (parallax start); footer photo 110%, shifted 5% */
+  --photo-img-top: -10%;
+  --photo-img-h: 120%;
+  --footer-img-top: -5%;
+  --footer-img-h: 110%;
+}
+@media (max-width: 991px) {
+  :root { --footer-console-pad: 48px 40px 32px; --testimonial-gap: 40px; }
+}
+@media (max-width: 767px) {
+  :root {
+    --nav-pad-x: 12px; --nav-pad-y: 11px; --card-art: 75px; --card-pad: 20px; --press-pad-top: 48px; --press-pad-bottom: 48px;
+    --footer-console-pad: 40px 20px 32px; --testimonial-gap: 32px; --cta-offset: 20px;
+  }
+}
+
+/* ---------- episode themes (live: per-episode :root --theme-* from CMS) ----------
+   Applied with :root:has([data-ep-theme="…"]) so the nav (outside the page) picks them up too. */
+:root:has([data-ep-theme="gold"])     { --theme-light: #f9f2d4; --theme-dark: #886300; --theme-a400: #ffea8c; --theme-a500: #e2ba00; --theme-a600: #b58c00; }
+:root:has([data-ep-theme="orange"])   { --theme-light: #f7efe0; --theme-dark: #803f00; --theme-a400: #f5a759; --theme-a500: #e88a2f; --theme-a600: #c06a15; }
+:root:has([data-ep-theme="cobalt"])   { --theme-light: #e0e9f2; --theme-dark: #16273c; --theme-a400: #4f7fe2; --theme-a500: #3865d0; --theme-a600: #2952b5; }
+:root:has([data-ep-theme="coral"])    { --theme-light: #f2e6e0; --theme-dark: #6c1010; --theme-a400: #e07878; --theme-a500: #ba4d4d; --theme-a600: #8a2727; }
+:root:has([data-ep-theme="sage"])     { --theme-light: #e1eed8; --theme-dark: #183503; --theme-a400: #7db852; --theme-a500: #5fa832; --theme-a600: #4a8022; }
+:root:has([data-ep-theme="teal"])     { --theme-light: #d7f3f1; --theme-dark: #0c3b3a; --theme-a400: #63bfbc; --theme-a500: #3ca7a3; --theme-a600: #2b8f8b; }
+:root:has([data-ep-theme="brown"])    { --theme-light: #f3ebe3; --theme-dark: #2e1a0f; --theme-a400: #c08e6f; --theme-a500: #9a6847; --theme-a600: #7a4f30; }
+:root:has([data-ep-theme="charcoal"]) { --theme-light: #eeeeee; --theme-dark: #1a1a1a; --theme-a400: #929292; --theme-a500: #a8a8a8; --theme-a600: #c9c9c9; }
+:root {
+  --theme-light-5: color-mix(in srgb, var(--theme-light) 5%, transparent);
+  --theme-light-10: color-mix(in srgb, var(--theme-light) 10%, transparent);
+  --theme-light-20: color-mix(in srgb, var(--theme-light) 20%, transparent);
+  --theme-light-80: color-mix(in srgb, var(--theme-light) 80%, transparent);
+  --theme-a400-50: color-mix(in srgb, var(--theme-a400) 50%, transparent);
+  --theme-a600-50: color-mix(in srgb, var(--theme-a600) 50%, transparent);
+  --theme-player: color-mix(in srgb, var(--theme-dark) 70%, var(--theme-a500) 30%);
+  --theme-cta-end: color-mix(in srgb, color-mix(in srgb, var(--theme-dark) 50%, black) 60%, transparent);
+
+  /* episode page metrics (1440) */
+  --ep-left-w: 448px;
+  --ep-right-w: 576px;
+  --ep-col-gap: 96px;
+  --ep-top: 64px;
+  --ep-icon-btn-w: 106px;
+  --ep-artifact-w: 156px;
+  --ep-artifact-h: 194px;
+  --ep-list-indent: 32px;
+  --player-w: 512px;
+  --player-min-h: 75px;
+  --player-inset: 16px;
+  --player-thumb: 60px;
+  --player-btn: 42px;
+  --slider-item-w: 30vw;
+  --slider-item-max: 432px;
+  --sheet-ease: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --drawer-ease: cubic-bezier(0.4, 0, 0.6, 1);
+  --zoom-in-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --item-ease: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --dur-sheet: 0.3s;
+  --dur-zoom-in: 320ms;
+  --dur-zoom-out: 250ms;
+  --gsap-player-dur: 0.25;
+  --drawer-h: 765px;
+  --drawer-hidden: 110%;
+  --sheet-cover: 202px;
+}
+@media (max-width: 1279px) { :root { --ep-left-w: 384px; --ep-right-w: 432px; --ep-col-gap: 80px; --player-w: 448px; --slider-item-max: 307px; } }
+@media (max-width: 991px)  { :root { --ep-left-w: 320px; --ep-right-w: 320px; --ep-col-gap: 64px; --ep-top: 40px; } }
+@media (max-width: 767px)  { :root { --ep-left-w: 100%; --ep-right-w: 100%; --ep-col-gap: 0px; --ep-top: 0px; --player-w: calc(100vw - 24px); --player-inset: 12px; --slider-item-max: 234px; --slider-item-w: 60vw; --ep-artifact-w: 97px; --ep-artifact-h: 121px; } }
+
+/* ---------- playlist (episodes list / features / industry) ---------- */
+:root {
+  --pl-sidebar-w: 288px;
+  --pl-sidebar-pad: 24px;
+  --pl-main-pad: 64px;
+  --pl-content-w: 1024px;
+  --pl-head-h: 80px;
+  --pl-row-pad: 24px;
+  --pl-row-art: 190px;
+  --pl-skim-art: 75px;
+  --pl-skim-pad: 16px;
+  --pl-title: var(--text-2xl);
+  --dur-sidebar: 0.42s;
+}
+@media (max-width: 1279px) { :root { --pl-main-pad: 40px; } }
+@media (max-width: 991px)  { :root { --pl-main-pad: 24px; --pl-row-pad: 20px; } }
+@media (max-width: 767px)  { :root { --pl-main-pad: 8px; --pl-row-art: 75px; --pl-title: var(--text-xl); --pl-head-h: 72px; } }
+:root { --artifact-w: 218px; }
+@media (max-width: 767px) { :root { --artifact-w: 140px; } }
+:root { --about-title: 72px; --stat-n: 88px; --host-card-h: 330px; --dur-bar: 1.1s; }
+@media (max-width: 767px) { :root { --about-title: 56px; --stat-n: 72px; --host-card-h: 260px; } }
+:root { --about-h2-w: 440px; }
+
+/* ---------- nav surfaces (live: --menu-*, --listen-*, --logo-popup-*, --surface-* vars) ---------- */
+:root {
+  --surface-fade-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --surface-open-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --surface-close-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --menu-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --listen-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --menu-section-open-ms: 220ms; --menu-section-close-ms: 250ms;
+  --listen-section-open-ms: 210ms; --listen-section-close-ms: 240ms;
+  --menu-panel-open-ms: 280ms; --menu-panel-close-ms: 180ms;
+  --listen-panel-open-ms: 250ms; --listen-panel-close-ms: 170ms;
+  --menu-panel-open-y: -4px; --menu-panel-close-y: -3px;
+  --listen-panel-open-y: -3px; --listen-panel-close-y: -2px;
+  --menu-content-fade-ms: 220ms; --menu-content-delay: 40ms;
+  --listen-content-fade-ms: 200ms; --listen-content-delay: 28ms;
+  --menu-stagger-base: 108ms; --menu-stagger-step: 26ms;
+  --listen-stagger-base: 84ms; --listen-stagger-step: 22ms;
+  --logo-popup-open-ms: 220ms; --logo-popup-close-ms: 150ms;
+  --logo-popup-open-y: -3px; --logo-popup-close-y: -2px;
+  --logo-popup-content-fade-ms: 180ms; --logo-popup-content-delay: 24ms;
+  --logo-popup-stagger-base: 60ms; --logo-popup-stagger-step: 28ms;
+}
+@media (max-width: 1279px) { :root { --page-pad: 40px; --footer-console-pad: 64px 40px 40px; } }
+@media (max-width: 991px) { :root { --page-pad: 24px; --footer-console-pad: 40px 24px 32px; --card-pad: 20px; } }
+@media (max-width: 767px) { :root { --page-pad: 20px; --footer-console-pad: 40px 20px 32px; } }
+@media (max-width: 991px) { :root { --about-title: 64px; } }
+@media (max-width: 767px) { :root { --about-title: 56px; } }
+@media (max-width: 991px) { :root { --stat-n: 72px; } }
+
+/* ---------- font-size-adjust: scale stand-ins to the live cap heights (Founders .63, Reckless .67) ---------- */
+:root { --adjust-display: cap-height 0.63; --adjust-serif: cap-height 0.67; --adjust-body: cap-height 0.67; --font-logo: var(--ff-logo), Arial, sans-serif; }
+@media (max-width: 767px) { :root { --logo-w: 112px; --logo-h: 14px; } }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" height="400" viewBox="0 0 400 400" width="400">
+  <rect fill="#991C26" height="400" width="400"/>
+<g clip-path="url(#clip0_5453_6905)" id="logo">
+<g id="full-cmyk">
+<g id="logoMark_1_">
+<g id="Group">
+<path d="M157.082 149.148L124 182.282V171.28L146.097 149.148H157.082Z" fill="#FFFCF5" id="logoMark__x3C_PathItem_x3E__13_"/>
+</g>
+<g id="Group_2">
+<path d="M209.963 129.192L124 215.159V204.286L198.978 129.192H209.963Z" fill="#FFFCF5" id="logoMark__x3C_PathItem_x3E__12_"/>
+</g>
+<g id="Group_3">
+<path d="M222.864 149.148L124 248.165V237.163L211.879 149.148H222.864Z" fill="#FFFCF5" id="logoMark__x3C_PathItem_x3E__11_"/>
+</g>
+<g id="Group_4">
+<path d="M270.252 129.192H275.745L134.985 270.168H128.598H124L264.76 129.192H270.252Z" fill="#FFFCF5" id="logoMark__x3C_PathItem_x3E__10_"/>
+</g>
+<g id="Group_5">
+<path d="M254.286 172.56V183.561L167.94 270.169H156.955L254.286 172.56Z" fill="#FFFCF5" id="logoMark__x3C_PathItem_x3E__9_"/>
+</g>
+<g id="Group_6">
+<path d="M275.744 184.073V195.075L200.766 270.168H189.781L275.744 184.073Z" fill="#FFFCF5" id="logoMark__x3C_PathItem_x3E__8_"/>
+</g>
+<g id="Group_7">
+<path d="M254.286 238.57V249.572L233.849 270.169H222.864L254.286 238.57Z" fill="#FFFCF5" id="logoMark__x3C_PathItem_x3E__7_"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_5453_6905">
+<rect fill="white" height="142" transform="translate(124 129)" width="152"/>
+</clipPath>
+</defs>
+</svg>

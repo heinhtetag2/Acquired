@@ -1,0 +1,31 @@
+import { chromium } from 'playwright';
+const w = +(process.argv[2] || 1440);
+const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: w, height: 900 } });
+const errs = []; p.on('pageerror', e => errs.push(e.message)); p.on('console', m => m.type() === 'error' && errs.push(m.text()));
+await p.goto('http://localhost:3100/?listen=1'); await p.waitForTimeout(2500);
+const q = (f) => p.evaluate(f);
+console.log('listen via url', await q(() => document.querySelector('.listen-section').className));
+await p.keyboard.press('Escape'); await p.waitForTimeout(400);
+console.log('after esc', await q(() => document.querySelector('.listen-section').className));
+await p.click('.nav__menu-btn'); await p.waitForTimeout(700);
+await p.screenshot({ path: `qa/states/${w}/menu-clone.png` });
+console.log('menu', await q(() => [document.querySelector('.menu-section').className, getComputedStyle(document.querySelector('.menu-link:nth-child(3)')).opacity]));
+await p.click('.nav__menu-btn'); await p.waitForTimeout(100);
+console.log('closing', await q(() => document.querySelector('.menu-section').className)); await p.waitForTimeout(400);
+console.log('closed', await q(() => document.querySelector('.menu-section').className));
+if (w >= 992) {
+  await p.click('.nav__actions .btn.nav-wide'); await p.waitForTimeout(700); await p.screenshot({ path: `qa/states/${w}/listen-clone.png` });
+  await p.keyboard.press('Escape'); await p.waitForTimeout(400);
+  await p.click('.nav__logo', { button: 'right' }); await p.waitForTimeout(500);
+  console.log('logo popup', await q(() => [document.querySelector('.logo-popup').className, document.querySelector('.logo-popup').style.left]));
+  await p.screenshot({ path: `qa/states/${w}/logo-clone.png` });
+  await p.mouse.click(700, 600); await p.waitForTimeout(300);
+}
+await p.click(w >= 768 ? '#nav-search' : '.search-bar'); await p.waitForTimeout(700);
+await p.screenshot({ path: `qa/states/search-open-${w}-clone.png` });
+await p.keyboard.type('disney', { delay: 40 }); await p.waitForTimeout(600);
+console.log('results', await q(() => [...document.querySelectorAll('.search-results .search-item__title')].map(e => e.textContent)));
+await p.screenshot({ path: `qa/states/search-results-${w}-clone.png` });
+await p.keyboard.press('ArrowDown'); await p.keyboard.press('Enter'); await p.waitForTimeout(1500);
+console.log('navigated', await q(() => location.pathname));
+console.log('errors', errs); await b.close();

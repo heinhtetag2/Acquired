@@ -1,0 +1,11 @@
+import { chromium } from 'playwright';
+const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1440, height: 900 } });
+const errs = []; p.on('pageerror', e => errs.push(e.message));
+await p.goto('http://localhost:3100/industry/software'); await p.waitForTimeout(1000);
+const st = () => p.evaluate(() => ({ url: location.pathname, h1: document.querySelector('.pl-head h1')?.textContent, eyebrow: document.querySelector('.pl-eyebrow')?.textContent, current: document.querySelector('.pl-link[aria-current=page]')?.textContent, rows: document.querySelectorAll('.pl-row').length, toggles: !!document.querySelector('.pl-head .pl-toggles'), nav: document.querySelector('.nav').className }));
+console.log(await st());
+await p.click('.pl-link[href="/features/niche-gems"]'); await p.waitForURL('**/niche-gems'); await p.waitForTimeout(500); console.log(await st());
+await p.click('.pl-link[href="/season/fall-2026"]'); await p.waitForURL('**/fall-2026'); await p.waitForTimeout(500); console.log(await st());
+await p.click('.pl-row__link'); await p.waitForURL('**/episodes/**'); await p.waitForTimeout(800);
+await p.click('.ep-badges a'); await p.waitForURL('**/industry/**'); await p.waitForTimeout(500); console.log(await st());
+console.log('errors', errs); await b.close();

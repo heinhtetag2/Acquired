@@ -1,0 +1,1130 @@
+{
+ "/features/must-listen": {
+  "title": "Must-Listen",
+  "slugs": [
+   "hermes",
+   "costco",
+   "rolex",
+   "microsoft",
+   "google-the-ai-company",
+   "lvmh",
+   "the-nfl",
+   "visa"
+  ],
+  "status": "Must-Listen Playlist | Acquired",
+  "head": [
+   {
+    "cls": "flex-col-left",
+    "box": [
+     352,
+     81,
+     1024,
+     128
+    ],
+    "fs": "18px",
+    "lh": "18px",
+    "color": "rgb(27, 25, 21)",
+    "ff": "\"Reckless Standard S\"",
+    "pad": "0px",
+    "bb": "0px none rgb(27, 25, 21)",
+    "pos": "static",
+    "text": ""
+   },
+   {
+    "cls": "spacer-x space-base",
+    "box": [
+     352,
+     81,
+     1024,
+     32
+    ],
+    "fs": "18px",
+    "lh": "18px",
+    "color": "rgb(27, 25, 21)",
+    "ff": "\"Reckless Standard S\"",
+    "pad": "0px",
+    "bb": "0px none rgb(27, 25, 21)",
+    "pos": "static",
+    "text": ""
+   },
+   {
+    "cls": "font-display text-accent-secondary leading-140",
+    "box": [
+     352,
+     113,
+     66,
+     25
+    ],
+    "fs": "18px",
+    "lh": "25.2px",
+    "color": "rgb(23, 203, 159)",
+    "ff": "\"Founders Grotesk Condensed\"",
+    "pad": "0px",
+    "bb": "0px none rgb(23, 203, 159)",
+    "pos": "static",
+    "text": "features"
+   },
+   {
+    "cls": "font-serif leading-120 text-4xl",
+    "box": [
+     352,
+     138,
+     173,
+     38
+    ],
+    "fs": "32px",
+    "lh": "38.4px",
+    "color": "rgb(27, 25, 21)",
+    "ff": "\"Reckless Condensed M\"",
+    "pad": "0px",
+    "bb": "0px none rgb(27, 25, 21)",
+    "pos": "static",
+    "text": "Must-Listen"
+   },
+   {
+    "cls": "spacer-x space-base",
+    "box": [
+     352,
+     177,
+     1024,
+     32
+    ],
+    "fs": "18px",
+    "lh": "18px",
+    "color": "rgb(27, 25, 21)",
+    "ff": "\"Reckless Standard S\"",
+    "pad": "0px",
+    "bb": "0px none rgb(27, 25, 21)",
+    "pos": "static",
+    "text": ""
+   }
+  ],
+  "firstRow": {
+   "cls": "playlist-block-item w-dyn-item",
+   "box": [
+    352,
+    234,
+    1024,
+    240
+   ],
+   "fs": "18px",
+   "lh": "18px",
+   "color": "rgb(27, 25, 21)",
+   "ff": "\"Reckless Standard S\"",
+   "pad": "24px",
+   "bb": "1px solid rgba(0, 0, 0, 0)",
+   "pos": "relative",
+   "text": ""
+  },
+  "prev": [
+   {
+    "cls": "playlist-header-wrap",
+    "box": [
+     352,
+     81,
+     1024,
+     129
+    ],
+    "fs": "18px",
+    "lh": "18px",
+    "color": "rgb(27, 25, 21)",
+    "ff": "\"Reckless Standard S\"",
+    "pad": "0px",
+    "bb": "1px solid color(srgb 0.105882 0.0980392 0.0823529 / 0.1)",
+    "pos": "static",
+    "text": ""
+   },
+   {
+    "cls": "cms-wrapper w-dyn-list",
+    "box": [
+     352,
+     210,
+     1024,
+     1968
+    ],
+    "fs": "18px",
+    "lh": "18px",
+    "color": "rgb(27, 25, 21)",
+    "ff": "\"Reckless Standard S\"",
+    "pad": "0px",
+    "bb": "0px none rgb(27, 25, 21)",
+    "pos": "static",
+    "text": ""
+   }
+  ],
+  "desc": "In luxury, there’s Hermès… and there’s everyone else. Stewar"
+ },
+ "/industry/software": {
+  "title": "Software",
+  "slugs": [
+   "google-the-ai-company",
+   "alphabet-inc",
+   "google",
+   "the-steve-ballmer-interview",
+   "epic-systems-mychart",
+   "microsoft-volume-ii",
+   "microsoft",
+   "spotify-ceo-daniel-ek",
+   "interview-hamilton-helmer-chenyi-shi-on-how-to-build-an-aws-like-second-business",
+   "amazon-web-services",
+   "capital-efficient-growth-with-zoom-ceo-eric-yuan-veeva-ceo-peter-gassner",
+   "the-browser-with-brendan-eich-chief-architect-of-netscape-mozilla-and-ceo-of-brave",
+   "kevin-rose-from-web-2-0-to-web3",
+   "slack-salesforce-emergency-pod-with-packy-mccormick-of-not-boring",
+   "special-superhuman-part-ii-designing-software-to-feel-like-a-game-with-rahul-vohra",
+   "eventbrite",
+   "google-maps",
+   "huawei",
+   "superhuman",
+   "the-slack-dpo",
+   "the-zoom-ipo-with-santi-subotovsky",
+   "netflix-part-2",
+   "netflix-part-1",
+   "behance-with-scott-belsky",
+   "season-3-episode-3the-sonos-ipo",
+   "season-3-episode-2the-xiaomi-ipo",
+   "season-2-episode-10the-rover-dogvacay-merger-with-rover-ceo-aaron-easterly",
+   "season-2-episode-9github",
+   "season-2-episode-7powerpoint",
+   "season-2-episode-6spotifys-direct-listing",
+   "season-2-episode-5the-dropbox-ipo",
+   "season-2-episode-3nest",
+   "episode-50-apple-beats",
+   "the-atlassian-ipo",
+   "episode-45-htc-google-and-the-future-of-mobile",
+   "episode-44-aol-time-warner-with-the-internet-history-podcast",
+   "episode-42-opsware-with-special-guest-michel-feaster",
+   "episode-38-soundjam-itunes",
+   "episode-35-oculus",
+   "episode-33-overture-with-the-internet-history-podcast",
+   "episode-24-skype",
+   "episode-23-next-live-show-at-the-geekwire-summit",
+   "episode-22-zillow-trulia-with-zillow-group-cfo-kathleen-philips",
+   "episode-20-android",
+   "acquired-episode-17-waze",
+   "acquired-episode-15-exacttarget-acquired-by-salesforce-with-scott-dorsey",
+   "episode-9-writely-google-docs",
+   "episode-8-acompli-sunrise-and-wunderlist",
+   "episode-5-siri",
+   "episode-3-twitch"
+  ],
+  "status": "Software Playlist | Acquired",
+  "head": [
+   {
+    "cls": "flex-col-left",
+    "box": [
+     352,
+     81,
+     1024,
+     128
+    ],
+    "fs": "18px",
+    "lh": "18px",
+    "color": "rgb(27, 25, 21)",
+    "ff": "\"Reckless Standard S\"",
+    "pad": "0px",
+    "bb": "0px none rgb(27, 25, 21)",
+    "pos": "static",
+    "text": ""
+   },
+   {
+    "cls": "spacer-x space-base",
+    "box": [
+     352,
+     81,
+     1024,
+     32
+    ],
+    "fs": "18px",
+    "lh": "18px",
+    "color": "rgb(27, 25, 21)",
+    "ff": "\"Reckless Standard S\"",
+    "pad": "0px",
+    "bb": "0px none rgb(27, 25, 21)",
+    "pos": "static",
+    "text": ""
+   },
+   {
+    "cls": "font-display text-accent-secondary leading-140",
+    "box": [
+     352,
+     113,
+     65,
+     25
+    ],
+    "fs": "18px",
+    "lh": "25.2px",
+    "color": "rgb(23, 203, 159)",
+    "ff": "\"Founders Grotesk Condensed\"",
+    "pad": "0px",
+    "bb": "0px none rgb(23, 203, 159)",
+    "pos": "static",
+    "text": "INDUSTRY"
+   },
+   {
+    "cls": "font-serif leading-120 text-4xl",
+    "box": [
+     352,
+     138,
+     144,
+     38
+    ],
+    "fs": "32px",
+    "lh": "38.4px",
+    "color": "rgb(27, 25, 21)",
+    "ff": "\"Reckless Condensed M\"",
+    "pad": "0px",
+    "bb": "0px none rgb(27, 25, 21)",
+    "pos": "static",
+    "text": "Software"
+   },
+   {
+    "cls": "spacer-x space-base",
+    "box": [
+     352,
+     177,
+     1024,
+     32
+    ],
+    "fs": "18px",
+    "lh": "18px",
+    "color": "rgb(27, 25, 21)",
+    "ff": "\"Reckless Standard S\"",
+    "pad": "0px",
+    "bb": "0px none rgb(27, 25, 21)",
+    "pos": "static",
+    "text": ""
+   }
+  ],
+  "firstRow": {
+   "cls": "playlist-block-item w-dyn-item",
+   "box": [
+    352,
+    234,
+    1024,
+    240
+   ],
+   "fs": "18px",
+   "lh": "18px",
+   "color": "rgb(27, 25, 21)",
+   "ff": "\"Reckless Standard S\"",
+   "pad": "24px",
+   "bb": "1px solid rgba(0, 0, 0, 0)",
+   "pos": "relative",
+   "text": ""
+  },
+  "prev": [
+   {
+    "cls": "playlist-header-wrap",
+    "box": [
+     352,
+     81,
+     1024,
+     129
+    ],
+    "fs": "18px",
+    "lh": "18px",
+    "color": "rgb(27, 25, 21)",
+    "ff": "\"Reckless Standard S\"",
+    "pad": "0px",
+    "bb": "1px solid color(srgb 0.105882 0.0980392 0.0823529 / 0.1)",
+    "pos": "static",
+    "text": ""
+   },
+   {
+    "cls": "cms-wrapper w-dyn-list",
+    "box": [
+     352,
+     210,
+     1024,
+     12310
+    ],
+    "fs": "18px",
+    "lh": "18px",
+    "color": "rgb(27, 25, 21)",
+    "ff": "\"Reckless Standard S\"",
+    "pad": "0px",
+    "bb": "0px none rgb(27, 25, 21)",
+    "pos": "static",
+    "text": ""
+   }
+  ],
+  "desc": "Google faces the greatest innovator's dilemma in history. Th"
+ },
+ "/features/niche-gems": {
+  "title": "Niche Gems",
+  "slugs": [
+   "epic-systems-mychart",
+   "indian-premier-league-cricket",
+   "mars-inc-the-chocolate-story",
+   "renaissance-technologies",
+   "novo-nordisk-ozempic",
+   "caa-with-michael-ovitz"
+  ],
+  "status": "Niche Gems Playlist | Acquired"
+ },
+ "/industry/luxury": {
+  "title": "Luxury",
+  "slugs": [
+   "ferrari",
+   "rolex",
+   "hermes",
+   "porsche-with-doug-demuro",
+   "lvmh"
+  ],
+  "status": "Luxury Playlist | Acquired"
+ },
+ "/features/interviews": {
+  "title": "Interviews",
+  "slugs": [
+   "10-years-of-acquired-with-michael-lewis",
+   "acquired-live-at-radio-city-music-hall-presented-by-j-p-morgan",
+   "the-jamie-dimon-interview",
+   "the-steve-ballmer-interview",
+   "tsmc-founder-morris-chang",
+   "acquired-live-from-chase-center-with-daniel-ek-emily-chang-jensen-huang-and-mark-zuckerberg",
+   "the-mark-zuckerberg-interview",
+   "starbucks-with-howard-schultz",
+   "charlie-munger",
+   "jensen-huang",
+   "uber-ceo-dara-khosrowshahi",
+   "spotify-ceo-daniel-ek",
+   "interview-hamilton-helmer-chenyi-shi-on-how-to-build-an-aws-like-second-business",
+   "stratechery-with-ben-thompson",
+   "acq-sessions-jason-calacanis",
+   "howard-marks-andrew-marks-something-of-value",
+   "from-nfl-to-startup-coo-to-congressman-regulating-crypto-with-rep-anthony-gonzalez",
+   "7-powers-with-hamilton-helmer",
+   "acquired-special-episode-jason-calacanis"
+  ],
+  "status": "Interviews Playlist | Acquired"
+ },
+ "/industry/vc-investing": {
+  "title": "VC/Investing",
+  "slugs": [
+   "renaissance-technologies",
+   "charlie-munger",
+   "benchmarks-mitch-lasky-and-blake-robbins-on-the-art-of-business-in-gaming",
+   "benchmark-part-ii-the-dinner",
+   "acq-sessions-jason-calacanis",
+   "benchmark-capital",
+   "howard-marks-andrew-marks-something-of-value",
+   "american-dynamism-with-katherine-boyle",
+   "arena-show-part-i-idea-dinner-yc-continuity",
+   "platforms-and-power-with-hamilton-helmer-and-chenyi-shi",
+   "altimeter-with-brad-gerstner",
+   "ftx-with-sam-bankman-fried-mario-gabriele",
+   "complexity-investing-semiconductors-with-nzs-capital",
+   "michael-mauboussin-master-class-moats-skill-luck-decision-making-and-a-whole-lot-more",
+   "andreessen-horowitz-part-ii",
+   "andreessen-horowitz-part-i",
+   "special-ho-nam-from-altos-ventures-a-different-approach-to-vc",
+   "berkshire-hathaway-part-iii",
+   "berkshire-hathaway-part-ii",
+   "berkshire-hathaway-part-i",
+   "special-sequoia-capitals-investment-playbook-with-alfred-lin",
+   "acquired-special-episode-jason-calacanis",
+   "sequoias-black-swan-memo",
+   "sequoia-capital-part-ii-with-doug-leone",
+   "season-5-episode-10-the-lean-startup-and-the-long-term-stock-exchange-with-eric-ries",
+   "sequoia-capital-part-1",
+   "arm-softbank",
+   "season-2-episode-4softbank-fortress-and-the-vision-fund",
+   "special-conversation-with-microsofts-head-of-strategic-investments-brian-schultz"
+  ],
+  "status": "VC/Investing Playlist | Acquired"
+ },
+ "/industry/finance": {
+  "title": "Finance",
+  "slugs": [
+   "vanguard",
+   "the-jamie-dimon-interview",
+   "renaissance-technologies",
+   "visa",
+   "charlie-munger",
+   "howard-marks-andrew-marks-something-of-value",
+   "season-3-episode-7-venmo-sf-live-show-with-andrew-kortina",
+   "episode-43-the-square-ipo",
+   "episode-11-paypal"
+  ],
+  "status": "Finance Playlist | Acquired"
+ },
+ "/industry/social-media": {
+  "title": "Social Media",
+  "slugs": [
+   "meta",
+   "the-mark-zuckerberg-interview",
+   "twitter-with-dick-costolo",
+   "whatsapp",
+   "tiktok",
+   "the-pinterest-ipo",
+   "instagram-revisited-with-emily-white",
+   "season-3-episode-10-tencent",
+   "episode-32-the-snap-inc-ipo",
+   "episode-25-the-facebook-ipo",
+   "episode-14-linkedin",
+   "episode-13-push-pop-press-facebook-instant-articles-with-todd-bishop",
+   "episode-12-snapchat",
+   "episode-7-youtube",
+   "episode-2-instagram"
+  ],
+  "status": "Social Media Playlist | Acquired"
+ },
+ "/industry/sports": {
+  "title": "Sports",
+  "slugs": [
+   "ferrari",
+   "formula-1",
+   "the-nfl",
+   "indian-premier-league-cricket",
+   "nike",
+   "from-nfl-to-startup-coo-to-congressman-regulating-crypto-with-rep-anthony-gonzalez",
+   "the-nba",
+   "season-4-episode-1-espn",
+   "episode-37-bamtech-disney-and-the-biggest-media-company-youve-never-heard-of",
+   "episode-36-the-la-clippers"
+  ],
+  "status": "Sports Playlist | Acquired"
+ },
+ "/industry/semiconductors": {
+  "title": "Semiconductors",
+  "slugs": [
+   "tsmc-founder-morris-chang",
+   "jensen-huang",
+   "nvidia-the-dawn-of-the-ai-era",
+   "qualcomm",
+   "nvidia-the-machine-learning-company-2006-2022",
+   "nvidia-the-gpu-company-1993-2006",
+   "complexity-investing-semiconductors-with-nzs-capital",
+   "tsmc",
+   "adapting-episode-3-intel",
+   "huawei",
+   "arm-softbank",
+   "qualcomm-broadcom",
+   "episode-30-pa-semi-authentec"
+  ],
+  "status": "Semiconductors Playlist | Acquired"
+ },
+ "/industry/fintech": {
+  "title": "Fintech",
+  "slugs": [
+   "visa",
+   "season-3-episode-7-venmo-sf-live-show-with-andrew-kortina",
+   "episode-43-the-square-ipo",
+   "episode-11-paypal"
+  ],
+  "status": "Fintech Playlist | Acquired"
+ },
+ "/industry/gaming": {
+  "title": "Gaming",
+  "slugs": [
+   "benchmarks-mitch-lasky-and-blake-robbins-on-the-art-of-business-in-gaming",
+   "short-the-death-of-sega",
+   "nintendo-the-console-wars",
+   "nintendo",
+   "nvidia-the-gpu-company-1993-2006",
+   "sony",
+   "rec-room-part-ii-with-ceo-nick-fajt",
+   "epic-games",
+   "atari-with-nolan-bushnell",
+   "the-electronic-arts-ipo-with-trip-hawkins",
+   "season-2-episode-2raising-a-seed-round-with-against-gravity-ceo-nick-fajt",
+   "episode-40-activision-blizzard",
+   "episode-35-oculus",
+   "episode-4-bungie",
+   "episode-3-twitch"
+  ],
+  "status": "Gaming Playlist | Acquired"
+ },
+ "/industry/media-entertainment": {
+  "title": "Media/Entertainment",
+  "slugs": [
+   "seinfeld",
+   "disney-the-renaissance-and-the-empire",
+   "the-walt-disney-company",
+   "formula-1",
+   "spotify-ceo-daniel-ek",
+   "stratechery-with-ben-thompson",
+   "sony",
+   "super-pumped-with-brian-koppelman-and-joseph-gordon-levitt",
+   "taylor-swift-acquireds-version",
+   "caa-with-michael-ovitz",
+   "not-boring-with-packy-mccormick",
+   "the-new-york-times-company",
+   "oprah-harpo-studios",
+   "disney-plus",
+   "season-4-episode-1-espn",
+   "netflix-part-2",
+   "netflix-part-1",
+   "season-3-episode-4recode-with-kara-swisher",
+   "season-2-episode-6spotifys-direct-listing",
+   "episode-50-apple-beats",
+   "episode-38-soundjam-itunes",
+   "episode-37-bamtech-disney-and-the-biggest-media-company-youve-never-heard-of",
+   "episode-25-marvel",
+   "episode-21-inside-the-ma-press-with-bloombergs-alex-sherman",
+   "acquired-episode-16-midroll-stitcher-acquired-by-scripps",
+   "episode-13-push-pop-press-facebook-instant-articles-with-todd-bishop",
+   "episode-7-youtube",
+   "episode-6-lucasfilm",
+   "episode-3-twitch",
+   "episode-1-pixar"
+  ],
+  "status": "Media/Entertainment Playlist | Acquired"
+ },
+ "/industry/e-commerce": {
+  "title": "E-commerce",
+  "slugs": [
+   "home-depot",
+   "amazon-com",
+   "meituan",
+   "doordash",
+   "pinduoduo",
+   "the-shopify-ipo",
+   "alibaba",
+   "season-2-episode-1zappos-with-alfred-lin",
+   "the-stitch-fix-ipo",
+   "episode-28-the-amazon-ipo-with-original-amazon-board-member-tom-alberg",
+   "episode-19-jet"
+  ],
+  "status": "E-commerce Playlist | Acquired"
+ },
+ "/industry/crypto-web3": {
+  "title": "Crypto/Web3",
+  "slugs": [
+   "ftx-with-sam-bankman-fried-mario-gabriele",
+   "kevin-rose-from-web-2-0-to-web3",
+   "solana-with-ceo-anatoly-yakovenko",
+   "ethereum",
+   "bitcoin"
+  ],
+  "status": "Crypto/Web3 Playlist | Acquired"
+ },
+ "/industry/retail": {
+  "title": "Retail",
+  "slugs": [
+   "home-depot",
+   "trader-joes",
+   "ikea",
+   "starbucks-with-howard-schultz",
+   "costco",
+   "nike",
+   "walmart",
+   "arena-show-part-ii-brooks-running-with-ceo-jim-weber",
+   "season-2-episode-1zappos-with-alfred-lin",
+   "blue-bottle-coffee",
+   "episode-39-whole-foods-market",
+   "episode-34-starbucks-ipo-with-dan-levitan",
+   "episode-19-jet"
+  ],
+  "status": "Retail Playlist | Acquired"
+ },
+ "/industry/food": {
+  "title": "Food",
+  "slugs": [
+   "coca-cola",
+   "mars-inc-the-chocolate-story",
+   "starbucks-with-howard-schultz",
+   "canlis",
+   "blue-bottle-coffee",
+   "episode-39-whole-foods-market",
+   "episode-34-starbucks-ipo-with-dan-levitan"
+  ],
+  "status": "Food Playlist | Acquired"
+ },
+ "/industry/transportation": {
+  "title": "Transportation",
+  "slugs": [
+   "ferrari",
+   "porsche-with-doug-demuro",
+   "uber-ceo-dara-khosrowshahi",
+   "lockheed-martin",
+   "super-pumped-with-brian-koppelman-and-joseph-gordon-levitt",
+   "virgin-galactic",
+   "spacex",
+   "convoy-with-ceo-dan-lewis",
+   "the-uber-ipo",
+   "season-4-episode-4-the-lyft-ipo",
+   "season-3-episode-1tesla",
+   "season-2-episode-10the-rover-dogvacay-merger-with-rover-ceo-aaron-easterly",
+   "episode-31-the-uber-didi-chuxing-merger-with-brad-stone-author-of-the-upstarts-the-everything-store",
+   "acquired-episode-17-waze",
+   "episode-10-virgin-america"
+  ],
+  "status": "Transportation Playlist | Acquired"
+ },
+ "/industry/energy": {
+  "title": "Energy",
+  "slugs": [
+   "enron",
+   "standard-oil-part-ii",
+   "standard-oil-part-i",
+   "season-3-episode-1tesla"
+  ],
+  "status": "Energy Playlist | Acquired"
+ },
+ "/industry/health": {
+  "title": "Health",
+  "slugs": [
+   "epic-systems-mychart",
+   "novo-nordisk-ozempic",
+   "peloton",
+   "special-why-now-for-digital-health-with-levels-founder-josh-clemente"
+  ],
+  "status": "Health Playlist | Acquired"
+ },
+ "/series/nvidia": {
+  "title": "Nvidia",
+  "slugs": [
+   "jensen-huang",
+   "nvidia-the-dawn-of-the-ai-era",
+   "nvidia-the-machine-learning-company-2006-2022",
+   "nvidia-the-gpu-company-1993-2006"
+  ],
+  "status": "Nvidia Playlist | Acquired"
+ },
+ "/series/disney": {
+  "title": "Disney",
+  "slugs": [
+   "disney-the-renaissance-and-the-empire",
+   "the-walt-disney-company",
+   "disney-plus",
+   "season-4-episode-1-espn",
+   "episode-37-bamtech-disney-and-the-biggest-media-company-youve-never-heard-of",
+   "episode-6-lucasfilm",
+   "episode-1-pixar"
+  ],
+  "status": "Disney Playlist | Acquired"
+ },
+ "/series/alphabet": {
+  "title": "Alphabet/Google",
+  "slugs": [
+   "google-the-ai-company",
+   "alphabet-inc",
+   "google",
+   "google-maps",
+   "season-2-episode-3nest",
+   "episode-45-htc-google-and-the-future-of-mobile",
+   "episode-20-android",
+   "acquired-episode-17-waze",
+   "episode-9-writely-google-docs",
+   "episode-7-youtube"
+  ],
+  "status": "Alphabet/Google Playlist | Acquired"
+ },
+ "/series/microsoft": {
+  "title": "Microsoft",
+  "slugs": [
+   "the-steve-ballmer-interview",
+   "microsoft-volume-ii",
+   "microsoft",
+   "season-2-episode-9github",
+   "season-2-episode-7powerpoint",
+   "special-conversation-with-microsofts-head-of-strategic-investments-brian-schultz",
+   "episode-24-skype",
+   "episode-14-linkedin",
+   "episode-8-acompli-sunrise-and-wunderlist"
+  ],
+  "status": "Microsoft Playlist | Acquired"
+ },
+ "/series/meta": {
+  "title": "Meta",
+  "slugs": [
+   "meta",
+   "the-mark-zuckerberg-interview",
+   "whatsapp",
+   "instagram-revisited-with-emily-white",
+   "episode-35-oculus",
+   "episode-25-the-facebook-ipo",
+   "episode-13-push-pop-press-facebook-instant-articles-with-todd-bishop",
+   "episode-2-instagram"
+  ],
+  "status": "Meta Playlist | Acquired"
+ },
+ "/series/apple": {
+  "title": "Apple",
+  "slugs": [
+   "episode-50-apple-beats",
+   "episode-38-soundjam-itunes",
+   "episode-30-pa-semi-authentec",
+   "episode-23-next-live-show-at-the-geekwire-summit",
+   "episode-5-siri"
+  ],
+  "status": "Apple Playlist | Acquired"
+ },
+ "/series/tsmc": {
+  "title": "TSMC",
+  "slugs": [
+   "tsmc-founder-morris-chang",
+   "tsmc"
+  ],
+  "status": "TSMC Playlist | Acquired"
+ },
+ "/series/berkshire-hathaway": {
+  "title": "Berkshire Hathaway",
+  "slugs": [
+   "charlie-munger",
+   "howard-marks-andrew-marks-something-of-value",
+   "berkshire-hathaway-part-iii",
+   "berkshire-hathaway-part-ii",
+   "berkshire-hathaway-part-i"
+  ],
+  "status": "Berkshire Hathaway Playlist | Acquired"
+ },
+ "/series/amazon": {
+  "title": "Amazon",
+  "slugs": [
+   "interview-hamilton-helmer-chenyi-shi-on-how-to-build-an-aws-like-second-business",
+   "amazon-web-services",
+   "amazon-com",
+   "special-amazon-unbound-with-brad-stone",
+   "episode-39-whole-foods-market",
+   "episode-28-the-amazon-ipo-with-original-amazon-board-member-tom-alberg"
+  ],
+  "status": "Amazon Playlist | Acquired"
+ },
+ "/series/benchmark": {
+  "title": "Benchmark",
+  "slugs": [
+   "benchmarks-mitch-lasky-and-blake-robbins-on-the-art-of-business-in-gaming",
+   "benchmark-part-ii-the-dinner",
+   "benchmark-capital"
+  ],
+  "status": "Benchmark Playlist | Acquired"
+ },
+ "/series/andreessen-horowitz": {
+  "title": "Andreessen Horowitz",
+  "slugs": [
+   "andreessen-horowitz-part-ii",
+   "andreessen-horowitz-part-i",
+   "episode-42-opsware-with-special-guest-michel-feaster"
+  ],
+  "status": "Andreessen Horowitz Playlist | Acquired"
+ },
+ "/series/sequoia-capital": {
+  "title": "Sequoia Capital",
+  "slugs": [
+   "special-sequoia-capitals-investment-playbook-with-alfred-lin",
+   "sequoia-capital-part-ii-with-doug-leone",
+   "sequoia-capital-part-1"
+  ],
+  "status": "Sequoia Capital Playlist | Acquired"
+ },
+ "/season/fall-2026": {
+  "title": "Fall 2026",
+  "slugs": [
+   "seinfeld",
+   "home-depot",
+   "disney-the-renaissance-and-the-empire"
+  ],
+  "status": "Fall 2026 Playlist | Acquired"
+ },
+ "/series/starbucks": {
+  "title": "Starbucks",
+  "slugs": [
+   "starbucks-with-howard-schultz",
+   "episode-34-starbucks-ipo-with-dan-levitan"
+  ],
+  "status": "Starbucks Playlist | Acquired"
+ },
+ "/series/nintendo": {
+  "title": "Nintendo",
+  "slugs": [
+   "short-the-death-of-sega",
+   "nintendo-the-console-wars",
+   "nintendo"
+  ],
+  "status": "Nintendo Playlist | Acquired"
+ },
+ "/season/summer-2025": {
+  "title": "Summer 2025",
+  "slugs": [
+   "alphabet-inc",
+   "the-jamie-dimon-interview",
+   "google",
+   "the-steve-ballmer-interview"
+  ],
+  "status": "Summer 2025 Playlist | Acquired"
+ },
+ "/season/fall-2025": {
+  "title": "Fall 2025",
+  "slugs": [
+   "10-years-of-acquired-with-michael-lewis",
+   "coca-cola",
+   "trader-joes",
+   "google-the-ai-company"
+  ],
+  "status": "Fall 2025 Playlist | Acquired"
+ },
+ "/season/spring-2026": {
+  "title": "Spring 2026",
+  "slugs": [
+   "the-walt-disney-company",
+   "vanguard",
+   "ferrari",
+   "formula-1",
+   "the-nfl"
+  ],
+  "status": "Spring 2026 Playlist | Acquired"
+ },
+ "/season/spring-2025": {
+  "title": "Spring 2025",
+  "slugs": [
+   "epic-systems-mychart",
+   "indian-premier-league-cricket",
+   "rolex",
+   "tsmc-founder-morris-chang"
+  ],
+  "status": "Spring 2025 Playlist | Acquired"
+ },
+ "/season/fall-2024": {
+  "title": "Fall 2024",
+  "slugs": [
+   "mars-inc-the-chocolate-story",
+   "ikea",
+   "meta",
+   "acquired-live-from-chase-center-with-daniel-ek-emily-chang-jensen-huang-and-mark-zuckerberg",
+   "the-mark-zuckerberg-interview"
+  ],
+  "status": "Fall 2024 Playlist | Acquired"
+ },
+ "/season/14": {
+  "title": "Season 14",
+  "slugs": [
+   "microsoft-volume-ii",
+   "starbucks-with-howard-schultz",
+   "microsoft",
+   "renaissance-technologies",
+   "hermes",
+   "novo-nordisk-ozempic"
+  ],
+  "status": "Season 14 Playlist | Acquired"
+ },
+ "/season/12": {
+  "title": "Season 12",
+  "slugs": [
+   "porsche-with-doug-demuro",
+   "lockheed-martin",
+   "nintendo-the-console-wars",
+   "nintendo",
+   "lvmh"
+  ],
+  "status": "Season 12 Playlist | Acquired"
+ },
+ "/season/11": {
+  "title": "Season 11",
+  "slugs": [
+   "stratechery-with-ben-thompson",
+   "enron",
+   "qualcomm",
+   "benchmark-part-ii-the-dinner",
+   "benchmark-capital",
+   "amazon-web-services",
+   "amazon-com",
+   "walmart"
+  ],
+  "status": "Season 11 Playlist | Acquired"
+ },
+ "/season/13": {
+  "title": "Season 13",
+  "slugs": [
+   "holiday-special-2023",
+   "visa",
+   "nvidia-the-dawn-of-the-ai-era",
+   "costco",
+   "nike"
+  ],
+  "status": "Season 13 Playlist | Acquired"
+ },
+ "/season/10": {
+  "title": "Season 10",
+  "slugs": [
+   "arena-show-part-ii-brooks-running-with-ceo-jim-weber",
+   "arena-show-part-i-idea-dinner-yc-continuity",
+   "nvidia-the-machine-learning-company-2006-2022",
+   "nvidia-the-gpu-company-1993-2006",
+   "altimeter-with-brad-gerstner",
+   "sony",
+   "peloton",
+   "taylor-swift-acquireds-version"
+  ],
+  "status": "Season 10 Playlist | Acquired"
+ },
+ "/season/8": {
+  "title": "Season 8",
+  "slugs": [
+   "ethereum",
+   "berkshire-hathaway-part-iii",
+   "berkshire-hathaway-part-ii",
+   "berkshire-hathaway-part-i",
+   "rec-room-part-ii-with-ceo-nick-fajt",
+   "meituan",
+   "the-new-york-times-company",
+   "bitcoin"
+  ],
+  "status": "Season 8 Playlist | Acquired"
+ },
+ "/season/9": {
+  "title": "Season 9",
+  "slugs": [
+   "caa-with-michael-ovitz",
+   "ftx-with-sam-bankman-fried-mario-gabriele",
+   "not-boring-with-packy-mccormick",
+   "standard-oil-part-ii",
+   "standard-oil-part-i",
+   "tsmc",
+   "andreessen-horowitz-part-ii",
+   "andreessen-horowitz-part-i"
+  ],
+  "status": "Season 9 Playlist | Acquired"
+ },
+ "/season/6": {
+  "title": "Season 6",
+  "slugs": [
+   "oprah-harpo-studios",
+   "spacex",
+   "adapting-episode-3-intel",
+   "sequoias-black-swan-memo",
+   "canlis",
+   "acquired-top-ten-the-best-acquisitions-of-all-time",
+   "sequoia-capital-part-ii-with-doug-leone",
+   "whatsapp"
+  ],
+  "status": "Season 6 Playlist | Acquired"
+ },
+ "/season/7": {
+  "title": "Season 7",
+  "slugs": [
+   "airbnb",
+   "doordash",
+   "virgin-galactic",
+   "twitter-with-dick-costolo",
+   "the-nba",
+   "epic-games",
+   "eventbrite",
+   "pinduoduo"
+  ],
+  "status": "Season 7 Playlist | Acquired"
+ },
+ "/season/5": {
+  "title": "Season 5",
+  "slugs": [
+   "season-5-episode-10-the-lean-startup-and-the-long-term-stock-exchange-with-eric-ries",
+   "convoy-with-ceo-dan-lewis",
+   "tiktok",
+   "disney-plus",
+   "the-wework-acquisition-with-dan-primack",
+   "atari-with-nolan-bushnell",
+   "sequoia-capital-part-1",
+   "google-maps",
+   "the-shopify-ipo",
+   "huawei"
+  ],
+  "status": "Season 5 Playlist | Acquired"
+ },
+ "/season/2": {
+  "title": "Season 2",
+  "slugs": [
+   "season-2-episode-10the-rover-dogvacay-merger-with-rover-ceo-aaron-easterly",
+   "season-2-episode-9github",
+   "season-2-episode-8t-mobile-sprint",
+   "season-2-episode-7powerpoint",
+   "season-2-episode-6spotifys-direct-listing",
+   "season-2-episode-5the-dropbox-ipo",
+   "season-2-episode-4softbank-fortress-and-the-vision-fund",
+   "season-2-episode-3nest",
+   "season-2-episode-2raising-a-seed-round-with-against-gravity-ceo-nick-fajt",
+   "season-2-episode-1zappos-with-alfred-lin"
+  ],
+  "status": "Season 2 Playlist | Acquired"
+ },
+ "/season/3": {
+  "title": "Season 3",
+  "slugs": [
+   "season-3-episode-10-tencent",
+   "netflix-part-2",
+   "netflix-part-1",
+   "season-3-episode-7-venmo-sf-live-show-with-andrew-kortina",
+   "behance-with-scott-belsky",
+   "alibaba",
+   "season-3-episode-4recode-with-kara-swisher",
+   "season-3-episode-3the-sonos-ipo",
+   "season-3-episode-2the-xiaomi-ipo",
+   "season-3-episode-1tesla"
+  ],
+  "status": "Season 3 Playlist | Acquired"
+ },
+ "/season/4": {
+  "title": "Season 4",
+  "slugs": [
+   "superhuman",
+   "the-slack-dpo",
+   "the-zoom-ipo-with-santi-subotovsky",
+   "the-electronic-arts-ipo-with-trip-hawkins",
+   "the-uber-ipo",
+   "the-pinterest-ipo",
+   "season-4-episode-4-the-lyft-ipo",
+   "instagram-revisited-with-emily-white",
+   "arm-softbank",
+   "season-4-episode-1-espn"
+  ],
+  "status": "Season 4 Playlist | Acquired"
+ },
+ "/season/1": {
+  "title": "Season 1",
+  "slugs": [
+   "2017-holiday-special",
+   "episode-50-apple-beats",
+   "the-stitch-fix-ipo",
+   "qualcomm-broadcom",
+   "the-atlassian-ipo",
+   "blue-bottle-coffee",
+   "episode-45-htc-google-and-the-future-of-mobile",
+   "episode-44-aol-time-warner-with-the-internet-history-podcast",
+   "episode-43-the-square-ipo",
+   "episode-42-opsware-with-special-guest-michel-feaster",
+   "episode-41-bookingcom-with-jetsetter-room-77-ceo-drew-patterson",
+   "episode-40-activision-blizzard",
+   "episode-39-whole-foods-market",
+   "episode-38-soundjam-itunes",
+   "episode-37-bamtech-disney-and-the-biggest-media-company-youve-never-heard-of",
+   "episode-36-the-la-clippers",
+   "episode-35-oculus",
+   "episode-34-starbucks-ipo-with-dan-levitan",
+   "episode-33-overture-with-the-internet-history-podcast",
+   "episode-32-the-snap-inc-ipo",
+   "episode-31-the-uber-didi-chuxing-merger-with-brad-stone-author-of-the-upstarts-the-everything-store",
+   "episode-30-pa-semi-authentec",
+   "special-2016-review-and-2017-predictions",
+   "episode-28-the-amazon-ipo-with-original-amazon-board-member-tom-alberg",
+   "special-conversation-with-microsofts-head-of-strategic-investments-brian-schultz",
+   "episode-25-marvel",
+   "episode-25-the-facebook-ipo",
+   "episode-24-skype",
+   "episode-23-next-live-show-at-the-geekwire-summit",
+   "episode-22-zillow-trulia-with-zillow-group-cfo-kathleen-philips",
+   "episode-21-inside-the-ma-press-with-bloombergs-alex-sherman",
+   "episode-20-android",
+   "episode-19-jet",
+   "special-an-acquirers-view-into-ma-with-taylor-barada-head-of-corp-dev-at-adobe",
+   "acquired-episode-17-waze",
+   "acquired-episode-16-midroll-stitcher-acquired-by-scripps",
+   "acquired-episode-15-exacttarget-acquired-by-salesforce-with-scott-dorsey",
+   "episode-14-linkedin",
+   "episode-13-push-pop-press-facebook-instant-articles-with-todd-bishop",
+   "episode-12-snapchat",
+   "episode-11-paypal",
+   "episode-10-virgin-america",
+   "episode-9-writely-google-docs",
+   "episode-8-acompli-sunrise-and-wunderlist",
+   "episode-7-youtube",
+   "episode-6-lucasfilm",
+   "episode-5-siri",
+   "episode-4-bungie",
+   "episode-3-twitch",
+   "episode-2-instagram",
+   "episode-1-pixar"
+  ],
+  "status": "Season 1 Playlist | Acquired"
+ }
+}

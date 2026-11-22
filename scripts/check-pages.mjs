@@ -1,0 +1,17 @@
+import { chromium } from 'playwright';
+const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1440, height: 900 } });
+const errs = []; p.on('pageerror', e => errs.push(e.message)); p.on('console', m => m.type() === 'error' && errs.push(m.text()));
+await p.goto('http://localhost:3100/press'); await p.waitForTimeout(1000);
+const act = () => p.evaluate(() => [...document.querySelectorAll('.timeline__item')].findIndex(e => e.classList.contains('is-active')));
+console.log('timeline start', await act());
+await p.click('.timeline__stage'); await p.waitForTimeout(1300);
+console.log('after click', await act(), await p.evaluate(() => [...document.querySelectorAll('.timeline__item')].map(e => (+getComputedStyle(e).opacity).toFixed(2)).join(',')));
+await p.goto('http://localhost:3100/about'); await p.waitForTimeout(1000);
+console.log('nav on hero', await p.evaluate(() => document.querySelector('.nav').className));
+await p.click('.hero__cta-inline'); await p.waitForTimeout(2000);
+console.log('after learn more scrollY', await p.evaluate(() => Math.round(scrollY)), 'vinyl', await p.evaluate(() => document.querySelector('.about-vinyl').className));
+await p.evaluate(() => document.querySelector('.aud-roles').scrollIntoView({ block: 'center' })); await p.waitForTimeout(1800);
+console.log('role bars', await p.evaluate(() => [...document.querySelectorAll('.aud-roles .aud-bar__fill')].slice(0, 4).map(e => Math.round(e.getBoundingClientRect().width)).join(',')));
+await p.goto('http://localhost:3100/acq2'); await p.waitForTimeout(800);
+console.log('acq2 cards', await p.evaluate(() => document.querySelectorAll('.acq2-item').length), 'nav', await p.evaluate(() => document.querySelector('.nav').className));
+console.log('errors', errs); await b.close();

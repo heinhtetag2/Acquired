@@ -1,0 +1,2830 @@
+{
+ "groups": [
+  {
+   "heading": "featureS",
+   "links": [
+    {
+     "label": "all episodes",
+     "href": "/episodes"
+    },
+    {
+     "label": "Must-Listen",
+     "href": "/features/must-listen"
+    },
+    {
+     "label": "Niche Gems",
+     "href": "/features/niche-gems"
+    },
+    {
+     "label": "Interviews",
+     "href": "/features/interviews"
+    },
+    {
+     "label": "acq2",
+     "href": "/acq2"
+    }
+   ]
+  },
+  {
+   "heading": "industry",
+   "links": [
+    {
+     "label": "Software",
+     "href": "/industry/software"
+    },
+    {
+     "label": "Luxury",
+     "href": "/industry/luxury"
+    },
+    {
+     "label": "Finance",
+     "href": "/industry/finance"
+    },
+    {
+     "label": "Social Media",
+     "href": "/industry/social-media"
+    },
+    {
+     "label": "VC/Investing",
+     "href": "/industry/vc-investing"
+    },
+    {
+     "label": "Sports",
+     "href": "/industry/sports"
+    },
+    {
+     "label": "Fintech",
+     "href": "/industry/fintech"
+    },
+    {
+     "label": "Semiconductors",
+     "href": "/industry/semiconductors"
+    },
+    {
+     "label": "E-commerce",
+     "href": "/industry/e-commerce"
+    },
+    {
+     "label": "Gaming",
+     "href": "/industry/gaming"
+    },
+    {
+     "label": "Media/Entertainment",
+     "href": "/industry/media-entertainment"
+    },
+    {
+     "label": "Retail",
+     "href": "/industry/retail"
+    },
+    {
+     "label": "Food",
+     "href": "/industry/food"
+    },
+    {
+     "label": "Crypto/Web3",
+     "href": "/industry/crypto-web3"
+    },
+    {
+     "label": "Transportation",
+     "href": "/industry/transportation"
+    },
+    {
+     "label": "Health",
+     "href": "/industry/health"
+    },
+    {
+     "label": "Energy",
+     "href": "/industry/energy"
+    }
+   ]
+  },
+  {
+   "heading": "series",
+   "links": [
+    {
+     "label": "Disney",
+     "href": "/series/disney"
+    },
+    {
+     "label": "Nvidia",
+     "href": "/series/nvidia"
+    },
+    {
+     "label": "Alphabet/Google",
+     "href": "/series/alphabet"
+    },
+    {
+     "label": "Meta",
+     "href": "/series/meta"
+    },
+    {
+     "label": "Microsoft",
+     "href": "/series/microsoft"
+    },
+    {
+     "label": "Apple",
+     "href": "/series/apple"
+    },
+    {
+     "label": "Berkshire Hathaway",
+     "href": "/series/berkshire-hathaway"
+    },
+    {
+     "label": "Amazon",
+     "href": "/series/amazon"
+    },
+    {
+     "label": "TSMC",
+     "href": "/series/tsmc"
+    },
+    {
+     "label": "Sequoia Capital",
+     "href": "/series/sequoia-capital"
+    },
+    {
+     "label": "Benchmark",
+     "href": "/series/benchmark"
+    },
+    {
+     "label": "Andreessen Horowitz",
+     "href": "/series/andreessen-horowitz"
+    },
+    {
+     "label": "Starbucks",
+     "href": "/series/starbucks"
+    },
+    {
+     "label": "Nintendo",
+     "href": "/series/nintendo"
+    }
+   ]
+  },
+  {
+   "heading": "seasons",
+   "links": [
+    {
+     "label": "Fall 2026",
+     "href": "/season/fall-2026"
+    },
+    {
+     "label": "Spring 2026",
+     "href": "/season/spring-2026"
+    },
+    {
+     "label": "Fall 2025",
+     "href": "/season/fall-2025"
+    },
+    {
+     "label": "Summer 2025",
+     "href": "/season/summer-2025"
+    },
+    {
+     "label": "Spring 2025",
+     "href": "/season/spring-2025"
+    },
+    {
+     "label": "Fall 2024",
+     "href": "/season/fall-2024"
+    },
+    {
+     "label": "Season 14",
+     "href": "/season/14"
+    },
+    {
+     "label": "Season 13",
+     "href": "/season/13"
+    },
+    {
+     "label": "Season 12",
+     "href": "/season/12"
+    },
+    {
+     "label": "Season 11",
+     "href": "/season/11"
+    },
+    {
+     "label": "Season 10",
+     "href": "/season/10"
+    },
+    {
+     "label": "Season 9",
+     "href": "/season/9"
+    },
+    {
+     "label": "Season 8",
+     "href": "/season/8"
+    },
+    {
+     "label": "Season 7",
+     "href": "/season/7"
+    },
+    {
+     "label": "Season 6",
+     "href": "/season/6"
+    },
+    {
+     "label": "Season 5",
+     "href": "/season/5"
+    },
+    {
+     "label": "Season 4",
+     "href": "/season/4"
+    },
+    {
+     "label": "Season 3",
+     "href": "/season/3"
+    },
+    {
+     "label": "Season 2",
+     "href": "/season/2"
+    },
+    {
+     "label": "Season 1",
+     "href": "/season/1"
+    }
+   ]
+  }
+ ],
+ "rows": [
+  {
+   "slug": "seinfeld",
+   "title": "Seinfeld",
+   "meta": "F26 E 3 · OCT 18, 2026",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_album-art_seinfeld/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/1hcUG3VEBIRKxOFyJn36xr?si=0LNWes2mQme3MR4UXipnqw",
+   "apple": "https://podcasts.apple.com/us/podcast/seinfeld/id1050462261?i=1000797010256",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "home-depot",
+   "title": "The Home Depot",
+   "meta": "F26 E 2 · SEP 14, 2026",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_album-art_home-depot/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/1FUhxMXgI9vW55zfPzpXAA",
+   "apple": "https://podcasts.apple.com/us/podcast/home-depot/id1050462261?i=1000789467893",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "disney-the-renaissance-and-the-empire",
+   "title": "Disney: The Renaissance and the Empire",
+   "meta": "F26 E 1 · AUG 10, 2026",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_album-art_disney-the-renaissance-and-the-empire/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/2oyFcfZHSVeiCliSNzvFWd",
+   "apple": "https://podcasts.apple.com/us/podcast/disney-the-renaissance-and-the-empire/id1050462261?i=1000781367915",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "the-walt-disney-company",
+   "title": "The Walt Disney Company",
+   "meta": "SP26 E 4 · JUN 22, 2026",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_album-art_the-walt-disney-company/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/5wMsOS4l8OLwqzEIVG3ofh?si=Ri9DcAmESXaqRVBjBET_ig",
+   "apple": "https://podcasts.apple.com/us/podcast/the-walt-disney-company/id1050462261?i=1000773687734",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "vanguard",
+   "title": "Vanguard",
+   "meta": "SP26 E 3 · MAY 18, 2026",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_album-art_vanguard/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/7JgSpMvx3S9G9zgmZLLQHI?si=867b2b39c5ef4194",
+   "apple": "https://podcasts.apple.com/us/podcast/acquired/id1050462261?i=1000768328125",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "ferrari",
+   "title": "Ferrari",
+   "meta": "SP26 E 2 · APR 13, 2026",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_album-art_ferrari/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/38WF1IXMypIn56llEtBajd?si=1d1bc9d85ed64b11",
+   "apple": "https://podcasts.apple.com/us/podcast/acquired/id1050462261?i=1000761027849",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "formula-1",
+   "title": "Formula 1",
+   "meta": "SP26 E 1 · MAR 2, 2026",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_album-art_formula-1/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/2rWH0CrSA7M57iMRxzGlaR",
+   "apple": "https://podcasts.apple.com/us/podcast/formula-1/id1050462261?i=1000752750417",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "the-nfl",
+   "title": "The NFL",
+   "meta": "SP26 · JAN 27, 2026",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_album-art_the-nfl/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/00GGdqpEhWIxSyKgPffME9",
+   "apple": "https://podcasts.apple.com/us/podcast/the-nfl/id1050462261?i=1000746788889",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "10-years-of-acquired-with-michael-lewis",
+   "title": "10 Years of Acquired (with Michael Lewis)",
+   "meta": "F25 E 4 · DEC 15, 2025",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_10-years-of-acquired-with-michael-lewis/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/5PwtWcgg71nSkb63ZV4hGX?si=022f9b06fdf54b77",
+   "apple": "https://podcasts.apple.com/ca/podcast/acquired/id1050462261?i=1000741297651",
+   "audio": [],
+   "hidden": false,
+   "video": true
+  },
+  {
+   "slug": "coca-cola",
+   "title": "Coca-Cola",
+   "meta": "F25 E 3 · NOV 24, 2025",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_album-art_coca-cola/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/artist/73mSg0dykFyhvU96tb5xQV",
+   "apple": "https://podcasts.apple.com/us/podcast/coca-cola/id1050462261?i=1000738059532&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "acquired-live-at-radio-city-music-hall-presented-by-j-p-morgan",
+   "title": "Acquired Live at Radio City Music Hall (Presented by J.P. Morgan)",
+   "meta": "NOV 5, 2025",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_acquired-live-at-radio-city-music-hall-presented-by-j-p-morgan/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/77Kl3BsiEQLpli2Q2ozZuf?si=4f4609e343504fd0",
+   "apple": "https://podcasts.apple.com/us/podcast/acquired-live-at-radio-city-music-hall-presented-by/id1050462261?i=1000735330767&uo=4",
+   "audio": null,
+   "hidden": false,
+   "video": true
+  },
+  {
+   "slug": "trader-joes",
+   "title": "Trader Joe’s",
+   "meta": "F25 E 2 · OCT 27, 2025",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_trader-joes/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6MZDRSrYZN0mzBuTtWXscY",
+   "apple": "https://podcasts.apple.com/us/podcast/trader-joes/id1050462261?i=1000733630276&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "google-the-ai-company",
+   "title": "Google: The AI Company",
+   "meta": "F25 E 1 · OCT 6, 2025",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_google-the-ai-company/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/1WICjyeivPI7KqGFq4zFKe",
+   "apple": "https://podcasts.apple.com/us/podcast/google-the-ai-company/id1050462261?i=1000730326283&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "alphabet-inc",
+   "title": "Alphabet Inc.",
+   "meta": "SU25 E 4 · AUG 26, 2025",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_alphabet-inc/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/5WFwfl9N4L5oWZLL9JwMis",
+   "apple": "https://podcasts.apple.com/us/podcast/alphabet-inc/id1050462261?i=1000723582204&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "the-jamie-dimon-interview",
+   "title": "The Jamie Dimon Interview",
+   "meta": "SU25 E 3 · JUL 16, 2025",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_the-jamie-dimon-interview/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/3JPOsxy5VY0uFYK2hosrWR",
+   "apple": "https://podcasts.apple.com/us/podcast/the-jamie-dimon-interview/id1050462261?i=1000717531260&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": true
+  },
+  {
+   "slug": "google",
+   "title": "Google: The Origin of Search",
+   "meta": "SU25 E 2 · JUN 30, 2025",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_google/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/64V71y4FpMlZ8Mymwu5Xts",
+   "apple": "https://podcasts.apple.com/us/podcast/google-the-origin-of-search/id1050462261?i=1000715075095&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "the-steve-ballmer-interview",
+   "title": "The Steve Ballmer Interview",
+   "meta": "SU25 E 1 · JUN 2, 2025",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_the-steve-ballmer-interview/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6SDalpojZs1dz2mLUpVMmC",
+   "apple": "https://podcasts.apple.com/us/podcast/the-steve-ballmer-interview/id1050462261?i=1000710802439&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": true
+  },
+  {
+   "slug": "epic-systems-mychart",
+   "title": "Epic Systems (MyChart)",
+   "meta": "SP25 E 4 · APR 21, 2025",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_epic-systems-mychart/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6ParBTxIbofsV5DDZxA4y9",
+   "apple": "https://podcasts.apple.com/us/podcast/epic-systems-mychart/id1050462261?i=1000704248986&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "indian-premier-league-cricket",
+   "title": "Indian Premier League Cricket",
+   "meta": "SP25 E 3 · MAR 24, 2025",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_indian-premier-league-cricket/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/5Zn8ObMyLJKua7xC4vCCI5",
+   "apple": "https://podcasts.apple.com/us/podcast/indian-premier-league-cricket/id1050462261?i=1000700530469&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "rolex",
+   "title": "Rolex",
+   "meta": "SP25 E 2 · FEB 24, 2025",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_rolex/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/1rhATlBcVbt299Vjy3WniR",
+   "apple": "https://podcasts.apple.com/us/podcast/rolex/id1050462261?i=1000695429676&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "tsmc-founder-morris-chang",
+   "title": "TSMC Founder Morris Chang",
+   "meta": "SP25 E 1 · JAN 27, 2025",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_tsmc-founder-morris-chang/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/0E0S5qyF4WRXoblMndaTp2",
+   "apple": "https://podcasts.apple.com/us/podcast/tsmc-founder-morris-chang/id1050462261?i=1000685569822&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": true
+  },
+  {
+   "slug": "mars-inc-the-chocolate-story",
+   "title": "Mars Inc. (the chocolate story)",
+   "meta": "F24 E 4 · DEC 16, 2024",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_mars-inc-the-chocolate-story/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/2puIbdddjwOK1p5wktxmVa",
+   "apple": "https://podcasts.apple.com/us/podcast/mars-inc-the-chocolate-story/id1050462261?i=1000680482245&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "ikea",
+   "title": "IKEA",
+   "meta": "F24 E 3 · NOV 18, 2024",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_ikea/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6AdowJpGm8uBINgHAdDTKB",
+   "apple": "https://podcasts.apple.com/us/podcast/ikea/id1050462261?i=1000677277227&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "meta",
+   "title": "Meta",
+   "meta": "F24 E 2 · OCT 28, 2024",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_meta/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6nJwfjrv8oxVzr50WmWHv8",
+   "apple": "https://podcasts.apple.com/us/podcast/meta/id1050462261?i=1000674646827&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "acquired-live-from-chase-center-with-daniel-ek-emily-chang-jensen-huang-and-mark-zuckerberg",
+   "title": "Acquired LIVE from Chase Center (with Daniel Ek, Emily Chang, Jensen Huang and Mark Zuckerberg)",
+   "meta": "F24 E 1 · SEP 30, 2024",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_acquired-live-from-chase-center-with-daniel-ek-emily-chang-jensen-huang-and-mark-zuckerberg/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/3AjzypdecehgDbMtCMKUxK",
+   "apple": "https://podcasts.apple.com/us/podcast/acquired-live-from-chase-center-with-daniel-ek-emily/id1050462261?i=1000671250518&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": true
+  },
+  {
+   "slug": "the-mark-zuckerberg-interview",
+   "title": "The Mark Zuckerberg Interview",
+   "meta": "F24 · SEP 18, 2024",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_the-mark-zuckerberg-interview/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/5CwiK7ZAw20YqTbyv8rl9M",
+   "apple": "https://podcasts.apple.com/us/podcast/the-mark-zuckerberg-interview/id1050462261?i=1000669898852&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": true
+  },
+  {
+   "slug": "microsoft-volume-ii",
+   "title": "Microsoft Volume II",
+   "meta": "S14 E 6 · JUL 22, 2024",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_microsoft-volume-ii/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/2VlQlPDJQSheDFDqgOv8N0",
+   "apple": "https://podcasts.apple.com/us/podcast/microsoft-volume-ii/id1050462261?i=1000662929328&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "starbucks-with-howard-schultz",
+   "title": "Starbucks (with Howard Schultz)",
+   "meta": "S14 E 5 · JUN 4, 2024",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_starbucks-with-howard-schultz/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/4c0HfHEdkcaHLXyyM5KFAF",
+   "apple": "https://podcasts.apple.com/us/podcast/starbucks-with-howard-schultz/id1050462261?i=1000657758174&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": true
+  },
+  {
+   "slug": "microsoft",
+   "title": "Microsoft Volume I",
+   "meta": "S14 E 4 · APR 22, 2024",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_microsoft/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/1YvDFxcv2v6XeyqnOdQRpX",
+   "apple": "https://podcasts.apple.com/us/podcast/microsoft-volume-i/id1050462261?i=1000653148600&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "renaissance-technologies",
+   "title": "Renaissance Technologies",
+   "meta": "S14 E 3 · MAR 18, 2024",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_renaissance-technologies/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/0psDxKAKhIpe4mvqipU1L1",
+   "apple": "https://podcasts.apple.com/us/podcast/renaissance-technologies/id1050462261?i=1000649514382&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "hermes",
+   "title": "Hermès",
+   "meta": "S14 E 2 · FEB 20, 2024",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_hermes/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/3JnXyI5G7umpVWijAvoL36",
+   "apple": "https://podcasts.apple.com/us/podcast/herm%C3%A8s/id1050462261?i=1000645939195&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "novo-nordisk-ozempic",
+   "title": "Novo Nordisk (Ozempic)",
+   "meta": "S14 E 1 · JAN 22, 2024",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_novo-nordisk-ozempic/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/42MPnbOskwDRGYWf0upXKb",
+   "apple": "https://podcasts.apple.com/us/podcast/novo-nordisk-ozempic/id1050462261?i=1000642431678&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "holiday-special-2023",
+   "title": "Holiday Special 2023",
+   "meta": "S13 E 5 · DEC 18, 2023",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_holiday-special-2023/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/7zKk3WdqWD5L3wavRJ18aB",
+   "apple": "https://podcasts.apple.com/us/podcast/holiday-special-2023/id1050462261?i=1000638891789&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "visa",
+   "title": "Visa",
+   "meta": "S13 E 4 · NOV 27, 2023",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_visa/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6DHmmmJX2ATX6MTBEuwbFa",
+   "apple": "https://podcasts.apple.com/us/podcast/visa/id1050462261?i=1000636586406&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "charlie-munger",
+   "title": "Charlie Munger",
+   "meta": "OCT 30, 2023",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_charlie-munger/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/5bSdpI3CYrpCvBNXVQBHFY",
+   "apple": "https://podcasts.apple.com/us/podcast/charlie-munger/id1050462261?i=1000633030747&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "jensen-huang",
+   "title": "NVIDIA CEO Jensen Huang",
+   "meta": "OCT 16, 2023",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_jensen-huang/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6MmkzOxBUeA2Ur1fLDmQRk",
+   "apple": "https://podcasts.apple.com/us/podcast/nvidia-ceo-jensen-huang/id1050462261?i=1000631419166&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": true
+  },
+  {
+   "slug": "nvidia-the-dawn-of-the-ai-era",
+   "title": "Nvidia Part III: The Dawn of the AI Era (2022-2023)",
+   "meta": "S13 E 3 · SEP 6, 2023",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_nvidia-the-dawn-of-the-ai-era/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/0ax1sBKJ1ombOYGwWl0hEq",
+   "apple": "https://podcasts.apple.com/us/podcast/nvidia-part-iii-the-dawn-of-the-ai-era-2022-2023/id1050462261?i=1000626913736&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "costco",
+   "title": "Costco",
+   "meta": "S13 E 2 · AUG 21, 2023",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_costco/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6S1zMv2hltsyg2i8lJrz73",
+   "apple": "https://podcasts.apple.com/us/podcast/costco/id1050462261?i=1000625088063&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "nike",
+   "title": "Nike",
+   "meta": "S13 E 1 · JUL 25, 2023",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_nike/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/1HoB680S5p8JdtaoXxnE7P",
+   "apple": "https://podcasts.apple.com/us/podcast/nike/id1050462261?i=1000622225443&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "porsche-with-doug-demuro",
+   "title": "Porsche (with Doug DeMuro)",
+   "meta": "S12 E 6 · JUN 27, 2023",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_porsche-with-doug-demuro/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/5hroWX0EDryNPKgBsx0709",
+   "apple": "https://podcasts.apple.com/us/podcast/porsche-with-doug-demuro/id1050462261?i=1000618441204&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": true
+  },
+  {
+   "slug": "uber-ceo-dara-khosrowshahi",
+   "title": "Uber CEO Dara Khosrowshahi",
+   "meta": "JUN 13, 2023",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_uber-ceo-dara-khosrowshahi/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/7fRRUrWDqQsXg0AvFjiwYr",
+   "apple": "https://podcasts.apple.com/us/podcast/uber-ceo-dara-khosrowshahi/id1050462261?i=1000616746825&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": true
+  },
+  {
+   "slug": "lockheed-martin",
+   "title": "Lockheed Martin",
+   "meta": "S12 E 5 · MAY 30, 2023",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_lockheed-martin/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/7BEVSm4QydO66SEfwiOZQc",
+   "apple": "https://podcasts.apple.com/us/podcast/lockheed-martin/id1050462261?i=1000614949686&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "spotify-ceo-daniel-ek",
+   "title": "Spotify CEO Daniel Ek",
+   "meta": "MAY 18, 2023",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_spotify-ceo-daniel-ek/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://www.acquired.fm/episodes/spotify-ceo-daniel-ek",
+   "apple": "https://podcasts.apple.com/us/podcast/spotify-ceo-daniel-ek/id1050462261?i=1000613456254&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": true
+  },
+  {
+   "slug": "benchmarks-mitch-lasky-and-blake-robbins-on-the-art-of-business-in-gaming",
+   "title": "Benchmark’s Mitch Lasky and Blake Robbins on The Art of Business in Gaming",
+   "meta": "APR 26, 2023",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_benchmarks-mitch-lasky-and-blake-robbins-on-the-art-of-business-in-gaming/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/0jMC32Wr73NucAeLje18QM",
+   "apple": "https://podcasts.apple.com/us/podcast/benchmarks-mitch-lasky-and-blake-robbins-on-the/id1050462261?i=1000610670037&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "short-the-death-of-sega",
+   "title": "Short: The Death of Sega",
+   "meta": "APR 18, 2023",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_short-the-death-of-sega/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/1cYnQRvFySAG8n3Hu5or44",
+   "apple": "https://podcasts.apple.com/us/podcast/short-the-death-of-sega/id1050462261?i=1000609424347&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "nintendo-the-console-wars",
+   "title": "Nintendo: The Console Wars",
+   "meta": "S12 E 4 · APR 11, 2023",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_nintendo-the-console-wars/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/44DKfqgkXGGhHtZPdXtKlJ",
+   "apple": "https://podcasts.apple.com/us/podcast/nintendo-the-console-wars/id1050462261?i=1000608337957&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "interview-hamilton-helmer-chenyi-shi-on-how-to-build-an-aws-like-second-business",
+   "title": "Interview: Hamilton Helmer & Chenyi Shi on How to Build an AWS-Like Second Business",
+   "meta": "APR 4, 2023",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_interview-hamilton-helmer-chenyi-shi-on-how-to-build-an-aws-like-second-business/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/3F4VY7udeOe4RdcIurhATN",
+   "apple": "https://podcasts.apple.com/us/podcast/interview-hamilton-helmer-chenyi-shi-on-how-to-build/id1050462261?i=1000607277541&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "sessions-david-senra-founders-podcast",
+   "title": "Sessions: David Senra (Founders Podcast)",
+   "meta": "MAR 29, 2023",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_sessions-david-senra-founders-podcast/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/4SQBIL1Ew0NeWWJvwTSbqY",
+   "apple": "https://podcasts.apple.com/us/podcast/sessions-david-senra-founders-podcast/id1050462261?i=1000606462900&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": true
+  },
+  {
+   "slug": "nintendo",
+   "title": "Nintendo’s Origins",
+   "meta": "S12 E 3 · MAR 16, 2023",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_nintendo/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/5Pe6juMsSbnI5VAxWgys8y",
+   "apple": "https://podcasts.apple.com/us/podcast/nintendos-origins/id1050462261?i=1000606224553&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "lvmh",
+   "title": "LVMH",
+   "meta": "S12 E 2 · FEB 21, 2023",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_lvmh/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/7lMY1C8AMFinpVMTgAH9D9",
+   "apple": "https://podcasts.apple.com/us/podcast/lvmh/id1050462261?i=1000606224485&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "holiday-special-2022",
+   "title": "Holiday Special 2022",
+   "meta": "DEC 19, 2022",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_holiday-special-2022/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/2RLsZksoE4x0Il9uO6uoq7",
+   "apple": "https://podcasts.apple.com/us/podcast/holiday-special-2022/id1050462261?i=1000606224554&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "stratechery-with-ben-thompson",
+   "title": "Stratechery (with Ben Thompson)",
+   "meta": "S11 E 8 · DEC 6, 2022",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_stratechery-with-ben-thompson/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6FJhq6E1i1KEP01fY4Bboz",
+   "apple": "https://podcasts.apple.com/us/podcast/stratechery-with-ben-thompson/id1050462261?i=1000606224471&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "enron",
+   "title": "Enron",
+   "meta": "S11 E 7 · NOV 29, 2022",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_enron/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6fvbpkGpPIqsXNCYO2UDKt",
+   "apple": "https://podcasts.apple.com/us/podcast/enron/id1050462261?i=1000606224555&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "qualcomm",
+   "title": "Qualcomm",
+   "meta": "S11 E 6 · NOV 15, 2022",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_qualcomm/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/2eFqFwm4L4fxFrCIkykBml",
+   "apple": "https://podcasts.apple.com/us/podcast/qualcomm/id1050462261?i=1000606224375&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "benchmark-part-ii-the-dinner",
+   "title": "Benchmark Part II: The Dinner",
+   "meta": "S11 E 5 · OCT 17, 2022",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_benchmark-part-ii-the-dinner/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/4C9OSfxIfqAzLOrW62PFIc",
+   "apple": "https://podcasts.apple.com/us/podcast/benchmark-part-ii-the-dinner/id1050462261?i=1000606224558&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": true
+  },
+  {
+   "slug": "acq-sessions-jason-calacanis",
+   "title": "ACQ Sessions: Jason Calacanis",
+   "meta": "OCT 4, 2022",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_acq-sessions-jason-calacanis/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/2bry5hIW8tMVctdAdSLN8Q",
+   "apple": "https://podcasts.apple.com/us/podcast/acq-sessions-jason-calacanis/id1050462261?i=1000606224372&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "benchmark-capital",
+   "title": "Benchmark Part I",
+   "meta": "S11 E 4 · SEP 28, 2022",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_benchmark-capital/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/3LVKQ667Y7uc6Ngayos7TA",
+   "apple": "https://podcasts.apple.com/us/podcast/benchmark-part-i/id1050462261?i=1000606224512&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "amazon-web-services",
+   "title": "Amazon Web Services",
+   "meta": "S11 E 3 · SEP 6, 2022",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_amazon-web-services/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/14LmWeOMRZysw2i2vYSOuw",
+   "apple": "https://podcasts.apple.com/us/podcast/amazon-web-services/id1050462261?i=1000606224513&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "howard-marks-andrew-marks-something-of-value",
+   "title": "Howard Marks & Andrew Marks: Something of Value",
+   "meta": "AUG 30, 2022",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_howard-marks-andrew-marks-something-of-value/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/2tUmKJNI7fRC3Pbho8oq4l",
+   "apple": "https://podcasts.apple.com/us/podcast/howard-marks-andrew-marks-something-of-value/id1050462261?i=1000606224556&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "amazon-com",
+   "title": "Amazon.com",
+   "meta": "S11 E 2 · AUG 16, 2022",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_amazon-com/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6xhXtd1SPDbkYhYsO9Tc3g",
+   "apple": "https://podcasts.apple.com/us/podcast/amazon-com/id1050462261?i=1000606224597&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "from-nfl-to-startup-coo-to-congressman-regulating-crypto-with-rep-anthony-gonzalez",
+   "title": "From NFL to Startup COO to Congressman Regulating Crypto (with Rep. Anthony Gonzalez)",
+   "meta": "AUG 2, 2022",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_from-nfl-to-startup-coo-to-congressman-regulating-crypto-with-rep-anthony-gonzalez/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6SzPWdwfFoT98nOQHfqa5u",
+   "apple": "https://podcasts.apple.com/us/podcast/from-nfl-to-startup-coo-to-congressman-regulating-crypto/id1050462261?i=1000606224472&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "walmart",
+   "title": "Walmart",
+   "meta": "S11 E 1 · JUL 19, 2022",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_walmart/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/0LQwuSaAzLkwATk9SjDMRC",
+   "apple": "https://podcasts.apple.com/us/podcast/walmart/id1050462261?i=1000606224557&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "the-playbook-lessons-from-200-company-stories",
+   "title": "The Playbook: Lessons from 200+ Company Stories",
+   "meta": "JUN 20, 2022",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_the-playbook-lessons-from-200-company-stories/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/2i44b0IWwD2aY2mlyDuyiJ",
+   "apple": "https://podcasts.apple.com/us/podcast/the-playbook-lessons-from-200-company-stories/id1050462261?i=1000606224373&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "american-dynamism-with-katherine-boyle",
+   "title": "Investing in American Dynamism (with Katherine Boyle)",
+   "meta": "JUN 6, 2022",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_american-dynamism-with-katherine-boyle/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/52yIzo25zh3Wnm9hDXx2GM",
+   "apple": "https://podcasts.apple.com/us/podcast/american-dynamism-with-katherine-boyle/id1050462261?i=1000606224559&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "capital-efficient-growth-with-zoom-ceo-eric-yuan-veeva-ceo-peter-gassner",
+   "title": "Capital-Efficient Growth (with Zoom CEO Eric Yuan & Veeva CEO Peter Gassner)",
+   "meta": "MAY 19, 2022",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_capital-efficient-growth-with-zoom-ceo-eric-yuan-veeva-ceo-peter-gassner/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/1NvgrSXtP9SxEv8UdEOTLA",
+   "apple": "https://podcasts.apple.com/us/podcast/capital-efficient-growth-with-zoom-ceo-eric-yuan-veeva/id1050462261?i=1000606224567&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "arena-show-part-ii-brooks-running-with-ceo-jim-weber",
+   "title": "Arena Show Part II: Brooks Running (with CEO Jim Weber)",
+   "meta": "S10 E 8 · MAY 16, 2022",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_arena-show-part-ii-brooks-running-with-ceo-jim-weber/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6IwSVSE0jwIufOgmo4oCzp",
+   "apple": "https://podcasts.apple.com/us/podcast/arena-show-part-ii-brooks-running-with-ceo-jim-weber/id1050462261?i=1000606224374&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "arena-show-part-i-idea-dinner-yc-continuity",
+   "title": "Arena Show Part I: Idea Dinner + YC Continuity",
+   "meta": "S10 E 7 · MAY 12, 2022",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_arena-show-part-i-idea-dinner-yc-continuity/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/7sduq1L1GkrWX6wTvnqzzC",
+   "apple": "https://podcasts.apple.com/us/podcast/arena-show-part-i-idea-dinner-yc-continuity/id1050462261?i=1000606224561&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": true
+  },
+  {
+   "slug": "nvidia-the-machine-learning-company-2006-2022",
+   "title": "Nvidia Part II: The Machine Learning Company (2006-2022)",
+   "meta": "S10 E 6 · APR 20, 2022",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_nvidia-the-machine-learning-company-2006-2022/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/75VXqCGAV1igZViPFO8LIE",
+   "apple": "https://podcasts.apple.com/us/podcast/nvidia-part-ii-the-machine-learning-company-2006-2022/id1050462261?i=1000606224474&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "platforms-and-power-with-hamilton-helmer-and-chenyi-shi",
+   "title": "Platforms and Power (with Hamilton Helmer and Chenyi Shi)",
+   "meta": "APR 6, 2022",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_platforms-and-power-with-hamilton-helmer-and-chenyi-shi/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/0uhDE80ZOURqcTkIuJDr7n",
+   "apple": "https://podcasts.apple.com/us/podcast/platforms-and-power-with-hamilton-helmer-and-chenyi-shi/id1050462261?i=1000606224473&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "nvidia-the-gpu-company-1993-2006",
+   "title": "Nvidia Part I: The GPU Company (1993-2006)",
+   "meta": "S10 E 5 · MAR 28, 2022",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_nvidia-the-gpu-company-1993-2006/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6G85ReuFsSkqIuwwwEhJeG",
+   "apple": "https://podcasts.apple.com/us/podcast/nvidia-part-i-the-gpu-company-1993-2006/id1050462261?i=1000606224351&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "altimeter-with-brad-gerstner",
+   "title": "Altimeter (with Brad Gerstner)",
+   "meta": "S10 E 4 · MAR 15, 2022",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_altimeter-with-brad-gerstner/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6NPdKFPMwcZUmoPv0JOp6A",
+   "apple": "https://podcasts.apple.com/us/podcast/altimeter-with-brad-gerstner/id1050462261?i=1000606224514&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "sony",
+   "title": "SONY",
+   "meta": "S10 E 3 · MAR 7, 2022",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_sony/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/191UKETU2H8XGSYqJJsTZO",
+   "apple": "https://podcasts.apple.com/us/podcast/sony/id1050462261?i=1000606224560&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "super-pumped-with-brian-koppelman-and-joseph-gordon-levitt",
+   "title": "Super Pumped (with Brian Koppelman and Joseph Gordon-Levitt)",
+   "meta": "FEB 22, 2022",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_super-pumped-with-brian-koppelman-and-joseph-gordon-levitt/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/0qO0msVfZFKHRB9EbIosms",
+   "apple": "https://podcasts.apple.com/us/podcast/super-pumped-with-brian-koppelman-and-joseph-gordon-levitt/id1050462261?i=1000606224484&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "the-browser-with-brendan-eich-chief-architect-of-netscape-mozilla-and-ceo-of-brave",
+   "title": "The Browser (with Brendan Eich, Chief Architect of Netscape + Mozilla and CEO of Brave)",
+   "meta": "FEB 15, 2022",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_the-browser-with-brendan-eich-chief-architect-of-netscape-mozilla-and-ceo-of-brave/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/76I4PdnJDsKSyPXoKCSxqU",
+   "apple": "https://podcasts.apple.com/us/podcast/the-browser-with-brendan-eich-chief-architect/id1050462261?i=1000606224376&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "peloton",
+   "title": "Peloton",
+   "meta": "S10 E 2 · FEB 10, 2022",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_peloton/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/5HlNi891efTPlBeUjMntKZ",
+   "apple": "https://podcasts.apple.com/us/podcast/peloton/id1050462261?i=1000606224352&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "taylor-swift-acquireds-version",
+   "title": "Taylor Swift (Acquired’s Version)",
+   "meta": "S10 E 1 · JAN 23, 2022",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_taylor-swift-acquireds-version/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/0ZCPQEwJo8ysISfprLnPY9",
+   "apple": "https://podcasts.apple.com/us/podcast/taylor-swift-acquireds-version/id1050462261?i=1000606224598&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "caa-with-michael-ovitz",
+   "title": "CAA (with Michael Ovitz)",
+   "meta": "S9 E 8 · DEC 21, 2021",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_caa-with-michael-ovitz/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/5dHhxa5er182Ff660byygx",
+   "apple": "https://podcasts.apple.com/us/podcast/caa-with-michael-ovitz/id1050462261?i=1000545682357&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": true
+  },
+  {
+   "slug": "ftx-with-sam-bankman-fried-mario-gabriele",
+   "title": "FTX (with Sam Bankman-Fried & Mario Gabriele)",
+   "meta": "S9 E 7 · DEC 15, 2021",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_ftx-with-sam-bankman-fried-mario-gabriele/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/1aJg4LMoP1b0f90wa6iaIM",
+   "apple": "https://podcasts.apple.com/us/podcast/ftx-with-sam-bankman-fried-mario-gabriele/id1050462261?i=1000545002748&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "7-powers-with-hamilton-helmer",
+   "title": "7 Powers with Hamilton Helmer",
+   "meta": "DEC 8, 2021",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_7-powers-with-hamilton-helmer/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6WHh5XDyAenPo0Zgickirm",
+   "apple": "https://podcasts.apple.com/us/podcast/7-powers-with-hamilton-helmer/id1050462261?i=1000544283775&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "not-boring-with-packy-mccormick",
+   "title": "Not Boring (with Packy McCormick)",
+   "meta": "S9 E 6 · DEC 3, 2021",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_not-boring-with-packy-mccormick/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/7CrdQYgMrcoL0KjmQyIYVm",
+   "apple": "https://podcasts.apple.com/us/podcast/not-boring-with-packy-mccormick/id1050462261?i=1000543802896&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": true
+  },
+  {
+   "slug": "complexity-investing-semiconductors-with-nzs-capital",
+   "title": "Complexity Investing & Semiconductors (with NZS Capital)",
+   "meta": "NOV 3, 2021",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_complexity-investing-semiconductors-with-nzs-capital/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6vTjsry5PgW16m36i2t964",
+   "apple": "https://podcasts.apple.com/us/podcast/complexity-investing-semiconductors-with-nzs-capital/id1050462261?i=1000540571907&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "standard-oil-part-ii",
+   "title": "Standard Oil Part II",
+   "meta": "S9 E 5 · OCT 18, 2021",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_standard-oil-part-ii/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/2AobkVeqKsNOBKrErVmASI",
+   "apple": "https://podcasts.apple.com/us/podcast/standard-oil-part-ii/id1050462261?i=1000539014401&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "michael-mauboussin-master-class-moats-skill-luck-decision-making-and-a-whole-lot-more",
+   "title": "Michael Mauboussin Master Class — Moats, Skill, Luck, Decision Making and a Whole Lot More",
+   "meta": "OCT 5, 2021",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_michael-mauboussin-master-class-moats-skill-luck-decision-making-and-a-whole-lot-more/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/3ELstNE2pNxHFIa7OEgxrG",
+   "apple": "https://podcasts.apple.com/us/podcast/michael-mauboussin-master-class-moats-skill-luck-decision/id1050462261?i=1000537622731&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "standard-oil-part-i",
+   "title": "Standard Oil Part I",
+   "meta": "S9 E 4 · SEP 22, 2021",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_standard-oil-part-i/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/665iwuLFKIYrKX27agzSrA",
+   "apple": "https://podcasts.apple.com/us/podcast/standard-oil-part-i/id1050462261?i=1000536218101&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "tsmc",
+   "title": "TSMC",
+   "meta": "S9 E 3 · SEP 7, 2021",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_tsmc/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/2sUyRjx5GaDYXVWnhWjsRv",
+   "apple": "https://podcasts.apple.com/us/podcast/tsmc/id1050462261?i=1000534514877&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "kevin-rose-from-web-2-0-to-web3",
+   "title": "Kevin Rose from Web 2.0 to Web3",
+   "meta": "AUG 30, 2021",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_kevin-rose-from-web-2-0-to-web3/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/3srhC4mNFLBcVEDY3xeu2r",
+   "apple": "https://podcasts.apple.com/us/podcast/kevin-rose-from-web-2-0-to-web3/id1050462261?i=1000533502979&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "andreessen-horowitz-part-ii",
+   "title": "Andreessen Horowitz Part II",
+   "meta": "S9 E 2 · AUG 10, 2021",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_andreessen-horowitz-part-ii/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/1XOjXAG9HOW9k3YqI82wuH",
+   "apple": "https://podcasts.apple.com/us/podcast/andreessen-horowitz-part-ii/id1050462261?i=1000531548014&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "andreessen-horowitz-part-i",
+   "title": "Andreessen Horowitz Part I",
+   "meta": "S9 E 1 · JUL 27, 2021",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_andreessen-horowitz-part-i/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/5qDmPoFUEUNenkztRQpY4D",
+   "apple": "https://podcasts.apple.com/us/podcast/andreessen-horowitz-part-i/id1050462261?i=1000530115963&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "solana-with-ceo-anatoly-yakovenko",
+   "title": "Special: Solana (with CEO Anatoly Yakovenko)",
+   "meta": "JUL 19, 2021",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_solana-with-ceo-anatoly-yakovenko/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/1mXUdiXm1QMX1xfU5hFK1R",
+   "apple": "https://podcasts.apple.com/us/podcast/special-solana-with-ceo-anatoly-yakovenko/id1050462261?i=1000529299557&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "ethereum",
+   "title": "Ethereum (with Packy McCormick)",
+   "meta": "S8 E 8 · JUL 6, 2021",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_ethereum/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/0a9yxPff6yYlhTc9TpPO2N",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=ZGNjMWJmN2QtNDM5Zi00OTI3LWFhODctNjI1NDBhZDU1Mzc0&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "special-ho-nam-from-altos-ventures-a-different-approach-to-vc",
+   "title": "Special: Ho Nam from Altos Ventures — A Different Approach to VC",
+   "meta": "JUN 21, 2021",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_special-ho-nam-from-altos-ventures-a-different-approach-to-vc/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/5kMcoVJNL3QsbOu7OpLpn6",
+   "apple": "https://podcasts.apple.com/us/podcast/special-ho-nam-from-altos-ventures-a-different/id1050462261?i=1000526216690&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "berkshire-hathaway-part-iii",
+   "title": "Berkshire Hathaway Part III",
+   "meta": "S8 E 7 · JUN 7, 2021",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_berkshire-hathaway-part-iii/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/5vWZy1rQePVaZH8pfwLexa",
+   "apple": "https://podcasts.apple.com/us/podcast/berkshire-hathaway-part-iii/id1050462261?i=1000524448688&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "special-amazon-unbound-with-brad-stone",
+   "title": "Special: Amazon Unbound (with Brad Stone)",
+   "meta": "MAY 27, 2021",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_special-amazon-unbound-with-brad-stone/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6bbzdYtUzcvX8llFO4Md2Y",
+   "apple": "https://podcasts.apple.com/us/podcast/special-amazon-unbound-with-brad-stone/id1050462261?i=1000523242503&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "berkshire-hathaway-part-ii",
+   "title": "Berkshire Hathaway Part II",
+   "meta": "S8 E 6 · MAY 12, 2021",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_berkshire-hathaway-part-ii/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/26DS7kVd0CyGvSsECJUU8g",
+   "apple": "https://podcasts.apple.com/us/podcast/berkshire-hathaway-part-ii/id1050462261?i=1000521473514&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "special-2021-china-tech-trends-with-tech-buzz-china",
+   "title": "Special: 2021 China Tech Trends (with Tech Buzz China)",
+   "meta": "MAY 5, 2021",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_special-2021-china-tech-trends-with-tech-buzz-china/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/5nzcgya6NfmHKv7nglNVgh",
+   "apple": "https://podcasts.apple.com/us/podcast/special-2021-china-tech-trends-with-tech-buzz-china/id1050462261?i=1000520331320&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "berkshire-hathaway-part-i",
+   "title": "Berkshire Hathaway Part I",
+   "meta": "S8 E 5 · APR 21, 2021",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_berkshire-hathaway-part-i/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/48tLFxjpH4TTbb1fGglAqf",
+   "apple": "https://podcasts.apple.com/us/podcast/berkshire-hathaway-part-i/id1050462261?i=1000517976801&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "special-why-now-for-digital-health-with-levels-founder-josh-clemente",
+   "title": "Special: “Why Now” for Digital Health with Levels founder Josh Clemente",
+   "meta": "APR 6, 2021",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_special-why-now-for-digital-health-with-levels-founder-josh-clemente/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/7aLW8nJ3bZDR9jptxjEmug",
+   "apple": "https://podcasts.apple.com/us/podcast/special-why-now-for-digital-health-with-levels-founder/id1050462261?i=1000515926464&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "rec-room-part-ii-with-ceo-nick-fajt",
+   "title": "Rec Room Part II (with CEO Nick Fajt)",
+   "meta": "S8 E 4 · MAR 24, 2021",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_rec-room-part-ii-with-ceo-nick-fajt/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6XpeadrHCQmKdlBBoegm1s",
+   "apple": "https://podcasts.apple.com/us/podcast/rec-room-part-ii-with-ceo-nick-fajt/id1050462261?i=1000514237139&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "meituan",
+   "title": "Meituan",
+   "meta": "S8 E 3 · MAR 10, 2021",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_meituan/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/0xirWB9j14Y1DYb5x2R9zu",
+   "apple": "https://podcasts.apple.com/us/podcast/meituan/id1050462261?i=1000512492982&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "the-new-york-times-company",
+   "title": "The New York Times Company",
+   "meta": "S8 E 2 · FEB 18, 2021",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_the-new-york-times-company/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/3SFBMa7xiKjuGRMiAODPS2",
+   "apple": "https://podcasts.apple.com/us/podcast/the-new-york-times-company/id1050462261?i=1000509678090&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "special-sequoia-capitals-investment-playbook-with-alfred-lin",
+   "title": "Special: Sequoia Capital’s Investment Playbook (with Alfred Lin)",
+   "meta": "FEB 1, 2021",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_special-sequoia-capitals-investment-playbook-with-alfred-lin/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/7oJ7Pp02mubKBlt1hEgfYC",
+   "apple": "https://podcasts.apple.com/us/podcast/special-sequoia-capitals-investment-playbook-with/id1050462261?i=1000507254904&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "bitcoin",
+   "title": "Bitcoin",
+   "meta": "S8 E 1 · JAN 19, 2021",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_bitcoin/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/62T3yPwFYbsRT7APcNvWTs",
+   "apple": "https://podcasts.apple.com/us/podcast/bitcoin/id1050462261?i=1000505749029&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "special-acquired-x-indie-hackers",
+   "title": "Special: Acquired x Indie Hackers",
+   "meta": "DEC 17, 2020",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_special-acquired-x-indie-hackers/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/3qltyT3Chjp0oIYYTHHlnW",
+   "apple": "https://podcasts.apple.com/us/podcast/special-acquired-x-indie-hackers/id1050462261?i=1000502667361&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "airbnb",
+   "title": "Airbnb",
+   "meta": "S7 E 8 · DEC 11, 2020",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_airbnb/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/4lN4LAJXL7UqF1OYmc2iPr",
+   "apple": "https://podcasts.apple.com/us/podcast/airbnb/id1050462261?i=1000502027864&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "doordash",
+   "title": "DoorDash",
+   "meta": "S7 E 7 · DEC 10, 2020",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_doordash/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/4aprEKq3zmnk45yi09TgTQ",
+   "apple": "https://podcasts.apple.com/us/podcast/doordash/id1050462261?i=1000501918997&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "slack-salesforce-emergency-pod-with-packy-mccormick-of-not-boring",
+   "title": "Slack + Salesforce Emergency Pod with Packy McCormick of Not Boring",
+   "meta": "DEC 2, 2020",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_slack-salesforce-emergency-pod-with-packy-mccormick-of-not-boring/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/0kWMyB7LAxVhwUpmclio2R",
+   "apple": "https://podcasts.apple.com/us/podcast/slack-salesforce-emergency-pod-with-packy-mccormick/id1050462261?i=1000501041617&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "virgin-galactic",
+   "title": "Virgin Galactic",
+   "meta": "S7 E 6 · NOV 23, 2020",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_virgin-galactic/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/5FiXPLCvfRBEz1XP8nmAKW",
+   "apple": "https://podcasts.apple.com/us/podcast/virgin-galactic/id1050462261?i=1000499888255&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "special-superhuman-part-ii-designing-software-to-feel-like-a-game-with-rahul-vohra",
+   "title": "Superhuman Part II - Designing Software to Feel like a Game (with Rahul Vohra)",
+   "meta": "NOV 12, 2020",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_special-superhuman-part-ii-designing-software-to-feel-like-a-game-with-rahul-vohra/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/0hNxHPkfzucjeoJ5DmKp2S",
+   "apple": "https://podcasts.apple.com/us/podcast/special-superhuman-part-ii-designing-software-to-feel/id1050462261?i=1000498348914&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "twitter-with-dick-costolo",
+   "title": "Twitter (with Dick Costolo)",
+   "meta": "S7 E 5 · OCT 28, 2020",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_twitter-with-dick-costolo/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/3KkUILyQe1RTIprwOfoGRt",
+   "apple": "https://podcasts.apple.com/us/podcast/twitter-with-dick-costolo/id1050462261?i=1000496379451&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "special-invest-like-the-best-on-acquired",
+   "title": "Special: Invest Like the Best on Acquired",
+   "meta": "OCT 7, 2020",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_special-invest-like-the-best-on-acquired/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/28QqzPgSgHaKs0fbYqpHlq",
+   "apple": "https://podcasts.apple.com/us/podcast/special-invest-like-the-best-on-acquired/id1050462261?i=1000493857053&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "the-nba",
+   "title": "The NBA",
+   "meta": "S7 E 4 · SEP 30, 2020",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_the-nba/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/4jfRjTpNySZhUq5TOWO28E",
+   "apple": "https://podcasts.apple.com/us/podcast/the-nba/id1050462261?i=1000493153617&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "special-acquired-x-my-first-million",
+   "title": "Special: Acquired x My First Million",
+   "meta": "SEP 9, 2020",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_special-acquired-x-my-first-million/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/7CTInt1UcUpfTSONJbUADL",
+   "apple": "https://podcasts.apple.com/us/podcast/special-acquired-x-my-first-million/id1050462261?i=1000490651957&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "epic-games",
+   "title": "Epic Games",
+   "meta": "S7 E 3 · SEP 2, 2020",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_epic-games/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/7y2LucMMmHnbbTLWzq8h3u",
+   "apple": "https://podcasts.apple.com/us/podcast/epic-games/id1050462261?i=1000489803857&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "eventbrite",
+   "title": "Eventbrite",
+   "meta": "S7 E 2 · AUG 25, 2020",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_eventbrite/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/3Epynvl4Afp2uDi73izagN",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=YjQ4MWZiOWQtOTI3ZC00NzllLWFjMzQtNGZjMzIxYzUzYTJh&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "pinduoduo",
+   "title": "Pinduoduo",
+   "meta": "S7 E 1 · JUL 16, 2020",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_pinduoduo/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/3OfyQteYfr4kbvjgNRnfD4",
+   "apple": "https://podcasts.apple.com/us/podcast/pinduoduo/id1050462261?i=1000485214060&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "oprah-harpo-studios",
+   "title": "Oprah (Harpo Studios)",
+   "meta": "S6 E 8 · JUN 25, 2020",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_oprah-harpo-studios/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/08Bq2OhOOgvOFDZWwVTUTe",
+   "apple": "https://podcasts.apple.com/us/podcast/oprah-harpo-studios/id1050462261?i=1000479641580&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "spacex",
+   "title": "SpaceX",
+   "meta": "S6 E 7 · MAY 26, 2020",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_spacex/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/7Jmu3Uhk96zYNOuqxXp37U",
+   "apple": "https://podcasts.apple.com/us/podcast/spacex/id1050462261?i=1000475834356&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "adapting-episode-3-intel",
+   "title": "Adapting Episode 3: Intel",
+   "meta": "S6 E 6 · MAY 12, 2020",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_adapting-episode-3-intel/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/4OjDDjcj3bmpRWbAvoQxN6",
+   "apple": "https://podcasts.apple.com/us/podcast/adapting-episode-3-intel/id1050462261?i=1000474296948&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "acquired-special-episode-jason-calacanis",
+   "title": "Special Episode: Jason Calacanis",
+   "meta": "APR 29, 2020",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_acquired-special-episode-jason-calacanis/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/4nR2h60iBbg9xuxe8veZ3q",
+   "apple": "https://podcasts.apple.com/us/podcast/special-episode-jason-calacanis/id1050462261?i=1000472979203&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "sequoias-black-swan-memo",
+   "title": "Adapting Episode 2: Sequoia’s Black Swan Memo (with Roelof Botha)",
+   "meta": "S6 E 5 · MAR 31, 2020",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_sequoias-black-swan-memo/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/5RMNLe85FYWUt3o1ulytg1",
+   "apple": "https://podcasts.apple.com/us/podcast/adapting-episode-2-sequoias-black-swan-memo-with/id1050462261?i=1000470045382&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "canlis",
+   "title": "Adapting Episode 1: Canlis",
+   "meta": "S6 E 4 · MAR 20, 2020",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_canlis/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/0Q0VtzlCdsPRCA5JN1QSKh",
+   "apple": "https://podcasts.apple.com/us/podcast/adapting-episode-1-canlis/id1050462261?i=1000468986464&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "acquired-top-ten-the-best-acquisitions-of-all-time",
+   "title": "The Best Acquisitions of All Time",
+   "meta": "S6 E 3 · MAR 17, 2020",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_acquired-top-ten-the-best-acquisitions-of-all-time/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/2LTsPH23Kv6Y10FWh6BADn",
+   "apple": "https://podcasts.apple.com/us/podcast/the-top-10-acquisitions-of-all-time/id1050462261?i=1000468690656&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "sequoia-capital-part-ii-with-doug-leone",
+   "title": "Sequoia Capital Part II (with Doug Leone)",
+   "meta": "S6 E 2 · FEB 18, 2020",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_sequoia-capital-part-ii-with-doug-leone/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/2kR2jTlkT10XvzFHBEWzOC",
+   "apple": "https://podcasts.apple.com/us/podcast/sequoia-capital-part-ii-with-doug-leone/id1050462261?i=1000465912532&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "whatsapp",
+   "title": "WhatsApp",
+   "meta": "S6 E 1 · JAN 29, 2020",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_whatsapp/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/3ZXrnzT9zjGUqmZBHpUwNN",
+   "apple": "https://podcasts.apple.com/us/podcast/whatsapp/id1050462261?i=1000463981220&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "season-5-episode-10-the-lean-startup-and-the-long-term-stock-exchange-with-eric-ries",
+   "title": "The Lean Startup and the Long-Term Stock Exchange (with Eric Ries)",
+   "meta": "S5 E 10 · DEC 30, 2019",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_season-5-episode-10-the-lean-startup-and-the-long-term-stock-exchange-with-eric-ries/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/2hm8wWmqUv0APxqBcabA7o",
+   "apple": "https://podcasts.apple.com/us/podcast/the-lean-startup-and-the-long-term-stock/id1050462261?i=1000461090858&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "convoy-with-ceo-dan-lewis",
+   "title": "Convoy (with CEO Dan Lewis)",
+   "meta": "S5 E 9 · DEC 19, 2019",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_convoy-with-ceo-dan-lewis/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6FzqMqokrrE9etF9fcj030",
+   "apple": "https://podcasts.apple.com/us/podcast/convoy-with-ceo-dan-lewis/id1050462261?i=1000460152124&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "tiktok",
+   "title": "TikTok",
+   "meta": "S5 E 8 · DEC 9, 2019",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_tiktok/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/4xTnafD9qfkKsUtqh5Fwip",
+   "apple": "https://podcasts.apple.com/us/podcast/tiktok/id1050462261?i=1000459060293&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "disney-plus",
+   "title": "Disney, Plus",
+   "meta": "S5 E 7 · NOV 25, 2019",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_disney-plus/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/5pz3Bx2LE7cd4hLcun4vFx",
+   "apple": "https://podcasts.apple.com/us/podcast/disney-plus/id1050462261?i=1000457839760&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "the-wework-acquisition-with-dan-primack",
+   "title": "The WeWork “Acquisition” (with Dan Primack)",
+   "meta": "S5 E 6 · OCT 25, 2019",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_the-wework-acquisition-with-dan-primack/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/2Qdxue3K83OVbtfvALJjGf",
+   "apple": "https://podcasts.apple.com/us/podcast/the-wework-acquisition-with-dan-primack/id1050462261?i=1000454841509&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "atari-with-nolan-bushnell",
+   "title": "Atari (with Nolan Bushnell)",
+   "meta": "S5 E 5 · OCT 15, 2019",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_atari-with-nolan-bushnell/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/3QDohF52oNvmh0kuRay9wE",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=YjQ2YjA4OTMwZTFlNGRlMzg3NWM0NzYxMDhjNzQ2MTU&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "sequoia-capital-part-1",
+   "title": "Sequoia Capital (Part 1)",
+   "meta": "S5 E 4 · SEP 26, 2019",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_sequoia-capital-part-1/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/4AvaQurrFMFXTc7ltWkrmd",
+   "apple": "https://podcasts.apple.com/us/podcast/sequoia-capital-part-1/id1050462261?i=1000451348306&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "google-maps",
+   "title": "Google Maps",
+   "meta": "S5 E 3 · AUG 26, 2019",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_google-maps/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/1hzGV1u4fy50jrvJSaBgNO",
+   "apple": "https://podcasts.apple.com/us/podcast/google-maps/id1050462261?i=1000447827913&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "the-shopify-ipo",
+   "title": "The Shopify IPO",
+   "meta": "S5 E 2 · AUG 6, 2019",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_the-shopify-ipo/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/3eWboyqCckHOM1IkArrQo6",
+   "apple": "https://podcasts.apple.com/us/podcast/the-shopify-ipo/id1050462261?i=1000446296759&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "huawei",
+   "title": "Huawei",
+   "meta": "S5 E 1 · JUL 22, 2019",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_huawei/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/4ApjJInyg8nkBkJWHrMU6y",
+   "apple": "https://podcasts.apple.com/us/podcast/huawei/id1050462261?i=1000445056152&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "superhuman",
+   "title": "Superhuman",
+   "meta": "S4 E 10 · JUN 27, 2019",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_superhuman/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/2PkTOfeofkKFGEARQoFkFR",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=M2QzOWM4NzRkM2RlNGUwMmFjZGQ4YjJlYjFjM2U0MmI&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "the-slack-dpo",
+   "title": "The Slack DPO",
+   "meta": "S4 E 9 · JUN 25, 2019",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_the-slack-dpo/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/4Or18L4RElnhiUfkdwPAZs",
+   "apple": "https://podcasts.apple.com/us/podcast/the-slack-dpo/id1050462261?i=1000442643639&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "the-zoom-ipo-with-santi-subotovsky",
+   "title": "The Zoom IPO (with Santi Subotovsky)",
+   "meta": "S4 E 8 · JUN 19, 2019",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_the-zoom-ipo-with-santi-subotovsky/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/11hW6K6crTAdEvN0QgVPHj",
+   "apple": "https://podcasts.apple.com/us/podcast/the-zoom-ipo-with-santi-subotovsky/id1050462261?i=1000441995387&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "the-electronic-arts-ipo-with-trip-hawkins",
+   "title": "The Electronic Arts IPO (with Trip Hawkins)",
+   "meta": "S4 E 7 · MAY 27, 2019",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_the-electronic-arts-ipo-with-trip-hawkins/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/1AIvPSjfLjgrHLj1caYr8V",
+   "apple": "https://podcasts.apple.com/us/podcast/the-electronic-arts-ipo-with-trip-hawkins/id1050462261?i=1000439894727&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "the-uber-ipo",
+   "title": "The Uber IPO",
+   "meta": "S4 E 6 · MAY 11, 2019",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_the-uber-ipo/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/3oVLxlVS2B2f6JkLm6i6Ye",
+   "apple": "https://podcasts.apple.com/us/podcast/the-uber-ipo/id1050462261?i=1000437832470&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "the-pinterest-ipo",
+   "title": "The Pinterest IPO",
+   "meta": "S4 E 5 · APR 24, 2019",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_the-pinterest-ipo/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/0AuCehhlHZxvz6LHwNjgNQ",
+   "apple": "https://podcasts.apple.com/us/podcast/the-pinterest-ipo/id1050462261?i=1000436218875&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "season-4-episode-4-the-lyft-ipo",
+   "title": "The Lyft IPO",
+   "meta": "S4 E 4 · MAR 30, 2019",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_season-4-episode-4-the-lyft-ipo/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/55NVU4Qy1YF9nSbeayZbc0",
+   "apple": "https://podcasts.apple.com/us/podcast/the-lyft-ipo/id1050462261?i=1000433803567&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "instagram-revisited-with-emily-white",
+   "title": "Instagram Revisited (with Emily White)",
+   "meta": "S4 E 3 · FEB 26, 2019",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_instagram-revisited-with-emily-white/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6kozToCR2FDw31tDtcVXax",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=MjcxM2YwMjc4ZTUxNDMwY2I0OTVkMTAxYjJjYTBjODc&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "arm-softbank",
+   "title": "ARM & SoftBank",
+   "meta": "S4 E 2 · FEB 3, 2019",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_arm-softbank/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/0rI11KF2OVKLzuljc179xt",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=NmNmNTllYTEzMTE2NDk5MmJjNjk4NWFlYTQ3NDA2YjU&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "season-4-episode-1-espn",
+   "title": "ESPN",
+   "meta": "S4 E 1 · JAN 21, 2019",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_season-4-episode-1-espn/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/2oUHWLiOcZYfrivQLuku2w",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=ZjJiYWFhOGNiZWYzNGRhYTg4MTQ5MzM5ZWVhYWZlN2Y&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "season-3-episode-10-tencent",
+   "title": "Tencent",
+   "meta": "S3 E 10 · DEC 17, 2018",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_season-3-episode-10-tencent/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/5Rh8LaFoaUvdmvJNjOXpJv",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=MDlkODQ4ZDgzYmQyNGJkYThjN2MzZWEyM2ZhMGQwODk&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "netflix-part-2",
+   "title": "Netflix (Part 2)",
+   "meta": "S3 E 9 · NOV 25, 2018",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_netflix-part-2/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/0CZLmjuvlBgWDhhoHXJudw",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=NjgwOGU4MGRmZmY1NGE4ODkxMmUwMThmYWIwZjgxOWU&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "netflix-part-1",
+   "title": "Netflix (Part 1)",
+   "meta": "S3 E 8 · NOV 12, 2018",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_netflix-part-1/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/1xMYXIRWGGuvlsrYP0xfEI",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=MzdiNTc2ZjU4MjU0NGYyNTkwOGNlNDEwZTM0ODI4NWM&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "season-3-episode-7-venmo-sf-live-show-with-andrew-kortina",
+   "title": "Venmo (SF live show with Andrew Kortina)",
+   "meta": "S3 E 7 · OCT 29, 2018",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_season-3-episode-7-venmo-sf-live-show-with-andrew-kortina/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/4KAr3G10Z6a1LJjbMR2OON",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=MDgzZjA4ZDU1Nzc0NGJkYzhkMmE2NWM3OGFiM2IzYzA&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "behance-with-scott-belsky",
+   "title": "Behance (with Scott Belsky)",
+   "meta": "S3 E 6 · OCT 2, 2018",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_behance-with-scott-belsky/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/0NJWSVKj62Liet004V2O0G",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=ZjM2NzhiZDIzNDc4NGQwNWJiMzk3MzA3MzIyNmZiMWM&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "alibaba",
+   "title": "Alibaba",
+   "meta": "S3 E 5 · SEP 24, 2018",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_alibaba/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/0Bb6fO2T5fQ2J4Gf9lfIw7",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=MmYxYzMxNTg5NzhjNDJkMzlkYzk5NTdiZDMyODBiZWU&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "season-3-episode-4recode-with-kara-swisher",
+   "title": "Recode (with Kara Swisher)",
+   "meta": "S3 E 4 · SEP 11, 2018",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_season-3-episode-4recode-with-kara-swisher/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/3fGoVm5XcfzQCqb5JGweCh",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=MjRjYmZjMGI4OGNmNDU1YmJjZDkwM2JkMmMyN2ZlOTI&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "season-3-episode-3the-sonos-ipo",
+   "title": "The Sonos IPO",
+   "meta": "S3 E 3 · AUG 20, 2018",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_season-3-episode-3the-sonos-ipo/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/3tywH2rmJmWLXgVOqR3g4w",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=ZjllMTcwZGYzM2RmNGM1OGFmYjNiYzBmYjNkZDQ0Yzg&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "season-3-episode-2the-xiaomi-ipo",
+   "title": "The Xiaomi IPO",
+   "meta": "S3 E 2 · AUG 6, 2018",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_season-3-episode-2the-xiaomi-ipo/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/7L28thBkFTNhvvY0DtWGJr",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=OTdlNDY1YjhiZjJhNDUwYmJiZWYyZmVjOGMxMmI4ZGU&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "season-3-episode-1tesla",
+   "title": "Tesla",
+   "meta": "S3 E 1 · JUL 17, 2018",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_season-3-episode-1tesla/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/3RX7o3HKqd6TGH9qONlr0t",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=N2E2NjZhZjMzYWIyNDg3Y2EyNTNhY2Q5NTM0NTBmZmE&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "season-2-episode-10the-rover-dogvacay-merger-with-rover-ceo-aaron-easterly",
+   "title": "The Rover-DogVacay Merger (with Rover CEO Aaron Easterly)",
+   "meta": "S2 E 10 · JUN 18, 2018",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_season-2-episode-10the-rover-dogvacay-merger-with-rover-ceo-aaron-easterly/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/7iPfgQMmjPw0NXpAsH6QHy",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=OGU0MjljYmZjZWRjNDYwNmIyZTcwMjFhZmYxNGU5N2E&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "season-2-episode-9github",
+   "title": "GitHub",
+   "meta": "S2 E 9 · JUN 6, 2018",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_season-2-episode-9github/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/5EMqTD5HC1eijRmpqsOqjV",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=ZmJjZjZjMjMzOGUwNDE3NTkxODJkYzEwZWIyYmE2MzY&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "season-2-episode-8t-mobile-sprint",
+   "title": "T-Mobile / Sprint",
+   "meta": "S2 E 8 · MAY 21, 2018",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_season-2-episode-8t-mobile-sprint/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/4xkIQGdjuCll8bSCdYI7D4",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=MDkyYzI1ZWQ0NmRmNGEwY2FhZmI1ODIxMWI5OGRkNWM&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "season-2-episode-7powerpoint",
+   "title": "PowerPoint",
+   "meta": "S2 E 7 · MAY 4, 2018",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_season-2-episode-7powerpoint/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/4FfZwhAvfYimObr71bOLDP",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=ODNhNTc0ZTljMGQxYzJkOTkzZTQ3MjM0M2ZjYzBjZmQ&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "season-2-episode-6spotifys-direct-listing",
+   "title": "Spotify’s Direct Listing",
+   "meta": "S2 E 6 · APR 6, 2018",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_season-2-episode-6spotifys-direct-listing/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://www.acquired.fm/episodes/season-2-episode-6spotifys-direct-listing",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=M2Y5ODdjOGE1NDY4YjJhODgwNmRjNzAyODI3OTE1OTM&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "season-2-episode-5the-dropbox-ipo",
+   "title": "The Dropbox IPO",
+   "meta": "S2 E 5 · MAR 26, 2018",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_season-2-episode-5the-dropbox-ipo/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6IlnNGcY2vRmZ37MeWNGZ0",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=OGUxMTM5N2M1MjY2MzhjMDc5ZmE5NjMzM2VjMjE5NTM&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "season-2-episode-4softbank-fortress-and-the-vision-fund",
+   "title": "SoftBank, Fortress and the Vision Fund",
+   "meta": "S2 E 4 · MAR 23, 2018",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_season-2-episode-4softbank-fortress-and-the-vision-fund/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/4iRUVqwRgzMqQOKAJmnxwW",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=MTA3YzdkYWUyZTE2YzZlMjBhMDIwYWIxOTExMzdmMzA&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "season-2-episode-3nest",
+   "title": "Nest",
+   "meta": "S2 E 3 · FEB 20, 2018",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_season-2-episode-3nest/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/3pdpwF1u6y9GxFTprgvwSE",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=MDA2NTQ4MzViMzlkMzEzZGY2YWE3NWQ0Y2NkNTA0N2Y&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "season-2-episode-2raising-a-seed-round-with-against-gravity-ceo-nick-fajt",
+   "title": "Raising a Seed Round with Against Gravity CEO Nick Fajt",
+   "meta": "S2 E 2 · FEB 7, 2018",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_season-2-episode-2raising-a-seed-round-with-against-gravity-ceo-nick-fajt/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/0nX7KJlFqhT9VbmP3WODsx",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=M2Q2Zjc1MThkZTJhY2RkOGJjMTEyNjY2ODJmOGIwY2U&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "season-2-episode-1zappos-with-alfred-lin",
+   "title": "Zappos (with Alfred Lin)",
+   "meta": "S2 E 1 · JAN 23, 2018",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_season-2-episode-1zappos-with-alfred-lin/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/1E1VShRYOAC3wprAVwKveA",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=MDI3YzE4NDc0YjgzNzQ1ZDI2MGQ3NjY0MWQzOWY4NDE&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "2017-holiday-special",
+   "title": "2017 Holiday Special",
+   "meta": "S1 E 51 · DEC 18, 2017",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_2017-holiday-special/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/4t5SZLvzHuc8vl66imOC2V",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=MjU0NjFjZmYzYjNkZjFjYWZjNTY5ZjhmZjIyYmY3OWI&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-50-apple-beats",
+   "title": "Apple - Beats",
+   "meta": "S1 E 50 · DEC 11, 2017",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-50-apple-beats/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/31XrBxZIdwjGYE6DPU7FYJ",
+   "apple": "https://www.acquired.fm/episodes/episode-50-apple-beats",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "the-stitch-fix-ipo",
+   "title": "The Stitch Fix IPO",
+   "meta": "S1 E 49 · DEC 4, 2017",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_the-stitch-fix-ipo/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/3BaRitgAOp9oNQbg0p2DEe",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=OTQ5ZDk3YzgwMzU0YjlmMjUwODhjNzFiZWY0OTUyZWM&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "qualcomm-broadcom",
+   "title": "Qualcomm - Broadcom",
+   "meta": "S1 E 48 · NOV 20, 2017",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_qualcomm-broadcom/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6Blnn7Axc5Wjp8aBGPTagm",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=MTdiMjgyOTU3YWUyYWZhY2UwOTQ2NGQ5ZjI3YjIwODA&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "the-atlassian-ipo",
+   "title": "The Atlassian IPO",
+   "meta": "S1 E 47 · NOV 7, 2017",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_the-atlassian-ipo/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/2YXINIcVcMqPSpv0BNIgL2",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=OWUzMWM2NTMwZjU1OWUzYmM1ZjQ3MzY3YTRiYjU3Zjc&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "blue-bottle-coffee",
+   "title": "Blue Bottle Coffee",
+   "meta": "S1 E 46 · OCT 8, 2017",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_blue-bottle-coffee/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/33WbtMVXWUiIva7bnHSEKn",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=Y2UyZDk3Nzg0ZDE1Yjk2ZjIzYmVhNWI1ZTY3YmRhYWI&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-45-htc-google-and-the-future-of-mobile",
+   "title": "HTC, Google and the Future of Mobile",
+   "meta": "S1 E 45 · SEP 21, 2017",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-45-htc-google-and-the-future-of-mobile/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/7s5LJ4zvtLcP0x55kqcnIJ",
+   "apple": "https://podcasts.apple.com/us/podcast/episode-45-htc-google-and-the-future-of-mobile/id1050462261?i=1000428067488&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-44-aol-time-warner-with-the-internet-history-podcast",
+   "title": "AOL - Time Warner (with the Internet History Podcast)",
+   "meta": "S1 E 44 · SEP 18, 2017",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-44-aol-time-warner-with-the-internet-history-podcast/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/1cpHhVp8EbmMSgl8ZsUtcP",
+   "apple": "https://podcasts.apple.com/us/podcast/episode-44-aol-time-warner-with-the-internet/id1050462261?i=1000428067479&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-43-the-square-ipo",
+   "title": "The Square IPO",
+   "meta": "S1 E 43 · AUG 16, 2017",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-43-the-square-ipo/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/2s1GyFhFGIKTBiZQzWwjcy",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=MjkyZjAzOGZhZTRhZGE3MWVmNzhjMDNhNzkwMWZhZGU&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-42-opsware-with-special-guest-michel-feaster",
+   "title": "Opsware (with special guest Michel Feaster)",
+   "meta": "S1 E 42 · AUG 5, 2017",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-42-opsware-with-special-guest-michel-feaster/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/64kUxRydw5M820fdSyQtFG",
+   "apple": "https://podcasts.apple.com/us/podcast/episode-42-opsware-with-special-guest-michel-feaster/id1050462261?i=1000428067500&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-41-bookingcom-with-jetsetter-room-77-ceo-drew-patterson",
+   "title": "Booking.com with Jetsetter & Room 77 CEO Drew Patterson",
+   "meta": "S1 E 41 · JUL 26, 2017",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-41-bookingcom-with-jetsetter-room-77-ceo-drew-patterson/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/5m6jFpPRaz2WUJ4gLbsWqL",
+   "apple": "https://podcasts.apple.com/us/podcast/episode-41-booking-com-with-jetsetter-room-77-ceo-drew/id1050462261?i=1000428067455&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-40-activision-blizzard",
+   "title": "Activision Blizzard",
+   "meta": "S1 E 40 · JUL 13, 2017",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-40-activision-blizzard/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/7wU23H8AalgAhPHAM80KQ2",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=NDdiNTlmOTYzZGJkMjRkOTdhZTBjMjIxZGQwNmRiYmY&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-39-whole-foods-market",
+   "title": "Whole Foods Market",
+   "meta": "S1 E 39 · JUN 21, 2017",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-39-whole-foods-market/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/2p3UnPi9OoWvV51afvmNKb",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=NjExMDgxN2I3YTMwN2Y3MWUwMDZjMTg1OTU3ZTc0OGQ&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-38-soundjam-itunes",
+   "title": "SoundJam (iTunes)",
+   "meta": "S1 E 38 · MAY 31, 2017",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-38-soundjam-itunes/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/25DO2q3xfi0vXdeAppbDH8",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=MjI4MDQxOTA4YjdkYzg3ZWEwNGFjZDk3Njg5ZTg2Zjc&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-37-bamtech-disney-and-the-biggest-media-company-youve-never-heard-of",
+   "title": "BAMTech, Disney and “the Biggest Media Company You’ve Never Heard Of”",
+   "meta": "S1 E 37 · MAY 10, 2017",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-37-bamtech-disney-and-the-biggest-media-company-youve-never-heard-of/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/1q0KxaI5yi5tqlqYlKreE6",
+   "apple": "https://podcasts.apple.com/us/podcast/episode-37-bamtech-disney-and-the-biggest-media/id1050462261?i=1000428067475&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-36-the-la-clippers",
+   "title": "The LA Clippers",
+   "meta": "S1 E 36 · APR 24, 2017",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-36-the-la-clippers/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/04BPUOkFxHtKtFOK5tqijf",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=MzYzODk3ZGJjYTc2NWE4YTMyMmViZWM0ZTk0MmQxMTc&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-35-oculus",
+   "title": "Oculus",
+   "meta": "S1 E 35 · APR 11, 2017",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-35-oculus/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6QJ5QYfNQlWae8BPaTZTvH",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=ZTA5ZDdlMTA4YWNkMWRhNWIyNDk2MGJkMWJjOWMwZGE&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-34-starbucks-ipo-with-dan-levitan",
+   "title": "Starbucks IPO with Dan Levitan",
+   "meta": "S1 E 34 · APR 3, 2017",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-34-starbucks-ipo-with-dan-levitan/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6nQxTnhThNNtqghpHhxTf7",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=MWM4MmZkYWJmNTc2OTA3YmRiMTgwYTNhOWM3NmNiMmI&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-33-overture-with-the-internet-history-podcast",
+   "title": "Overture (with the Internet History Podcast!)",
+   "meta": "S1 E 33 · MAR 13, 2017",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-33-overture-with-the-internet-history-podcast/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/2wNjU1UNiPHUj0mcn1joYQ",
+   "apple": "https://podcasts.apple.com/us/podcast/episode-33-overture-with-the-internet-history-podcast/id1050462261?i=1000428067447&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-32-the-snap-inc-ipo",
+   "title": "The Snap Inc. IPO",
+   "meta": "S1 E 32 · MAR 4, 2017",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-32-the-snap-inc-ipo/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/5DNzpvWPjlJ9HwMqZQZBxc",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=ZGRkYzE0ZTE1ZjVlYzM2Yzg4MWQ4YzRmOGRlYTI1M2Y&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-31-the-uber-didi-chuxing-merger-with-brad-stone-author-of-the-upstarts-the-everything-store",
+   "title": "The Uber - Didi Chuxing Merger with Brad Stone, author of The Upstarts & The Everything Store",
+   "meta": "S1 E 31 · MAR 1, 2017",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-31-the-uber-didi-chuxing-merger-with-brad-stone-author-of-the-upstarts-the-everything-store/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6T4VZObOyMJkrhFVbvgBPg",
+   "apple": "https://podcasts.apple.com/us/podcast/episode-31-the-uber-didi-chuxing-merger-with-brad/id1050462261?i=1000428067510&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-30-pa-semi-authentec",
+   "title": "P.A. Semi + AuthenTec",
+   "meta": "S1 E 30 · JAN 24, 2017",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-30-pa-semi-authentec/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/5AXkgHdCye3qJBlZiKzfmJ",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=OWY5ZmFlNzkxOTFmMDE4YzliMDQ2ZTgwYWE1YzhmMDg&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "special-2016-review-and-2017-predictions",
+   "title": "Special: 2016 Review and 2017 Predictions",
+   "meta": "S1 E 29 · JAN 11, 2017",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_special-2016-review-and-2017-predictions/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6Q8DPLkpjEHJ77fBY76bhF",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=MDdhYjI4ZjNhZDgwNWI3YzNkYTdmNzNkNTRlZTZmZjY&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-28-the-amazon-ipo-with-original-amazon-board-member-tom-alberg",
+   "title": "The Amazon IPO with original Amazon Board Member Tom Alberg",
+   "meta": "S1 E 28 · DEC 31, 2016",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-28-the-amazon-ipo-with-original-amazon-board-member-tom-alberg/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/5QMx7TbcoJg2YAjjJHp1co",
+   "apple": "https://podcasts.apple.com/us/podcast/episode-28-the-amazon-ipo-with-original-amazon/id1050462261?i=1000428067473&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "special-conversation-with-microsofts-head-of-strategic-investments-brian-schultz",
+   "title": "Special: Conversation with Microsoft’s Head of Strategic Investments Brian Schultz",
+   "meta": "S1 E 27 · DEC 16, 2016",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_special-conversation-with-microsofts-head-of-strategic-investments-brian-schultz/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/7Ji12LnEoG5m6rmIJuyxZp",
+   "apple": "https://podcasts.apple.com/us/podcast/episode-27-special-a-conversation-with-microsofts/id1050462261?i=1000428067462&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-25-marvel",
+   "title": "Marvel",
+   "meta": "S1 E 26 · DEC 5, 2016",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-25-marvel/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/5qeZWBkP91bO42HsPxmukt",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=MTI1ODI4M2FhMzMwYmU3OGE5ZjI3OTA3Mzc3YTQ5OWU&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-25-the-facebook-ipo",
+   "title": "The Facebook IPO",
+   "meta": "S1 E 25 · NOV 11, 2016",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-25-the-facebook-ipo/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/03FJwpRlUmYaGxLaq64EL0",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=NDc4MzVlYjE4YTBjNzBmYTFlYWY1NjkwZTE4NmZiOWM&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-24-skype",
+   "title": "Skype",
+   "meta": "S1 E 24 · NOV 2, 2016",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-24-skype/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/4QTDZOD0vAtyPNgS0lOD3c",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=MWM5M2YzOWZiODk1M2QwNmU3MDQ5ZmMwMTUyNzFhNjc&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-23-next-live-show-at-the-geekwire-summit",
+   "title": "NeXT (Live show at the GeekWire Summit)",
+   "meta": "S1 E 23 · OCT 23, 2016",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-23-next-live-show-at-the-geekwire-summit/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/5bHf4pVRmbEhE0mD6vgqOK",
+   "apple": "https://podcasts.apple.com/us/podcast/episode-23-next-live-show-at-the-geekwire-summit/id1050462261?i=1000428067456&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-22-zillow-trulia-with-zillow-group-cfo-kathleen-philips",
+   "title": "Zillow + Trulia with Zillow Group CFO Kathleen Philips",
+   "meta": "S1 E 22 · OCT 14, 2016",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-22-zillow-trulia-with-zillow-group-cfo-kathleen-philips/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/0uRw56A3X4TJJRmrCDVUbn",
+   "apple": "https://podcasts.apple.com/us/podcast/episode-22-zillow-trulia-with-zillow-group-cfo/id1050462261?i=1000428067449&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-21-inside-the-ma-press-with-bloombergs-alex-sherman",
+   "title": "Inside the M&A Press with Bloomberg’s Alex Sherman",
+   "meta": "S1 E 21 · SEP 27, 2016",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-21-inside-the-ma-press-with-bloombergs-alex-sherman/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/59InM7UeihkqBXJmFVIYd7",
+   "apple": "https://podcasts.apple.com/us/podcast/episode-21-inside-the-m-a-press-with-bloombergs-alex-sherman/id1050462261?i=1000428067466&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-20-android",
+   "title": "Android",
+   "meta": "S1 E 20 · SEP 16, 2016",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-20-android/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/1mB4ykeYcn6nY4sWwsvaZm",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=MDYzYjlhOTIzMmMyYjJhYzQ2ZmFhOTk2MGRjNTI4OGY&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-19-jet",
+   "title": "Jet",
+   "meta": "S1 E 19 · AUG 29, 2016",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-19-jet/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/3RAHqrYBtMOZPp4vqV9rsS",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=YmQ5MWUxNjcyOTU0YmQ5MmFmMjM3Yzg0Nzg3YzhlYzQ&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "special-an-acquirers-view-into-ma-with-taylor-barada-head-of-corp-dev-at-adobe",
+   "title": "Special: An Acquirer’s View into M&A with Taylor Barada, head of Corp Dev at Adobe",
+   "meta": "S1 E 18 · AUG 22, 2016",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_special-an-acquirers-view-into-ma-with-taylor-barada-head-of-corp-dev-at-adobe/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/2ddbRNVPMMQkeRc8bLOSNT",
+   "apple": "https://podcasts.apple.com/us/podcast/episode-18-special-an-acquirers-view-into-m-a/id1050462261?i=1000428067467&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "acquired-episode-17-waze",
+   "title": "Waze",
+   "meta": "S1 E 17 · AUG 3, 2016",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_acquired-episode-17-waze/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6dNzDD5flxE2JTmEdE6x1T",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=OWIwNDZlN2MxZDgwMzhmODNkMDQxNjE1OTc5MzMzNDc&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "acquired-episode-16-midroll-stitcher-acquired-by-scripps",
+   "title": "Midroll + Stitcher (acquired by Scripps)",
+   "meta": "S1 E 16 · JUL 12, 2016",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_acquired-episode-16-midroll-stitcher-acquired-by-scripps/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/056tPGqY4y29BwRieLSLqZ",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=ZjU5ZmIwZDYzZWMxODdjMDQwOWZlOWQ4MmMwMDM5NjQ&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "acquired-episode-15-exacttarget-acquired-by-salesforce-with-scott-dorsey",
+   "title": "ExactTarget (acquired by Salesforce) with Scott Dorsey",
+   "meta": "S1 E 15 · JUL 5, 2016",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_acquired-episode-15-exacttarget-acquired-by-salesforce-with-scott-dorsey/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/1hINlXjFK3CTwnrPxVrQVH",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=OTg1ODIzY2Y4YmVlOGYxM2Y5NTExYzE4NGFmODUyYzI&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-14-linkedin",
+   "title": "LinkedIn",
+   "meta": "S1 E 14 · JUN 16, 2016",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-14-linkedin/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/1NehZ6RUbdtyUtvCafUGpv",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=Yjg0NGYyNWQ0OGJhNDcyZmEwMDkyNzdiYjQ2YjMzNmQ&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-13-push-pop-press-facebook-instant-articles-with-todd-bishop",
+   "title": "Push Pop Press (Facebook Instant Articles) with Todd Bishop",
+   "meta": "S1 E 13 · JUN 6, 2016",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-13-push-pop-press-facebook-instant-articles-with-todd-bishop/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/2xztSEZkPeG4aIVJipCo6p",
+   "apple": "https://podcasts.apple.com/us/podcast/episode-13-push-pop-press-facebook-instant-articles/id1050462261?i=1000428067478&uo=4",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-12-snapchat",
+   "title": "Snapchat (?!)",
+   "meta": "S1 E 12 · MAY 23, 2016",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-12-snapchat/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/4Oqf76SQmxUVdZbLYte2tt",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=OGE3OTM4ODY4NjliN2VlYTg3ZWNjMTg2ZGI4NTI1ZjY&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-11-paypal",
+   "title": "PayPal",
+   "meta": "S1 E 11 · MAY 9, 2016",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-11-paypal/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6IgsyLjm4bRVeZwWDFzUfM",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=ZWE1YzMyYTEzZDE4ZDA5OGI4Yjc2ZjRlMzM4NTM1MzU&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-10-virgin-america",
+   "title": "Virgin America",
+   "meta": "S1 E 10 · APR 27, 2016",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-10-virgin-america/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/0OHzmuTCv0OfmHQb1JrJjY",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=YjdjYWEwYjMwZmMwYTI1MzZhMWEyZmVhYjVmOTVmYmY&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-9-writely-google-docs",
+   "title": "Writely (Google Docs)",
+   "meta": "S1 E 9 · MAR 29, 2016",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-9-writely-google-docs/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/3v6XYuofiZLmITBnlTNgxp",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=ZTJhMTYwN2VkOGExNDBjMmIzY2VjNDNlM2FlYjNkZWI&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-8-acompli-sunrise-and-wunderlist",
+   "title": "Acompli, Sunrise, and Wunderlist (w/ Kurt DelBene)",
+   "meta": "S1 E 8 · FEB 29, 2016",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-8-acompli-sunrise-and-wunderlist/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6kgEf0BL7KkSxuXY6NM1BU",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=NzY5MDkyNTkzYmU3NGMyNDlkODhlOTYxODlmMGQxMDU&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-7-youtube",
+   "title": "YouTube",
+   "meta": "S1 E 7 · FEB 3, 2016",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-7-youtube/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/1743POEDvvFA3xaBcb8Xvp",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=MjNhODM3N2IyYmRlNDliODhhYmM1NmM5YmExNTAyZGE&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-6-lucasfilm",
+   "title": "Lucasfilm",
+   "meta": "S1 E 6 · JAN 19, 2016",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-6-lucasfilm/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/0oZNxfDKoaiXlFU5RhH31j",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=NDFkZTlhMWYwNmVjNGU1YzhlODBkZjRkMDVkYzdjZTM&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-5-siri",
+   "title": "Siri",
+   "meta": "S1 E 5 · DEC 14, 2015",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-5-siri/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/26szI9oM9UJIfl9xUXJjuL",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=ZjVmOGM1YWY3Zjg0NDRmNTk1OTI5ZDhlMWE3NGI1NGQ&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-4-bungie",
+   "title": "Bungie (with Xbox Co-Founder Ed Fries)",
+   "meta": "S1 E 4 · NOV 30, 2015",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-4-bungie/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/7caJjdHYkXb4k8B8eOAF17",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=ZDc3YmI3YjljZGFkNDI5MmIyODMxZGVmMjVhYTFkOTA&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-3-twitch",
+   "title": "Twitch",
+   "meta": "S1 E 3 · NOV 16, 2015",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-3-twitch/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6FZuumoPqzUYzkHoRE7S5g",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=NzU1ZjRlMzZhMDU2NDgyYWFjYTg5N2ZkZTQ1YTk5ODk&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-2-instagram",
+   "title": "Instagram",
+   "meta": "S1 E 2 · NOV 1, 2015",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-2-instagram/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/6An2xXbryVjtJTXFohSFR1?si=L6pvSeFwR9mHanCCKas9zg",
+   "apple": "https://pod.link/launch?showId=acquired&episodeGuid=MjQyYTczOGY5YzBjNGFjZjgxZWRjNmIyMjI4N2E5NWM&platform=apple",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  },
+  {
+   "slug": "episode-1-pixar",
+   "title": "Pixar",
+   "meta": "S1 E 1 · OCT 15, 2015",
+   "img": "https://imagedelivery.net/4Iq_5OuN3Oq3QRRKSY6D4w/episodes_thumbnails_episode-1-pixar/sm",
+   "bg": "rgb(12, 59, 58)",
+   "spotify": "https://open.spotify.com/episode/76vEakceSlIazwDSqNoBdX",
+   "apple": "https://itunes.apple.com/us/podcast/episode-1-pixar/id1050462261?i=354798884&mt=2",
+   "audio": [],
+   "hidden": false,
+   "video": false
+  }
+ ]
+}

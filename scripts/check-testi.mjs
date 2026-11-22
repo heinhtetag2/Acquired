@@ -1,0 +1,11 @@
+import { chromium } from 'playwright';
+const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1440, height: 900 } });
+await p.goto('http://localhost:3100/press'); await p.waitForTimeout(1500);
+await p.evaluate(() => document.querySelector('.testimonials').scrollIntoView({ block: 'center' })); await p.waitForTimeout(500);
+const names = () => p.evaluate(() => [...document.querySelectorAll('.testimonials__page.is-visible .t-label-lg:first-child')].map(e => e.textContent).join(','));
+console.log('start', await names(), await p.evaluate(() => document.querySelector('.testimonials').style.height));
+const box = await p.evaluate(() => { const r = document.querySelector('.testimonials').getBoundingClientRect(); return [r.x + r.width * 0.75, r.y + 40]; });
+await p.mouse.click(box[0], box[1]); await p.waitForTimeout(1500); console.log('after right click', await names());
+await p.mouse.click(box[0] - 600, box[1]); await p.waitForTimeout(1500); console.log('after left click', await names());
+await p.waitForTimeout(7500); console.log('after auto', await names());
+await b.close();

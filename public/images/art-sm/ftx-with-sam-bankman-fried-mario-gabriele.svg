@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" height="400" viewBox="0 0 400 400" width="400">
+  <rect fill="#1DB9F6" height="400" width="400"/>
+<g id="logo">
+<g id="g12">
+<path d="M199.654 189.669V201.314H223.008V212.883H199.654V231.032H184.688V178.099H226.183V189.669H199.654Z" fill="#FFFCF5" id="path14"/>
+</g>
+<g id="g16">
+<path d="M247.873 189.971H231.623V178.099H279.013V189.971H262.839V231.032H247.873V189.971Z" fill="#FFFCF5" id="path18"/>
+</g>
+<g id="g20">
+<path d="M318.616 178.099L308.186 193.374L297.604 178.099H280.75L299.191 204.263L279.918 231.032H296.999L307.808 214.622L318.768 231.032H336L316.348 203.658L334.791 178.099H318.616Z" fill="#FFFCF5" id="path22"/>
+</g>
+<path d="M91.7786 242.5H114.358V219.91H91.7786V242.5Z" fill="#FFFCF5" id="path24"/>
+<g id="g26">
+<path d="M134.391 188.701H91.7786V211.291H134.391V211.288H142.139V188.704H134.391V188.701Z" fill="#FFFCF5" id="path28"/>
+</g>
+<path d="M91.7786 180.083H161.724V157.5H91.7786V180.083Z" fill="#FFFCF5" id="path30"/>
+<path d="M64 211.291H86.5719V188.701H64V211.291Z" fill="#FFFCF5" id="path32"/>
+</g>
+</svg>

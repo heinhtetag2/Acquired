@@ -1,0 +1,38 @@
+[
+ {
+  "slug": "seinfeld",
+  "title": "Seinfeld",
+  "frames": [
+   "/images/artifacts/seinfeld/pilot-test-report.webp",
+   "/images/artifacts/seinfeld/behind-the-scenes.jpg",
+   "/images/artifacts/seinfeld/junior-mint_still.jpg",
+   "/images/artifacts/seinfeld/tonight-show-debut_still.jpg",
+   "/images/artifacts/seinfeld/nyt-front-page.webp",
+   "/images/artifacts/seinfeld/data-visualization.jpg"
+  ]
+ },
+ {
+  "slug": "home-depot",
+  "title": "The Home Depot",
+  "frames": [
+   "/images/artifacts/home-depot/first-stores.webp",
+   "/images/artifacts/home-depot/shares-outstanding.jpg",
+   "/images/artifacts/home-depot/first-annual-report.jpg",
+   "/images/artifacts/home-depot/stores-by-state.jpg",
+   "/images/artifacts/home-depot/home-depot-stockholder.webp",
+   "/images/artifacts/home-depot/moodys-manual.webp"
+  ]
+ },
+ {
+  "slug": "disney-the-renaissance-and-the-empire",
+  "title": "Disney: The Renaissance and the Empire",
+  "frames": [
+   "/images/artifacts/disney-the-renaissance-and-the-empire/catmull-hand.webp",
+   "/images/artifacts/disney-the-renaissance-and-the-empire/luxo-jr_still.jpg",
+   "/images/artifacts/disney-the-renaissance-and-the-empire/ballroom_still.jpg",
+   "/images/artifacts/disney-the-renaissance-and-the-empire/buzz-wireframe.webp",
+   "/images/artifacts/disney-the-renaissance-and-the-empire/genesis-effect_still.jpg",
+   "/images/artifacts/disney-the-renaissance-and-the-empire/pixar-ends-talks.jpg"
+  ]
+ }
+]

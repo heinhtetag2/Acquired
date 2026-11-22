@@ -1,0 +1,81 @@
+<div .search-section.is-open> [0,0 390x900] {"background-color":"rgb(255, 252, 245)","border":"1px solid rgba(0, 0, 0, 0)"}
+  <div .search-popup> [1,1 388x898] {"padding":"15px 18px 0px","border":"0px none rgb(27, 25, 21)"}
+    <div .cms-search-form.w-form> [19,16 352x56] {"border":"0px none rgb(27, 25, 21)"}
+      <form .search-bar> [19,16 352x56] {"gap":"8px","border":"0px none color(srgb 0.105882 0.0980392 0.0823529 / 0.6)"}
+        <div .flex-row-center._w-full.gap-3xs.items-center> [19,34 296x21] {"gap":"8px","border":"0px none color(srgb 0.105882 0.0980392 0.0823529 / 0.6)"}
+          <input .search-input.w-input> [44,34 271x21] {"border":"0px none rgb(56, 152, 236)","transition":"0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955)"}
+          <div .btn-icon> [19,36 17x17] {"border":"0px none color(srgb 0.105882 0.0980392 0.0823529 / 0.6)"}
+            <div .svg.w-embed> [19,36 17x17] {"border":"0px none color(srgb 0.105882 0.0980392 0.0823529 / 0.6)"}
+              <svg .svg> [19,36 17x17] " " {"font-size":"17px","line-height":"20.4px","font-family":"\"Reckless Standard S\", \"Times New Roman\", sans-serif","color":"color(srgb 0.105882 0.0980392 0.0823529 / 0.6)","border":"0px none color(srgb 0.105882 0.0980392 0.0823529 / 0.6)"}
+                <path .> [21,37 14x14] {"border":"0px none color(srgb 0.105882 0.0980392 0.0823529 / 0.6)"}
+        <div .search-cancel> [323,23 48x42] {"gap":"6px","border":"1px solid rgba(0, 0, 0, 0)","border-radius":"1000px","transition":"0.2s cubic-bezier(0.645, 0.045, 0.355, 1)"}
+          <div .> [324,34 46x20] "Cancel" {"font-size":"16px","line-height":"20.4px","font-family":"\"Founders Grotesk Condensed\", Tahoma, sans-serif","color":"color(srgb 0.105882 0.0980392 0.0823529 / 0.6)","border":"0px none color(srgb 0.105882 0.0980392 0.0823529 / 0.6)","text-transform":"uppercase"}
+    <div .search-body> [19,72 352x827] {"border":""}
+      <div .spacer-x.space-xs> [19,73 352x16] {"border":"0px none rgb(27, 25, 21)"}
+      <div .search-initial> [19,89 352x679] {"border":"0px none rgb(27, 25, 21)"}
+        <div .flex-col-left> [19,89 352x314] {"border":"0px none rgb(27, 25, 21)"}
+          <div .font-display.text-xs.text-foreground-muted.mb-xs> [19,89 93x14] "recent releases" {"font-size":"14px","line-height":"14px","font-family":"\"Founders Grotesk Condensed\", Tahoma, sans-serif","color":"color(srgb 0.105882 0.0980392 0.0823529 / 0.6)","border":"0px none color(srgb 0.105882 0.0980392 0.0823529 / 0.6)","text-transform":"uppercase"}
+          <div .cms-wrapper.w-dyn-list> [19,119 352x284] {"border":"0px none rgb(27, 25, 21)"}
+            <div .flex-col-stretch.w-dyn-items> [19,119 352x284] {"border":"0px none rgb(27, 25, 21)"}
+              <div .w-dyn-item> [19,119 352x71] {"border":"0px none rgb(27, 25, 21)"}
+                <a .search-item.w-inline-block> [19,119 352x71] {"padding":"8px 0px","gap":"12px","border":"0px none rgb(27, 25, 21)","border-radius":"4px"}
+                  <div .episode-item-media.s-search-item> [19,127 55x55] {"background-color":"rgb(181, 140, 0)","border":"0px none rgb(27, 25, 21)","border-radius":"3px"}
+                  <div .flex-col-stretch> [86,133 285x43] {"border":"0px none rgb(27, 25, 21)"}
+              <div .w-dyn-item> [19,190 352x71] {"border":"0px none rgb(27, 25, 21)"}
+                <a .search-item.w-inline-block> [19,190 352x71] {"padding":"8px 0px","gap":"12px","border":"0px none rgb(27, 25, 21)","border-radius":"4px"}
+                  <div .episode-item-media.s-search-item> [19,198 55x55] {"background-color":"rgb(192, 106, 21)","border":"0px none rgb(27, 25, 21)","border-radius":"3px"}
+                  <div .flex-col-stretch> [86,204 285x43] {"border":"0px none rgb(27, 25, 21)"}
+              <div .w-dyn-item> [19,261 352x71] {"border":"0px none rgb(27, 25, 21)"}
+                <a .search-item.w-inline-block> [19,261 352x71] {"padding":"8px 0px","gap":"12px","border":"0px none rgb(27, 25, 21)","border-radius":"4px"}
+                  <div .episode-item-media.s-search-item> [19,269 55x55] {"background-color":"rgb(55, 80, 114)","border":"0px none rgb(27, 25, 21)","border-radius":"3px"}
+                  <div .flex-col-stretch> [86,275 285x43] {"border":"0px none rgb(27, 25, 21)"}
+              <div .w-dyn-item> [19,332 352x71] {"border":"0px none rgb(27, 25, 21)"}
+                <a .search-item.w-inline-block> [19,332 352x71] {"padding":"8px 0px","gap":"12px","border":"0px none rgb(27, 25, 21)","border-radius":"4px"}
+                  <div .episode-item-media.s-search-item> [19,340 55x55] {"background-color":"rgb(82, 82, 82)","border":"0px none rgb(27, 25, 21)","border-radius":"3px"}
+                  <div .flex-col-stretch> [86,346 285x43] {"border":"0px none rgb(27, 25, 21)"}
+        <div .spacer-x.space-sm> [19,403 352x20] {"border":"0px none rgb(27, 25, 21)"}
+        <div .h-rule.bg-foreground-5> [19,423 352x1] {"background-color":"color(srgb 0.105882 0.0980392 0.0823529 / 0.05)","border":"0px none rgb(27, 25, 21)"}
+        <div .spacer-x.space-sm> [19,424 352x20] {"border":"0px none rgb(27, 25, 21)"}
+        <div .flex-col-left> [19,444 352x110] {"border":"0px none rgb(27, 25, 21)"}
+          <div .font-display.text-xs.text-foreground-muted.mb-xs> [19,444 107x14] "featured playlists" {"font-size":"14px","line-height":"14px","font-family":"\"Founders Grotesk Condensed\", Tahoma, sans-serif","color":"color(srgb 0.105882 0.0980392 0.0823529 / 0.6)","border":"0px none color(srgb 0.105882 0.0980392 0.0823529 / 0.6)","text-transform":"uppercase"}
+          <div .search-options-grid> [19,474 352x80] {"gap":"8px","border":"0px none rgb(27, 25, 21)"}
+            <a .btn.w-variant-7bd1fc2b-54d2-1c6e-babd-c7ff8b4b9690.w-inline-block> [19,474 172x36] {"background-color":"color(srgb 0.105882 0.0980392 0.0823529 / 0.05)","padding":"0px 14px","gap":"6px","border":"1px solid rgba(0, 0, 0, 0)","border-radius":"3px","backdrop-filter":"blur(6px)","transition":"0.4s"}
+              <div .> [72,488 66x9] "Must-Listen" {"font-size":"14px","line-height":"20.4px","font-family":"\"Founders Grotesk Condensed\", Tahoma, sans-serif","color":"rgb(27, 25, 21)","border":"0px none rgb(27, 25, 21)","text-transform":"uppercase"}
+            <a .btn.w-variant-7bd1fc2b-54d2-1c6e-babd-c7ff8b4b9690.w-inline-block> [199,474 172x36] {"background-color":"color(srgb 0.105882 0.0980392 0.0823529 / 0.05)","padding":"0px 14px","gap":"6px","border":"1px solid rgba(0, 0, 0, 0)","border-radius":"3px","backdrop-filter":"blur(6px)","transition":"0.4s"}
+              <div .> [254,488 62x9] "Niche Gems" {"font-size":"14px","line-height":"20.4px","font-family":"\"Founders Grotesk Condensed\", Tahoma, sans-serif","color":"rgb(27, 25, 21)","border":"0px none rgb(27, 25, 21)","text-transform":"uppercase"}
+            <a .btn.w-variant-7bd1fc2b-54d2-1c6e-babd-c7ff8b4b9690.w-inline-block> [19,518 172x36] {"background-color":"color(srgb 0.105882 0.0980392 0.0823529 / 0.05)","padding":"0px 14px","gap":"6px","border":"1px solid rgba(0, 0, 0, 0)","border-radius":"3px","backdrop-filter":"blur(6px)","transition":"0.4s"}
+              <div .> [75,532 61x9] "Interviews" {"font-size":"14px","line-height":"20.4px","font-family":"\"Founders Grotesk Condensed\", Tahoma, sans-serif","color":"rgb(27, 25, 21)","border":"0px none rgb(27, 25, 21)","text-transform":"uppercase"}
+            <a .btn.w-variant-7bd1fc2b-54d2-1c6e-babd-c7ff8b4b9690.w-inline-block> [199,518 172x36] {"background-color":"color(srgb 0.105882 0.0980392 0.0823529 / 0.05)","padding":"0px 14px","gap":"6px","border":"1px solid rgba(0, 0, 0, 0)","border-radius":"3px","backdrop-filter":"blur(6px)","transition":"0.4s"}
+              <div .> [262,532 47x9] "view all" {"font-size":"14px","line-height":"20.4px","font-family":"\"Founders Grotesk Condensed\", Tahoma, sans-serif","color":"rgb(27, 25, 21)","border":"0px none rgb(27, 25, 21)","text-transform":"uppercase"}
+        <div .spacer-x.space-xs> [19,554 352x16] {"border":"0px none rgb(27, 25, 21)"}
+        <div .flex-col-left> [19,570 352x198] {"border":"0px none rgb(27, 25, 21)"}
+          <div .font-display.text-xs.text-foreground-muted.mb-xs> [19,570 50x14] "industry" {"font-size":"14px","line-height":"14px","font-family":"\"Founders Grotesk Condensed\", Tahoma, sans-serif","color":"color(srgb 0.105882 0.0980392 0.0823529 / 0.6)","border":"0px none color(srgb 0.105882 0.0980392 0.0823529 / 0.6)","text-transform":"uppercase"}
+          <div .cms-wrapper.w-dyn-list> [19,600 352x168] {"border":"0px none rgb(27, 25, 21)"}
+            <div .search-options-grid.w-dyn-items> [19,600 352x168] {"gap":"8px","border":"0px none rgb(27, 25, 21)"}
+              <div ._w-full.w-dyn-item> [19,600 172x36] {"border":"0px none rgb(27, 25, 21)"}
+                <a .btn.w-variant-7bd1fc2b-54d2-1c6e-babd-c7ff8b4b9690.w-inline-block> [19,600 172x36] {"background-color":"color(srgb 0.105882 0.0980392 0.0823529 / 0.05)","padding":"0px 14px","gap":"6px","border":"1px solid rgba(0, 0, 0, 0)","border-radius":"3px","backdrop-filter":"blur(6px)","transition":"0.4s"}
+                  <div .> [78,614 55x9] "Software" {"font-size":"14px","line-height":"20.4px","font-family":"\"Founders Grotesk Condensed\", Tahoma, sans-serif","color":"rgb(27, 25, 21)","border":"0px none rgb(27, 25, 21)","text-transform":"uppercase"}
+              <div ._w-full.w-dyn-item> [199,600 172x36] {"border":"0px none rgb(27, 25, 21)"}
+                <a .btn.w-variant-7bd1fc2b-54d2-1c6e-babd-c7ff8b4b9690.w-inline-block> [199,600 172x36] {"background-color":"color(srgb 0.105882 0.0980392 0.0823529 / 0.05)","padding":"0px 14px","gap":"6px","border":"1px solid rgba(0, 0, 0, 0)","border-radius":"3px","backdrop-filter":"blur(6px)","transition":"0.4s"}
+                  <div .> [265,614 39x9] "Luxury" {"font-size":"14px","line-height":"20.4px","font-family":"\"Founders Grotesk Condensed\", Tahoma, sans-serif","color":"rgb(27, 25, 21)","border":"0px none rgb(27, 25, 21)","text-transform":"uppercase"}
+              <div ._w-full.w-dyn-item> [19,644 172x36] {"border":"0px none rgb(27, 25, 21)"}
+                <a .btn.w-variant-7bd1fc2b-54d2-1c6e-babd-c7ff8b4b9690.w-inline-block> [19,644 172x36] {"background-color":"color(srgb 0.105882 0.0980392 0.0823529 / 0.05)","padding":"0px 14px","gap":"6px","border":"1px solid rgba(0, 0, 0, 0)","border-radius":"3px","backdrop-filter":"blur(6px)","transition":"0.4s"}
+                  <div .> [83,658 43x9] "Finance" {"font-size":"14px","line-height":"20.4px","font-family":"\"Founders Grotesk Condensed\", Tahoma, sans-serif","color":"rgb(27, 25, 21)","border":"0px none rgb(27, 25, 21)","text-transform":"uppercase"}
+              <div ._w-full.w-dyn-item> [199,644 172x36] {"border":"0px none rgb(27, 25, 21)"}
+                <a .btn.w-variant-7bd1fc2b-54d2-1c6e-babd-c7ff8b4b9690.w-inline-block> [199,644 172x36] {"background-color":"color(srgb 0.105882 0.0980392 0.0823529 / 0.05)","padding":"0px 14px","gap":"6px","border":"1px solid rgba(0, 0, 0, 0)","border-radius":"3px","backdrop-filter":"blur(6px)","transition":"0.4s"}
+                  <div .> [250,658 71x9] "Social Media" {"font-size":"14px","line-height":"20.4px","font-family":"\"Founders Grotesk Condensed\", Tahoma, sans-serif","color":"rgb(27, 25, 21)","border":"0px none rgb(27, 25, 21)","text-transform":"uppercase"}
+              <div ._w-full.w-dyn-item> [19,688 172x36] {"border":"0px none rgb(27, 25, 21)"}
+                <a .btn.w-variant-7bd1fc2b-54d2-1c6e-babd-c7ff8b4b9690.w-inline-block> [19,688 172x36] {"background-color":"color(srgb 0.105882 0.0980392 0.0823529 / 0.05)","padding":"0px 14px","gap":"6px","border":"1px solid rgba(0, 0, 0, 0)","border-radius":"3px","backdrop-filter":"blur(6px)","transition":"0.4s"}
+                  <div .> [70,702 70x9] "VC/Investing" {"font-size":"14px","line-height":"20.4px","font-family":"\"Founders Grotesk Condensed\", Tahoma, sans-serif","color":"rgb(27, 25, 21)","border":"0px none rgb(27, 25, 21)","text-transform":"uppercase"}
+              <div ._w-full.w-dyn-item> [199,688 172x36] {"border":"0px none rgb(27, 25, 21)"}
+                <a .btn.w-variant-7bd1fc2b-54d2-1c6e-babd-c7ff8b4b9690.w-inline-block> [199,688 172x36] {"background-color":"color(srgb 0.105882 0.0980392 0.0823529 / 0.05)","padding":"0px 14px","gap":"6px","border":"1px solid rgba(0, 0, 0, 0)","border-radius":"3px","backdrop-filter":"blur(6px)","transition":"0.4s"}
+                  <div .> [266,702 39x9] "Sports" {"font-size":"14px","line-height":"20.4px","font-family":"\"Founders Grotesk Condensed\", Tahoma, sans-serif","color":"rgb(27, 25, 21)","border":"0px none rgb(27, 25, 21)","text-transform":"uppercase"}
+              <div ._w-full.w-dyn-item> [19,732 172x36] {"border":"0px none rgb(27, 25, 21)"}
+                <a .btn.w-variant-7bd1fc2b-54d2-1c6e-babd-c7ff8b4b9690.w-inline-block> [19,732 172x36] {"background-color":"color(srgb 0.105882 0.0980392 0.0823529 / 0.05)","padding":"0px 14px","gap":"6px","border":"1px solid rgba(0, 0, 0, 0)","border-radius":"3px","backdrop-filter":"blur(6px)","transition":"0.4s"}
+                  <div .> [83,746 43x9] "Fintech" {"font-size":"14px","line-height":"20.4px","font-family":"\"Founders Grotesk Condensed\", Tahoma, sans-serif","color":"rgb(27, 25, 21)","border":"0px none rgb(27, 25, 21)","text-transform":"uppercase"}
+              <div ._w-full.w-dyn-item> [199,732 172x36] {"border":"0px none rgb(27, 25, 21)"}
+                <a .btn.w-variant-7bd1fc2b-54d2-1c6e-babd-c7ff8b4b9690.w-inline-block> [199,732 172x36] {"background-color":"color(srgb 0.105882 0.0980392 0.0823529 / 0.05)","padding":"0px 14px","gap":"6px","border":"1px solid rgba(0, 0, 0, 0)","border-radius":"3px","backdrop-filter":"blur(6px)","transition":"0.4s"}
+                  <div .> [239,746 92x9] "Semiconductors" {"font-size":"14px","line-height":"20.4px","font-family":"\"Founders Grotesk Condensed\", Tahoma, sans-serif","color":"rgb(27, 25, 21)","border":"0px none rgb(27, 25, 21)","text-transform":"uppercase"}
+      <div .spacer-x.pad-x> [19,768 352x18] {"border":"0px none rgb(27, 25, 21)"}
+
+BG: {"background-color":"rgb(27, 25, 21)","backdrop-filter":"blur(12px)","opacity":"1","transition":"0.2s"}
