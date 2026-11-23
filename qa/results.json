@@ -1,5 +1,425 @@
 [
  {
+  "page": "about",
+  "width": 1440,
+  "refH": 7448,
+  "cloneH": 7443,
+  "diffPct": 6.15
+ },
+ {
+  "page": "about",
+  "width": 1024,
+  "refH": 7499,
+  "cloneH": 7521,
+  "diffPct": 12.18
+ },
+ {
+  "page": "about",
+  "width": 768,
+  "refH": 7109,
+  "cloneH": 7139,
+  "diffPct": 16.01
+ },
+ {
+  "page": "about",
+  "width": 390,
+  "refH": 8671,
+  "cloneH": 8778,
+  "diffPct": 22.88
+ },
+ {
+  "page": "acq2",
+  "width": 1440,
+  "refH": 20067,
+  "cloneH": 20000,
+  "diffPct": 6.7
+ },
+ {
+  "page": "acq2",
+  "width": 1024,
+  "refH": 19510,
+  "cloneH": 19331,
+  "diffPct": 8.11
+ },
+ {
+  "page": "acq2",
+  "width": 768,
+  "refH": 17723,
+  "cloneH": 17605,
+  "diffPct": 10.56
+ },
+ {
+  "page": "acq2",
+  "width": 390,
+  "refH": 31019,
+  "cloneH": 30772,
+  "diffPct": 12.98
+ },
+ {
+  "page": "artifacts",
+  "width": 1440,
+  "refH": 1951,
+  "cloneH": 1949,
+  "diffPct": 0.72
+ },
+ {
+  "page": "artifacts",
+  "width": 1024,
+  "refH": 1711,
+  "cloneH": 1709,
+  "diffPct": 1.23
+ },
+ {
+  "page": "artifacts",
+  "width": 768,
+  "refH": 1541,
+  "cloneH": 1524,
+  "diffPct": 2.48
+ },
+ {
+  "page": "artifacts",
+  "width": 390,
+  "refH": 1683,
+  "cloneH": 1674,
+  "diffPct": 2.94
+ },
+ {
+  "page": "email",
+  "width": 1440,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 1.36
+ },
+ {
+  "page": "email",
+  "width": 1024,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 1.91
+ },
+ {
+  "page": "email",
+  "width": 768,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 2.74
+ },
+ {
+  "page": "email",
+  "width": 390,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 3.09
+ },
+ {
+  "page": "episode-seinfeld",
+  "width": 1440,
+  "refH": 4066,
+  "cloneH": 4065,
+  "diffPct": 1.65
+ },
+ {
+  "page": "episode-seinfeld",
+  "width": 1024,
+  "refH": 4058,
+  "cloneH": 4038,
+  "diffPct": 7.28
+ },
+ {
+  "page": "episode-seinfeld",
+  "width": 768,
+  "refH": 3934,
+  "cloneH": 3938,
+  "diffPct": 11.58
+ },
+ {
+  "page": "episode-seinfeld",
+  "width": 390,
+  "refH": 4912,
+  "cloneH": 5012,
+  "diffPct": 11.37
+ },
+ {
+  "page": "episodes",
+  "width": 1440,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 3.7
+ },
+ {
+  "page": "episodes",
+  "width": 1024,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 4.83
+ },
+ {
+  "page": "episodes",
+  "width": 768,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 4.7
+ },
+ {
+  "page": "episodes",
+  "width": 390,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 5.72
+ },
+ {
+  "page": "features-interviews",
+  "width": 1440,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 4.28
+ },
+ {
+  "page": "features-interviews",
+  "width": 1024,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 4.38
+ },
+ {
+  "page": "features-interviews",
+  "width": 768,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 5.72
+ },
+ {
+  "page": "features-interviews",
+  "width": 390,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 7.1
+ },
+ {
+  "page": "features-must-listen",
+  "width": 1440,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 3.28
+ },
+ {
+  "page": "features-must-listen",
+  "width": 1024,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 3.2
+ },
+ {
+  "page": "features-must-listen",
+  "width": 768,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 3.94
+ },
+ {
+  "page": "features-must-listen",
+  "width": 390,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 5.35
+ },
+ {
+  "page": "features-niche-gems",
+  "width": 1440,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 3.77
+ },
+ {
+  "page": "features-niche-gems",
+  "width": 1024,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 3.78
+ },
+ {
+  "page": "features-niche-gems",
+  "width": 768,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 4.88
+ },
+ {
+  "page": "features-niche-gems",
+  "width": 390,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 6.72
+ },
+ {
+  "page": "home",
+  "width": 1440,
+  "refH": 4667,
+  "cloneH": 4657,
+  "diffPct": 7.91
+ },
+ {
+  "page": "home",
+  "width": 1024,
+  "refH": 4720,
+  "cloneH": 4709,
+  "diffPct": 10.96
+ },
+ {
+  "page": "home",
+  "width": 768,
+  "refH": 4600,
+  "cloneH": 4596,
+  "diffPct": 10.92
+ },
+ {
+  "page": "home",
+  "width": 390,
+  "refH": 4858,
+  "cloneH": 4862,
+  "diffPct": 9.17
+ },
+ {
+  "page": "industry-software",
+  "width": 1440,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 3.63
+ },
+ {
+  "page": "industry-software",
+  "width": 1024,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 3.63
+ },
+ {
+  "page": "industry-software",
+  "width": 768,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 4.68
+ },
+ {
+  "page": "industry-software",
+  "width": 390,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 6.34
+ },
+ {
+  "page": "library",
+  "width": 1440,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 1.17
+ },
+ {
+  "page": "library",
+  "width": 1024,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 1.63
+ },
+ {
+  "page": "library",
+  "width": 768,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 2.38
+ },
+ {
+  "page": "library",
+  "width": 390,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 3.64
+ },
+ {
+  "page": "media-kit",
+  "width": 1440,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 0
+ },
+ {
+  "page": "media-kit",
+  "width": 1024,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 0
+ },
+ {
+  "page": "media-kit",
+  "width": 768,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 0
+ },
+ {
+  "page": "media-kit",
+  "width": 390,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 0
+ },
+ {
+  "page": "press",
+  "width": 1440,
+  "refH": 3072,
+  "cloneH": 3061,
+  "diffPct": 2.46
+ },
+ {
+  "page": "press",
+  "width": 1024,
+  "refH": 3124,
+  "cloneH": 3113,
+  "diffPct": 5.76
+ },
+ {
+  "page": "press",
+  "width": 768,
+  "refH": 3040,
+  "cloneH": 3032,
+  "diffPct": 5.95
+ },
+ {
+  "page": "press",
+  "width": 390,
+  "refH": 3760,
+  "cloneH": 3756,
+  "diffPct": 6.91
+ },
+ {
+  "page": "sponsor",
+  "width": 1440,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 0.04
+ },
+ {
+  "page": "sponsor",
+  "width": 1024,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 0
+ },
+ {
+  "page": "sponsor",
+  "width": 768,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 0
+ },
+ {
+  "page": "sponsor",
+  "width": 390,
+  "refH": 900,
+  "cloneH": 900,
+  "diffPct": 0
+ },
+ {
   "page": "wsj",
   "width": 1440,
   "refH": 2634,
@@ -24,7 +444,7 @@
   "page": "wsj",
   "width": 390,
   "refH": 4873,
-  "cloneH": 4847,
-  "diffPct": 17.27
+  "cloneH": 4863,
+  "diffPct": 17.28
  }
 ]

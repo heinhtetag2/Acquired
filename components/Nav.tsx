@@ -1,4 +1,5 @@
 "use client";
+import Acq2Wordmark from "./Acq2Wordmark";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -131,7 +132,7 @@ export default function Nav() {
 
   return (
     <>
-      <header ref={navRef} className={`nav ${themeClass}`}>
+      <header ref={navRef} className={`nav ${themeClass}${isAcq2 ? " nav--acq2" : ""}`}>
         <nav className="nav__row" aria-label="Primary">
           <Link href="/" className="nav__logo" aria-label="Acquired home"
             onContextMenu={(e) => {
@@ -140,9 +141,11 @@ export default function Nav() {
               if (logo.isOpen) return logo.close();
               setLogoPos({ x: e.clientX, y: e.clientY }); logo.open();
             }}>
-            <svg className={`nav__wordmark ${isAcq2 ? "nav__wordmark--acq2" : ""}`} viewBox={isAcq2 ? "0 0 520 135" : "0 0 1044 135"} aria-hidden>
-              <text x="0" y="122" textLength={isAcq2 ? 520 : 1044} lengthAdjust="spacing">{isAcq2 ? "ACQ2" : "ACQUIRED"}</text>
-            </svg>
+            {isAcq2 ? <Acq2Wordmark className="nav__wordmark nav__wordmark--acq2" /> : (
+              <svg className="nav__wordmark" viewBox="0 0 1044 135" aria-hidden>
+                <text x="0" y="122" textLength={1044} lengthAdjust="spacing">ACQUIRED</text>
+              </svg>
+            )}
           </Link>
           <SearchModal />
           <div className="nav__actions">

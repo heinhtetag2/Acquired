@@ -33,7 +33,7 @@ export default function EpisodeHero({ ep }: { ep: Episode }) {
           <Link href="/episodes" className="btn btn--back"><ArrowLeft />all episodes</Link>
           <div className="spacer-sm" />
         </div>
-        <ArtZoom src={art} alt={ep.title} color={ep.color} />
+        <ArtZoom src={art} alt={ep.title} color={ep.color} animated={ep.imageAnimated && art === ep.image} />
         <div className="spacer-lg" />
         <div className="ep-details">
           {!!ep.tags?.length && (
@@ -78,12 +78,12 @@ export default function EpisodeHero({ ep }: { ep: Episode }) {
             </div>
           </div>
         )}
+        <div className="spacer-base" />
         <div className="ep-mobile-only ep-sponsors-m">
           <div className="ep-rule-m" />
           <Sponsors ep={ep} className="" />
           <div className="ep-rule-m" />
         </div>
-        <div className="spacer-base ep-desktop-only" />
         {(ep.links || ep.carveOuts) && (
           <>
             <h2 className="ep-h2">More on the episode</h2>

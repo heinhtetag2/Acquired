@@ -2,11 +2,22 @@
 import { useEffect, useRef, useState } from "react";
 
 // Live: click album art → zooms to 92% of min(vw, vh); in 320ms cubic-bezier(.16,1,.3,1), out 250ms cubic-bezier(.4,0,.2,1).
-export default function ArtZoom({ src, alt, color }: { src?: string; alt: string; color: string }) {
+/** `animated`: live album art is an animated GIF; the still paints first (keeps LCP), then the animated WebP swaps in after load. */
+export default function ArtZoom({ src, alt, color, animated }: { src?: string; alt: string; color: string; animated?: boolean }) {
   const btn = useRef<HTMLButtonElement>(null);
   const img = useRef<HTMLImageElement>(null);
   const [open, setOpen] = useState(false);
   const [phase, setPhase] = useState<"in" | "out" | "">("");
+  const [anim, setAnim] = useState(false);
+
+  useEffect(() => {
+    if (!animated || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let idle = 0;
+    const start = () => { idle = window.setTimeout(() => setAnim(true), 300); };
+    if (document.readyState === "complete") start(); else window.addEventListener("load", start, { once: true });
+    return () => { window.removeEventListener("load", start); clearTimeout(idle); };
+  }, [animated]);
+  const v = (s: string, w?: number) => s.replace(".webp", `${anim ? "-anim" : ""}${w ? `-${w}` : anim ? "-900" : ""}.webp`);
 
   const rect = () => btn.current!.getBoundingClientRect();
   const fitTransform = () => {
@@ -43,12 +54,12 @@ export default function ArtZoom({ src, alt, color }: { src?: string; alt: string
     <>
       <button ref={btn} className="ep-art" onClick={() => src && setOpen(true)} aria-label={`Enlarge ${alt} artwork`} style={{ background: color }}>
         {src && <img src={src} alt={alt} fetchPriority="high"
-          srcSet={src.startsWith("/images/art/") && src.endsWith(".webp") ? `${src.replace(".webp", "-450.webp")} 450w, ${src.replace(".webp", "-700.webp")} 700w, ${src} 900w` : undefined}
+          srcSet={src.startsWith("/images/art/") && src.endsWith(".webp") ? `${v(src, 450)} 450w, ${v(src, 700)} 700w, ${v(src)} 900w` : undefined}
           sizes="(max-width: 767px) 100vw, 448px" />}
       </button>
       {open && src && (
         <div className={`zoom ${phase === "in" ? "is-in" : ""}`} onClick={close} role="dialog" aria-label={`${alt} artwork`}>
-          <img ref={img} src={src} alt={alt} />
+          <img ref={img} src={anim ? v(src) : src} alt={alt} />
         </div>
       )}
     </>

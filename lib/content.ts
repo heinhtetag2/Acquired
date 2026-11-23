@@ -4,7 +4,7 @@ import { site } from "./site";
 export type Episode = {
   slug: string; title: string; date: string; isNew?: boolean; duration?: string;
   season?: number; episode?: number; color: string; theme: string; description: string;
-  industry: string[]; features: string[]; spotify?: string; apple?: string; image?: string; cover?: string; tagline?: string;
+  industry: string[]; features: string[]; spotify?: string; apple?: string; image?: string; imageAnimated?: boolean; cover?: string; tagline?: string;
   subtitle?: string; thumb?: string; seasonCode?: string; video?: boolean; heroLine?: string; vinyl?: string; hasTranscript?: boolean;
   themeColors?: { light: string; dark: string; a400: string; a500: string; a600: string }; seasonLabel?: string; seasonHref?: string; tags?: { label: string; href: string }[];
   youtube?: string; netflix?: string; audioSrc?: string; durationSec?: number; overview?: string[];

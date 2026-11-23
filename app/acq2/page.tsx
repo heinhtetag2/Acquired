@@ -27,7 +27,7 @@ function Card({ ep, size }: { ep: Acq2Episode; size: "featured" | "side" | "grid
           <div className={size === "featured" ? "spacer-base" : "spacer-sm"} />
           <div className="acq2-foot">
             <span className="t-label acq2-date">{ep.video && <VideoIcon width={16} height={16} />}{formatDate(ep.date)}</span>
-            <Link href={href} className="acq2-play" aria-label={`Play ${ep.title}`}><PlayIcon /></Link>
+            {ep.zone !== "lp" && <Link href={href} className="acq2-play" aria-label={`Play ${ep.title}`}><PlayIcon /></Link>}
           </div>
         </div>
       </div>

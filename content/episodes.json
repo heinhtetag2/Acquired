@@ -20,6 +20,7 @@
   "apple": "https://podcasts.apple.com/us/podcast/seinfeld/id1050462261?i=1000797010256",
   "cover": "/images/covers/seinfeld.svg",
   "image": "/images/art/seinfeld.webp",
+  "imageAnimated": true,
   "subtitle": "TV’s last great startup",
   "seasonLabel": "Fall 2026",
   "seasonHref": "/season/fall-2026",
@@ -34,7 +35,7 @@
   "audioSrc": "https://audio.transistor.fm/m/shows/39109/ca0df1168651e0a51be7d6012432411f.mp3",
   "durationSec": 13819,
   "overview": [
-   "Sample overview written for the clone. The live page has a ~4-line summary here: how a sitcom that ended decades ago still draws a huge audience, and the business story behind it — the creators, the timing, the ownership structure and the incentives that made it the most valuable show on television. Replace with the real copy in content/episodes.json."
+   "Sample overview written for the clone. The live page has a summary here: how a sitcom that ended decades ago still draws a huge audience, and the business story behind it — the creators, the timing, the ownership structure and the incentives that made it the most valuable show on TV. Replace with the real copy in content/episodes.json."
   ],
   "presentedBy": {
    "label": "Sierra",
