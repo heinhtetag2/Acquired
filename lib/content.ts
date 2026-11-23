@@ -28,6 +28,7 @@ export const getFilter = (group: string, slug: string) => filters.find((f) => f.
 export const filterEpisodes = (f: Filter) => f.episodes.map((s) => getEpisode(s)).filter((e): e is Episode => !!e);
 
 import acq2Json from "@/content/acq2.json";
+import scrollbookData from "@/content/scrollbook.json";
 export type Acq2Episode = Episode & { zone: "featured" | "side" | "grid" | "lp" };
 export const acq2 = acq2Json as Acq2Episode[];
 export const getAcq2 = (slug: string) => acq2.find((e) => e.slug === slug);
@@ -36,3 +37,7 @@ export const getAcq2 = (slug: string) => acq2.find((e) => e.slug === slug);
 export type EpisodeLite = Pick<Episode, "slug" | "title" | "date" | "seasonCode" | "episode" | "video" | "thumb" | "image" | "cover" | "color" | "theme" | "themeColors" | "description" | "spotify" | "apple" | "audioSrc" | "durationSec" | "vinyl" | "heroLine" | "tagline" | "isNew">;
 const LITE_KEYS = ["slug", "title", "date", "seasonCode", "episode", "video", "thumb", "image", "cover", "color", "theme", "themeColors", "description", "spotify", "apple", "audioSrc", "durationSec", "vinyl", "heroLine", "tagline", "isNew"] as const;
 export const lite = (e: Episode): EpisodeLite => Object.fromEntries(LITE_KEYS.filter((k) => e[k] !== undefined).map((k) => [k, e[k]])) as EpisodeLite;
+
+// Scrollbook: per-slug overrides from content/scrollbook.json, applied on /scrollbook pages only.
+const scrollbookBooks = scrollbookData.books as Record<string, Partial<Episode>>;
+export const getBook = (slug: string): Episode | undefined => { const e = getEpisode(slug); return e && { ...e, ...scrollbookBooks[slug] }; };

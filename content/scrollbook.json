@@ -1,0 +1,8 @@
+{
+  "_note": "Scrollbook-only overrides, keyed by slug. Any field here replaces the episode's value on /scrollbook pages only; the Acquired pages keep episodes.json.",
+  "books": {
+    "disney-the-renaissance-and-the-empire": {
+      "title": "Disney: The Kingdom Reborn"
+    }
+  }
+}

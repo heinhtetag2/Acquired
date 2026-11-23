@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { episodes, getEpisode, lite } from "@/lib/content";
+import { episodes, getBook, lite } from "@/lib/content";
 import EpisodeHero from "@/components/scrollbook/EpisodeHero";
 import EpisodeOverlays from "@/components/scrollbook/EpisodeOverlays";
 import EpisodePlayer from "@/components/scrollbook/EpisodePlayer";
@@ -11,15 +11,15 @@ import Footer from "@/components/Footer";
 export const generateStaticParams = () => episodes.map((e) => ({ slug: e.slug }));
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const ep = getEpisode((await params).slug);
+  const ep = getBook((await params).slug);
   return { title: ep ? `${ep.title} | Scrollbook` : "Episode" };
 }
 
 /** Scrollbook: read-and-listen page, duplicated from the episode page as the starting point for the new product. */
 export default async function ScrollbookPage({ params }: { params: Promise<{ slug: string }> }) {
-  const ep = getEpisode((await params).slug);
+  const ep = getBook((await params).slug);
   if (!ep) notFound();
-  const related = (ep.related ?? episodes.filter((e) => e.slug !== ep.slug).slice(0, 6).map((e) => e.slug)).map(getEpisode).filter((e) => !!e);
+  const related = (ep.related ?? episodes.filter((e) => e.slug !== ep.slug).slice(0, 6).map((e) => e.slug)).map(getBook).filter((e) => !!e);
   return (
     <div data-ep-theme={ep.theme}>
       {ep.themeColors && (
