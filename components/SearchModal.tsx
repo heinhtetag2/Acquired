@@ -4,11 +4,19 @@ import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { formatDate, seasonLabel, site } from "@/lib/site";
 import searchIndex from "@/content/search-index.json";
+import scrollbookData from "@/content/scrollbook.json";
 import { SearchIcon } from "./Icons";
 
 // Slim client-side index (content/search-index.json): title, date, season code, art, plus filter names for matching.
-type Hit = { slug: string; title: string; date: string; seasonCode?: string; thumb?: string; cover?: string; color?: string; tags: string };
-const INDEX = searchIndex as Hit[];
+type Hit = { slug: string; title: string; date: string; seasonCode?: string; thumb?: string; cover?: string; color?: string; tags: string; href?: string; label?: string };
+const EPISODES = searchIndex as Hit[];
+// Scrollbook books (content/scrollbook.json): own title + link, still matched by the original title and tags.
+const BOOKS: Hit[] = Object.entries(scrollbookData.books as Record<string, { title?: string }>).flatMap(([slug, o]) => {
+  const ep = EPISODES.find((h) => h.slug === slug); if (!ep) return [];
+  return [{ ...ep, title: o.title ?? ep.title, href: `/scrollbook/${slug}`, label: "Scrollbook", tags: `${ep.tags} scrollbook book read ${ep.title.toLowerCase()}` }];
+});
+const INDEX = [...BOOKS, ...EPISODES];
+const hrefOf = (h: Hit) => h.href ?? `/episodes/${h.slug}`;
 
 // Live constants (search-nav.v1.js): DEBOUNCE_MS 180, MIN_QUERY 2, MAX_RESULTS 6.
 const DEBOUNCE_MS = 180, MIN_QUERY = 2, MAX_RESULTS = 6;
@@ -19,7 +27,7 @@ const FEATURED = [
 ];
 const INDUSTRY_SLUGS = ["software", "luxury", "finance", "social-media", "vc-investing", "sports", "fintech", "semiconductors"];
 const INDUSTRIES = INDUSTRY_SLUGS.map((s) => site.sidebar.flatMap((g) => g.links).find((l) => l.href === `/industry/${s}`)!).filter(Boolean).map((l) => ({ href: l.href, title: l.label }));
-const RECENT_HITS = [...site.latest.map((s) => INDEX.find((h) => h.slug === s)!).filter(Boolean), ...INDEX].filter((h, i, a) => a.indexOf(h) === i).slice(0, RECENT);
+const RECENT_HITS = [...site.latest.map((s) => EPISODES.find((h) => h.slug === s)!).filter(Boolean), ...EPISODES].filter((h, i, a) => a.indexOf(h) === i).slice(0, RECENT);
 
 function search(q: string): Hit[] {
   const terms = q.toLowerCase().split(/\s+/).filter(Boolean);
@@ -41,11 +49,11 @@ function search(q: string): Hit[] {
 function Item({ ep, active, onPick }: { ep: Hit; active?: boolean; onPick: () => void }) {
   const art = ep.thumb ?? ep.cover;
   return (
-    <Link href={`/episodes/${ep.slug}`} className={`search-item ${active ? "is-active" : ""}`} onClick={onPick}>
+    <Link href={hrefOf(ep)} className={`search-item ${active ? "is-active" : ""}`} onClick={onPick}>
       <div className="search-item__art" style={{ background: ep.color }}>{art && <img src={art} alt="" loading="lazy" />}</div>
       <div style={{ minWidth: 0 }}>
         <div className="search-item__title">{ep.title}</div>
-        <div className="search-item__desc">{[seasonLabel(ep.seasonCode), formatDate(ep.date)].filter(Boolean).join(" · ")}</div>
+        <div className="search-item__desc">{[ep.label ?? seasonLabel(ep.seasonCode), formatDate(ep.date)].filter(Boolean).join(" · ")}</div>
       </div>
     </Link>
   );
@@ -97,7 +105,7 @@ export default function SearchModal() {
     else if (e.key === "ArrowUp") { e.preventDefault(); setActive((a) => Math.max(a - 1, -1)); }
     else if (e.key === "Enter") {
       e.preventDefault();
-      if (active >= 0) { pick(); router.push(`/episodes/${results[active].slug}`); }
+      if (active >= 0) { pick(); router.push(hrefOf(results[active])); }
       else { pick(); router.push(`/episodes?q=${encodeURIComponent(q.trim())}`); }
     }
   };
@@ -133,7 +141,7 @@ export default function SearchModal() {
           )}
           {view === "results" && (
             <div id="search-results" className="search-results" role="listbox">
-              {results.map((ep, i) => <div key={ep.slug} id={`search-r-${i}`} role="option" aria-selected={i === active}><Item ep={ep} active={i === active} onPick={pick} /></div>)}
+              {results.map((ep, i) => <div key={hrefOf(ep)} id={`search-r-${i}`} role="option" aria-selected={i === active}><Item ep={ep} active={i === active} onPick={pick} /></div>)}
             </div>
           )}
           {view === "empty" && <div className="search-empty">No episodes found.</div>}

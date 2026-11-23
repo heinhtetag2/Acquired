@@ -1,5 +1,4 @@
 "use client";
-import Acq2Wordmark from "./Acq2Wordmark";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -46,7 +45,6 @@ export default function Nav() {
   const listenBtn = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
   const isAcq2 = pathname?.startsWith("/acq2");
-  const isScrollbook = pathname?.startsWith("/scrollbook");
 
   // close everything on route change
   useEffect(() => { menu.close(); listen.close(); logo.close(); /* eslint-disable-next-line react-hooks/exhaustive-deps */ }, [pathname]);
@@ -133,25 +131,19 @@ export default function Nav() {
 
   return (
     <>
-      <header ref={navRef} className={`nav ${themeClass}${isAcq2 ? " nav--acq2" : ""}${isScrollbook ? " nav--scrollbook" : ""}`}>
+      <header ref={navRef} className={`nav ${themeClass}`}>
         <nav className="nav__row" aria-label="Primary">
-          <Link href={isScrollbook ? "/scrollbook" : "/"} className="nav__logo" aria-label={isScrollbook ? "Scrollbook home" : "Acquired home"}
+          <Link href="/" className="nav__logo" aria-label="Scrollbook home"
             onContextMenu={(e) => {
               if (!window.matchMedia("(pointer: fine)").matches) return;
               e.preventDefault();
               if (logo.isOpen) return logo.close();
               setLogoPos({ x: e.clientX, y: e.clientY }); logo.open();
             }}>
-            {isAcq2 ? <Acq2Wordmark className="nav__wordmark nav__wordmark--acq2" /> : isScrollbook ? (
-              // same logo font and letter spacing as ACQUIRED (fitted at 97.4% of natural width)
-              <svg className="nav__wordmark nav__wordmark--scrollbook" viewBox="0 0 1376 135" aria-hidden>
-                <text x="0" y="122" textLength={1376} lengthAdjust="spacing">SCROLLBOOK</text>
-              </svg>
-            ) : (
-              <svg className="nav__wordmark" viewBox="0 0 1044 135" aria-hidden>
-                <text x="0" y="122" textLength={1044} lengthAdjust="spacing">ACQUIRED</text>
-              </svg>
-            )}
+            {/* Scrollbook wordmark on every page: same logo font and letter spacing as the old ACQUIRED mark (fitted at 97.4% of natural width) */}
+            <svg className="nav__wordmark" viewBox="0 0 1376 135" aria-hidden>
+              <text x="0" y="122" textLength={1376} lengthAdjust="spacing">SCROLLBOOK</text>
+            </svg>
           </Link>
           <SearchModal />
           <div className="nav__actions">

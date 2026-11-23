@@ -109,11 +109,10 @@
 /* ====================== Search (live: search-nav.v1) ====================== */
 .search-bg { position: fixed; inset: 0; z-index: 39; background: var(--c-ink-10); opacity: 0; pointer-events: none; transition: all var(--dur-fast); }
 .search-bg.is-open { opacity: 1; pointer-events: auto; backdrop-filter: blur(var(--blur-lg)); }
-.search-section { --nav-logo-w: var(--logo-w); position: fixed; left: calc(50% - 16px - (var(--logo-w) - var(--nav-logo-w)) / 2); top: 15px; translate: -50% 0; z-index: 50; width: var(--w-base); border: 1px solid var(--fg-20); border-radius: var(--r-xl);
+.search-section { --nav-logo-w: var(--logo-scrollbook-w); position: fixed; left: calc(50% - 16px - (var(--logo-w) - var(--nav-logo-w)) / 2); top: 15px; translate: -50% 0; z-index: 50; width: var(--w-base); border: 1px solid var(--fg-20); border-radius: var(--r-xl);
   background: color-mix(in srgb, var(--bg) 10%, transparent); backdrop-filter: blur(8px); color: var(--fg); overflow: hidden;
   transition: border-color .3s, background-color .3s, color .3s; }
-.nav--acq2 .search-section { --nav-logo-w: var(--logo-acq2-w); } /* live centres search in the space beside the logo */
-.nav--scrollbook .search-section { --nav-logo-w: calc(var(--logo-w) * 1376 / 1044); }
+/* search centres in the space beside the logo, so it shifts by half the extra logo width */
 .nav--hidden ~ .search-section:not(.is-open) { opacity: 0; pointer-events: none; }
 .search-section.is-open { width: var(--w-2xl); max-height: calc(100svh - 30px); display: flex; flex-direction: column; border-color: var(--c-ink-10); border-radius: var(--r-lg); background: var(--c-cream); color: var(--c-ink);
   box-shadow: 0 16px 64px rgba(0, 0, 0, 0.25); --fg: var(--c-ink); --fg-muted: var(--c-ink-60); }

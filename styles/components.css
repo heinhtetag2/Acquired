@@ -57,10 +57,8 @@
   gap: var(--space-base); padding: 0 var(--nav-pad-x); color: var(--fg);
 }
 .nav__logo { display: flex; align-items: center; height: var(--btn-h); padding: 17px var(--btn-pad-x); flex: none; transition: all var(--dur-base); }
-.nav__wordmark { display: block; width: var(--logo-w); height: var(--logo-h); overflow: visible; fill: currentColor; }
+.nav__wordmark { display: block; width: var(--logo-scrollbook-w); height: var(--logo-h); overflow: visible; fill: currentColor; }
 .nav__wordmark text { font-family: var(--font-logo); font-weight: 700; font-stretch: 125%; font-size: 156px; font-size-adjust: none; letter-spacing: 0; }
-.nav__wordmark--acq2 { width: auto; aspect-ratio: 789 / 192; fill: none; }
-.nav__wordmark--scrollbook { width: calc(var(--logo-w) * 1376 / 1044); }
 .nav__actions { display: flex; gap: var(--space-3xs); align-items: center; }
 .nav-narrow { display: none; }
 .nav__menu-btn svg { width: 16px; height: 16px; }

@@ -225,7 +225,7 @@
   --nav-pad-y: 15px;
   --logo-w: 128px;
   --logo-h: 16px;
-  --logo-acq2-w: calc(var(--logo-h) * 789 / 192);
+  --logo-scrollbook-w: calc(var(--logo-w) * 1376 / 1044); /* SCROLLBOOK at the same letter size as the 8-letter mark */
   --search-w: 446px;
   --menu-pop-inset: 16px;
   --menu-pop-top: 76px;
