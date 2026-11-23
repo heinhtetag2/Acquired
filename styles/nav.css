@@ -113,6 +113,7 @@
   background: color-mix(in srgb, var(--bg) 10%, transparent); backdrop-filter: blur(8px); color: var(--fg); overflow: hidden;
   transition: border-color .3s, background-color .3s, color .3s; }
 .nav--acq2 .search-section { --nav-logo-w: var(--logo-acq2-w); } /* live centres search in the space beside the logo */
+.nav--scrollbook .search-section { --nav-logo-w: calc(var(--logo-w) * 1376 / 1044); }
 .nav--hidden ~ .search-section:not(.is-open) { opacity: 0; pointer-events: none; }
 .search-section.is-open { width: var(--w-2xl); max-height: calc(100svh - 30px); display: flex; flex-direction: column; border-color: var(--c-ink-10); border-radius: var(--r-lg); background: var(--c-cream); color: var(--c-ink);
   box-shadow: 0 16px 64px rgba(0, 0, 0, 0.25); --fg: var(--c-ink); --fg-muted: var(--c-ink-60); }
