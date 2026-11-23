@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PT_Serif, Sofia_Sans_Condensed, Geist, Archivo } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import BottomNav from "@/components/BottomNav";
 import Nav from "@/components/Nav";
 
 // Free stand-ins for the licensed faces, chosen by measured cap height + width (scripts/font-fit.mjs, font-caps.mjs)
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main" className="sr-only">Skip to content</a>
         <Nav />
         {children}
+        <BottomNav />
       </body>
     </html>
   );

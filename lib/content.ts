@@ -39,5 +39,7 @@ const LITE_KEYS = ["slug", "title", "date", "seasonCode", "episode", "video", "t
 export const lite = (e: Episode): EpisodeLite => Object.fromEntries(LITE_KEYS.filter((k) => e[k] !== undefined).map((k) => [k, e[k]])) as EpisodeLite;
 
 // Scrollbook: per-slug overrides from content/scrollbook.json, applied on /scrollbook pages only.
-const scrollbookBooks = scrollbookData.books as Record<string, Partial<Episode>>;
-export const getBook = (slug: string): Episode | undefined => { const e = getEpisode(slug); return e && { ...e, ...scrollbookBooks[slug] }; };
+export type Article = { title: string; dek: string; min: number; at?: number };
+export type Book = Episode & { articles?: Article[]; demoRead?: number };
+const scrollbookBooks = scrollbookData.books as Record<string, Partial<Book>>;
+export const getBook = (slug: string): Book | undefined => { const e = getEpisode(slug); return e && { ...e, ...scrollbookBooks[slug] }; };

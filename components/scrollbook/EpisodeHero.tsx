@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { formatLongDate, type Episode } from "@/lib/content";
+import { formatLongDate, type Book, type Episode } from "@/lib/content";
 import { ArrowLeft, ArrowUpRight, PlusIcon, SpotifyIcon, AppleGlyph, VideoIcon } from "../Icons";
 import ArtZoom from "./ArtZoom";
+import TodayProgress from "./ReadingPlan";
 
 function Presenting({ ep, className }: { ep: Episode; className: string }) {
   if (!ep.presentedBy) return null;
@@ -24,13 +25,16 @@ function Sponsors({ ep, className }: { ep: Episode; className: string }) {
   );
 }
 
-export default function EpisodeHero({ ep }: { ep: Episode }) {
+export default function EpisodeHero({ ep }: { ep: Book }) {
   const art = ep.image ?? ep.cover;
   return (
     <main id="main" className="ep-hero">
       <div className="ep-left">
         <div className="ep-left__top">
-          <Link href="/episodes" className="btn btn--back"><ArrowLeft />all episodes</Link>
+          <div className="sb-top-row">
+            <Link href="/episodes" className="btn btn--back"><ArrowLeft />all episodes</Link>
+            {!!ep.articles?.length && <TodayProgress slug={ep.slug} articles={ep.articles} demoRead={ep.demoRead} />}
+          </div>
           <div className="spacer-sm" />
         </div>
         <ArtZoom src={art} alt={ep.title} color={ep.color} animated={ep.imageAnimated && art === ep.image} />

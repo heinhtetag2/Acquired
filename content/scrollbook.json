@@ -1,8 +1,25 @@
 {
-  "_note": "Scrollbook-only overrides, keyed by slug. Any field here replaces the episode's value on /scrollbook pages only; the Acquired pages keep episodes.json.",
+  "_note": "Scrollbook-only overrides, keyed by slug. Any field here replaces the episode's value on /scrollbook pages only; the Acquired pages keep episodes.json. `articles` is the daily reading plan: one article a day; `at` (seconds) is where its audio starts, otherwise the audio is split evenly. `demoRead` shows that many articles as already read until the visitor has progress of their own (demo only).",
   "books": {
     "disney-the-renaissance-and-the-empire": {
-      "title": "Disney: The Kingdom Reborn"
+      "title": "Disney: The Kingdom Reborn",
+      "demoRead": 3,
+      "articles": [
+        { "title": "A kingdom adrift", "dek": "By 1984 the company Walt built was earning more from real estate than from movies, and raiders were circling.", "min": 6 },
+        { "title": "The raid", "dek": "Saul Steinberg's greenmail bid, and how a near-hostile takeover forced the family to look outside for leaders.", "min": 7 },
+        { "title": "Eisner and Wells", "dek": "A Paramount hitmaker and a Warner Bros. operator, hired as a pair. Why the split of roles mattered.", "min": 6 },
+        { "title": "Mining the vault", "dek": "Home video turned old classics into a cash machine almost overnight, and paid for everything that came next.", "min": 7 },
+        { "title": "The parks reprice", "dek": "Ticket prices had barely moved in years. Raising them was the fastest profit lever the new team had.", "min": 6 },
+        { "title": "The Little Mermaid", "dek": "Howard Ashman, Alan Menken and the Broadway formula that brought feature animation back from the edge.", "min": 8 },
+        { "title": "The Renaissance run", "dek": "Beauty and the Beast, Aladdin, The Lion King: five years that rebuilt the brand and the merchandise business.", "min": 7 },
+        { "title": "A deal with Pixar", "dek": "A small computer-animation studio in Richmond, a three-picture contract, and Toy Story.", "min": 7 },
+        { "title": "Buying ABC", "dek": "Capital Cities/ABC for $19 billion, and with it ESPN, the most valuable asset Disney would own for decades.", "min": 8 },
+        { "title": "The long decline", "dek": "Wells' death, the Ovitz fiasco and a falling-out with Pixar. How the second Eisner decade went wrong.", "min": 7 },
+        { "title": "Save Disney", "dek": "Roy E. Disney's campaign, the 43% no-vote, and the board's choice of a quiet operator named Bob Iger.", "min": 6 },
+        { "title": "Iger buys Pixar", "dek": "His first big move: pay $7.4 billion for the studio Disney had fallen out with, and hand it the keys to animation.", "min": 7 },
+        { "title": "Marvel and Lucasfilm", "dek": "Two more franchise libraries bought within three years, each one built into a decade of films and parks.", "min": 8 },
+        { "title": "The empire, assembled", "dek": "Fox, Disney+ and the flywheel at full size. What the comeback teaches about owning stories people return to.", "min": 7 }
+      ]
     }
   }
 }

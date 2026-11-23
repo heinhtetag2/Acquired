@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { flushSync } from "react-dom";
 import { formatDate, seasonLabel, site } from "@/lib/site";
 import searchIndex from "@/content/search-index.json";
 import scrollbookData from "@/content/scrollbook.json";
@@ -93,6 +94,14 @@ export default function SearchModal() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
 
+  // the mobile bottom bar's search button opens this same panel
+  useEffect(() => {
+    // flushSync renders the open panel before focusing, so the phone keyboard opens inside the same tap
+    const onOpen = () => { flushSync(() => setOpen(true)); input.current?.focus(); };
+    window.addEventListener("sb:search-open", onOpen);
+    return () => window.removeEventListener("sb:search-open", onOpen);
+  }, []);
+
   const close = () => { setOpen(false); input.current?.blur(); };
   const pick = () => { setOpen(false); setQ(""); };
 
@@ -116,7 +125,7 @@ export default function SearchModal() {
     <>
       <div className={`search-bg ${open ? "is-open" : ""}`} onClick={close} aria-hidden />
       <div className={`search-section ${open ? "is-open" : ""}`} role={open ? "dialog" : undefined} aria-label={open ? "Search episodes" : undefined}>
-        <form className="search-bar" role="search" onSubmit={(e) => e.preventDefault()} onClick={() => { if (!open) { setOpen(true); input.current?.focus(); } }}>
+        <form className="search-bar" role="search" onSubmit={(e) => e.preventDefault()} onClick={() => { if (!open) { flushSync(() => setOpen(true)); input.current?.focus(); } }}>
           <SearchIcon className="search-bar__icon search-bar__icon--lead" />
           <label htmlFor="nav-search" className="sr-only">Search episodes</label>
           <input ref={input} id="nav-search" className="search-input" type="search" placeholder="Search Episodes" autoComplete="off" value={q}

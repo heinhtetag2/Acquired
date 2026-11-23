@@ -67,6 +67,19 @@ export default function EpisodePlayer({ ep, autoPlay }: { ep: Episode; autoPlay?
     return () => window.removeEventListener("scroll", onScroll);
   }, [userToggled]);
 
+  // phones: the expanded player folds back into the bar as soon as the reader scrolls (~24px), so reading isn't covered
+  useEffect(() => {
+    if (min !== false || popup || !window.matchMedia("(max-width: 767px)").matches) return;
+    const start = window.scrollY;
+    const onScroll = () => {
+      if (Math.abs(window.scrollY - start) < 24) return;
+      if (player.current) player.current.dataset.h = String(player.current.offsetHeight);
+      setMin(true);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [min, popup]);
+
   // animate height when min changes
   const first = useRef(true);
   useEffect(() => {
@@ -91,6 +104,10 @@ export default function EpisodePlayer({ ep, autoPlay }: { ep: Episode; autoPlay?
   const skip = (d: number) => { const a = audio.current; if (a) { a.currentTime = Math.max(0, Math.min(dur, a.currentTime + d)); setTime(a.currentTime); } };
   const cycleSpeed = () => { const n = (speed + 1) % SPEEDS.length; setSpeed(n); if (audio.current) audio.current.playbackRate = SPEEDS[n]; };
   const pct = dur ? (time / dur) * 100 : 0;
+  // docked (phone) extras: time left in words, and a progress ring around the play button
+  const left = Math.max(0, dur - time), lh = Math.floor(left / 3600), lm = Math.round((left % 3600) / 60);
+  const leftLabel = dur ? `${lh ? `${lh}h ` : ""}${lm}m ${time > 1 ? "left" : ""}`.trim() : formatDate(ep.date);
+  const R = 20, C = 2 * Math.PI * R;
   const art = ep.image ?? ep.cover;
 
   return (
@@ -106,9 +123,14 @@ export default function EpisodePlayer({ ep, autoPlay }: { ep: Episode; autoPlay?
           <div className="player__thumb">{art && <img src={art} alt="" />}</div>
           <div className="player__meta t-label">
             <div className="player__title">{ep.title}</div>
-            <div className="muted">{formatDate(ep.date)}</div>
+            <div className="muted player__date">{formatDate(ep.date)}</div>
+            <div className="player__left">{leftLabel}</div>
           </div>
           <button className="player__play player__mini-play" onClick={(e) => { e.stopPropagation(); toggle(); }} aria-label={playing ? "Pause" : "Play"} disabled={!ep.audioSrc}>
+            <svg className="player__ring" viewBox="0 0 44 44" aria-hidden>
+              <circle cx="22" cy="22" r={R} />
+              <circle cx="22" cy="22" r={R} strokeDasharray={C} strokeDashoffset={C * (1 - pct / 100)} />
+            </svg>
             {playing ? <PauseIcon /> : <PlayIcon />}
           </button>
           <button className="player__min" onClick={(e) => { e.stopPropagation(); remember(); setUserToggled(true); setMin(true); }} aria-label="Minimize player"><CloseIcon /></button>
