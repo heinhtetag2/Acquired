@@ -40,6 +40,17 @@ export const lite = (e: Episode): EpisodeLite => Object.fromEntries(LITE_KEYS.fi
 
 // Scrollbook: per-slug overrides from content/scrollbook.json, applied on /scrollbook pages only.
 export type Article = { title: string; dek: string; min: number; at?: number };
-export type Book = Episode & { articles?: Article[]; demoRead?: number };
-const scrollbookBooks = scrollbookData.books as Record<string, Partial<Book>>;
-export const getBook = (slug: string): Book | undefined => { const e = getEpisode(slug); return e && { ...e, ...scrollbookBooks[slug] }; };
+export type Book = Episode & {
+  articles?: Article[]; demoRead?: number;
+  // the book's article, shown on the book page instead of the podcast blocks: headed sections of paragraphs, or a pull quote
+  story?: ({ h: string; p: string[] } | { quote: string })[];
+  facts?: { label: string; value: string }[]; // "Quick facts" card
+};
+const scrollbookBooks = scrollbookData.books as unknown as Record<string, Partial<Book>>; // null in the JSON = remove that field
+// Scrollbook-only stories (not podcast episodes): full entries in content/scrollbook.json → stories
+const scrollbookStories = ((scrollbookData as unknown as { stories?: Record<string, Book> }).stories ?? {}); // null in the JSON = field removed
+export const storySlugs = Object.keys(scrollbookStories);
+export const getBook = (slug: string): Book | undefined => {
+  const e = getEpisode(slug);
+  return e ? { ...e, ...scrollbookBooks[slug] } : scrollbookStories[slug];
+};

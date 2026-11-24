@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { flushSync } from "react-dom";
-import { formatDate, seasonLabel, site } from "@/lib/site";
+import filters from "@/content/filters.json";
 import searchIndex from "@/content/search-index.json";
 import scrollbookData from "@/content/scrollbook.json";
 import { SearchIcon } from "./Icons";
@@ -11,24 +11,34 @@ import { SearchIcon } from "./Icons";
 // Slim client-side index (content/search-index.json): title, date, season code, art, plus filter names for matching.
 type Hit = { slug: string; title: string; date: string; seasonCode?: string; thumb?: string; cover?: string; color?: string; tags: string; href?: string; label?: string };
 const EPISODES = searchIndex as Hit[];
-// Scrollbook books (content/scrollbook.json): own title + link, still matched by the original title and tags.
-const BOOKS: Hit[] = Object.entries(scrollbookData.books as Record<string, { title?: string }>).flatMap(([slug, o]) => {
-  const ep = EPISODES.find((h) => h.slug === slug); if (!ep) return [];
-  return [{ ...ep, title: o.title ?? ep.title, href: `/scrollbook/${slug}`, label: "Scrollbook", tags: `${ep.tags} scrollbook book read ${ep.title.toLowerCase()}` }];
+// Every hit is a Scrollbook story: it opens the story page, shows the book's own title where there is one
+// (still matched by the original title too), and is labelled by topic + reading time instead of season + date.
+const BOOK_TITLES = scrollbookData.books as Record<string, { title?: string }>;
+const CURATED = new Map(scrollbookData.deck.map((d) => [d.slug, d]));
+const INDUSTRY = filters.filter((f) => f.group === "industry");
+const TOPIC_OF = new Map<string, string>();
+for (const f of INDUSTRY) for (const s of f.episodes) if (!TOPIC_OF.has(s)) TOPIC_OF.set(s, f.title);
+const INDEX: Hit[] = EPISODES.map((h) => {
+  const book = BOOK_TITLES[h.slug]?.title;
+  const d = CURATED.get(h.slug);
+  return { ...h, title: book ?? h.title, tags: book ? `${h.tags} ${h.title.toLowerCase()}` : h.tags,
+    label: `${d?.topic ?? TOPIC_OF.get(h.slug) ?? "Story"} · ${d?.min ?? 7} min read` };
 });
-const INDEX = [...BOOKS, ...EPISODES];
-const hrefOf = (h: Hit) => h.href ?? `/episodes/${h.slug}`;
+const BY_SLUG = new Map(INDEX.map((h) => [h.slug, h]));
+const hrefOf = (h: Hit) => h.href ?? `/scrollbook/${h.slug}`;
 
 // Live constants (search-nav.v1.js): DEBOUNCE_MS 180, MIN_QUERY 2, MAX_RESULTS 6.
 const DEBOUNCE_MS = 180, MIN_QUERY = 2, MAX_RESULTS = 6;
 const RECENT = 4;
-const FEATURED = [
-  { label: "Must-Listen", href: "/features/must-listen" }, { label: "Niche Gems", href: "/features/niche-gems" },
-  { label: "Interviews", href: "/features/interviews" }, { label: "view all", href: "/episodes" },
+// collections shuffle into Discover (/?c=…); reader-friendly names for the curated lists
+const COLLECTIONS = [
+  { label: "Must-reads", href: "/?c=must-listen" }, { label: "Hidden gems", href: "/?c=niche-gems" },
+  { label: "Conversations", href: "/?c=interviews" }, { label: "Library", href: "/library" },
 ];
-const INDUSTRY_SLUGS = ["software", "luxury", "finance", "social-media", "vc-investing", "sports", "fintech", "semiconductors"];
-const INDUSTRIES = INDUSTRY_SLUGS.map((s) => site.sidebar.flatMap((g) => g.links).find((l) => l.href === `/industry/${s}`)!).filter(Boolean).map((l) => ({ href: l.href, title: l.label }));
-const RECENT_HITS = [...site.latest.map((s) => EPISODES.find((h) => h.slug === s)!).filter(Boolean), ...EPISODES].filter((h, i, a) => a.indexOf(h) === i).slice(0, RECENT);
+const TOPIC_SLUGS = ["software", "luxury", "finance", "social-media", "vc-investing", "sports", "fintech", "semiconductors"];
+const TOPICS = TOPIC_SLUGS.map((s) => INDUSTRY.find((f) => f.slug === s)).filter((f) => !!f).map((f) => ({ href: `/?c=${f.slug}`, title: f.title }));
+// when nothing is saved yet: the start of the Discover deck
+const PICKS = scrollbookData.deck.slice(0, RECENT).map((d) => BY_SLUG.get(d.slug)).filter((h): h is Hit => !!h);
 
 function search(q: string): Hit[] {
   const terms = q.toLowerCase().split(/\s+/).filter(Boolean);
@@ -54,7 +64,7 @@ function Item({ ep, active, onPick }: { ep: Hit; active?: boolean; onPick: () =>
       <div className="search-item__art" style={{ background: ep.color }}>{art && <img src={art} alt="" loading="lazy" />}</div>
       <div style={{ minWidth: 0 }}>
         <div className="search-item__title">{ep.title}</div>
-        <div className="search-item__desc">{[ep.label ?? seasonLabel(ep.seasonCode), formatDate(ep.date)].filter(Boolean).join(" · ")}</div>
+        <div className="search-item__desc">{ep.label}</div>
       </div>
     </Link>
   );
@@ -66,6 +76,12 @@ export default function SearchModal() {
   const [q, setQ] = useState("");
   const [query, setQuery] = useState("");
   const [active, setActive] = useState(-1);
+  // your latest saves (newest first), read each time the panel opens
+  const [shelf, setShelf] = useState<Hit[]>([]);
+  useEffect(() => {
+    if (!open) return;
+    try { setShelf((JSON.parse(localStorage.getItem("scrollbook:saved") || "[]") as string[]).reverse().map((s) => BY_SLUG.get(s)).filter((h): h is Hit => !!h).slice(0, RECENT)); } catch { setShelf([]); }
+  }, [open]);
   const input = useRef<HTMLInputElement>(null);
   const scrollY = useRef(0);
 
@@ -107,7 +123,7 @@ export default function SearchModal() {
 
   const onKeyDown = (e: React.KeyboardEvent) => {
     if (!results.length) {
-      if (e.key === "Enter" && q.trim()) { e.preventDefault(); pick(); router.push(`/episodes?q=${encodeURIComponent(q.trim())}`); }
+      if (e.key === "Enter") e.preventDefault(); // nothing to open
       return;
     }
     if (e.key === "ArrowDown") { e.preventDefault(); setActive((a) => Math.min(a + 1, results.length - 1)); }
@@ -115,7 +131,7 @@ export default function SearchModal() {
     else if (e.key === "Enter") {
       e.preventDefault();
       if (active >= 0) { pick(); router.push(hrefOf(results[active])); }
-      else { pick(); router.push(`/episodes?q=${encodeURIComponent(q.trim())}`); }
+      else { pick(); router.push(hrefOf(results[0])); } // Enter opens the top match
     }
   };
 
@@ -124,11 +140,11 @@ export default function SearchModal() {
   return (
     <>
       <div className={`search-bg ${open ? "is-open" : ""}`} onClick={close} aria-hidden />
-      <div className={`search-section ${open ? "is-open" : ""}`} role={open ? "dialog" : undefined} aria-label={open ? "Search episodes" : undefined}>
+      <div className={`search-section ${open ? "is-open" : ""}`} role={open ? "dialog" : undefined} aria-label={open ? "Search stories" : undefined}>
         <form className="search-bar" role="search" onSubmit={(e) => e.preventDefault()} onClick={() => { if (!open) { flushSync(() => setOpen(true)); input.current?.focus(); } }}>
           <SearchIcon className="search-bar__icon search-bar__icon--lead" />
-          <label htmlFor="nav-search" className="sr-only">Search episodes</label>
-          <input ref={input} id="nav-search" className="search-input" type="search" placeholder="Search Episodes" autoComplete="off" value={q}
+          <label htmlFor="nav-search" className="sr-only">Search stories</label>
+          <input ref={input} id="nav-search" className="search-input" type="search" placeholder="Search stories" autoComplete="off" value={q}
             onChange={(e) => setQ(e.target.value)} onFocus={() => setOpen(true)} onKeyDown={onKeyDown}
             role="combobox" aria-expanded={view === "results"} aria-controls="search-results" aria-activedescendant={active >= 0 ? `search-r-${active}` : undefined} />
           <SearchIcon className="search-bar__icon search-bar__icon--trail" />
@@ -138,14 +154,14 @@ export default function SearchModal() {
           <div className="spacer-xs" />
           {view === "initial" && (
             <div className="search-initial">
-              <div className="search-label">recent releases</div>
-              {RECENT_HITS.map((ep) => <Item key={ep.slug} ep={ep} onPick={pick} />)}
+              <div className="search-label">{shelf.length ? "pick up where you left off" : "today's picks"}</div>
+              {(shelf.length ? shelf : PICKS).map((ep) => <Item key={ep.slug} ep={ep} onPick={pick} />)}
               <div className="spacer-sm" /><div className="search-rule" /><div className="spacer-sm" />
-              <div className="search-label">featured playlists</div>
-              <div className="search-grid">{FEATURED.map((f) => <Link key={f.href} href={f.href} className="search-chip" onClick={pick}>{f.label}</Link>)}</div>
+              <div className="search-label">collections</div>
+              <div className="search-grid">{COLLECTIONS.map((f) => <Link key={f.href} href={f.href} className="search-chip" onClick={pick}>{f.label}</Link>)}</div>
               <div className="spacer-xs" />
-              <div className="search-label">industry</div>
-              <div className="search-grid">{INDUSTRIES.map((f) => <Link key={f.href} href={f.href} className="search-chip" onClick={pick}>{f.title}</Link>)}</div>
+              <div className="search-label">topics</div>
+              <div className="search-grid">{TOPICS.map((f) => <Link key={f.href} href={f.href} className="search-chip" onClick={pick}>{f.title}</Link>)}</div>
             </div>
           )}
           {view === "results" && (
@@ -153,7 +169,7 @@ export default function SearchModal() {
               {results.map((ep, i) => <div key={hrefOf(ep)} id={`search-r-${i}`} role="option" aria-selected={i === active}><Item ep={ep} active={i === active} onPick={pick} /></div>)}
             </div>
           )}
-          {view === "empty" && <div className="search-empty">No episodes found.</div>}
+          {view === "empty" && <div className="search-empty">No stories found.</div>}
           <div style={{ height: 20 }} />
         </div>
       </div>

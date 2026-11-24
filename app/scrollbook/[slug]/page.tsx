@@ -1,14 +1,15 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { episodes, getBook, lite } from "@/lib/content";
+import { episodes, getBook, lite, storySlugs } from "@/lib/content";
 import EpisodeHero from "@/components/scrollbook/EpisodeHero";
 import EpisodeOverlays from "@/components/scrollbook/EpisodeOverlays";
-import EpisodePlayer from "@/components/scrollbook/EpisodePlayer";
 import RelatedSlider from "@/components/scrollbook/RelatedSlider";
 import EmailForm from "@/components/EmailForm";
 import Footer from "@/components/Footer";
+import MarkRead from "@/components/scrollbook/MarkRead";
+import StoryComments from "@/components/scrollbook/StoryComments";
 
-export const generateStaticParams = () => episodes.map((e) => ({ slug: e.slug }));
+export const generateStaticParams = () => [...episodes.map((e) => e.slug), ...storySlugs].map((slug) => ({ slug }));
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const ep = getBook((await params).slug);
@@ -42,7 +43,9 @@ export default async function ScrollbookPage({ params }: { params: Promise<{ slu
       </div>
       <Footer />
       <EpisodeOverlays ep={ep} />
-      <EpisodePlayer ep={lite(ep)} />
+      <MarkRead slug={ep.slug} />
+      <StoryComments slug={ep.slug} />
+      {/* audio player hidden on Scrollbook for now; bring it back by restoring: <EpisodePlayer ep={lite(ep)} /> */}
     </div>
   );
 }

@@ -30,7 +30,7 @@ export default function EpisodeHero({ ep }: { ep: Episode }) {
     <main id="main" className="ep-hero">
       <div className="ep-left">
         <div className="ep-left__top">
-          <Link href="/episodes" className="btn btn--back"><ArrowLeft />all episodes</Link>
+          <Link href="/episodes" className="btn btn--back" data-bnav-anchor><ArrowLeft />all episodes</Link>
           <div className="spacer-sm" />
         </div>
         <ArtZoom src={art} alt={ep.title} color={ep.color} animated={ep.imageAnimated && art === ep.image} />

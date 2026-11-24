@@ -87,3 +87,63 @@
 /* filter pages (features / industry / series / season): eyebrow + title header, no view toggles */
 .pl-head--filter { position: static; height: auto; flex-direction: column; justify-content: flex-start; align-items: flex-start; padding: var(--space-base) 0; }
 .pl-eyebrow { color: var(--c-accent-lo); line-height: var(--lh-140); }
+
+/* ====================== Shelf (the Episodes tab): saved stories ====================== */
+/* Same row layout as the classic list; the right-hand corner holds "remove from shelf" + "read", and a status line
+   says when it was saved, with a "Read" tag or a gentle "Revisit?" nudge for old unread saves. */
+.shelf__acts { position: absolute; right: var(--pl-row-pad); bottom: var(--pl-row-pad); z-index: 5; display: flex; gap: var(--space-3xs); }
+.shelf__acts .pl-play { position: static; }
+.shelf__unsave { width: var(--icon-btn); height: var(--icon-btn); border-radius: var(--r-full); display: flex; align-items: center; justify-content: center; cursor: pointer;
+  color: var(--c-ink); border: 1px solid var(--c-ink-10); background: transparent; transition: background-color var(--dur-fast), color var(--dur-fast); }
+.shelf__unsave svg { width: 16px; height: 16px; }
+.shelf__unsave:hover { background: var(--c-ink); color: var(--c-cream); }
+.shelf__status { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; min-height: var(--icon-btn); margin-top: var(--space-xs); padding-right: calc(var(--icon-btn) * 2 + var(--space-sm)); color: var(--c-ink-60); }
+.shelf__tag { padding: 4px 7px; border-radius: var(--r-full); line-height: 1; }
+.shelf__tag--read { background: var(--c-ink-10); color: var(--c-ink); }
+.shelf__tag--revisit { background: color-mix(in srgb, #2f8f5b 14%, transparent); color: #23714a; }
+.shelf__row.is-read .pl-art img { filter: saturate(.75); opacity: .85; }
+.shelf__n { margin-left: auto; opacity: .55; font-size: var(--text-xs); }
+.shelf .pl-link { cursor: pointer; text-align: left; background: none; }
+/* shelf in skim view: compact grid rows, the two buttons centred on the right */
+.is-skim .shelf__acts { top: 50%; bottom: auto; translate: 0 -50%; right: var(--pl-skim-pad); }
+.is-skim .shelf__acts .pl-play { translate: none; }
+.is-skim.pl-list .shelf__row .pl-body { padding-right: calc(var(--icon-btn) * 2 + var(--space-sm)); }
+
+/* Shelf: Stories | Notes switch */
+.shelf__tabs { display: flex; gap: 6px; padding: 10px 0 4px; }
+.shelf__tab { display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 12px; position: relative; border-radius: var(--r-full); cursor: pointer;
+  border: 1px solid var(--c-ink-10); background: transparent; color: var(--c-ink);
+  font-family: var(--font-display); font-size-adjust: var(--adjust-display); font-size: var(--text-xs); letter-spacing: var(--track-display); text-transform: uppercase; }
+.shelf__tab::before { content: ""; position: absolute; inset: -7px 0; } /* keeps a 44px tap target */
+.shelf__tab span { font-size: var(--text-xs); opacity: .6; }
+.shelf__tab[aria-selected="true"] { background: var(--c-ink); color: var(--c-cream); border-color: var(--c-ink); }
+@media (max-width: 1023px) { .shelf__tabs { padding: 10px 24px 4px; } }
+@media (max-width: 599px) { .shelf__tabs { padding-left: 20px; padding-right: 20px; } }
+
+/* Shelf → Notes */
+.notes { display: flex; flex-direction: column; gap: var(--space-base); padding: var(--space-2xs) 0 var(--space-lg); }
+@media (max-width: 1023px) { .notes, .notes-empty { padding-left: 24px; padding-right: 24px; } }
+@media (max-width: 599px) { .notes, .notes-empty { padding-left: 20px; padding-right: 20px; } }
+.notes__head { display: flex; align-items: center; gap: var(--space-2xs); padding-bottom: var(--space-2xs); border-bottom: 1px solid var(--c-ink-10); color: var(--c-ink); }
+.notes__art { width: 40px; height: 40px; flex: none; border-radius: var(--r-2xs); overflow: hidden; background: var(--c-ink-10); }
+.notes__art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.notes__title { flex: 1; min-width: 0; font-family: var(--font-serif); font-size-adjust: var(--adjust-serif); font-size: var(--text-xl); line-height: var(--lh-tight); text-transform: uppercase; }
+.notes__n { color: var(--c-ink-60); white-space: nowrap; }
+.notes__list { display: flex; flex-direction: column; }
+.notes__item { display: flex; flex-direction: column; gap: 6px; padding: var(--space-xs) 0; border-bottom: 1px solid var(--c-ink-10); color: var(--c-ink); }
+.notes__item:hover .notes__quote { border-left-color: var(--c-ink); }
+.notes__quote { padding-left: 12px; border-left: 3px solid color-mix(in srgb, #2f8f5b 55%, transparent);
+  font-family: var(--font-body); font-size-adjust: var(--adjust-body); font-size: var(--text-base); line-height: 1.5; color: var(--c-ink-80, var(--c-ink)); }
+.notes__body { padding-left: 15px; color: var(--c-ink); }
+.notes__meta { padding-left: 15px; color: var(--c-ink-60); }
+.notes-empty { display: flex; flex-direction: column; gap: var(--space-2xs); max-width: 46ch; padding-top: var(--space-base); padding-bottom: var(--space-xl); color: var(--c-ink-60); }
+.notes-empty b { color: var(--c-ink); font-weight: 600; }
+
+/* highlight vs comment, so they never look alike: a marker-filled quote vs an underlined quote with a note */
+.notes__kind { display: inline-flex; align-items: center; gap: 5px; color: var(--c-ink-60); }
+.notes__kind svg { width: 14px; height: 14px; }
+.notes__item.is-mark .notes__quote { border-left: 0; padding: 2px 0; }
+.notes__item.is-mark .notes__quote span { background: color-mix(in srgb, #9bd26a 50%, transparent); padding: 1px 2px; border-radius: 2px;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.notes__item.is-mark .notes__meta { padding-left: 0; }
+.notes__item.is-comment .notes__quote { text-decoration: underline dashed color-mix(in srgb, #2f8f5b 70%, transparent); text-decoration-thickness: 2px; text-underline-offset: 5px; }

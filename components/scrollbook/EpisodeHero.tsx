@@ -1,7 +1,10 @@
 import Link from "next/link";
 import { formatLongDate, type Book, type Episode } from "@/lib/content";
-import { ArrowLeft, ArrowUpRight, PlusIcon, SpotifyIcon, AppleGlyph, VideoIcon } from "../Icons";
+import { ArrowUpRight, PlusIcon, SpotifyIcon, AppleGlyph, VideoIcon } from "../Icons";
 import ArtZoom from "./ArtZoom";
+import BookFacts from "./BookFacts";
+import StoryBack from "./StoryBack";
+import StorySave from "./StorySave";
 import TodayProgress from "./ReadingPlan";
 
 function Presenting({ ep, className }: { ep: Episode; className: string }) {
@@ -25,6 +28,24 @@ function Sponsors({ ep, className }: { ep: Episode; className: string }) {
   );
 }
 
+/** The book's article: plain reading — section headings, paragraphs and the odd pull quote. */
+function Story({ story }: { story: NonNullable<Book["story"]> }) {
+  return (
+    <article className="sb-story">
+      {story.map((block, i) =>
+        "quote" in block ? (
+          <blockquote key={i} className="sb-story__quote"><p data-cid={`q${i}`}>{block.quote}</p></blockquote>
+        ) : (
+          <section key={i}>
+            <h3 className="sb-story__h">{block.h}</h3>
+            {block.p.map((t, j) => <p key={j} data-cid={`s${i}-${j}`}>{t}</p>)}
+          </section>
+        )
+      )}
+    </article>
+  );
+}
+
 export default function EpisodeHero({ ep }: { ep: Book }) {
   const art = ep.image ?? ep.cover;
   return (
@@ -32,7 +53,7 @@ export default function EpisodeHero({ ep }: { ep: Book }) {
       <div className="ep-left">
         <div className="ep-left__top">
           <div className="sb-top-row">
-            <Link href="/episodes" className="btn btn--back"><ArrowLeft />all episodes</Link>
+            <StoryBack />
             {!!ep.articles?.length && <TodayProgress slug={ep.slug} articles={ep.articles} demoRead={ep.demoRead} />}
           </div>
           <div className="spacer-sm" />
@@ -48,6 +69,7 @@ export default function EpisodeHero({ ep }: { ep: Book }) {
           <div className="ep-meta">
             {ep.seasonLabel && <Link href={ep.seasonHref ?? "#"} className="badge">{ep.seasonLabel}</Link>}
             <div className="t-label-xs">{ep.episode ? `Episode ${ep.episode} · ` : ""}<time dateTime={ep.date}>{formatLongDate(ep.date)}</time></div>
+            <StorySave slug={ep.slug} title={ep.title} />
           </div>
           <div className="spacer-base" />
           <div className="ep-links">
@@ -60,6 +82,7 @@ export default function EpisodeHero({ ep }: { ep: Book }) {
             {ep.companion && <a href="#companion" className="popup-btn">PDF Companion<PlusIcon /></a>}
             {(ep.hasTranscript || !!ep.chapters?.length) && <a href="#transcript" className="popup-btn">Transcript<PlusIcon /></a>}
             {!!ep.sources?.length && <a href="#sources" className="popup-btn">Sources<PlusIcon /></a>}
+            {!!ep.facts?.length && <BookFacts facts={ep.facts} />}
           </div>
           <Sponsors ep={ep} className="ep-desktop-only" />
         </div>
@@ -69,7 +92,7 @@ export default function EpisodeHero({ ep }: { ep: Book }) {
         <Presenting ep={ep} className="ep-mobile-only" />
         {ep.subtitle && <h2 className="ep-h2">{ep.subtitle}</h2>}
         <div className="rich-h2">Overview</div>
-        <div className="rich">{(ep.overview ?? [ep.description]).map((p, i) => <p key={i}>{p}</p>)}</div>
+        <div className="rich">{(ep.overview ?? [ep.description]).map((p, i) => <p key={i} data-cid={`ov-${i}`}>{p}</p>)}</div>
         <Presenting ep={ep} className="ep-desktop-only" />
         {!!ep.artifacts?.length && (
           <div className="ep-artifacts">
@@ -83,21 +106,29 @@ export default function EpisodeHero({ ep }: { ep: Book }) {
           </div>
         )}
         <div className="spacer-base" />
-        <div className="ep-mobile-only ep-sponsors-m">
-          <div className="ep-rule-m" />
-          <Sponsors ep={ep} className="" />
-          <div className="ep-rule-m" />
-        </div>
-        {(ep.links || ep.carveOuts) && (
+        {!!ep.sponsors?.length && (
+          <div className="ep-mobile-only ep-sponsors-m">
+            <div className="ep-rule-m" />
+            <Sponsors ep={ep} className="" />
+            <div className="ep-rule-m" />
+          </div>
+        )}
+        {ep.story?.length ? (
+          <Story story={ep.story} />
+        ) : (
           <>
-            <h2 className="ep-h2">More on the episode</h2>
-            <div className="rich">
-              {ep.links && (<><h2>Links</h2><ul>{ep.links.map((l, i) => <li key={i} dangerouslySetInnerHTML={{ __html: l.html }} />)}</ul></>)}
-              {ep.carveOuts && (<><h2>Carve Outs</h2><ul>{ep.carveOuts.map((l, i) => <li key={i} dangerouslySetInnerHTML={{ __html: l.html }} />)}</ul></>)}
-            </div>
+            {(ep.links || ep.carveOuts) && (
+              <>
+                <h2 className="ep-h2">More on the episode</h2>
+                <div className="rich">
+                  {ep.links && (<><h2>Links</h2><ul>{ep.links.map((l, i) => <li key={i} dangerouslySetInnerHTML={{ __html: l.html }} />)}</ul></>)}
+                  {ep.carveOuts && (<><h2>Carve Outs</h2><ul>{ep.carveOuts.map((l, i) => <li key={i} dangerouslySetInnerHTML={{ __html: l.html }} />)}</ul></>)}
+                </div>
+              </>
+            )}
+            <p className="ep-disclaimer">Note: Acquired hosts and guests may hold assets discussed in this episode. This podcast is not investment advice, and is intended for informational and entertainment purposes only. You should do your own research and make your own independent decisions when considering any financial transactions.</p>
           </>
         )}
-        <p className="ep-disclaimer">Note: Acquired hosts and guests may hold assets discussed in this episode. This podcast is not investment advice, and is intended for informational and entertainment purposes only. You should do your own research and make your own independent decisions when considering any financial transactions.</p>
       </div>
     </main>
   );

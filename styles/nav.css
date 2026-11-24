@@ -162,6 +162,11 @@
 /* ≤767px only: cream pill of tabs + a round ink search button, like an iOS tab bar. Desktop keeps the top nav menu. */
 .bnav, .bnav-sheet { display: none; }
 @media (max-width: 767px) {
+  :root { --bnav-surface: color-mix(in srgb, var(--c-cream) 82%, transparent); --bnav-edge: var(--c-ink-10); --bnav-shadow: 0 6px 24px rgba(0, 0, 0, .12);
+    --bnav-ink: var(--c-ink); --bnav-ink-soft: color-mix(in srgb, var(--c-ink) 55%, transparent); --bnav-active: var(--c-ink-10); }
+  /* dark pages: translucent dark glass so the bar sinks back and the content leads */
+  :root:has(main.deck, [data-ep-theme]) { --bnav-surface: color-mix(in srgb, #0b0d10 64%, transparent); --bnav-edge: color-mix(in srgb, var(--c-cream) 12%, transparent);
+    --bnav-shadow: 0 6px 24px rgba(0, 0, 0, .25); --bnav-ink: var(--c-cream); --bnav-ink-soft: color-mix(in srgb, var(--c-cream) 55%, transparent); --bnav-active: color-mix(in srgb, var(--c-cream) 12%, transparent); }
   :root { --bnav-h: 64px; --bnav-gap: 12px; --bnav-space: calc(var(--bnav-h) + var(--bnav-gap) * 2 + env(safe-area-inset-bottom)); }
   body { padding-bottom: var(--bnav-space); }
   .nav__menu-btn { visibility: hidden; } /* menu lives in the bottom bar; keep its space so the top row stays aligned */
@@ -175,48 +180,58 @@
   /* home newsletter box: a floating card above the bar instead of a tab stuck to the screen edge */
   .fcta, .fcta.is-minimized { left: var(--bnav-gap); right: var(--bnav-gap); bottom: calc(var(--bnav-h) + var(--bnav-gap) * 2 + env(safe-area-inset-bottom)); border-radius: var(--r-lg); }
 
-  .bnav { display: flex; gap: var(--space-3xs); position: fixed; z-index: calc(var(--z-popup) + 2); left: var(--bnav-gap); right: var(--bnav-gap); bottom: calc(var(--bnav-gap) + env(safe-area-inset-bottom)); height: var(--bnav-h); }
-  .bnav__pill { flex: 1; display: flex; padding: 4px; border-radius: var(--r-full); background: var(--c-cream); border: 1px solid var(--c-ink-10); box-shadow: 0 8px 28px rgba(0, 0, 0, .18); }
-  .bnav__tab { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; border-radius: var(--r-full); color: var(--c-ink-60, color-mix(in srgb, var(--c-ink) 60%, transparent));
+  .bnav { display: flex; justify-content: space-between; gap: var(--space-3xs); position: fixed; z-index: calc(var(--z-popup) + 2); left: var(--bnav-gap); right: var(--bnav-gap); bottom: calc(var(--bnav-gap) + env(safe-area-inset-bottom)); height: var(--bnav-h); }
+  .bnav__pill { flex: none; display: flex; padding: 4px; /* hugs its tabs instead of stretching across the screen */ border-radius: var(--r-full); background: var(--bnav-surface); border: 1px solid var(--bnav-edge); box-shadow: var(--bnav-shadow);
+    -webkit-backdrop-filter: blur(18px) saturate(1.4); backdrop-filter: blur(18px) saturate(1.4); }
+  .bnav__tab { flex: none; width: 80px; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; border-radius: var(--r-full); color: var(--bnav-ink-soft);
     font-family: var(--font-display); font-size-adjust: var(--adjust-display); font-size: var(--text-2xs); line-height: 1; letter-spacing: var(--track-display); text-transform: uppercase; transition: background var(--dur-fast), color var(--dur-fast); }
   .bnav__tab svg { width: 22px; height: 22px; }
-  .bnav__tab.is-active { background: var(--c-ink-10); color: var(--c-ink); }
-  .bnav__tab:focus-visible { outline: 2px solid var(--c-ink); outline-offset: 2px; }
+  .bnav__tab.is-active { background: var(--bnav-active); color: var(--bnav-ink); }
+  .bnav__tab:focus-visible { outline: 2px solid var(--bnav-ink); outline-offset: 2px; }
   /* same cream surface as the tab pill, so it reads on light pages and on every dark book colour */
   .bnav__search { flex: none; width: var(--bnav-h); height: var(--bnav-h); display: flex; align-items: center; justify-content: center; border-radius: var(--r-full);
-    background: var(--c-cream); color: var(--c-ink); border: 1px solid var(--c-ink-10); box-shadow: 0 8px 28px rgba(0, 0, 0, .18); transition: transform var(--dur-fast); }
+    background: var(--bnav-surface); color: var(--bnav-ink); border: 1px solid var(--bnav-edge); box-shadow: var(--bnav-shadow); transition: transform var(--dur-fast);
+    -webkit-backdrop-filter: blur(18px) saturate(1.4); backdrop-filter: blur(18px) saturate(1.4); }
   .bnav__search:active { transform: scale(.94); }
   /* on a book / episode page the icon takes the book's own dark colour */
-  :root:has([data-ep-theme]) .bnav__search, :root:has([data-ep-theme]) .bnav__tab { color: var(--theme-dark); }
+
   .bnav__search svg { width: 24px; height: 24px; }
-  .bnav__search:focus-visible { outline: 2px solid var(--c-ink); outline-offset: 2px; }
+  .bnav__search:focus-visible { outline: 2px solid var(--bnav-ink); outline-offset: 2px; }
   /* search lives in the bottom bar on phones: hide the closed top-left trigger (kept focusable-in-place so the panel can open with the keyboard) */
   .search-section:not(.is-open) { opacity: 0; pointer-events: none; }
   .search-section.is-open .search-body { padding-bottom: var(--bnav-space); }
   /* detail pages: search goes back to the top bar, left of the logo (the bottom bar there is just Back + Home) */
   :root:has(.bnav--detail) .search-section:not(.is-open) { opacity: 1; pointer-events: auto; }
   /* detail pages: compact pill (Back + Home) only; search is in the top bar there */
-  .bnav--detail { justify-content: space-between; }
+  .bnav--detail { justify-content: space-between; pointer-events: none; } /* empty part of the row lets taps through to the docked player */
+  .bnav--detail > * { pointer-events: auto; }
+  /* slides away while the page's own top "all episodes" button is visible (BottomNav adds .is-tucked) */
+  .bnav--detail { transition: transform 320ms cubic-bezier(.22, 1, .36, 1), opacity 200ms ease; }
+  .bnav--detail.is-tucked { transform: translateY(calc(100% + var(--bnav-gap) + env(safe-area-inset-bottom))); opacity: 0; }
+  /* a docked player (Acquired episode pages) takes the whole row while the Back/Home pill is tucked away */
+  :root:has(.bnav--detail.is-tucked) .player-wrap:is(.is-minimized, .is-auto) { left: var(--bnav-gap) !important; }
   .bnav--detail .bnav__pill { flex: none; width: 120px; }
+  .bnav--detail .bnav__tab { width: 56px; }
   /* detail bar is a step smaller (56px) since it only holds two actions; the player and page padding follow --bnav-h */
   :root:has(.bnav--detail) { --bnav-h: 56px; }
   .bnav--detail .bnav__tab svg { width: 20px; height: 20px; }
   .bnav--detail .bnav__tab--icon svg { width: 22px; height: 22px; }
   .bnav__tab--icon svg { width: 24px; height: 24px; }
+  .bnav--detail .bnav__tab { color: var(--bnav-ink); }
 
   /* Docked mini player: on detail pages the minimised player sits in the bar row, right of the Back/Home pill,
      same height and cream surface. Cover · title + time left · play button with a progress ring. Tap to expand. */
   :root:has(.bnav--detail) .player-wrap:is(.is-minimized, .is-auto) { z-index: calc(var(--z-popup) + 2); left: calc(var(--bnav-gap) + 120px + var(--space-3xs)); right: var(--bnav-gap);
     bottom: calc(var(--bnav-gap) + env(safe-area-inset-bottom)); padding: 0; }
   :root:has(.bnav--detail) .player-wrap:is(.is-minimized, .is-auto) .player { width: 100%; height: var(--bnav-h); padding: 0 6px; justify-content: center; border-radius: var(--r-full);
-    background: var(--c-cream); color: var(--c-ink); border-color: var(--c-ink-10); box-shadow: 0 8px 28px rgba(0, 0, 0, .18); }
+    background: var(--bnav-surface); color: var(--bnav-ink); border-color: var(--bnav-edge); box-shadow: var(--bnav-shadow); -webkit-backdrop-filter: blur(18px) saturate(1.4); backdrop-filter: blur(18px) saturate(1.4); }
   :root:has(.bnav--detail) .player-wrap:is(.is-minimized, .is-auto) .player__head { gap: 10px; }
-  :root:has(.bnav--detail) .player-wrap:is(.is-minimized, .is-auto) .player__thumb { width: 42px; height: 42px; margin-left: 1px; border-radius: 12px; border-color: var(--c-ink-10); box-shadow: none; }
+  :root:has(.bnav--detail) .player-wrap:is(.is-minimized, .is-auto) .player__thumb { width: 42px; height: 42px; margin-left: 1px; border-radius: 12px; border-color: var(--bnav-edge); box-shadow: none; }
   :root:has(.bnav--detail) .player-wrap:is(.is-minimized, .is-auto) .player__meta { flex: 1; gap: 3px; }
   :root:has(.bnav--detail) .player-wrap:is(.is-minimized, .is-auto) .player__date { display: none; }
   :root:has(.bnav--detail) .player-wrap:is(.is-minimized, .is-auto) .player__title { max-width: none; font-size: var(--text-xs); line-height: 1.15; }
   :root:has(.bnav--detail) .player-wrap:is(.is-minimized, .is-auto) .player__left { display: block; font-family: var(--font-body); font-size-adjust: var(--adjust-body); font-size: var(--text-2xs); line-height: 1.2;
-    text-transform: none; letter-spacing: var(--track-body); color: color-mix(in srgb, var(--c-ink) 60%, transparent); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    text-transform: none; letter-spacing: var(--track-body); color: var(--bnav-ink-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   /* play button: book-coloured disc with the progress drawn as a ring around it */
   :root:has(.bnav--detail) .player-wrap:is(.is-minimized, .is-auto) .player__mini-play { position: relative; width: 44px; height: 44px; flex: none; background: var(--theme-dark, var(--c-ink)); color: var(--c-cream); }
   :root:has(.bnav--detail) .player-wrap:is(.is-minimized, .is-auto) .player__mini-play:hover { transform: none; }
@@ -242,6 +257,12 @@
   .bnav-sheet__icons a { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: var(--r-full); background: var(--c-ink-10); }
   .bnav-sheet__icons svg { width: 16px; height: 16px; }
   html.bnav-lock { overflow: hidden; }
+  /* solid top bar once scrolled, in the colour of the section under it (--bg follows the nav theme) */
+  .nav { transition: background-color var(--dur-base), box-shadow var(--dur-base), opacity var(--dur-base), transform var(--dur-base); }
+  .nav.is-scrolled:not(.nav--hidden) { background: var(--bg); box-shadow: 0 1px 0 color-mix(in srgb, var(--fg) 10%, transparent); }
+  /* any sheet / modal / search panel covers the bar and the docked player (they slip underneath, then come back on close).
+     !important: the player's own state classes (docked, is-popup-open) set higher z-indexes */
+  :root:has(.sheet.is-open, .modal.is-open, .search-section.is-open) :is(.bnav, .player-wrap) { z-index: var(--z-cta) !important; }
 }
-@media (max-width: 767px) and (prefers-reduced-motion: reduce) { .bnav-sheet, .bnav-sheet__panel { transition: none; } }
+@media (max-width: 767px) and (prefers-reduced-motion: reduce) { .bnav-sheet, .bnav-sheet__panel, .bnav--detail { transition: none; } }
 

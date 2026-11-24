@@ -39,6 +39,13 @@ export default function Nav() {
   const [logoPos, setLogoPos] = useState({ x: 0, y: 0 });
   const [theme, setTheme] = useState<Theme>("");
   const [forced, setForced] = useState<Theme>("");
+  // phones: once the page scrolls, the bar gets a solid background so text doesn't run under the logo
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const on = () => setScrolled(window.scrollY > 8);
+    on(); window.addEventListener("scroll", on, { passive: true });
+    return () => window.removeEventListener("scroll", on);
+  }, []);
   useEffect(() => { const on = (e: Event) => setForced((e as CustomEvent<Theme>).detail); window.addEventListener("acq:navtheme", on); return () => window.removeEventListener("acq:navtheme", on); }, []);
   const navRef = useRef<HTMLElement>(null);
   const menuBtn = useRef<HTMLButtonElement>(null);
@@ -78,12 +85,14 @@ export default function Nav() {
   // Nav theme follows the last [data-theme] section under the nav band (live IntersectionObserver).
   useEffect(() => {
     const nav = navRef.current; if (!nav) return;
-    const themed = Array.from(document.querySelectorAll<HTMLElement>("[data-theme]")).filter((el) => !nav.contains(el));
-    if (!themed.length) { setTheme(""); return; }
+    let themed: HTMLElement[] = [];
+    const collect = () => { themed = Array.from(document.querySelectorAll<HTMLElement>("[data-theme]")).filter((el) => !nav.contains(el)); };
+    collect();
     const active = new Set<Element>();
     let io: IntersectionObserver | null = null;
     const make = () => {
       io?.disconnect(); active.clear();
+      if (!themed.length) { setTheme(""); return; }
       const r = nav.getBoundingClientRect();
       io = new IntersectionObserver((entries) => {
         entries.forEach((e) => (e.isIntersecting ? active.add(e.target) : active.delete(e.target)));
@@ -93,11 +102,17 @@ export default function Nav() {
       }, { rootMargin: `${-Math.round(r.top)}px 0px ${-(window.innerHeight - Math.round(r.bottom))}px 0px`, threshold: 0 });
       themed.forEach((el) => io!.observe(el));
     };
+    const rebuild = () => { collect(); make(); };
     const raf = requestAnimationFrame(make);
     let t: ReturnType<typeof setTimeout>;
     const onResize = () => { clearTimeout(t); t = setTimeout(make, 200); };
     window.addEventListener("resize", onResize);
-    return () => { cancelAnimationFrame(raf); io?.disconnect(); window.removeEventListener("resize", onResize); };
+    // the page itself can be swapped without the path changing (e.g. "/" → "/?c=sports" re-mounts the deck):
+    // when body's direct children change, re-collect the themed sections so the bar keeps the right colours
+    let m: ReturnType<typeof setTimeout>;
+    const mo = new MutationObserver(() => { clearTimeout(m); m = setTimeout(rebuild, 50); });
+    mo.observe(document.body, { childList: true });
+    return () => { cancelAnimationFrame(raf); io?.disconnect(); mo.disconnect(); clearTimeout(m); window.removeEventListener("resize", onResize); };
   }, [pathname]);
 
   const anyOpen = menu.isOpen || listen.isOpen;
@@ -131,7 +146,7 @@ export default function Nav() {
 
   return (
     <>
-      <header ref={navRef} className={`nav ${themeClass}`}>
+      <header ref={navRef} className={`nav ${themeClass}${scrolled ? " is-scrolled" : ""}`}>
         <nav className="nav__row" aria-label="Primary">
           <Link href="/" className="nav__logo" aria-label="Scrollbook home"
             onContextMenu={(e) => {

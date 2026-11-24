@@ -26,20 +26,20 @@
  ],
  "menu": [
   {
-   "label": "Home",
+   "label": "Discover",
    "href": "/"
   },
   {
-   "label": "Episodes",
+   "label": "Shelf",
    "href": "/episodes"
-  },
-  {
-   "label": "Artifacts",
-   "href": "/artifacts"
   },
   {
    "label": "Library",
    "href": "/library"
+  },
+  {
+   "label": "Artifacts",
+   "href": "/artifacts"
   },
   {
    "label": "Email Archive",
@@ -52,6 +52,18 @@
   {
    "label": "Sponsor",
    "href": "/sponsor"
+  },
+  {
+   "label": "Classic Home",
+   "href": "/home-classic"
+  },
+  {
+   "label": "Classic Episodes",
+   "href": "/episodes-classic"
+  },
+  {
+   "label": "Classic Library",
+   "href": "/library-classic"
   }
  ],
  "listen": [

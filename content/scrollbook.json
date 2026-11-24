@@ -1,25 +1,424 @@
 {
-  "_note": "Scrollbook-only overrides, keyed by slug. Any field here replaces the episode's value on /scrollbook pages only; the Acquired pages keep episodes.json. `articles` is the daily reading plan: one article a day; `at` (seconds) is where its audio starts, otherwise the audio is split evenly. `demoRead` shows that many articles as already read until the visitor has progress of their own (demo only).",
+  "_note": "Scrollbook-only overrides, keyed by slug. Any field here replaces the episode's value on /scrollbook pages only; the Acquired pages keep episodes.json. `articles` is the daily reading plan: one article a day; `at` (seconds) is where its audio starts, otherwise the audio is split evenly. `demoRead` shows that many articles as already read until the visitor has progress of their own (demo only). `story` is the book's article: sections with a heading `h` and paragraphs `p`, or a pull quote `quote`. It replaces the podcast blocks on the book page; null removes a field (sponsor, links, carve outs). `facts` fills the Quick facts card (label / value rows). `deck` is the home page's card deck: episode slug, topic, minutes and one-line hook. `stories` holds Scrollbook-only stories that aren't podcast episodes (same fields as an episode + the book fields); deck entries with `new: true` are dealt first and tagged New.",
   "books": {
     "disney-the-renaissance-and-the-empire": {
       "title": "Disney: The Kingdom Reborn",
       "demoRead": 3,
       "articles": [
-        { "title": "A kingdom adrift", "dek": "By 1984 the company Walt built was earning more from real estate than from movies, and raiders were circling.", "min": 6 },
-        { "title": "The raid", "dek": "Saul Steinberg's greenmail bid, and how a near-hostile takeover forced the family to look outside for leaders.", "min": 7 },
-        { "title": "Eisner and Wells", "dek": "A Paramount hitmaker and a Warner Bros. operator, hired as a pair. Why the split of roles mattered.", "min": 6 },
-        { "title": "Mining the vault", "dek": "Home video turned old classics into a cash machine almost overnight, and paid for everything that came next.", "min": 7 },
-        { "title": "The parks reprice", "dek": "Ticket prices had barely moved in years. Raising them was the fastest profit lever the new team had.", "min": 6 },
-        { "title": "The Little Mermaid", "dek": "Howard Ashman, Alan Menken and the Broadway formula that brought feature animation back from the edge.", "min": 8 },
-        { "title": "The Renaissance run", "dek": "Beauty and the Beast, Aladdin, The Lion King: five years that rebuilt the brand and the merchandise business.", "min": 7 },
-        { "title": "A deal with Pixar", "dek": "A small computer-animation studio in Richmond, a three-picture contract, and Toy Story.", "min": 7 },
-        { "title": "Buying ABC", "dek": "Capital Cities/ABC for $19 billion, and with it ESPN, the most valuable asset Disney would own for decades.", "min": 8 },
-        { "title": "The long decline", "dek": "Wells' death, the Ovitz fiasco and a falling-out with Pixar. How the second Eisner decade went wrong.", "min": 7 },
-        { "title": "Save Disney", "dek": "Roy E. Disney's campaign, the 43% no-vote, and the board's choice of a quiet operator named Bob Iger.", "min": 6 },
-        { "title": "Iger buys Pixar", "dek": "His first big move: pay $7.4 billion for the studio Disney had fallen out with, and hand it the keys to animation.", "min": 7 },
-        { "title": "Marvel and Lucasfilm", "dek": "Two more franchise libraries bought within three years, each one built into a decade of films and parks.", "min": 8 },
-        { "title": "The empire, assembled", "dek": "Fox, Disney+ and the flywheel at full size. What the comeback teaches about owning stories people return to.", "min": 7 }
+        {
+          "title": "A kingdom adrift",
+          "dek": "By 1984 the company Walt built was earning more from real estate than from movies, and raiders were circling.",
+          "min": 6
+        },
+        {
+          "title": "The raid",
+          "dek": "Saul Steinberg's greenmail bid, and how a near-hostile takeover forced the family to look outside for leaders.",
+          "min": 7
+        },
+        {
+          "title": "Eisner and Wells",
+          "dek": "A Paramount hitmaker and a Warner Bros. operator, hired as a pair. Why the split of roles mattered.",
+          "min": 6
+        },
+        {
+          "title": "Mining the vault",
+          "dek": "Home video turned old classics into a cash machine almost overnight, and paid for everything that came next.",
+          "min": 7
+        },
+        {
+          "title": "The parks reprice",
+          "dek": "Ticket prices had barely moved in years. Raising them was the fastest profit lever the new team had.",
+          "min": 6
+        },
+        {
+          "title": "The Little Mermaid",
+          "dek": "Howard Ashman, Alan Menken and the Broadway formula that brought feature animation back from the edge.",
+          "min": 8
+        },
+        {
+          "title": "The Renaissance run",
+          "dek": "Beauty and the Beast, Aladdin, The Lion King: five years that rebuilt the brand and the merchandise business.",
+          "min": 7
+        },
+        {
+          "title": "A deal with Pixar",
+          "dek": "A small computer-animation studio in Richmond, a three-picture contract, and Toy Story.",
+          "min": 7
+        },
+        {
+          "title": "Buying ABC",
+          "dek": "Capital Cities/ABC for $19 billion, and with it ESPN, the most valuable asset Disney would own for decades.",
+          "min": 8
+        },
+        {
+          "title": "The long decline",
+          "dek": "Wells' death, the Ovitz fiasco and a falling-out with Pixar. How the second Eisner decade went wrong.",
+          "min": 7
+        },
+        {
+          "title": "Save Disney",
+          "dek": "Roy E. Disney's campaign, the 43% no-vote, and the board's choice of a quiet operator named Bob Iger.",
+          "min": 6
+        },
+        {
+          "title": "Iger buys Pixar",
+          "dek": "His first big move: pay $7.4 billion for the studio Disney had fallen out with, and hand it the keys to animation.",
+          "min": 7
+        },
+        {
+          "title": "Marvel and Lucasfilm",
+          "dek": "Two more franchise libraries bought within three years, each one built into a decade of films and parks.",
+          "min": 8
+        },
+        {
+          "title": "The empire, assembled",
+          "dek": "Fox, Disney+ and the flywheel at full size. What the comeback teaches about owning stories people return to.",
+          "min": 7
+        }
+      ],
+      "subtitle": "How Disney went from a takeover target to the world's biggest storyteller.",
+      "overview": [
+        "In 1984 Disney was worth more broken up than whole. Its studio had gone cold, its parks were underpriced, and corporate raiders were circling.",
+        "Over the next 35 years two leaders rebuilt it. Michael Eisner revived animation and raised what the parks earned. Bob Iger bought the studios that made the stories people loved most: Pixar, Marvel and Lucasfilm.",
+        "This book follows that turnaround, and the one idea underneath it: own great stories, then let every part of the company make money from them."
+      ],
+      "presentedBy": null,
+      "sponsors": [],
+      "links": null,
+      "carveOuts": null,
+      "story": [
+        {
+          "h": "A kingdom worth more in pieces",
+          "p": [
+            "By the early 1980s, the company Walt Disney built had lost its nerve. Walt had died in 1966, and for years afterwards the studio made decisions by asking what he would have done. The films got safer and smaller. Most of the profit came from the theme parks and the land around them, not from new stories.",
+            "Wall Street noticed. In 1984 the investor Saul Steinberg bought a large stake and threatened a hostile takeover. His plan was simple: buy the company, sell off the parks, the film library and the real estate one by one, and walk away richer. Disney avoided that only by buying his shares back at a premium, a tactic known as greenmail. The company survived, but it was clear it could not go on as it was."
+          ]
+        },
+        {
+          "h": "The first rescue",
+          "p": [
+            "Roy E. Disney, Walt's nephew, and the company's largest shareholders brought in two outsiders. Michael Eisner came from Paramount, where he had backed hit after hit. Frank Wells came from Warner Bros. and knew how to run the business side. Eisner would chase ideas; Wells would make sure they paid.",
+            "Their first moves were not glamorous. Ticket prices at the parks had barely moved in years, so they raised them. Classic films that had sat in the vault were released on home video and sold millions of copies. That money bought time, and they spent it on animation.",
+            "In 1989 The Little Mermaid brought audiences back. Beauty and the Beast, Aladdin and The Lion King followed within five years. Each one did more than fill cinemas. It sold toys, filled new rides, became a stage show and kept selling on video for years."
+          ]
+        },
+        {
+          "quote": "A hit film was never the end of the story at Disney. It was the opening act."
+        },
+        {
+          "h": "The flywheel",
+          "p": [
+            "None of this was new. In 1957 Walt had drawn a simple chart with the films in the middle and lines running out to the parks, the music, the books, the comics and television. Every part fed the others. A film made people want to visit the park, the park sold the toys, and the toys kept children asking for the next film.",
+            "Eisner put that chart back to work. It also explains why Disney paid $19 billion for Capital Cities/ABC in 1996. Owning a television network, and especially ESPN, gave Disney a place to show its stories and a steady stream of cash that did not depend on the next hit."
+          ]
+        },
+        {
+          "h": "The long middle",
+          "p": [
+            "Then the partnership broke. Frank Wells died in a helicopter crash in 1994, and Eisner never found another partner like him. His choice of Hollywood agent Michael Ovitz as president ended badly within about a year. Relations with Pixar, the studio that had made Toy Story for Disney, turned bitter. Animation began to slip again.",
+            "Roy E. Disney left the board and started a campaign to remove Eisner. At the 2004 shareholder meeting, 43 percent of the votes refused to back him, a remarkable rebuke for a sitting chief executive. A year later the board named Bob Iger, a quieter operator from the ABC side, as his successor."
+          ]
+        },
+        {
+          "h": "Buying the storytellers",
+          "p": [
+            "Iger's first big decision surprised almost everyone. Rather than keep fighting Pixar, he bought it in 2006 for $7.4 billion and put its leaders in charge of Disney's own animation studio. He followed with Marvel in 2009 and Lucasfilm, the home of Star Wars, in 2012, for roughly $4 billion each.",
+            "The trick was what he did not do. Each studio kept its own people and its own way of working. Disney added what it was best at: marketing, distribution, parks and merchandise. The flywheel now had far more stories to spin. In 2019 Disney completed its $71.3 billion purchase of 21st Century Fox and launched Disney+, a service built almost entirely on the library it had spent decades assembling."
+          ]
+        },
+        {
+          "h": "What it teaches",
+          "p": [
+            "Disney's comeback is often told as the story of two famous bosses. Underneath it is a quieter lesson. A company that owns stories people love can earn from them again and again, in places that have nothing to do with a cinema. The danger is forgetting that, as Disney did in the 1980s, or losing the people who know how to make the next one.",
+            "Over the next 14 days, each article in this book takes one part of that story and goes deeper."
+          ]
+        }
+      ],
+      "facts": [
+        {
+          "label": "Company",
+          "value": "The Walt Disney Company"
+        },
+        {
+          "label": "Founded",
+          "value": "1923, by Walt and Roy O. Disney"
+        },
+        {
+          "label": "Headquarters",
+          "value": "Burbank, California"
+        },
+        {
+          "label": "Years covered",
+          "value": "1984 to 2019"
+        },
+        {
+          "label": "Key people",
+          "value": "Michael Eisner, Frank Wells, Bob Iger"
+        },
+        {
+          "label": "Big deals",
+          "value": "ABC and ESPN, Pixar, Marvel, Lucasfilm, 21st Century Fox"
+        }
       ]
+    }
+  },
+  "deck": [
+    {
+      "slug": "avengers-doomsday",
+      "topic": "Film",
+      "min": 5,
+      "new": true,
+      "hook": "Robert Downey Jr., who launched Marvel's film universe as Iron Man in 2008, comes back as its biggest villain: Doctor Doom."
+    },
+    {
+      "slug": "disney-the-renaissance-and-the-empire",
+      "topic": "Media",
+      "min": 7,
+      "hook": "In 1984 Disney was nearly broken up and sold for parts. Today it owns Pixar, Marvel and Star Wars."
+    },
+    {
+      "slug": "seinfeld",
+      "topic": "Television",
+      "min": 6,
+      "hook": "Seinfeld's first episode tested so badly that NBC nearly passed on the show. It became one of the most valuable sitcoms ever made."
+    },
+    {
+      "slug": "costco",
+      "topic": "Retail",
+      "min": 6,
+      "hook": "Costco caps the markup on most of what it sells at around 15%. A big share of its profit comes from membership fees instead."
+    },
+    {
+      "slug": "vanguard",
+      "topic": "Investing",
+      "min": 7,
+      "hook": "Vanguard is owned by its own funds, which are owned by the people who invest in them. There are no outside shareholders to pay."
+    },
+    {
+      "slug": "starbucks-with-howard-schultz",
+      "topic": "Food & drink",
+      "min": 6,
+      "hook": "When Howard Schultz joined Starbucks in 1982, it sold coffee beans. It didn't serve espresso drinks yet."
+    },
+    {
+      "slug": "rolex",
+      "topic": "Luxury",
+      "min": 6,
+      "hook": "Rolex has no shareholders. Since 1960 it has been owned by a charitable foundation set up by its founder, Hans Wilsdorf."
+    },
+    {
+      "slug": "hermes",
+      "topic": "Luxury",
+      "min": 7,
+      "hook": "Hermès started in Paris in 1837 making harnesses and saddles for horses, decades before its first handbag."
+    },
+    {
+      "slug": "google",
+      "topic": "Technology",
+      "min": 8,
+      "hook": "Google began in 1996 as a Stanford research project called BackRub, ranking pages by the links pointing to them."
+    },
+    {
+      "slug": "home-depot",
+      "topic": "Retail",
+      "min": 6,
+      "hook": "The Home Depot was founded in 1978 by two executives who had just been fired from another hardware chain."
+    },
+    {
+      "slug": "formula-1",
+      "topic": "Sports",
+      "min": 7,
+      "hook": "Liberty Media bought Formula 1 in 2017. A Netflix series, Drive to Survive, then won it a whole new generation of fans."
+    },
+    {
+      "slug": "tsmc-founder-morris-chang",
+      "topic": "Semiconductors",
+      "min": 8,
+      "hook": "TSMC makes chips for other companies and sells none under its own name. Morris Chang built that model in 1987."
+    },
+    {
+      "slug": "visa",
+      "topic": "Finance",
+      "min": 6,
+      "hook": "Visa doesn't lend anyone money. It runs the network that moves each payment and earns a tiny fee every time."
+    },
+    {
+      "slug": "the-nfl",
+      "topic": "Sports",
+      "min": 7,
+      "hook": "The NFL splits most of its TV money equally between all 32 teams, so small-market clubs can compete with the giants."
+    },
+    {
+      "slug": "trader-joes",
+      "topic": "Retail",
+      "min": 6,
+      "hook": "Trader Joe's has been owned since 1979 by the family behind Aldi Nord, one of Germany's biggest grocery chains."
+    },
+    {
+      "slug": "jensen-huang",
+      "topic": "Technology",
+      "min": 7,
+      "hook": "Nvidia was founded in 1993 after its three founders met to plan it at a Denny's restaurant in San Jose."
+    },
+    {
+      "slug": "charlie-munger",
+      "topic": "Investing",
+      "min": 6,
+      "hook": "Charlie Munger was vice chairman of Berkshire Hathaway for 45 years, Warren Buffett's closest partner in investing."
+    }
+  ],
+  "stories": {
+    "avengers-doomsday": {
+      "slug": "avengers-doomsday",
+      "title": "Avengers: Doomsday",
+      "date": "2026-11-24",
+      "color": "#5f8a3a",
+      "theme": "sage",
+      "industry": [],
+      "features": [],
+      "description": "Marvel's biggest team returns, with Robert Downey Jr. back in the universe he started, this time as Doctor Doom.",
+      "cover": "/images/covers/avengers-doomsday.svg",
+      "themeColors": {
+        "light": "#e8f0da",
+        "dark": "#0b140d",
+        "a400": "#a6cc6c",
+        "a500": "#5f8a3a",
+        "a600": "#43662a"
+      },
+      "subtitle": "Marvel's comeback bet, and the actor who started it all.",
+      "overview": [
+        "Avengers: Doomsday is Marvel Studios' next team-up film, set to open on December 18, 2026. It reunites directors Anthony and Joe Russo, who made Avengers: Infinity War and Avengers: Endgame.",
+        "Its biggest headline is a casting twist: Robert Downey Jr., who launched Marvel's film universe as Iron Man in 2008, returns as the villain Victor von Doom."
+      ],
+      "story": [
+        {
+          "h": "Why this film matters to Disney",
+          "p": [
+            "Disney bought Marvel in 2009 for about $4 billion. The bet paid off on a scale few deals ever do: Avengers: Endgame alone earned about $2.8 billion worldwide in 2019.",
+            "The years after Endgame were bumpier, with more films and series and fewer giant hits. Doomsday is Marvel's attempt to make a team-up feel like an event again, by bringing back the people who made the last ones work."
+          ]
+        },
+        {
+          "quote": "The actor who built Marvel's universe comes back to threaten it."
+        },
+        {
+          "h": "The return of a familiar face",
+          "p": [
+            "Downey's Iron Man was the start of everything: the first Marvel Studios film, and the character whose sacrifice closed the original saga. Casting him as Doctor Doom, one of comics' great villains, turns that history into the story's hook.",
+            "The film leads into Avengers: Secret Wars, which follows a year later and is planned to close this chapter of the Marvel story."
+          ]
+        }
+      ],
+      "facts": [
+        {
+          "label": "Studio",
+          "value": "Marvel Studios (Disney)"
+        },
+        {
+          "label": "Directors",
+          "value": "Anthony and Joe Russo"
+        },
+        {
+          "label": "Set to open",
+          "value": "December 18, 2026"
+        },
+        {
+          "label": "Villain",
+          "value": "Victor von Doom, played by Robert Downey Jr."
+        },
+        {
+          "label": "What's next",
+          "value": "Avengers: Secret Wars, a year later"
+        }
+      ],
+      "presentedBy": null,
+      "sponsors": [],
+      "image": "/images/art/avengers-doomsday.jpg",
+      "demoRead": 2,
+      "articles": [
+        {
+          "title": "Where it all began",
+          "dek": "Iron Man, 2008: a risky film about a second-tier hero that started the most successful series in movie history.",
+          "min": 5
+        },
+        {
+          "title": "The $4 billion deal",
+          "dek": "Why Disney bought Marvel in 2009, and why many people thought it was paying too much.",
+          "min": 6
+        },
+        {
+          "title": "Assembling a team",
+          "dek": "The Avengers, 2012: the first time separate films came together as one, and the template everyone copied.",
+          "min": 5
+        },
+        {
+          "title": "From sitcoms to superheroes",
+          "dek": "Anthony and Joe Russo made their name on TV comedies before Marvel handed them Captain America.",
+          "min": 6
+        },
+        {
+          "title": "The two-part finale",
+          "dek": "Infinity War and Endgame were planned as one story, filmed back to back across two years.",
+          "min": 7
+        },
+        {
+          "title": "The end of an era",
+          "dek": "Endgame earned about $2.8 billion and closed the story Iron Man had started eleven years earlier.",
+          "min": 6
+        },
+        {
+          "title": "Into the multiverse",
+          "dek": "What came after Endgame: more films, more series, and a much bigger, looser story.",
+          "min": 6
+        },
+        {
+          "title": "A harder stretch",
+          "dek": "More releases, mixed results. Why the post-Endgame years tested Marvel's formula.",
+          "min": 6
+        },
+        {
+          "title": "Who is Doctor Doom?",
+          "dek": "Created by Stan Lee and Jack Kirby in 1962, Victor von Doom is one of comics' most famous villains.",
+          "min": 5
+        },
+        {
+          "title": "A villain with a country",
+          "dek": "Doom rules Latveria, a small nation in his stories. That makes him a king, not just a criminal.",
+          "min": 5
+        },
+        {
+          "title": "The family comes home",
+          "dek": "Disney's purchase of Fox brought the Fantastic Four, and Doom, back to Marvel Studios.",
+          "min": 6
+        },
+        {
+          "title": "Downey's return",
+          "dek": "Revealed at Comic-Con in 2024: the actor who played Iron Man comes back as Doom.",
+          "min": 5
+        },
+        {
+          "title": "Making it an event again",
+          "dek": "Bringing back the directors and stars of the biggest hits, to make a team-up feel special.",
+          "min": 6
+        },
+        {
+          "title": "The road to Secret Wars",
+          "dek": "Doomsday sets up Avengers: Secret Wars a year later, planned to close this chapter.",
+          "min": 5
+        }
+      ],
+      "tags": [
+        {
+          "label": "Disney",
+          "href": "/series/disney"
+        },
+        {
+          "label": "Media/Entertainment",
+          "href": "/industry/media-entertainment"
+        }
+      ],
+      "seasonLabel": "Winter 2026",
+      "seasonHref": "/?c=media-entertainment"
     }
   }
 }
