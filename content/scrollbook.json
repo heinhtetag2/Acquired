@@ -164,11 +164,25 @@
   },
   "deck": [
     {
+      "slug": "iphone-17-pro",
+      "topic": "Gadgets",
+      "min": 5,
+      "new": true,
+      "hook": "The iPhone 17 Pro swapped titanium for an aluminum body, partly to keep its faster chip cool."
+    },
+    {
+      "slug": "black-clover-yuno",
+      "topic": "Anime",
+      "min": 5,
+      "new": true,
+      "hook": "Yuno and Asta were left at the same church on the same night. Only Yuno was born with magic."
+    },
+    {
       "slug": "avengers-doomsday",
       "topic": "Film",
       "min": 5,
       "new": true,
-      "hook": "Robert Downey Jr., who launched Marvel's film universe as Iron Man in 2008, comes back as its biggest villain: Doctor Doom."
+      "hook": "Robert Downey Jr., who started Marvel's films as Iron Man, returns as its biggest villain: Doctor Doom."
     },
     {
       "slug": "disney-the-renaissance-and-the-empire",
@@ -180,19 +194,19 @@
       "slug": "seinfeld",
       "topic": "Television",
       "min": 6,
-      "hook": "Seinfeld's first episode tested so badly that NBC nearly passed on the show. It became one of the most valuable sitcoms ever made."
+      "hook": "Seinfeld's first episode tested so badly NBC nearly passed. It became one of TV's most valuable sitcoms."
     },
     {
       "slug": "costco",
       "topic": "Retail",
       "min": 6,
-      "hook": "Costco caps the markup on most of what it sells at around 15%. A big share of its profit comes from membership fees instead."
+      "hook": "Costco caps most markups at around 15%. Much of its profit comes from membership fees instead."
     },
     {
       "slug": "vanguard",
       "topic": "Investing",
       "min": 7,
-      "hook": "Vanguard is owned by its own funds, which are owned by the people who invest in them. There are no outside shareholders to pay."
+      "hook": "Vanguard is owned by its own funds, which are owned by their investors. No outside shareholders to pay."
     },
     {
       "slug": "starbucks-with-howard-schultz",
@@ -204,7 +218,7 @@
       "slug": "rolex",
       "topic": "Luxury",
       "min": 6,
-      "hook": "Rolex has no shareholders. Since 1960 it has been owned by a charitable foundation set up by its founder, Hans Wilsdorf."
+      "hook": "Rolex has no shareholders. Since 1960 it has been owned by a charity its founder, Hans Wilsdorf, set up."
     },
     {
       "slug": "hermes",
@@ -246,7 +260,7 @@
       "slug": "the-nfl",
       "topic": "Sports",
       "min": 7,
-      "hook": "The NFL splits most of its TV money equally between all 32 teams, so small-market clubs can compete with the giants."
+      "hook": "The NFL shares most of its TV money equally across all 32 teams, so small-market clubs can keep up."
     },
     {
       "slug": "trader-joes",
@@ -271,7 +285,7 @@
     "avengers-doomsday": {
       "slug": "avengers-doomsday",
       "title": "Avengers: Doomsday",
-      "date": "2026-11-24",
+      "date": "2026-11-25",
       "color": "#5f8a3a",
       "theme": "sage",
       "industry": [],
@@ -307,6 +321,13 @@
             "Downey's Iron Man was the start of everything: the first Marvel Studios film, and the character whose sacrifice closed the original saga. Casting him as Doctor Doom, one of comics' great villains, turns that history into the story's hook.",
             "The film leads into Avengers: Secret Wars, which follows a year later and is planned to close this chapter of the Marvel story."
           ]
+        },
+        {
+          "h": "What the trailers show",
+          "p": [
+            "Marvel released the final trailer on November 23, 2026, less than four weeks before opening. It begins with a quiet scene: Steve Rogers and Peggy Carter, played by Chris Evans and Hayley Atwell, talking about telling their son who his father really is.",
+            "Then a flash of light, and the Fantastic Four, led by Pedro Pascal's Reed Richards, land in their front yard. Earlier teasers had already brought back Thor, the X-Men and Wakanda, setting up the biggest crossover Marvel has tried."
+          ]
         }
       ],
       "facts": [
@@ -321,6 +342,10 @@
         {
           "label": "Set to open",
           "value": "December 18, 2026"
+        },
+        {
+          "label": "Final trailer",
+          "value": "November 23, 2026"
         },
         {
           "label": "Villain",
@@ -418,7 +443,814 @@
         }
       ],
       "seasonLabel": "Winter 2026",
-      "seasonHref": "/?c=media-entertainment"
+      "seasonHref": "/?c=media-entertainment",
+      "youtube": "https://www.youtube.com/watch?v=_-WPounzLgQ",
+      "deeper": {
+        "updated": "Nov 2026",
+        "watch": [
+          {
+            "id": "_-WPounzLgQ",
+            "title": "Avengers: Doomsday, official final trailer",
+            "channel": "IGN",
+            "note": "About 3 min"
+          }
+        ],
+        "listen": [
+          {
+            "title": "Avengers: Doomsday final trailer reactions",
+            "show": "Midnight Boys, The Ringer",
+            "note": "Nov 24, 2026",
+            "url": "https://www.theringer.com/podcasts/midnight-boys/2026/11/24/avengers-doomsday-final-trailer-reactions-plus-thanksgiving-leftovers"
+          },
+          {
+            "title": "Avengers: Doomsday, the trailers breakdown",
+            "show": "The Empire Film Podcast",
+            "apple": "https://podcasts.apple.com/gb/podcast/avengers-doomsday-the-trailers-breakdown/id507987292?i=1000745728999"
+          }
+        ],
+        "read": [
+          {
+            "title": "What we know from the new Avengers: Doomsday trailer",
+            "publisher": "Good Morning America",
+            "url": "https://www.goodmorningamerica.com/culture/story/avengers-doomsday-final-trailer-released-138375955",
+            "note": "A quick rundown of the final trailer"
+          },
+          {
+            "title": "The Avengers face off against Doctor Doom in the D23 trailer",
+            "publisher": "Variety",
+            "url": "https://variety.com/2026/film/news/avengers-doomsday-trailer-d23-1236817670/",
+            "note": "The second trailer, shown at Disney's fan event"
+          },
+          {
+            "title": "Watch the Avengers: Doomsday teaser trailers",
+            "publisher": "Marvel",
+            "url": "https://www.marvel.com/articles/movies/avengers-doomsday-teaser-trailer",
+            "note": "Marvel's own page with every teaser"
+          }
+        ],
+        "sources": [
+          {
+            "label": "Avengers: Doomsday",
+            "url": "https://en.wikipedia.org/wiki/Avengers:_Doomsday"
+          },
+          {
+            "label": "Avengers: Doomsday final trailer released",
+            "url": "https://www.goodmorningamerica.com/culture/story/avengers-doomsday-final-trailer-released-138375955"
+          },
+          {
+            "label": "Avengers: Doomsday trailer at D23",
+            "url": "https://variety.com/2026/film/news/avengers-doomsday-trailer-d23-1236817670/"
+          },
+          {
+            "label": "Watch the Avengers: Doomsday teaser trailers",
+            "url": "https://www.marvel.com/articles/movies/avengers-doomsday-teaser-trailer"
+          }
+        ],
+        "more": [
+          "disney-the-renaissance-and-the-empire",
+          "episode-25-marvel",
+          "episode-6-lucasfilm"
+        ],
+        "tiktok": [
+          {
+            "id": "7711373045654424863",
+            "account": "ign",
+            "caption": "The final trailer for Avengers: Doomsday is here."
+          },
+          {
+            "id": "7594848357210656031",
+            "account": "marvel",
+            "caption": "December 18, 2026. #AvengersDoomsday"
+          }
+        ]
+      }
+    },
+    "black-clover-yuno": {
+      "slug": "black-clover-yuno",
+      "title": "Black Clover: Yuno's Final Form",
+      "date": "2026-11-25",
+      "color": "#2fae4a",
+      "theme": "sage",
+      "industry": [],
+      "features": [],
+      "description": "Asta's rival had every gift from the start. How Yuno kept getting stronger, and the form he reached in the final battle.",
+      "cover": "/images/art/black-clover-yuno.jpg",
+      "image": "/images/art/black-clover-yuno.jpg",
+      "motion": "/videos/black-clover-yuno.mp4",
+      "themeColors": {
+        "light": "#e4f5dc",
+        "dark": "#06140b",
+        "a400": "#7fe07a",
+        "a500": "#2fae4a",
+        "a600": "#1d7a33"
+      },
+      "subtitle": "The rival who had everything, and the power he found last.",
+      "overview": [
+        "Black Clover is a fantasy manga by Yūki Tabata. It ran from 2015 to 2026, first in Weekly Shōnen Jump and then in Jump GIGA, and has sold more than 25 million copies. It follows two orphans, Asta and Yuno, who both dream of becoming the Wizard King, the strongest mage in the Clover Kingdom.",
+        "Asta was born with no magic at all. Yuno was born with almost too much: a rare four-leaf grimoire, a wind spirit at his side, and a talent everyone could see. The manga finished in May 2026, and the anime came back for a second season that October."
+      ],
+      "story": [
+        {
+          "h": "Two boys, one church",
+          "p": [
+            "Asta and Yuno were left at the same church in the village of Hage, on the same night. They grew up as brothers and rivals, and at fifteen each received a grimoire, the book that holds a mage's magic.",
+            "Yuno's was a four-leaf clover grimoire, said to hold good fortune, and it drew the wind spirit Sylph, whom Asta nicknamed Bell. Asta's was a battered five-leaf book that holds anti-magic."
+          ]
+        },
+        {
+          "quote": "One boy had no magic. The other had more than anyone. In the end they fought with the same power."
+        },
+        {
+          "h": "Wind, then stars",
+          "p": [
+            "Joining the elite Golden Dawn squad, Yuno learned to fuse with Bell in a form called Spirit Dive, turning himself into living wind.",
+            "Later he learned where he really came from: he was a lost prince of the Spade Kingdom, and his mother's star magic was his too. He could make small stars and fire spells from them, and mix them with his wind."
+          ]
+        },
+        {
+          "h": "The final form",
+          "p": [
+            "In the last battle, against Lucius Zogratis, Asta did something no one expected: he shared his anti-magic with Yuno, through his Demon-Dweller sword.",
+            "Yuno combined it with Bell's wind and his star magic. One side of his body is wrapped in anti-magic and a demonic wing grows from his back. For the first time, the boy with every gift fights with the one power only Asta had."
+          ]
+        },
+        {
+          "h": "Back on screen",
+          "p": [
+            "The first anime ran for 170 episodes from 2017 to 2021. Crunchyroll announced a second season in July 2025, and it premiered in Japan on October 3, 2026, again made by Studio Pierrot."
+          ]
+        }
+      ],
+      "facts": [
+        {
+          "label": "Creator",
+          "value": "Yūki Tabata"
+        },
+        {
+          "label": "Manga",
+          "value": "2015–2026, 38 volumes"
+        },
+        {
+          "label": "Copies sold",
+          "value": "More than 25 million"
+        },
+        {
+          "label": "Anime",
+          "value": "170 episodes (2017–2021); season 2 from October 2026"
+        },
+        {
+          "label": "Yuno's final form",
+          "value": "Wind, star magic and Asta's anti-magic"
+        }
+      ],
+      "articles": [
+        {
+          "title": "Left at the church",
+          "dek": "Hage, a frontier village, and two babies found on the same night who would both want the same crown.",
+          "min": 4
+        },
+        {
+          "title": "The four-leaf grimoire",
+          "dek": "Why Yuno's book mattered: in this world, a four-leaf clover is the rarest sign of luck there is.",
+          "min": 4
+        },
+        {
+          "title": "Bell, the wind spirit",
+          "dek": "Sylph, the spirit who chose Yuno, and why Asta's nickname for her stuck.",
+          "min": 4
+        },
+        {
+          "title": "The genius problem",
+          "dek": "Writing a rival who is good at everything, without making him boring.",
+          "min": 5
+        },
+        {
+          "title": "Golden Dawn",
+          "dek": "The kingdom's top squad, full of nobles, and the commoner who outworked all of them.",
+          "min": 5
+        },
+        {
+          "title": "Spirit Dive",
+          "dek": "The first time Yuno fused with Bell, and what it changed about how he fights.",
+          "min": 4
+        },
+        {
+          "title": "A prince of Spade",
+          "dek": "The reveal of Yuno's real family, and how it turned his past upside down.",
+          "min": 5
+        },
+        {
+          "title": "Star magic",
+          "dek": "The power he inherited from his mother, and why it was hidden from him so long.",
+          "min": 4
+        },
+        {
+          "title": "The final form",
+          "dek": "Chapter 380: Asta lends Yuno his anti-magic, and the rival finally fights with his brother's power.",
+          "min": 5
+        },
+        {
+          "title": "Rivals, not enemies",
+          "dek": "Why Asta and Yuno's rivalry works: two brothers pushing each other, all the way to the last page.",
+          "min": 5
+        },
+        {
+          "title": "From Jump to Jump GIGA",
+          "dek": "In 2023 the manga moved to a quarterly magazine so Tabata could finish it his way. It ended there in May 2026.",
+          "min": 4
+        },
+        {
+          "title": "Back for season two",
+          "dek": "170 episodes, a Netflix film, and a second season that began in October 2026.",
+          "min": 5
+        }
+      ],
+      "demoRead": 2,
+      "tags": [
+        {
+          "label": "Anime",
+          "href": "/?c=anime"
+        },
+        {
+          "label": "Media/Entertainment",
+          "href": "/industry/media-entertainment"
+        }
+      ],
+      "seasonLabel": "Winter 2026",
+      "seasonHref": "/?c=anime",
+      "presentedBy": null,
+      "sponsors": [],
+      "youtube": "https://www.youtube.com/watch?v=hpgZ3__jGUc",
+      "deeper": {
+        "updated": "Nov 2026",
+        "watch": [
+          {
+            "id": "hpgZ3__jGUc",
+            "title": "Yuno unleashes a new form: Spirit of Boreas",
+            "channel": "Crunchyroll",
+            "note": "Black Clover, season 2"
+          }
+        ],
+        "listen": [
+          {
+            "title": "Is Yuno stronger than William Vengeance?",
+            "show": "The Anime Podcast",
+            "note": "Yuno reaches level 0",
+            "url": "https://creators.spotify.com/pod/profile/theanimepodcast/episodes/Black-Clover-Is-Yuno-Stronger-than-William-Vengeance--Level-0-explained----The-Anime-Podcast-S2-EP-1-eakd1j"
+          },
+          {
+            "title": "Asta and Yuno earn Wizard King: the ending explained",
+            "show": "The Anime Recap Show",
+            "note": "Spoilers for the final chapters",
+            "spotify": "https://open.spotify.com/episode/45qmFjyUr6ZXH8tIgijeTP"
+          }
+        ],
+        "read": [
+          {
+            "title": "Yuno's new anti-magic form, explained",
+            "publisher": "Sportskeeda",
+            "url": "https://www.sportskeeda.com/anime/yuno-s-new-anti-magic-form-black-clover-explained",
+            "note": "The final form from chapter 380 (manga spoilers)"
+          },
+          {
+            "title": "Black Clover unleashes Yuno's powerful new form",
+            "publisher": "ComicBook.com",
+            "url": "https://comicbook.com/anime/news/black-clover-yuno-spirit-dive-transformation-watch-anime/",
+            "note": "Spirit Dive, the first time Yuno fuses with Bell"
+          },
+          {
+            "title": "Black Clover's Star Magic, explained",
+            "publisher": "EpicStream",
+            "url": "https://epicstream.com/article/black-clovers-star-magic-explained",
+            "note": "The power Yuno inherited from the Spade Kingdom"
+          },
+          {
+            "title": "Yuno's star magic and new grimoire",
+            "publisher": "ComicBook.com",
+            "url": "https://comicbook.com/anime/news/black-clover-yuno-star-magic-new-grimoire-spade-kingdom-manga-spoilers/",
+            "note": "Manga spoilers"
+          }
+        ],
+        "sources": [
+          {
+            "label": "Black Clover",
+            "url": "https://en.wikipedia.org/wiki/Black_Clover"
+          },
+          {
+            "label": "Black Clover, season 2",
+            "url": "https://en.wikipedia.org/wiki/Black_Clover_season_2"
+          },
+          {
+            "label": "Black Clover gives Yuno anti-magic",
+            "url": "https://comicbook.com/anime/news/black-clover-manga-yuno-anti-magic"
+          },
+          {
+            "label": "Chapter 380: Yuno unlocks a new form",
+            "url": "https://www.sportskeeda.com/anime/black-clover-chapter-380-lucius-defeats-asta-yuno-unlocks-new-form-anti-magic"
+          },
+          {
+            "label": "Yuno's Spirit Dive transformation",
+            "url": "https://comicbook.com/anime/news/black-clover-yuno-spirit-dive-transformation-watch-anime/"
+          }
+        ],
+        "more": [
+          "sony",
+          "nintendo",
+          "avengers-doomsday"
+        ],
+        "tiktok": [
+          {
+            "id": "7523765911183035703",
+            "account": "crunchyroll",
+            "caption": "Witness a new legend. Black Clover is coming soon to Crunchyroll 🍀"
+          }
+        ]
+      }
+    },
+    "iphone-17-pro": {
+      "slug": "iphone-17-pro",
+      "title": "iPhone 17 Pro",
+      "date": "2026-11-25",
+      "color": "#4b5f78",
+      "theme": "cobalt",
+      "industry": [],
+      "features": [],
+      "description": "Apple's 2025 Pro phone gave up titanium for aluminum, stretched the camera across the back, and was built to run cool.",
+      "cover": "/images/art/iphone-17-pro.jpg",
+      "image": "/images/art/iphone-17-pro.jpg",
+      "themeColors": {
+        "light": "#e8ecf1",
+        "dark": "#10151c",
+        "a400": "#a9bbd1",
+        "a500": "#4b5f78",
+        "a600": "#33445a"
+      },
+      "subtitle": "Why Apple's most powerful phone went back to aluminum.",
+      "overview": [
+        "Apple announced the iPhone 17 Pro and 17 Pro Max on September 9, 2025. They were the biggest redesign of the Pro line in years: a new aluminum body, a camera area that runs the full width of the back, and a new A19 Pro chip.",
+        "The changes weren't only about looks. Most of them come back to one problem every phone maker now faces: fitting more power into a thin glass slab without it getting too hot."
+      ],
+      "story": [
+        {
+          "h": "From titanium back to aluminum",
+          "p": [
+            "The two previous Pro models were made of titanium, sold as tough and premium. The 17 Pro went back to aluminum: a single unibody piece of aerospace-grade 7000-series aluminum alloy.",
+            "Aluminum moves heat away far better than titanium. Inside, Apple added a vapor chamber, a sealed pocket of deionized water laser-welded into the frame, which spreads heat away from the chip. Apple says the result is up to 40% better sustained performance than the year before."
+          ]
+        },
+        {
+          "quote": "Thin, powerful, cool to the touch: getting all three is the hardest promise in phones."
+        },
+        {
+          "h": "A camera built like a plateau",
+          "p": [
+            "The cameras now sit on a raised, forged bar that stretches across the whole top of the back. All three rear cameras are 48 megapixels, and the telephoto reaches about 8x zoom at optical quality.",
+            "Apple says the plateau also frees up space inside for a bigger battery. It was one of the clearest signs of Apple's direction: the Pro is now as much a camera as a phone."
+          ]
+        }
+      ],
+      "facts": [
+        {
+          "label": "Maker",
+          "value": "Apple"
+        },
+        {
+          "label": "Announced",
+          "value": "September 9, 2025"
+        },
+        {
+          "label": "Body",
+          "value": "7000-series aluminum unibody, with a vapor chamber inside"
+        },
+        {
+          "label": "Chip",
+          "value": "A19 Pro, up to 40% better sustained performance (Apple)"
+        },
+        {
+          "label": "Cameras",
+          "value": "Three 48MP rear cameras, up to 8x optical-quality zoom"
+        }
+      ],
+      "articles": [
+        {
+          "title": "Why phones get hot",
+          "dek": "Fast chips in thin glass slabs: the problem behind almost every choice in this phone.",
+          "min": 4
+        },
+        {
+          "title": "Goodbye, titanium",
+          "dek": "Two years of titanium Pros, and the reasons Apple walked away from it.",
+          "min": 5
+        },
+        {
+          "title": "The vapor chamber",
+          "dek": "A sealed pocket of liquid that carries heat away from the chip, explained simply.",
+          "min": 4
+        },
+        {
+          "title": "One piece of metal",
+          "dek": "What a unibody design means, and why Apple keeps coming back to it, from MacBooks to phones.",
+          "min": 4
+        },
+        {
+          "title": "The camera plateau",
+          "dek": "Why the camera grew into a bar across the back, and what it makes room for inside.",
+          "min": 5
+        },
+        {
+          "title": "Three 48MP cameras",
+          "dek": "Wide, ultra-wide and telephoto at the same resolution, and why that matters for zoom.",
+          "min": 5
+        },
+        {
+          "title": "The A19 Pro",
+          "dek": "Apple's own chips, from the first iPhone silicon to the one built for on-device AI.",
+          "min": 6
+        },
+        {
+          "title": "Pro, Max and Air",
+          "dek": "The same year Apple launched the ultra-thin iPhone Air. How the line-up splits the buyers.",
+          "min": 5
+        },
+        {
+          "title": "Selling the colour",
+          "dek": "Cosmic Orange, and why a bold new colour still moves more phones than a spec sheet.",
+          "min": 4
+        },
+        {
+          "title": "Why a $1,099 phone sells",
+          "dek": "Apple earns most of the smartphone industry's profit. How the Pro models do the heavy lifting.",
+          "min": 6
+        },
+        {
+          "title": "The yearly upgrade machine",
+          "dek": "Trade-ins, carriers and monthly plans: how Apple keeps people buying a new phone.",
+          "min": 5
+        },
+        {
+          "title": "What comes next",
+          "dek": "Foldables, more AI on the device, and where the Pro line might head after this redesign.",
+          "min": 5
+        }
+      ],
+      "demoRead": 2,
+      "tags": [
+        {
+          "label": "Apple",
+          "href": "/series/apple"
+        },
+        {
+          "label": "Gadgets",
+          "href": "/?c=gadgets"
+        }
+      ],
+      "seasonLabel": "Fall 2025",
+      "seasonHref": "/?c=gadgets",
+      "presentedBy": null,
+      "sponsors": [],
+      "youtube": "https://www.youtube.com/watch?v=H3KnMyojEQU",
+      "deeper": {
+        "updated": "Nov 2026",
+        "watch": [
+          {
+            "id": "H3KnMyojEQU",
+            "title": "Apple Event, September 9, 2025",
+            "channel": "Apple",
+            "note": "The full launch event"
+          }
+        ],
+        "listen": [
+          {
+            "title": "Who is the iPhone Air really for?",
+            "show": "The Vergecast",
+            "note": "Hands-on with the 17, 17 Pro and Air",
+            "spotify": "https://open.spotify.com/episode/0vLdbATG7mrkzMDNK3xjf4",
+            "apple": "https://podcasts.apple.com/us/podcast/who-is-the-iphone-air-really-for/id430333725?i=1000727194897"
+          },
+          {
+            "title": "A deeper dive into the iPhone 17 and iPhone Air",
+            "show": "Engadget Podcast",
+            "url": "https://www.engadget.com/mobile/smartphones/engadget-podcast-a-deeper-dive-into-the-iphone-17-and-iphone-air-124536155.html"
+          }
+        ],
+        "read": [
+          {
+            "title": "Apple unveils iPhone 17 Pro and iPhone 17 Pro Max",
+            "publisher": "Apple Newsroom",
+            "url": "https://www.apple.com/ca/newsroom/2025/09/apple-unveils-iphone-17-pro-and-iphone-17-pro-max",
+            "note": "The official announcement: aluminum body, vapor chamber, cameras"
+          },
+          {
+            "title": "iPhone 17 Pro",
+            "publisher": "Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/IPhone_17_Pro",
+            "note": "Specs, release dates and reception in one place"
+          }
+        ],
+        "sources": [
+          {
+            "label": "Apple unveils iPhone 17 Pro and iPhone 17 Pro Max",
+            "url": "https://www.apple.com/ca/newsroom/2025/09/apple-unveils-iphone-17-pro-and-iphone-17-pro-max"
+          },
+          {
+            "label": "iPhone 17 Pro",
+            "url": "https://en.wikipedia.org/wiki/IPhone_17_Pro"
+          }
+        ],
+        "more": [
+          "episode-30-pa-semi-authentec",
+          "tsmc",
+          "episode-50-apple-beats"
+        ],
+        "tiktok": [
+          {
+            "id": "7548208236311153934",
+            "account": "verge",
+            "caption": "Hands-on with the iPhone 17 Pro: new colours, new design and the front camera."
+          }
+        ]
+      }
     }
+  },
+  "hooks": {
+    "episode-25-marvel": "Marvel went bankrupt in 1996 and sold its heroes' film rights. In 2009 Disney bought it for $4 billion.",
+    "episode-1-pixar": "Steve Jobs bought Pixar from George Lucas for about $10 million. Disney paid $7.4 billion for it in 2006.",
+    "episode-6-lucasfilm": "George Lucas took a smaller fee for Star Wars in exchange for its toy rights. Disney later paid $4 billion.",
+    "the-walt-disney-company": "Walt Disney created Mickey Mouse in 1928, after losing his first hit character, Oswald, to his distributor.",
+    "sony": "Sony began in 1946 as a radio repair shop in a bomb-damaged Tokyo department store.",
+    "caa-with-michael-ovitz": "CAA began in 1975 when five agents quit William Morris. Their wives answered the phones at first.",
+    "google-the-ai-company": "The 2017 Google paper that introduced the transformer is the 'T' in ChatGPT. Google invented it first.",
+    "alphabet-inc": "Google became one unit of a new parent company, Alphabet, in 2015, so its side bets could stand alone.",
+    "the-steve-ballmer-interview": "Steve Ballmer was Microsoft's 30th employee and its first business manager. He ran it from 2000 to 2014.",
+    "epic-systems-mychart": "Epic Systems is private and based in Verona, Wisconsin. It holds health records for over half of Americans.",
+    "microsoft-volume-ii": "Satya Nadella became Microsoft's third CEO in 2014 and steered it toward the cloud with Azure.",
+    "microsoft": "Microsoft was founded in 1975 in Albuquerque, New Mexico, to be near its first customer, MITS.",
+    "spotify-ceo-daniel-ek": "Daniel Ek founded Spotify in Stockholm in 2006 as a legal answer to music piracy.",
+    "interview-hamilton-helmer-chenyi-shi-on-how-to-build-an-aws-like-second-business": "AWS began as Amazon's own internal tools and grew into one of its most profitable businesses.",
+    "amazon-web-services": "AWS launched S3 storage in 2006. Today it earns a large share of Amazon's operating profit.",
+    "capital-efficient-growth-with-zoom-ceo-eric-yuan-veeva-ceo-peter-gassner": "Veeva raised only about $7 million before going public. Zoom was already profitable at its 2019 IPO.",
+    "the-browser-with-brendan-eich-chief-architect-of-netscape-mozilla-and-ceo-of-brave": "Brendan Eich created JavaScript in about 10 days in 1995. He later co-founded Mozilla and Brave.",
+    "kevin-rose-from-web-2-0-to-web3": "Kevin Rose launched Digg in 2004. It became one of the most popular news sites of the early social web.",
+    "slack-salesforce-emergency-pod-with-packy-mccormick-of-not-boring": "Salesforce agreed to buy Slack for about $27.7 billion in December 2020, its biggest deal ever.",
+    "special-superhuman-part-ii-designing-software-to-feel-like-a-game-with-rahul-vohra": "Superhuman designed its email app like a game, with keyboard shortcuts and a 100-millisecond speed goal.",
+    "eventbrite": "Eventbrite was founded in 2006 by Kevin and Julia Hartz and Renaud Visage. It went public in 2018.",
+    "google-maps": "Google Maps grew out of Where 2, a startup Google bought in 2004. It launched in early 2005.",
+    "huawei": "Huawei was founded in 1987 by Ren Zhengfei, a former army engineer, with about $5,000 in capital.",
+    "superhuman": "Superhuman charged $30 a month for email and gave new users a one-on-one onboarding call.",
+    "the-slack-dpo": "Slack listed in 2019 without a traditional IPO: no new shares, and no underwriters setting the price.",
+    "the-zoom-ipo-with-santi-subotovsky": "Eric Yuan left Cisco's WebEx in 2011 to start Zoom. Its 2019 IPO jumped 72% on the first day.",
+    "netflix-part-2": "Netflix's first big original series, House of Cards, premiered in 2013 with every episode at once.",
+    "netflix-part-1": "Netflix launched in 1998 renting DVDs by mail. It didn't start streaming until 2007.",
+    "behance-with-scott-belsky": "Scott Belsky's Behance, a portfolio site for creative people, was bought by Adobe in 2012.",
+    "season-3-episode-3the-sonos-ipo": "Sonos was founded in 2002 in Santa Barbara to play music in every room. It went public in 2018.",
+    "season-3-episode-2the-xiaomi-ipo": "Before its 2018 IPO, Xiaomi promised to cap its profit margin on hardware at 5%.",
+    "season-2-episode-10the-rover-dogvacay-merger-with-rover-ceo-aaron-easterly": "Seattle's Rover merged with its biggest rival, DogVacay, in 2017 to lead the pet-sitting market.",
+    "season-2-episode-9github": "GitHub was founded in 2008. Microsoft bought it in 2018 for $7.5 billion in stock.",
+    "season-2-episode-7powerpoint": "PowerPoint was built by a startup called Forethought. Microsoft bought it in 1987 for $14 million.",
+    "season-2-episode-6spotifys-direct-listing": "Spotify listed on the NYSE in 2018 without raising any money, the first big direct listing.",
+    "season-2-episode-5the-dropbox-ipo": "Drew Houston started Dropbox after forgetting his USB drive on a bus trip. It went public in 2018.",
+    "season-2-episode-3nest": "Tony Fadell, who helped create the iPod, co-founded Nest. Google bought it in 2014 for $3.2 billion.",
+    "episode-50-apple-beats": "Apple bought Beats in 2014 for $3 billion, still the biggest acquisition Apple has made.",
+    "the-atlassian-ipo": "Atlassian sold its software with almost no sales team. It went public on Nasdaq in 2015.",
+    "episode-45-htc-google-and-the-future-of-mobile": "HTC built the first Android phone, the T-Mobile G1, released in 2008.",
+    "episode-44-aol-time-warner-with-the-internet-history-podcast": "AOL's $165 billion deal for Time Warner in 2000 is often called the worst merger in history.",
+    "episode-42-opsware-with-special-guest-michel-feaster": "Ben Horowitz turned struggling Loudcloud into Opsware and sold it to HP in 2007 for $1.6 billion.",
+    "episode-38-soundjam-itunes": "Apple bought the MP3 app SoundJam in 2000 and turned it into iTunes, released in 2001.",
+    "episode-35-oculus": "Palmer Luckey built Oculus prototypes as a teenager. Facebook bought it in 2014 for $2 billion.",
+    "episode-33-overture-with-the-internet-history-podcast": "Overture, first called GoTo.com, invented pay-per-click search ads. Yahoo bought it in 2003.",
+    "episode-24-skype": "Skype was built in Estonia. eBay bought it in 2005, and Microsoft paid $8.5 billion for it in 2011.",
+    "episode-23-next-live-show-at-the-geekwire-summit": "Apple bought NeXT in 1996 for about $400 million, and the deal brought Steve Jobs back to Apple.",
+    "episode-22-zillow-trulia-with-zillow-group-cfo-kathleen-philips": "Zillow bought its main rival, Trulia, in 2015 for about $3.5 billion in stock.",
+    "episode-20-android": "Google bought Android in 2005 for about $50 million, two years before the first iPhone.",
+    "acquired-episode-17-waze": "Google bought Waze in 2013 for about $1.1 billion, reportedly beating an offer from Facebook.",
+    "acquired-episode-15-exacttarget-acquired-by-salesforce-with-scott-dorsey": "Indianapolis email company ExactTarget was bought by Salesforce in 2013 for $2.5 billion.",
+    "episode-9-writely-google-docs": "Google bought Writely, a tiny web word processor, in 2006. It became Google Docs.",
+    "episode-8-acompli-sunrise-and-wunderlist": "Microsoft bought Acompli in 2014 and turned it into the Outlook mobile app within weeks.",
+    "episode-5-siri": "Siri began at the research lab SRI International. Apple bought it in 2010, reportedly for $200 million.",
+    "episode-3-twitch": "Twitch began as the gaming section of Justin.tv. Amazon bought it in 2014 for about $970 million.",
+    "ferrari": "Enzo Ferrari sold road cars mainly to pay for his racing team. Ferrari went public in 2015.",
+    "porsche-with-doug-demuro": "The Cayenne SUV, launched in 2002, helped save Porsche and became one of its best sellers.",
+    "lvmh": "LVMH owns about 75 brands, from Louis Vuitton to Dom Pérignon. Bernard Arnault built it from 1989.",
+    "renaissance-technologies": "Renaissance's Medallion fund, open only to employees, averaged about 66% a year before fees for decades.",
+    "benchmarks-mitch-lasky-and-blake-robbins-on-the-art-of-business-in-gaming": "Video games now make more money each year than movies and music combined.",
+    "benchmark-part-ii-the-dinner": "Benchmark's partners meet for dinner every week and share the profits equally, whoever led the deal.",
+    "acq-sessions-jason-calacanis": "Jason Calacanis was an early angel investor in Uber, one of the best bets in venture history.",
+    "benchmark-capital": "Benchmark was founded in 1995 by equal partners. Its $6.7 million bet on eBay grew to about $5 billion.",
+    "howard-marks-andrew-marks-something-of-value": "Howard Marks co-founded Oaktree Capital in 1995. His client memos are read all over Wall Street.",
+    "american-dynamism-with-katherine-boyle": "a16z launched its American Dynamism fund in 2022 to back startups in defense, space and manufacturing.",
+    "arena-show-part-i-idea-dinner-yc-continuity": "Y Combinator set up its Continuity fund to keep investing in YC companies as they grow up.",
+    "platforms-and-power-with-hamilton-helmer-and-chenyi-shi": "Hamilton Helmer's book 7 Powers names the seven ways a company can keep its edge for decades.",
+    "altimeter-with-brad-gerstner": "Brad Gerstner founded Altimeter in 2008, just as the financial crisis was starting.",
+    "ftx-with-sam-bankman-fried-mario-gabriele": "This was recorded before FTX collapsed in late 2022. Its founder was later convicted of fraud.",
+    "complexity-investing-semiconductors-with-nzs-capital": "NZS Capital invests by treating markets as complex systems, with chips as the base of all tech.",
+    "michael-mauboussin-master-class-moats-skill-luck-decision-making-and-a-whole-lot-more": "Michael Mauboussin's book The Success Equation is about telling skill apart from luck.",
+    "andreessen-horowitz-part-ii": "In 2019 a16z registered as an investment adviser, so it could freely buy crypto and public stocks.",
+    "andreessen-horowitz-part-i": "Marc Andreessen and Ben Horowitz started a16z in 2009 with a $300 million first fund.",
+    "special-ho-nam-from-altos-ventures-a-different-approach-to-vc": "Ho Nam's Altos Ventures was an early backer of Korean companies like the shopping giant Coupang.",
+    "berkshire-hathaway-part-iii": "Berkshire Hathaway's Class A shares have never been split. One share costs more than most houses.",
+    "berkshire-hathaway-part-ii": "Berkshire took full control of the insurer GEICO in 1996, giving Buffett a huge float to invest.",
+    "berkshire-hathaway-part-i": "Berkshire Hathaway was a struggling textile mill when Warren Buffett took control of it in 1965.",
+    "special-sequoia-capitals-investment-playbook-with-alfred-lin": "Alfred Lin ran operations and finance at Zappos before joining Sequoia, where he backed Airbnb.",
+    "acquired-special-episode-jason-calacanis": "Jason Calacanis hosts This Week in Startups and runs Launch, a program for early-stage founders.",
+    "sequoias-black-swan-memo": "In March 2020 Sequoia warned its founders that COVID-19 could be the black swan of 2020.",
+    "sequoia-capital-part-ii-with-doug-leone": "Doug Leone led Sequoia with Michael Moritz and took the firm into China, India and Israel.",
+    "season-5-episode-10-the-lean-startup-and-the-long-term-stock-exchange-with-eric-ries": "Eric Ries wrote The Lean Startup, then founded the Long-Term Stock Exchange, approved in 2019.",
+    "sequoia-capital-part-1": "Don Valentine founded Sequoia in 1972. The firm was an early backer of both Atari and Apple.",
+    "arm-softbank": "ARM designs chips but doesn't make them. SoftBank bought it in 2016 for about $32 billion.",
+    "season-2-episode-4softbank-fortress-and-the-vision-fund": "SoftBank's Vision Fund launched in 2017 with nearly $100 billion, the biggest tech fund ever.",
+    "special-conversation-with-microsofts-head-of-strategic-investments-brian-schultz": "Microsoft has bought companies of every size, from tiny apps to LinkedIn for $26.2 billion.",
+    "the-jamie-dimon-interview": "Jamie Dimon has run JPMorgan Chase since 2006, one of the longest runs of any big bank CEO.",
+    "season-3-episode-7-venmo-sf-live-show-with-andrew-kortina": "Venmo started as a way to pay friends by text message. Today it's owned by PayPal.",
+    "episode-43-the-square-ipo": "Square's 2015 IPO priced below its last private valuation, a rare down-round IPO.",
+    "episode-11-paypal": "PayPal's early team, the PayPal Mafia, went on to found YouTube, LinkedIn and Yelp.",
+    "meta": "Facebook renamed itself Meta in October 2021 to signal its big bet on virtual reality.",
+    "the-mark-zuckerberg-interview": "Mark Zuckerberg started Facebook in his Harvard dorm room in 2004, when he was 19.",
+    "twitter-with-dick-costolo": "Dick Costolo ran Twitter from 2010 to 2015 and took the company public in 2013.",
+    "whatsapp": "WhatsApp had about 55 employees when Facebook agreed to buy it for $19 billion in 2014.",
+    "tiktok": "ByteDance bought the app Musical.ly in 2017 and merged it into TikTok the next year.",
+    "the-pinterest-ipo": "Pinterest went public in 2019, about nine years after Ben Silbermann started it.",
+    "instagram-revisited-with-emily-white": "Instagram passed a billion monthly users in 2018, six years after Facebook bought it.",
+    "season-3-episode-10-tencent": "Tencent's first hit was QQ, a desktop messenger. It later built WeChat, China's everything app.",
+    "episode-32-the-snap-inc-ipo": "Snap's 2017 IPO sold shares with no voting rights at all, a first for a big US listing.",
+    "episode-25-the-facebook-ipo": "Facebook's 2012 IPO was hit by Nasdaq glitches, and the stock stayed below $38 for over a year.",
+    "episode-14-linkedin": "Reid Hoffman founded LinkedIn in 2002. Microsoft bought it in 2016 for $26.2 billion.",
+    "episode-13-push-pop-press-facebook-instant-articles-with-todd-bishop": "Push Pop Press made Al Gore's interactive iPad book. Facebook bought it in 2011.",
+    "episode-12-snapchat": "Snapchat turned down a reported $3 billion offer from Facebook in 2013.",
+    "episode-7-youtube": "Google bought YouTube in 2006 for $1.65 billion, less than two years after it launched.",
+    "episode-2-instagram": "Instagram had 13 employees when Facebook bought it for $1 billion in 2012.",
+    "indian-premier-league-cricket": "The Indian Premier League began in 2008. Its TV rights for 2023 to 2027 sold for about $6 billion.",
+    "nike": "Nike began in 1964 as Blue Ribbon Sports, selling Japanese running shoes out of a car.",
+    "from-nfl-to-startup-coo-to-congressman-regulating-crypto-with-rep-anthony-gonzalez": "Anthony Gonzalez played wide receiver in the NFL, worked at a startup, then served in Congress.",
+    "the-nba": "The NBA's TV deals starting in 2025 are worth about $76 billion over 11 years.",
+    "season-4-episode-1-espn": "ESPN launched in 1979 from Bristol, Connecticut. It earns money from almost every US cable bill.",
+    "episode-37-bamtech-disney-and-the-biggest-media-company-youve-never-heard-of": "BAMTech began as Major League Baseball's streaming arm. Disney used it to build Disney+.",
+    "episode-36-the-la-clippers": "Steve Ballmer bought the LA Clippers in 2014 for $2 billion, then a record for an NBA team.",
+    "nvidia-the-dawn-of-the-ai-era": "ChatGPT launched in late 2022 running on Nvidia chips. Demand for its data center GPUs soared.",
+    "qualcomm": "Qualcomm earns much of its profit licensing wireless patents, not just selling chips.",
+    "nvidia-the-machine-learning-company-2006-2022": "Nvidia launched CUDA in 2006, letting its graphics chips run any kind of math, not just graphics.",
+    "nvidia-the-gpu-company-1993-2006": "Nvidia nearly ran out of money in 1997. Its RIVA 128 chip saved the company.",
+    "tsmc": "TSMC makes most of the world's most advanced chips, including Apple's and Nvidia's.",
+    "adapting-episode-3-intel": "Intel passed on making the first iPhone's chip, a call its CEO later said he regretted.",
+    "qualcomm-broadcom": "Broadcom's $117 billion bid for Qualcomm was blocked by the US president in 2018.",
+    "episode-30-pa-semi-authentec": "Apple bought chip designer P.A. Semi in 2008. Its team helped build the chips in today's iPhones.",
+    "short-the-death-of-sega": "Sega's Dreamcast was its last console. In 2001 Sega quit making hardware for good.",
+    "nintendo-the-console-wars": "The Wii, launched in 2006, outsold the more powerful PS3 and Xbox 360 by being fun for everyone.",
+    "nintendo": "Nintendo was founded in Kyoto in 1889 to make playing cards.",
+    "rec-room-part-ii-with-ceo-nick-fajt": "Rec Room started as a VR game and grew into a social app where players build their own games.",
+    "epic-games": "Epic makes Fortnite and the Unreal Engine, and sued Apple over its App Store fees in 2020.",
+    "atari-with-nolan-bushnell": "Nolan Bushnell founded Atari in 1972. A young Steve Jobs worked there as a technician.",
+    "the-electronic-arts-ipo-with-trip-hawkins": "Trip Hawkins left Apple to found Electronic Arts in 1982, and promoted game makers like rock stars.",
+    "season-2-episode-2raising-a-seed-round-with-against-gravity-ceo-nick-fajt": "Against Gravity, later renamed Rec Room, raised its seed round to build social games for VR.",
+    "episode-40-activision-blizzard": "Microsoft bought Activision Blizzard for about $69 billion in 2023, gaming's biggest deal ever.",
+    "episode-4-bungie": "Microsoft bought Bungie in 2000 so that Halo could launch with the first Xbox.",
+    "stratechery-with-ben-thompson": "Ben Thompson's Stratechery showed one writer could make a living from a paid tech newsletter.",
+    "super-pumped-with-brian-koppelman-and-joseph-gordon-levitt": "Super Pumped is the TV series about Uber's rise, from the creators of Billions.",
+    "taylor-swift-acquireds-version": "Taylor Swift re-recorded her early albums after losing their masters, releasing them as Taylor's Version.",
+    "not-boring-with-packy-mccormick": "Packy McCormick's Not Boring grew past 100,000 readers with long, upbeat business essays.",
+    "the-new-york-times-company": "The New York Times now has more than 10 million subscribers, most of them digital.",
+    "oprah-harpo-studios": "Oprah Winfrey owned her talk show through Harpo, a rare move that made her a billionaire.",
+    "disney-plus": "Disney+ launched in November 2019 and passed 100 million subscribers in about 16 months.",
+    "season-3-episode-4recode-with-kara-swisher": "Kara Swisher co-ran the All Things Digital conference, where Jobs and Gates shared a stage in 2007.",
+    "episode-21-inside-the-ma-press-with-bloombergs-alex-sherman": "Alex Sherman has spent years covering the biggest media and tech deals for Bloomberg and CNBC.",
+    "acquired-episode-16-midroll-stitcher-acquired-by-scripps": "Scripps bought the podcast ad network Midroll in 2015, then the Stitcher app in 2016.",
+    "amazon-com": "Jeff Bezos started Amazon in his garage in 1994, selling books online.",
+    "meituan": "Meituan started as a group-buying site in 2010 and became China's biggest food delivery app.",
+    "doordash": "DoorDash started in 2013 as PaloAltoDelivery.com, built by four Stanford students.",
+    "pinduoduo": "Pinduoduo lets friends team up to buy at lower prices. Its parent company also owns Temu.",
+    "the-shopify-ipo": "Shopify began in 2006 as an online snowboard shop. Its founders built their own store software.",
+    "alibaba": "Jack Ma started Alibaba in his Hangzhou apartment in 1999 with 17 co-founders.",
+    "season-2-episode-1zappos-with-alfred-lin": "Amazon bought Zappos in 2009 for about $1.2 billion and kept its famous customer service culture.",
+    "the-stitch-fix-ipo": "Stitch Fix mixes algorithms with human stylists to choose clothes. It went public in 2017.",
+    "episode-28-the-amazon-ipo-with-original-amazon-board-member-tom-alberg": "Amazon went public in May 1997 at $18 a share, valuing the company at about $438 million.",
+    "episode-19-jet": "Walmart bought Jet.com in 2016 for $3.3 billion to take on Amazon online.",
+    "solana-with-ceo-anatoly-yakovenko": "Anatoly Yakovenko started Solana in 2017 to build a blockchain fast enough for everyday apps.",
+    "ethereum": "Vitalik Buterin proposed Ethereum in 2013, when he was 19. It launched in 2015.",
+    "bitcoin": "The first real purchase with Bitcoin was two pizzas, bought for 10,000 bitcoin in 2010.",
+    "ikea": "IKEA's name joins founder Ingvar Kamprad's initials with his family farm and his home village.",
+    "walmart": "Sam Walton opened the first Walmart in Rogers, Arkansas, in 1962.",
+    "arena-show-part-ii-brooks-running-with-ceo-jim-weber": "Brooks dropped most of its products to focus only on running shoes. Berkshire Hathaway owns it.",
+    "blue-bottle-coffee": "Nestlé bought a majority of Blue Bottle Coffee in 2017 for about $425 million.",
+    "episode-39-whole-foods-market": "Amazon bought Whole Foods in 2017 for $13.7 billion, its biggest deal at the time.",
+    "episode-34-starbucks-ipo-with-dan-levitan": "Starbucks went public in 1992. Dan Levitan helped take it to market as an investment banker.",
+    "coca-cola": "Coca-Cola was invented in 1886 by John Pemberton, a pharmacist in Atlanta.",
+    "mars-inc-the-chocolate-story": "Mars, the maker of M&M's and Snickers, has been owned by the Mars family for over a century.",
+    "canlis": "In March 2020, Seattle's fine dining restaurant Canlis turned itself into a drive-through and bagel shop.",
+    "uber-ceo-dara-khosrowshahi": "Dara Khosrowshahi left Expedia to become Uber's CEO in 2017, after a year of scandals.",
+    "lockheed-martin": "Lockheed Martin was formed in 1995 when Lockheed merged with Martin Marietta.",
+    "virgin-galactic": "Virgin Galactic flew Richard Branson to the edge of space in July 2021.",
+    "spacex": "SpaceX first landed a Falcon 9 booster in 2015, the start of reusable rockets.",
+    "convoy-with-ceo-dan-lewis": "Convoy's app matched truckers with loads. It hit a $3.8 billion valuation, then shut down in 2023.",
+    "the-uber-ipo": "Uber's 2019 IPO valued it at about $82 billion, below what many had expected.",
+    "season-4-episode-4-the-lyft-ipo": "Lyft went public in March 2019, beating its bigger rival Uber to the stock market.",
+    "season-3-episode-1tesla": "Tesla's first car, the Roadster, was built on the chassis of a Lotus Elise.",
+    "episode-31-the-uber-didi-chuxing-merger-with-brad-stone-author-of-the-upstarts-the-everything-store": "Uber sold its China business to Didi in 2016 in exchange for a stake of about 18%.",
+    "episode-10-virgin-america": "Alaska Airlines bought Virgin America in 2016 for about $2.6 billion, then retired the brand.",
+    "enron": "Fortune named Enron America's most innovative company six years running. It collapsed in 2001.",
+    "standard-oil-part-ii": "In 1911 the Supreme Court split Standard Oil into 34 companies, including the roots of Exxon and Chevron.",
+    "standard-oil-part-i": "John D. Rockefeller founded Standard Oil in 1870. At its peak it refined about 90% of US oil.",
+    "novo-nordisk-ozempic": "Novo Nordisk is controlled by a foundation. Ozempic made it Europe's most valuable company in 2023.",
+    "peloton": "Peloton's sales boomed during the 2020 lockdowns, then fell sharply as gyms reopened.",
+    "special-why-now-for-digital-health-with-levels-founder-josh-clemente": "Levels pairs continuous glucose monitors with an app to show how food affects your body."
+  },
+  "cardTitles": {
+    "interview-hamilton-helmer-chenyi-shi-on-how-to-build-an-aws-like-second-business": "Building a Second Business",
+    "capital-efficient-growth-with-zoom-ceo-eric-yuan-veeva-ceo-peter-gassner": "Capital-Efficient Growth",
+    "the-browser-with-brendan-eich-chief-architect-of-netscape-mozilla-and-ceo-of-brave": "The Browser",
+    "kevin-rose-from-web-2-0-to-web3": "Kevin Rose",
+    "slack-salesforce-emergency-pod-with-packy-mccormick-of-not-boring": "Slack + Salesforce",
+    "special-superhuman-part-ii-designing-software-to-feel-like-a-game-with-rahul-vohra": "Superhuman Part II",
+    "the-zoom-ipo-with-santi-subotovsky": "The Zoom IPO",
+    "behance-with-scott-belsky": "Behance",
+    "season-2-episode-10the-rover-dogvacay-merger-with-rover-ceo-aaron-easterly": "Rover + DogVacay",
+    "episode-45-htc-google-and-the-future-of-mobile": "HTC and Android",
+    "episode-44-aol-time-warner-with-the-internet-history-podcast": "AOL + Time Warner",
+    "episode-42-opsware-with-special-guest-michel-feaster": "Opsware",
+    "episode-33-overture-with-the-internet-history-podcast": "Overture",
+    "episode-23-next-live-show-at-the-geekwire-summit": "NeXT",
+    "episode-22-zillow-trulia-with-zillow-group-cfo-kathleen-philips": "Zillow + Trulia",
+    "acquired-episode-15-exacttarget-acquired-by-salesforce-with-scott-dorsey": "ExactTarget",
+    "episode-8-acompli-sunrise-and-wunderlist": "Acompli, Sunrise & Wunderlist",
+    "porsche-with-doug-demuro": "Porsche",
+    "benchmarks-mitch-lasky-and-blake-robbins-on-the-art-of-business-in-gaming": "The Business of Gaming",
+    "benchmark-part-ii-the-dinner": "Benchmark Part II",
+    "acq-sessions-jason-calacanis": "Jason Calacanis",
+    "howard-marks-andrew-marks-something-of-value": "Howard Marks",
+    "american-dynamism-with-katherine-boyle": "American Dynamism",
+    "arena-show-part-i-idea-dinner-yc-continuity": "YC Continuity",
+    "platforms-and-power-with-hamilton-helmer-and-chenyi-shi": "Platforms and Power",
+    "altimeter-with-brad-gerstner": "Altimeter",
+    "ftx-with-sam-bankman-fried-mario-gabriele": "FTX",
+    "complexity-investing-semiconductors-with-nzs-capital": "Complexity Investing",
+    "michael-mauboussin-master-class-moats-skill-luck-decision-making-and-a-whole-lot-more": "Michael Mauboussin",
+    "special-ho-nam-from-altos-ventures-a-different-approach-to-vc": "Altos Ventures",
+    "special-sequoia-capitals-investment-playbook-with-alfred-lin": "Sequoia's Playbook",
+    "acquired-special-episode-jason-calacanis": "Jason Calacanis",
+    "sequoias-black-swan-memo": "Sequoia's Black Swan Memo",
+    "sequoia-capital-part-ii-with-doug-leone": "Sequoia Capital Part II",
+    "season-5-episode-10-the-lean-startup-and-the-long-term-stock-exchange-with-eric-ries": "The Long-Term Stock Exchange",
+    "season-2-episode-4softbank-fortress-and-the-vision-fund": "SoftBank's Vision Fund",
+    "special-conversation-with-microsofts-head-of-strategic-investments-brian-schultz": "Inside Microsoft's Deals",
+    "season-3-episode-7-venmo-sf-live-show-with-andrew-kortina": "Venmo",
+    "the-mark-zuckerberg-interview": "Mark Zuckerberg",
+    "twitter-with-dick-costolo": "Twitter",
+    "instagram-revisited-with-emily-white": "Instagram Revisited",
+    "episode-13-push-pop-press-facebook-instant-articles-with-todd-bishop": "Push Pop Press",
+    "episode-12-snapchat": "Snapchat",
+    "from-nfl-to-startup-coo-to-congressman-regulating-crypto-with-rep-anthony-gonzalez": "Anthony Gonzalez",
+    "episode-37-bamtech-disney-and-the-biggest-media-company-youve-never-heard-of": "BAMTech",
+    "nvidia-the-dawn-of-the-ai-era": "Nvidia Part III",
+    "nvidia-the-machine-learning-company-2006-2022": "Nvidia Part II",
+    "nvidia-the-gpu-company-1993-2006": "Nvidia Part I",
+    "adapting-episode-3-intel": "Intel",
+    "qualcomm-broadcom": "Qualcomm vs. Broadcom",
+    "short-the-death-of-sega": "The Death of Sega",
+    "nintendo-the-console-wars": "Nintendo's Console Wars",
+    "rec-room-part-ii-with-ceo-nick-fajt": "Rec Room Part II",
+    "atari-with-nolan-bushnell": "Atari",
+    "the-electronic-arts-ipo-with-trip-hawkins": "The Electronic Arts IPO",
+    "season-2-episode-2raising-a-seed-round-with-against-gravity-ceo-nick-fajt": "Raising a Seed Round",
+    "episode-4-bungie": "Bungie",
+    "stratechery-with-ben-thompson": "Stratechery",
+    "super-pumped-with-brian-koppelman-and-joseph-gordon-levitt": "Super Pumped",
+    "taylor-swift-acquireds-version": "Taylor Swift",
+    "not-boring-with-packy-mccormick": "Not Boring",
+    "season-3-episode-4recode-with-kara-swisher": "Recode",
+    "episode-21-inside-the-ma-press-with-bloombergs-alex-sherman": "Inside the M&A Press",
+    "acquired-episode-16-midroll-stitcher-acquired-by-scripps": "Midroll + Stitcher",
+    "season-2-episode-1zappos-with-alfred-lin": "Zappos",
+    "episode-28-the-amazon-ipo-with-original-amazon-board-member-tom-alberg": "The Amazon IPO",
+    "solana-with-ceo-anatoly-yakovenko": "Solana",
+    "ethereum": "Ethereum",
+    "arena-show-part-ii-brooks-running-with-ceo-jim-weber": "Brooks Running",
+    "episode-34-starbucks-ipo-with-dan-levitan": "The Starbucks IPO",
+    "mars-inc-the-chocolate-story": "Mars, Inc.",
+    "canlis": "Canlis",
+    "uber-ceo-dara-khosrowshahi": "Uber's Dara Khosrowshahi",
+    "convoy-with-ceo-dan-lewis": "Convoy",
+    "episode-31-the-uber-didi-chuxing-merger-with-brad-stone-author-of-the-upstarts-the-everything-store": "Uber + Didi",
+    "special-why-now-for-digital-health-with-levels-founder-josh-clemente": "Digital Health, Now",
+    "the-steve-ballmer-interview": "Steve Ballmer",
+    "the-jamie-dimon-interview": "Jamie Dimon",
+    "10-years-of-acquired-with-michael-lewis": "10 Years of Acquired",
+    "acquired-live-at-radio-city-music-hall-presented-by-j-p-morgan": "Live at Radio City",
+    "acquired-live-from-chase-center-with-daniel-ek-emily-chang-jensen-huang-and-mark-zuckerberg": "Live from Chase Center",
+    "starbucks-with-howard-schultz": "Starbucks",
+    "sessions-david-senra-founders-podcast": "David Senra",
+    "the-playbook-lessons-from-200-company-stories": "The Playbook",
+    "caa-with-michael-ovitz": "CAA",
+    "7-powers-with-hamilton-helmer": "7 Powers",
+    "special-amazon-unbound-with-brad-stone": "Amazon Unbound",
+    "special-2021-china-tech-trends-with-tech-buzz-china": "China Tech Trends 2021",
+    "special-acquired-x-indie-hackers": "Acquired x Indie Hackers",
+    "special-invest-like-the-best-on-acquired": "Invest Like the Best",
+    "special-acquired-x-my-first-million": "Acquired x My First Million",
+    "acquired-top-ten-the-best-acquisitions-of-all-time": "The Best Acquisitions Ever",
+    "the-wework-acquisition-with-dan-primack": "WeWork",
+    "sequoia-capital-part-1": "Sequoia Capital Part I",
+    "netflix-part-2": "Netflix Part II",
+    "netflix-part-1": "Netflix Part I",
+    "episode-41-bookingcom-with-jetsetter-room-77-ceo-drew-patterson": "Booking.com",
+    "special-2016-review-and-2017-predictions": "2016 Review, 2017 Predictions",
+    "special-an-acquirers-view-into-ma-with-taylor-barada-head-of-corp-dev-at-adobe": "M&A Inside Adobe"
   }
 }

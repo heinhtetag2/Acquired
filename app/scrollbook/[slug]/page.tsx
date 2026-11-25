@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { episodes, getBook, lite, storySlugs } from "@/lib/content";
+import { episodes, getBook, lite, shortTitle, storySlugs } from "@/lib/content";
+import filters from "@/content/filters.json";
 import EpisodeHero from "@/components/scrollbook/EpisodeHero";
 import EpisodeOverlays from "@/components/scrollbook/EpisodeOverlays";
 import RelatedSlider from "@/components/scrollbook/RelatedSlider";
@@ -20,6 +21,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function ScrollbookPage({ params }: { params: Promise<{ slug: string }> }) {
   const ep = getBook((await params).slug);
   if (!ep) notFound();
+  // "More on Scrollbook" in Go deeper: hand-picked stories, labelled with their category
+  const more = (ep.deeper?.more ?? []).map((s) => {
+    const b = getBook(s); if (!b) return null;
+    const cat = filters.find((f) => f.group === "category" && f.episodes.includes(s))?.title ?? "Story";
+    return { slug: s, title: shortTitle(s, b.title), art: b.image ?? b.cover ?? b.thumb, topic: cat };
+  }).filter((x) => !!x);
   const related = (ep.related ?? episodes.filter((e) => e.slug !== ep.slug).slice(0, 6).map((e) => e.slug)).map(getBook).filter((e) => !!e);
   return (
     <div data-ep-theme={ep.theme}>
@@ -28,7 +35,7 @@ export default async function ScrollbookPage({ params }: { params: Promise<{ slu
         <style>{`:root:has([data-ep-theme]){--theme-light:${ep.themeColors.light};--theme-dark:${ep.themeColors.dark};--theme-a400:${ep.themeColors.a400};--theme-a500:${ep.themeColors.a500};--theme-a600:${ep.themeColors.a600};}`}</style>
       )}
       <div className="ep" data-theme="episode">
-        <EpisodeHero ep={ep} />
+        <EpisodeHero ep={ep} more={more} />
         <div className="ep-rule" aria-hidden />
         <section className="ep-cta" aria-label="Newsletter">
           <div className="ep-cta__inner">

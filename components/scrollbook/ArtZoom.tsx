@@ -3,7 +3,8 @@ import { useEffect, useRef, useState } from "react";
 
 // Live: click album art → zooms to 92% of min(vw, vh); in 320ms cubic-bezier(.16,1,.3,1), out 250ms cubic-bezier(.4,0,.2,1).
 /** `animated`: live album art is an animated GIF; the still paints first (keeps LCP), then the animated WebP swaps in after load. */
-export default function ArtZoom({ src, alt, color, animated }: { src?: string; alt: string; color: string; animated?: boolean }) {
+/** `motion`: a short silent video that loops over the still (which stays underneath as the poster and for the zoom). */
+export default function ArtZoom({ src, alt, color, animated, motion }: { src?: string; alt: string; color: string; animated?: boolean; motion?: string }) {
   const btn = useRef<HTMLButtonElement>(null);
   const img = useRef<HTMLImageElement>(null);
   const [open, setOpen] = useState(false);
@@ -56,6 +57,7 @@ export default function ArtZoom({ src, alt, color, animated }: { src?: string; a
         {src && <img src={src} alt={alt} fetchPriority="high"
           srcSet={src.startsWith("/images/art/") && src.endsWith(".webp") ? `${v(src, 450)} 450w, ${v(src, 700)} 700w, ${v(src)} 900w` : undefined}
           sizes="(max-width: 767px) 100vw, 448px" />}
+        {motion && <video className="ep-art__motion" src={motion} poster={src} autoPlay muted loop playsInline preload="auto" aria-hidden />}
       </button>
       {open && src && (
         <div className={`zoom ${phase === "in" ? "is-in" : ""}`} onClick={close} role="dialog" aria-label={`${alt} artwork`}>

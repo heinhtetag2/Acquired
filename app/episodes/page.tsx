@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import filters from "@/content/filters.json";
 import scrollbookData from "@/content/scrollbook.json";
-import { episodes, getBook, storySlugs, type Episode } from "@/lib/content";
+import { episodes, getBook, shortTitle, storySlugs, type Episode } from "@/lib/content";
 import ShelfPage, { type ShelfItem } from "@/components/scrollbook/ShelfPage";
 
 export const metadata: Metadata = { title: "Shelf | Scrollbook" };
 
 const curated = new Map(scrollbookData.deck.map((d) => [d.slug, d]));
-const topics = filters.filter((f) => f.group === "industry");
+const topics = filters.filter((f) => f.group === "category");
 const topicOf = new Map<string, (typeof topics)[number]>();
 for (const t of topics) for (const s of t.episodes) if (!topicOf.has(s)) topicOf.set(s, t);
 // a usable teaser line (the clone still has "Sample …" placeholder copy on many episodes)
@@ -21,7 +21,7 @@ export default function ShelfRoute() {
     const b = getBook(e.slug) ?? e;
     const d = curated.get(e.slug);
     const t = topicOf.get(e.slug);
-    return { slug: e.slug, title: b.title, art: b.thumb ?? b.image ?? b.cover, topic: d?.topic ?? t?.title ?? "Story", topicSlug: t?.slug, teaser: d?.hook ?? teaser(b), min: d?.min ?? 7 };
+    return { slug: e.slug, title: shortTitle(e.slug, b.title), art: b.thumb ?? b.image ?? b.cover, topic: d?.topic ?? t?.title ?? "Story", topicSlug: t?.slug, teaser: d?.hook ?? teaser(b), min: d?.min ?? 7 };
   });
   return <ShelfPage items={items} topics={topics.map((t) => ({ slug: t.slug, title: t.title }))} />;
 }

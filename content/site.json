@@ -33,6 +33,7 @@
    "label": "Shelf",
    "href": "/episodes"
   },
+  { "label": "You", "href": "/me" },
   {
    "label": "Library",
    "href": "/library"

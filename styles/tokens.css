@@ -379,3 +379,40 @@
 @media (max-width: 767px) { :root { --text-base: 17px; --text-lg: 19px; } }
 
 @media (max-width: 479px) { :root { --ep-card-title: 22px; } }
+
+/* ====================== Scrollbook dark surfaces ======================
+   Discover and story pages are dark (each story's own colours). Everything else you open from them — search, the More sheet,
+   the Shelf, the Library, your profile — uses this one deep, neutral dark, so moving around never feels like another app.
+   Same tokens, flipped: "ink" is the light text, "cream" the dark background; the mixes are recomputed in this scope. */
+:is(.shelf, .lib, .me, .search-section.is-open, .bnav-sheet__panel, .sheet__panel, .drawer, .ss__panel) {
+  --c-ink: #ece5d8;
+  --c-cream: #131517;
+  --c-paper: #1b1e21;
+  --c-neutral-white: #1b1e21;
+  --c-white: #1f2226;
+  --c-ink-3: color-mix(in srgb, var(--c-ink) 3%, transparent);
+  --c-ink-5: color-mix(in srgb, var(--c-ink) 6%, transparent);
+  --c-ink-7: color-mix(in srgb, var(--c-ink) 8%, transparent);
+  --c-ink-10: color-mix(in srgb, var(--c-ink) 11%, transparent);
+  --c-ink-20: color-mix(in srgb, var(--c-ink) 20%, transparent);
+  --c-ink-30: color-mix(in srgb, var(--c-ink) 30%, transparent);
+  --c-ink-50: color-mix(in srgb, var(--c-ink) 50%, transparent);
+  --c-ink-60: color-mix(in srgb, var(--c-ink) 62%, transparent);
+  --c-ink-70: color-mix(in srgb, var(--c-ink) 72%, transparent);
+  --c-ink-80: color-mix(in srgb, var(--c-ink) 82%, transparent);
+  --c-cream-3: color-mix(in srgb, var(--c-cream) 3%, transparent);
+  --c-cream-5: color-mix(in srgb, var(--c-cream) 5%, transparent);
+  --c-cream-7: color-mix(in srgb, var(--c-cream) 7%, transparent);
+  --c-cream-10: color-mix(in srgb, var(--c-cream) 10%, transparent);
+  --c-cream-50: color-mix(in srgb, var(--c-cream) 50%, transparent);
+  --c-cream-60: color-mix(in srgb, var(--c-cream) 60%, transparent);
+  --c-cream-70: color-mix(in srgb, var(--c-cream) 70%, transparent);
+  --bg: var(--c-cream);
+  --fg: var(--c-ink);
+  --fg-3: var(--c-ink-3); --fg-5: var(--c-ink-5); --fg-7: var(--c-ink-7); --fg-10: var(--c-ink-10); --fg-20: var(--c-ink-20);
+  --fg-30: var(--c-ink-30); --fg-50: var(--c-ink-50); --fg-muted: var(--c-ink-60); --fg-70: var(--c-ink-70);
+  color-scheme: dark;
+  color: var(--c-ink); /* text that just inherits picks up the light ink too */
+}
+/* the page behind those screens (and under the top bar) is the same dark */
+html:has(.shelf, .lib, .me), body:has(.shelf, .lib, .me) { background: #131517; }

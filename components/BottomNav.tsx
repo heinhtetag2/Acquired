@@ -6,10 +6,12 @@ import { site } from "@/lib/site";
 import { previousOf, track } from "@/lib/navTrail";
 import { deckImageReady, leftStoryPage, navigateWithTransition } from "@/lib/viewTransition";
 import { useSaved } from "@/lib/saved";
+import { dayKey, loadGoal, loadName, onProfileChange, readsByDay } from "@/lib/profile";
 import { iconFor } from "./Icons";
 
-/* Mobile-only bottom bar (≤767px): two main tabs + "More" in a cream pill, and a round search button beside it (search moves here from the top bar).
-   Everything else from the site menu lives in the More sheet, which slides up from behind the bar. */
+/* Mobile-only bottom bar (≤767px): two main tabs + "More" in a pill, and beside it a round "Today" ring (stories read vs your daily goal;
+   taps open your profile). Search sits in the top bar, left of the logo.
+   Everything else from the site menu lives in the More sheet, which slides up from behind the bar, with your profile on top. */
 
 const ic = { fill: "none", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round", strokeLinejoin: "round" } as const;
 // compass: the home deck is for discovering stories, not a "home" page
@@ -18,13 +20,12 @@ const ShelfIcon = () => (<svg viewBox="0 0 24 24" aria-hidden><path d="M5 4.5v13
 const MoreIcon = () => (<svg viewBox="0 0 24 24" aria-hidden><circle cx="6" cy="12" r="1.4" fill="currentColor" /><circle cx="12" cy="12" r="1.4" fill="currentColor" /><circle cx="18" cy="12" r="1.4" fill="currentColor" /></svg>);
 const CloseIcon = () => (<svg viewBox="0 0 24 24" aria-hidden><path d="M7 7l10 10M17 7 7 17" {...ic} /></svg>);
 const SaveIcon = ({ filled }: { filled?: boolean }) => (<svg viewBox="0 0 24 24" aria-hidden><path d="M6.5 4.5h11v15l-5.5-4-5.5 4z" {...ic} fill={filled ? "currentColor" : "none"} /></svg>);
-const SearchIcon = () => (<svg viewBox="0 0 24 24" aria-hidden><circle cx="11" cy="11" r="6.5" {...ic} /><path d="M16 16l4 4" {...ic} /></svg>);
 
 const TABS = [
   { label: "Discover", href: "/", Icon: DiscoverIcon },
   { label: "Shelf", href: "/episodes", Icon: ShelfIcon }, // your saved stories (the old Episodes tab)
 ];
-const MAIN = new Set(TABS.map((t) => t.href));
+const MAIN = new Set([...TABS.map((t) => t.href), "/me"]); // /me gets its own profile row in the More sheet
 const BackIcon = () => (<svg viewBox="0 0 24 24" aria-hidden><path d="M19 12H5M11 6l-6 6 6 6" {...ic} /></svg>);
 
 /** Detail pages get the compact bar (Back + Home). Value = where Back goes when there's no history to return to. */
@@ -71,6 +72,22 @@ export default function BottomNav() {
     });
     return () => { cancelAnimationFrame(raf); io?.disconnect(); };
   }, [pathname, parent]);
+  // the profile row in the More sheet: your name and today's progress, read when the sheet opens
+  const [me, setMe] = useState({ name: "", today: 0, goal: 3 });
+  // today's progress for the ring beside the pill: refreshed on every page and whenever a story is read
+  const [today, setToday] = useState<{ n: number; goal: number } | null>(null);
+  useEffect(() => {
+    const load = () => setToday({ n: readsByDay()[dayKey()]?.length ?? 0, goal: loadGoal() });
+    load();
+    const off = onProfileChange(load);
+    const onStorage = () => load();
+    window.addEventListener("storage", onStorage);
+    return () => { off(); window.removeEventListener("storage", onStorage); };
+  }, [pathname]);
+  useEffect(() => {
+    if (!more) return;
+    setMe({ name: loadName(), today: readsByDay()[dayKey()]?.length ?? 0, goal: loadGoal() });
+  }, [more]);
   useEffect(() => {
     if (!more) return;
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setMore(false); };
@@ -86,12 +103,20 @@ export default function BottomNav() {
   const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
   const extra = site.menu.filter((l) => !MAIN.has(l.href));
   // pages listed under More (e.g. New / the Library) light up the More tab while you're on them
-  const inMore = !TABS.some((t) => isActive(t.href)) && extra.some((l) => isActive(l.href));
+  const inMore = !TABS.some((t) => isActive(t.href)) && (extra.some((l) => isActive(l.href)) || isActive("/me"));
 
   return (
     <>
       <div className={`bnav-sheet${more ? " is-open" : ""}`} onClick={(e) => e.target === e.currentTarget && setMore(false)} aria-hidden={!more} inert={!more}>
         <div className="bnav-sheet__panel" role="dialog" aria-label="More">
+          <Link href="/me" className="bnav-sheet__me" aria-current={isActive("/me") ? "page" : undefined}>
+            <span className="bnav-sheet__avatar" aria-hidden>{(me.name || "R")[0].toUpperCase()}</span>
+            <span className="bnav-sheet__me-text">
+              <span className="bnav-sheet__me-name">{me.name || "Your profile"}</span>
+              <span className="t-label-xs">{me.today >= me.goal ? `Goal done today · ${me.today}/${me.goal}` : `Today ${me.today}/${me.goal} · stats, streak & goal`}</span>
+            </span>
+            <svg className="bnav-sheet__me-go" viewBox="0 0 24 24" aria-hidden><path d="M9 6l6 6-6 6" {...ic} /></svg>
+          </Link>
           <nav className="bnav-sheet__links" aria-label="More pages">
             {extra.map((l, i) => (
               <Link key={l.href} href={l.href} className="bnav-sheet__link" style={{ ["--i" as string]: i }} aria-current={isActive(l.href) ? "page" : undefined}>{l.label}</Link>
@@ -134,7 +159,16 @@ export default function BottomNav() {
             </button>
           </div>
         )}
-        {!parent && <button type="button" className="bnav__search" aria-label="Search" onClick={() => { setMore(false); window.dispatchEvent(new Event("sb:search-open")); }}><SearchIcon /></button>}
+        {!parent && (() => {
+          const n = today?.n ?? 0, goal = today?.goal ?? 3, C = 2 * Math.PI * 24;
+          return (
+            <Link href="/me" className={`bnav__today${n >= goal ? " is-done" : ""}`} onClick={() => setMore(false)}
+              aria-label={`Today: ${n} of ${goal} stories read. Open your profile`}>
+              <svg viewBox="0 0 54 54" aria-hidden><circle cx="27" cy="27" r="24" /><circle cx="27" cy="27" r="24" style={{ strokeDasharray: C, strokeDashoffset: C * (1 - Math.min(1, n / goal)) }} /></svg>
+              <span className="bnav__today-n" suppressHydrationWarning><b>{today ? n : "\u00a0"}</b>{today ? `/${goal}` : ""}</span>
+            </Link>
+          );
+        })()}
       </nav>
     </>
   );

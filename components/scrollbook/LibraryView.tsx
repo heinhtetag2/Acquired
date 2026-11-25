@@ -45,7 +45,7 @@ export default function LibraryView({ stories, collections, topics }: { stories:
   const savedStories = (saved ?? []).map((s) => stories[s]).filter(Boolean).reverse(); // newest first
 
   return (
-    <main id="main" className="lib" data-theme="light-fill">
+    <main id="main" className="lib" data-theme="dark">
       {/* page bar, same pattern as the Episodes page: round icon, serif title, two small toggles */}
       <div className="lib__bar">
         <span className="lib__bar-icon" aria-hidden><BookIcon /></span>

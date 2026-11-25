@@ -51,7 +51,10 @@ export default function EpisodeOverlays({ ep }: { ep: Episode }) {
   }, [open, drawer, close]);
 
   const chapters = ep.chapters ?? [];
-  const sections = ep.sources ?? [];
+  // real sources (from the story's Go deeper data) when it has them; otherwise the clone's placeholder sections
+  const real = (ep as { deeper?: { sources?: { label: string; url: string }[] } }).deeper?.sources ?? [];
+  const sections: [string, number][] = real.length ? [["Where this story comes from", real.length]] : ep.sources ?? [];
+  const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return u; } };
 
   return (
     <>
@@ -67,22 +70,30 @@ export default function EpisodeOverlays({ ep }: { ep: Episode }) {
         ))}
       </Sheet>
 
-      <Sheet id="sources" label="Sources" open={open === "sources"} onClose={close} onToc={() => setDrawer("sections")} tocLabel="Sections"
+      {real.length > 0 && <SourcesSheet open={open === "sources"} onClose={close} sources={real} host={host} />}
+      {!real.length && <Sheet id="sources" label="Sources" open={open === "sources"} onClose={close} onToc={() => setDrawer("sections")} tocLabel="Sections"
         toc={sections.map(([name, n]) => ({ id: `src-${slug(name)}`, label: name, meta: String(n) }))}>
         <div className="sheet-eyebrow">Sources · {ep.title}</div>
         <h2 className="sheet-title">{ep.title}</h2>
-        {sections.map(([name, n]) => (
+        {real.length ? (
+          <section>
+            <h3 id={`src-${slug(sections[0][0])}`} className="sheet-section">{sections[0][0]}</h3>
+            <ol className="sheet-sources">
+              {real.map((s) => <li key={s.url}><a href={s.url} target="_blank" rel="noreferrer">{s.label}</a><span>{host(s.url)}</span></li>)}
+            </ol>
+          </section>
+        ) : sections.map(([name, n]) => (
           <section key={name}>
             <h3 id={`src-${slug(name)}`} className="sheet-section">{name}</h3>
             <ul>{Array.from({ length: n }, (_, i) => <li key={i}>Source {i + 1} placeholder — add real sources in content/episodes.json.</li>)}</ul>
           </section>
         ))}
-      </Sheet>
+      </Sheet>}
 
       <Drawer label="Chapters" open={drawer === "chapters"} onClose={() => setDrawer("")}
         items={chapters.map(([t, title]) => ({ label: title, meta: formatStamp(t), href: `#ch-${slug(title)}`, onClick: () => seek(t) }))} />
-      <Drawer label="Sections" open={drawer === "sections"} onClose={() => setDrawer("")}
-        items={sections.map(([name, n]) => ({ label: name, meta: String(n), href: `#src-${slug(name)}` }))} />
+      {!real.length && <Drawer label="Sections" open={drawer === "sections"} onClose={() => setDrawer("")}
+        items={sections.map(([name, n]) => ({ label: name, meta: String(n), href: `#src-${slug(name)}` }))} />}
 
       {ep.companion && (
         <div className={`modal ${open === "companion" ? "is-open" : ""}`} onClick={(e) => e.target === e.currentTarget && close()} inert={open !== "companion"}>
@@ -102,6 +113,90 @@ export default function EpisodeOverlays({ ep }: { ep: Episode }) {
         </div>
       )}
     </>
+  );
+}
+
+// who published a source, and which group it belongs in (official → reference → news), from its web address
+const PUBLISHERS: [RegExp, string, "Official" | "Reference" | "News & coverage"][] = [
+  [/apple\.com/, "Apple", "Official"], [/marvel\.com/, "Marvel", "Official"], [/crunchyroll\.com/, "Crunchyroll", "Official"],
+  [/wikipedia\.org/, "Wikipedia", "Reference"],
+  [/goodmorningamerica\.com/, "Good Morning America", "News & coverage"], [/variety\.com/, "Variety", "News & coverage"],
+  [/comicbook\.com/, "ComicBook.com", "News & coverage"], [/sportskeeda\.com/, "Sportskeeda", "News & coverage"], [/theverge\.com/, "The Verge", "News & coverage"],
+];
+const GROUPS = ["Official", "Reference", "News & coverage"] as const;
+const whoIs = (url: string, host: (u: string) => string) => {
+  const m = PUBLISHERS.find(([re]) => re.test(url));
+  return m ? { name: m[1], group: m[2] } : { name: host(url), group: "News & coverage" as const };
+};
+
+/** Sources: a light bottom sheet that opens at about 60% of the screen. Drag the handle (or scroll the list) up for
+    full height; drag down to go back to 60%, and down again to close. Tap outside, × or Escape also close. */
+function SourcesSheet({ open, onClose, sources, host }: { open: boolean; onClose: () => void; sources: { label: string; url: string }[]; host: (u: string) => string }) {
+  const [full, setFull] = useState(false);
+  const [drag, setDrag] = useState(0);
+  const start = useRef<number | null>(null);
+  const list = useRef<HTMLDivElement>(null);
+  useEffect(() => { if (!open) { setFull(false); setDrag(0); } else list.current?.scrollTo(0, 0); }, [open]);
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open, onClose]);
+
+  const begin = (y: number) => { start.current = y; };
+  const move = (y: number) => { if (start.current !== null) setDrag(y - start.current); };
+  const end = () => {
+    if (start.current === null) return;
+    const d = drag; start.current = null; setDrag(0);
+    if (d < -40) setFull(true);
+    else if (d > 70) { if (full) setFull(false); else onClose(); }
+  };
+  // swiping up anywhere on the half-open sheet expands it; at the top of the list, swiping down shrinks it
+  const touchY = useRef(0);
+  const onTouchStart = (e: React.TouchEvent) => { touchY.current = e.touches[0].clientY; };
+  const onTouchMove = (e: React.TouchEvent) => {
+    const dy = e.touches[0].clientY - touchY.current;
+    if (!full && dy < -24) setFull(true);
+    else if (full && dy > 60 && (list.current?.scrollTop ?? 0) <= 0) setFull(false);
+  };
+
+  return (
+    <div className={`ss${open ? " is-open" : ""}${full ? " is-full" : ""}`} aria-hidden={!open} inert={!open}>
+      <div className="ss__bg" onClick={onClose} />
+      <div className="ss__panel" role="dialog" aria-modal="true" aria-label="Sources" style={drag ? { transform: `translateY(calc(var(--ss-y) + ${Math.max(drag, full ? 0 : -200)}px))`, transition: "none" } : undefined}
+        onTouchStart={onTouchStart} onTouchMove={onTouchMove}>
+        <div className="ss__head" onPointerDown={(e) => { begin(e.clientY); (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId); }}
+          onPointerMove={(e) => move(e.clientY)} onPointerUp={end} onPointerCancel={end}>
+          <span className="ss__grab" aria-hidden />
+          <div className="ss__row">
+            <h2 className="ss__title">Sources <span>{sources.length}</span></h2>
+            <button type="button" className="ss__done" onClick={onClose} onPointerDown={(e) => e.stopPropagation()}>Done</button>
+          </div>
+        </div>
+        {/* grouped like a reading list: just the titles, each one a link */}
+        <div ref={list} className="ss__list" onScroll={(e) => { if (!full && (e.currentTarget.scrollTop > 4)) setFull(true); }}>
+          {GROUPS.map((g) => {
+            const items = sources.map((s) => ({ ...s, ...whoIs(s.url, host) })).filter((s) => s.group === g);
+            if (!items.length) return null;
+            return (
+              <section key={g} className="ss__group">
+                <h3 className="ss__group-head">{g}</h3>
+                <ul>
+                  {items.map((s) => (
+                    <li key={s.url}>
+                      <a href={s.url} target="_blank" rel="noreferrer" aria-label={`${s.label}, ${s.name} (opens in a new tab)`}>
+                        <span className="ss__label">{s.label}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            );
+          })}
+        </div>
+      </div>
+    </div>
   );
 }
 

@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { MenuIcon } from "../Icons";
 import { loadSeen, type Seen } from "@/lib/seen";
 import { allThreads, onNotesChange, type SlugThread } from "@/lib/notes";
 import { track } from "@/lib/navTrail";
@@ -16,12 +15,14 @@ export type ShelfItem = { slug: string; title: string; art?: string; topic: stri
 
 const SAVED_KEY = "scrollbook:saved";
 const HIDDEN_KEY = "scrollbook:shelf-hidden"; // demo items you've taken off the shelf
-const VIEW_KEY = "scrollbook:shelf-view";
 const DAY = 86_400_000;
 const DEMO = true; // pretend everything is already saved (demo); set false to show only real saves
 
 const ic = { fill: "none", stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round", strokeLinejoin: "round" } as const;
 const ArrowIcon = () => (<svg viewBox="0 0 24 24" aria-hidden><path d="M5 12h13M13 6.5l5.5 5.5-5.5 5.5" {...ic} /></svg>);
+// sliders: "narrow this list down" (a ☰ reads as a site menu, so nobody guessed it filtered)
+const FilterIcon = () => (<svg viewBox="0 0 24 24" aria-hidden><path d="M4 7h9M17 7h3M4 17h3M11 17h9" {...ic} /><circle cx="15" cy="7" r="2" {...ic} /><circle cx="9" cy="17" r="2" {...ic} /></svg>);
+const CloseIcon = () => (<svg viewBox="0 0 24 24" aria-hidden><path d="M7 7l10 10M17 7 7 17" {...ic} /></svg>);
 const SaveIcon = ({ filled }: { filled?: boolean }) => (<svg viewBox="0 0 24 24" aria-hidden><path d="M6.5 4.5h11v15l-5.5-4-5.5 4z" {...ic} fill={filled ? "currentColor" : "none"} /></svg>);
 
 const read = <T,>(k: string, d: T): T => { try { return JSON.parse(localStorage.getItem(k) || "null") ?? d; } catch { return d; } };
@@ -43,22 +44,21 @@ export default function ShelfPage({ items, topics }: { items: ShelfItem[]; topic
   const [saved, setSaved] = useState<string[]>([]);
   const [hidden, setHidden] = useState<string[]>([]);
   const [seen, setSeen] = useState<Seen>({});
-  const [skim, setSkim] = useState(false); // view only: full rows (browse) or compact grid (skim), like the classic list
-  const [topic, setTopic] = useState<string | null>(null);
+  const [picked, setPicked] = useState<string[]>([]); // categories to show (several at once); none = everything
+  const togglePick = (slug: string) => setPicked((p) => (p.includes(slug) ? p.filter((x) => x !== slug) : [...p, slug]));
   const [sidebar, setSidebar] = useState(false);
   const [tab, setTab] = useState<"stories" | "notes">("stories"); // ?tab=notes opens your highlights + comments
   const [threads, setThreads] = useState<SlugThread[]>([]);
 
-  useEffect(() => { setSaved(read(SAVED_KEY, [])); setHidden(read(HIDDEN_KEY, [])); setSeen(loadSeen()); setSkim(read<string>(VIEW_KEY, "browse") === "skim");
+  useEffect(() => { setSaved(read(SAVED_KEY, [])); setHidden(read(HIDDEN_KEY, [])); setSeen(loadSeen());
     setThreads(allThreads()); if (new URLSearchParams(location.search).get("tab") === "notes") setTab("notes"); setReady(true); }, []);
   useEffect(() => onNotesChange(() => setThreads(allThreads())), []);
   // keep the tab in the address, so a story's Back button returns to the same tab
   const pickTab = (t: "stories" | "notes") => {
-    setTab(t); setTopic(null);
+    setTab(t); setPicked([]);
     const url = t === "notes" ? "/episodes?tab=notes" : "/episodes";
     history.replaceState(history.state, "", url); track(url);
   };
-  useEffect(() => { if (ready) write(VIEW_KEY, skim ? "skim" : "browse"); }, [skim, ready]);
   useEffect(() => {
     if (!sidebar) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setSidebar(false);
@@ -79,12 +79,11 @@ export default function ShelfPage({ items, topics }: { items: ShelfItem[]; topic
   }, [saved, hidden, seen, items, bySlug]);
 
   const isRead = (slug: string) => seen[slug]?.s === "read";
-  const list = shelf.filter((i) => !topic || i.topicSlug === topic);
+  const list = shelf.filter((i) => !picked.length || (!!i.topicSlug && picked.includes(i.topicSlug)));
   const counts = useMemo(() => { const m = new Map<string, number>(); shelf.forEach((i) => i.topicSlug && m.set(i.topicSlug, (m.get(i.topicSlug) ?? 0) + 1)); return m; }, [shelf]);
-  const topicTitle = topics.find((t) => t.slug === topic)?.title;
+  const titleOf = (slug: string) => topics.find((t) => t.slug === slug)?.title ?? slug;
   const notes = tab === "notes";
-  const noteCount = threads.filter((t) => bySlug.has(t.slug)).length;
-  const heading = notes ? "Your notes" : topicTitle ? `Shelf · ${topicTitle}` : "Your shelf";
+  const heading = "Your shelf"; // stays put: the chips under the bar show any filter, the switch shows stories / notes
 
   // taking a story off the shelf: drop it from your saves and keep the demo fill from bringing it back
   const remove = (slug: string, real: boolean) => {
@@ -92,50 +91,69 @@ export default function ShelfPage({ items, topics }: { items: ShelfItem[]; topic
     const h = [...hidden, slug]; setHidden(h); write(HIDDEN_KEY, h);
   };
 
+  // top-right switch: your saved stories, or the highlights and comments you made in them
   const toggles = (
-    <div className="pl-toggles" role="group" aria-label="View">
-      <button className="filter-btn" aria-pressed={!skim} onClick={() => setSkim(false)}>browse</button>
-      <button className="filter-btn" aria-pressed={skim} onClick={() => setSkim(true)}>skim</button>
+    <div className="pl-toggles" role="group" aria-label="Shelf">
+      <button className="filter-btn" aria-pressed={!notes} onClick={() => pickTab("stories")}>stories</button>
+      <button className="filter-btn" aria-pressed={notes} onClick={() => pickTab("notes")}>notes</button>
     </div>
   );
 
   return (
     <div className="pl shelf">
-      <div className="pl-nav-band" data-theme="playlist" aria-hidden />
+      <div className="pl-nav-band" data-theme="dark" aria-hidden />
       <div className="pl-bar">
-        <button className="icon-btn" aria-expanded={sidebar} aria-controls="shelf-topics" onClick={() => setSidebar(!sidebar)}><MenuIcon /><span className="sr-only">Filter by topic</span></button>
+        <button className={`icon-btn shelf__filter${picked.length ? " is-on" : ""}`} aria-expanded={sidebar} aria-controls="shelf-topics" onClick={() => setSidebar(!sidebar)}>
+          <FilterIcon /><span className="sr-only">{picked.length ? `Filtered by ${picked.map(titleOf).join(", ")}. Change filter` : "Filter by category"}</span>
+        </button>
         <div className="pl-bar__title">{heading}</div>
-        {!notes && toggles}
+        {toggles}
       </div>
 
-      {/* ☰ = filter your shelf by topic */}
+      {/* filter by category: a bottom sheet on phones, the side panel on wider screens */}
       <div className={`pl-sidebar-pop ${sidebar ? "is-open" : ""}`} onClick={(e) => e.target === e.currentTarget && setSidebar(false)}>
         <nav id="shelf-topics" className="pl-sidebar" aria-label="Filter shelf by topic">
-          <div className="pl-group">
-            <div className="pl-group__head t-label">Topics on your shelf</div>
-            <button type="button" className="pl-link" aria-current={!topic ? "page" : undefined} onClick={() => { setTopic(null); setSidebar(false); }}>everything <span className="shelf__n">{shelf.length}</span></button>
-            {topics.filter((t) => counts.get(t.slug)).map((t) => (
-              <button key={t.slug} type="button" className="pl-link" aria-current={topic === t.slug ? "page" : undefined} onClick={() => { setTopic(t.slug); setSidebar(false); }}>
-                {t.title} <span className="shelf__n">{counts.get(t.slug)}</span>
-              </button>
-            ))}
+          {/* tick as many categories as you like; the list updates as you go, Show closes */}
+          <div className="sf">
+            <div className="sf__head">
+              <span className="t-label-xs">Filter by category</span>
+              {picked.length > 0 && <button type="button" className="sf__clear t-label-xs" onClick={() => setPicked([])}>Clear</button>}
+            </div>
+            <div className="sf__grid" role="group" aria-label="Categories">
+              {topics.filter((t) => counts.get(t.slug)).map((t) => {
+                const on = picked.includes(t.slug);
+                return (
+                  <button key={t.slug} type="button" className="sf__opt" aria-pressed={on} onClick={() => togglePick(t.slug)}>
+                    <span className="sf__name">{t.title}</span><span className="sf__n">{counts.get(t.slug)}</span>
+                  </button>
+                );
+              })}
+            </div>
+            <button type="button" className="sf__show" onClick={() => setSidebar(false)}>
+              {picked.length ? `Show ${list.length} ${list.length === 1 ? "story" : "stories"}` : `Show all ${shelf.length} stories`}
+            </button>
           </div>
         </nav>
       </div>
 
       <div className="pl-main">
         <div className="spacer-xl only-desktop-xl" />
+        {/* the active filter, one tap to clear */}
+        {picked.length > 0 && !notes && (
+          <div className="shelf__active">
+            {picked.map((slug) => (
+              <button key={slug} type="button" className="shelf__active-chip t-label-xs" onClick={() => togglePick(slug)} aria-label={`Remove the ${titleOf(slug)} filter`}>{titleOf(slug)}<CloseIcon /></button>
+            ))}
+            <span className="t-label-xs">{list.length} {list.length === 1 ? "story" : "stories"}</span>
+          </div>
+        )}
         <div className="pl-head">
           <h1 className="t-h2">{heading}</h1>
-          {!notes && toggles}
-        </div>
-        <div className="shelf__tabs" role="tablist" aria-label="Shelf">
-          <button type="button" role="tab" aria-selected={!notes} className="shelf__tab" onClick={() => pickTab("stories")}>Stories{ready && <span>{shelf.length}</span>}</button>
-          <button type="button" role="tab" aria-selected={notes} className="shelf__tab" onClick={() => pickTab("notes")}>Notes{ready && <span>{noteCount}</span>}</button>
+          {toggles}
         </div>
         {ready && notes && <ShelfNotes threads={threads} bySlug={bySlug} />}
         {ready && !notes && !list.length && <p className="pl-empty t-body">Nothing here yet. Swipe right in Discover to save a story.</p>}
-        <div className={`pl-list${skim ? " is-skim" : ""}`} hidden={notes}>
+        <div className="pl-list" hidden={notes}>
           {ready && !notes && list.map((i) => {
             const done = isRead(i.slug);
             // "Revisit?": saved a while ago and never opened. Kept rare so it means something:

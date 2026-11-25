@@ -6,6 +6,7 @@ import BookFacts from "./BookFacts";
 import StoryBack from "./StoryBack";
 import StorySave from "./StorySave";
 import TodayProgress from "./ReadingPlan";
+import GoDeeper, { type MoreStory } from "./GoDeeper";
 
 function Presenting({ ep, className }: { ep: Episode; className: string }) {
   if (!ep.presentedBy) return null;
@@ -46,7 +47,7 @@ function Story({ story }: { story: NonNullable<Book["story"]> }) {
   );
 }
 
-export default function EpisodeHero({ ep }: { ep: Book }) {
+export default function EpisodeHero({ ep, more }: { ep: Book; more?: MoreStory[] }) {
   const art = ep.image ?? ep.cover;
   return (
     <main id="main" className="ep-hero">
@@ -58,7 +59,7 @@ export default function EpisodeHero({ ep }: { ep: Book }) {
           </div>
           <div className="spacer-sm" />
         </div>
-        <ArtZoom src={art} alt={ep.title} color={ep.color} animated={ep.imageAnimated && art === ep.image} />
+        <ArtZoom src={art} alt={ep.title} color={ep.color} animated={ep.imageAnimated && art === ep.image} motion={ep.motion} />
         <div className="spacer-lg" />
         <div className="ep-details">
           {!!ep.tags?.length && (
@@ -77,11 +78,18 @@ export default function EpisodeHero({ ep }: { ep: Book }) {
             {ep.apple && <a className="ep-icon-btn" href={ep.apple} target="_blank" rel="noreferrer" aria-label="Listen on Apple Podcasts"><AppleGlyph /></a>}
             {ep.youtube && <a className="ep-icon-btn" href={ep.youtube} target="_blank" rel="noreferrer" aria-label="Watch on YouTube"><VideoIcon /></a>}
             {ep.netflix && <a className="ep-icon-btn" href={ep.netflix} target="_blank" rel="noreferrer" aria-label="Watch on Netflix"><span className="n-glyph" aria-hidden>N</span></a>}
+            {/* TikTok: the story's top TikTok (Go deeper has the rest) */}
+            {ep.deeper?.tiktok?.[0] && (
+              <a className="ep-icon-btn" href={`https://www.tiktok.com/@${ep.deeper.tiktok[0].account}/video/${ep.deeper.tiktok[0].id}`} target="_blank" rel="noreferrer" aria-label={`Watch on TikTok (@${ep.deeper.tiktok[0].account})`}>
+                <svg viewBox="0 0 24 24" aria-hidden><path d="M14.5 3.5c.4 2.4 1.9 4 4.5 4.3v3c-1.7 0-3.2-.5-4.5-1.4v6.1a5 5 0 1 1-5-5h.5v3.1a2 2 0 1 0 1.5 1.9V3.5z" fill="currentColor" /></svg>
+              </a>
+            )}
           </div>
           <div className="ep-popup-btns">
             {ep.companion && <a href="#companion" className="popup-btn">PDF Companion<PlusIcon /></a>}
             {(ep.hasTranscript || !!ep.chapters?.length) && <a href="#transcript" className="popup-btn">Transcript<PlusIcon /></a>}
-            {!!ep.sources?.length && <a href="#sources" className="popup-btn">Sources<PlusIcon /></a>}
+            {/* Sources sits above Quick facts and opens a bottom sheet (there can be many) */}
+            {(!!ep.sources?.length || !!ep.deeper?.sources?.length) && <a href="#sources" className="popup-btn">Sources<PlusIcon /></a>}
             {!!ep.facts?.length && <BookFacts facts={ep.facts} />}
           </div>
           <Sponsors ep={ep} className="ep-desktop-only" />
@@ -114,7 +122,10 @@ export default function EpisodeHero({ ep }: { ep: Book }) {
           </div>
         )}
         {ep.story?.length ? (
-          <Story story={ep.story} />
+          <>
+            <Story story={ep.story} />
+            {ep.deeper && <GoDeeper deeper={ep.deeper} more={more} />}
+          </>
         ) : (
           <>
             {(ep.links || ep.carveOuts) && (

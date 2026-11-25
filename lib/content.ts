@@ -45,11 +45,17 @@ export type Book = Episode & {
   // the book's article, shown on the book page instead of the podcast blocks: headed sections of paragraphs, or a pull quote
   story?: ({ h: string; p: string[] } | { quote: string })[];
   facts?: { label: string; value: string }[]; // "Quick facts" card
+  deeper?: import("@/components/scrollbook/GoDeeper").Deeper & { more?: string[] }; // "Go deeper": watch / listen / read / sources
+  motion?: string; // a short silent looping video that plays over the cover (the still `image` stays as its poster)
 };
 const scrollbookBooks = scrollbookData.books as unknown as Record<string, Partial<Book>>; // null in the JSON = remove that field
 // Scrollbook-only stories (not podcast episodes): full entries in content/scrollbook.json → stories
 const scrollbookStories = ((scrollbookData as unknown as { stories?: Record<string, Book> }).stories ?? {}); // null in the JSON = field removed
 export const storySlugs = Object.keys(scrollbookStories);
+/** Short display titles for stories whose episode title runs long ("Convoy (with CEO Dan Lewis)" → "Convoy"),
+    used on cards and lists; the story page keeps the full title. */
+const cardTitles = ((scrollbookData as unknown as { cardTitles?: Record<string, string> }).cardTitles ?? {});
+export const shortTitle = (slug: string, title: string) => cardTitles[slug] ?? title;
 export const getBook = (slug: string): Book | undefined => {
   const e = getEpisode(slug);
   return e ? { ...e, ...scrollbookBooks[slug] } : scrollbookStories[slug];

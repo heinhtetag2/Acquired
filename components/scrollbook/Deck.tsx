@@ -1,10 +1,11 @@
 "use client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { navigateWithTransition, onStoryPage, storyImageReady } from "@/lib/viewTransition";
 import { forget, loadSeen, markSeen } from "@/lib/seen";
 import { allThreads, createdAt, openNoteLater, type SlugThread } from "@/lib/notes";
+import { loadInterests, logRead, onboardedAt } from "@/lib/profile";
 
 /* Home deck: one story at a time, in a random order — stories you haven't met yet come first (lib/seen.ts).
    Swipe left / ✕ = skip, swipe right / bookmark = save for later, tap the card / Read = open it, ↺ = undo.
@@ -12,13 +13,16 @@ import { allThreads, createdAt, openNoteLater, type SlugThread } from "@/lib/not
 
 export type DeckCard = {
   slug: string; title: string; topic: string; min: number; art?: string;
+  motion?: string;               // a looping silent video over the cover (plays on the top card only)
   hook?: string; fact?: boolean; // fact = the hook is a curated "did you know"; otherwise it's the story's teaser line
   isNew?: boolean;               // freshly added story: dealt first and tagged "New"
+  groups?: string[];             // topic slugs (industries) it belongs to, matched against your interests
   colors: { dark: string; light: string; a400: string; a500: string };
 };
 
 const SAVED_KEY = "scrollbook:saved";
 const SESSION_KEY = "scrollbook:deck"; // this tab's shuffle + position
+const DEAL_V = 2; // bump when the dealing rules change, so tabs holding an older deal get a fresh one
 const SWIPE = 90;    // px past which a drag counts as a swipe
 const FLY_MS = 280;
 
@@ -30,16 +34,23 @@ const ArrowIcon = () => (<svg viewBox="0 0 24 24" aria-hidden><path d="M5 12h13M
 
 const vars = (c: DeckCard) => ({ "--card-dark": c.colors.dark, "--card-light": c.colors.light, "--card-a400": c.colors.a400, "--card-a500": c.colors.a500 } as React.CSSProperties);
 const shuffleList = (a: number[]) => { a = [...a]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
-/** New-to-you stories first (shuffled), then the ones already skipped/saved/read (shuffled). */
-const dealOrder = (cards: DeckCard[]) => {
+/** Stories marked "new" (the ones just added) are always mixed into the first few cards, seen or not, so they're easy
+    to find while skipping. The rest: new-to-you first (your interests, then everything else), already-met ones last. */
+const dealOrder = (cards: DeckCard[], interests: string[] = []) => {
   const seen = loadSeen();
   const idx = [...cards.keys()];
   const fresh = (i: number) => !seen[cards[i].slug];
-  return [
-    ...shuffleList(idx.filter((i) => fresh(i) && cards[i].isNew)), // new stories you haven't met lead the deck
-    ...shuffleList(idx.filter((i) => fresh(i) && !cards[i].isNew)),
-    ...shuffleList(idx.filter((i) => !fresh(i))),
+  const liked = (i: number) => !!cards[i].groups?.some((g) => interests.includes(g));
+  const added = shuffleList(idx.filter((i) => cards[i].isNew));
+  const rest = [
+    ...shuffleList(idx.filter((i) => !cards[i].isNew && fresh(i) && liked(i))),
+    ...shuffleList(idx.filter((i) => !cards[i].isNew && fresh(i) && !liked(i))),
+    ...shuffleList(idx.filter((i) => !cards[i].isNew && !fresh(i))),
   ];
+  // drop each added story into a random spot among the first few cards (about every other card)
+  const order = [...rest];
+  added.forEach((i, k) => order.splice(Math.min(order.length, k * 2 + Math.floor(Math.random() * 2)), 0, i));
+  return order;
 };
 const loadSaved = (): string[] => { try { return JSON.parse(localStorage.getItem(SAVED_KEY) || "[]"); } catch { return []; } };
 const storeSaved = (s: string[]) => { try { localStorage.setItem(SAVED_KEY, JSON.stringify(s)); } catch {} };
@@ -66,7 +77,7 @@ const markRecalled = (id: string) => {
   try { const m = JSON.parse(localStorage.getItem(RECALL_KEY) || "{}"); m[id] = Date.now(); localStorage.setItem(RECALL_KEY, JSON.stringify(m)); } catch {}
 };
 
-export default function Deck({ cards, topic }: { cards: DeckCard[]; topic?: { slug: string; title: string } }) {
+export default function Deck({ cards: curatedCards, extra = [], topic, seenFilter }: { cards: DeckCard[]; extra?: DeckCard[]; topic?: { slug: string; title: string }; seenFilter?: "unread" | "read" }) {
   const sessionKey = SESSION_KEY + (topic ? `:${topic.slug}` : ""); // each topic deck keeps its own place
   const router = useRouter();
   const [order, setOrder] = useState<number[] | null>(null); // null until mounted (random order is client-only)
@@ -79,26 +90,42 @@ export default function Deck({ cards, topic }: { cards: DeckCard[]; topic?: { sl
   const [pressed, setPressed] = useState(false); // instant touch feedback before anything loads
   const start = useRef<{ x: number; y: number; t: number } | null>(null);
   const moved = useRef(false);
+  // your interests (from onboarding) add their stories to the curated deck; null until read from this browser
+  const [interests, setInterests] = useState<string[] | null>(null);
+  const [seenAtStart, setSeenAtStart] = useState<ReturnType<typeof loadSeen> | null>(null); // "New to me": what you'd met when the deck opened
+  useEffect(() => {
+    if (!topic && !onboardedAt()) { router.replace("/welcome"); return; } // first visit: onboarding first
+    setInterests(loadInterests());
+    if (seenFilter) setSeenAtStart(loadSeen());
+  }, [topic, router, seenFilter]);
+  const cards = useMemo(() => {
+    // "New to me": stories you hadn't met when the deck opened; "Read again": the ones you've opened before
+    if (seenFilter) return seenAtStart ? curatedCards.filter((c) => (seenFilter === "unread" ? !seenAtStart[c.slug] : seenAtStart[c.slug]?.s === "read")) : [];
+    if (!interests?.length) return curatedCards;
+    const have = new Set(curatedCards.map((c) => c.slug));
+    return [...curatedCards, ...extra.filter((c) => !have.has(c.slug) && c.groups?.some((g) => interests.includes(g)))];
+  }, [curatedCards, extra, interests, seenFilter, seenAtStart]);
   const [recall, setRecall] = useState<SlugThread | null>(null); // this session's "Remember this?" card
   const [recallDone, setRecallDone] = useState(false);
 
   // keep your place for this browser session, so coming back from a story lands on the same card
   useEffect(() => {
+    if (interests === null) return; // wait until we know your interests
     setSaved(loadSaved());
     try {
       const st = JSON.parse(sessionStorage.getItem(sessionKey) || "null");
-      if (st && Array.isArray(st.order) && st.order.length === cards.length) {
+      if (st && st.v === DEAL_V && Array.isArray(st.order) && st.order.length === cards.length) {
         setOrder(st.order); setPos(st.pos ?? 0); setHistory(st.history ?? []);
         setRecallDone(!!st.recallDone); if (!st.recallDone) setRecall(allThreads().find((t) => t.id === st.recall) ?? null);
         return;
       }
     } catch {}
-    setOrder(dealOrder(cards));
+    setOrder(dealOrder(cards, interests));
     setRecall(pickRecall(new Set(cards.map((c) => c.slug))));
-  }, [cards, sessionKey]);
+  }, [cards, sessionKey, interests]);
   useEffect(() => {
     if (!order) return;
-    try { sessionStorage.setItem(sessionKey, JSON.stringify({ order, pos, history, recall: recall?.id, recallDone })); } catch {}
+    try { sessionStorage.setItem(sessionKey, JSON.stringify({ v: DEAL_V, order, pos, history, recall: recall?.id, recallDone })); } catch {}
   }, [order, pos, history, recall, recallDone, sessionKey]);
 
   const current = order && pos < order.length ? cards[order[pos]] : undefined;
@@ -145,13 +172,13 @@ export default function Deck({ cards, topic }: { cards: DeckCard[]; topic?: { sl
       return;
     }
     const href = `/scrollbook/${current.slug}`;
-    markSeen(current.slug, "read");
+    markSeen(current.slug, "read"); logRead(current.slug);
     navigateWithTransition(() => router.push(href), onStoryPage, storyImageReady);
   }, [current, router, showRecall, recall]);
 
   // warm the next story so the transition starts straight away
   useEffect(() => { if (current) router.prefetch(`/scrollbook/${current.slug}`); }, [current, router]);
-  const reshuffle = () => { setOrder(dealOrder(cards)); setPos(0); setHistory([]); setRecall(pickRecall(new Set(cards.map((c) => c.slug)))); setRecallDone(false); };
+  const reshuffle = () => { setOrder(dealOrder(cards, interests ?? [])); setPos(0); setHistory([]); setRecall(pickRecall(new Set(cards.map((c) => c.slug)))); setRecallDone(false); };
 
   // keyboard: ← skip, → save, Enter read, Backspace undo
   useEffect(() => {
@@ -255,6 +282,7 @@ function Face({ card, shared }: { card: DeckCard; shared?: boolean }) {
     <>
       <div className="deck__art" style={{ background: card.colors.a500, viewTransitionName: shared ? "sb-art" : undefined }}>
         {card.art ? <img src={card.art} alt="" draggable={false} /> : <span className="deck__art-title">{card.title}</span>}
+        {card.motion && shared && <video className="deck__motion" src={card.motion} poster={card.art} autoPlay muted loop playsInline preload="auto" aria-hidden />}
       </div>
       <div className="deck__body" style={{ viewTransitionName: shared ? "sb-card-body" : undefined }}>
         <div className="deck__meta t-label-xs">{card.isNew && <span className="deck__new">New</span>}<span className="deck__topic">{card.topic}</span><span>{card.min} min read</span></div>
