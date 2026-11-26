@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 
-// Scrollbook has no index page yet; open the Disney book (the page it was duplicated from).
+// Stories live at /scrollbook/<slug>; the bare path goes to Discover.
 export default function ScrollbookIndex() {
-  redirect("/scrollbook/disney-the-renaissance-and-the-empire");
+  redirect("/");
 }

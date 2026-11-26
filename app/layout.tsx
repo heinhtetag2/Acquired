@@ -20,8 +20,8 @@ const sans = Geist({ subsets: ["latin"], variable: "--ff-sans", display: "swap",
 const logo = Archivo({ subsets: ["latin"], axes: ["wdth"], variable: "--ff-logo", display: "swap", preload: false });
 
 export const metadata: Metadata = {
-  title: "Acquired Podcast | Every Company Has a Story (clone)",
-  description: "Local study clone of acquired.fm.",
+  title: "Scrollbook | One story at a time",
+  description: "Short, true stories about the companies and people that shape the world. Swipe, save, read.",
   robots: { index: false, follow: false },
 };
 

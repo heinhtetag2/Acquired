@@ -137,6 +137,9 @@
 .search-chip { height: 36px; padding: 0 14px; display: flex; align-items: center; justify-content: center; border-radius: var(--r-xs); background: var(--c-ink-5); border: 1px solid transparent;
   font-family: var(--font-display); font-size-adjust: var(--adjust-display); font-size: var(--text-xs); line-height: 1.3; letter-spacing: var(--track-display); text-transform: uppercase; color: var(--c-ink); transition: all var(--dur-fast); }
 .search-chip:hover { background: var(--c-ink-10); }
+.search-chip[aria-pressed] { cursor: pointer; }
+.search-chip[aria-pressed="true"] { background: var(--c-ink); color: var(--c-cream); border-color: var(--c-ink); } /* picked (onboarding interests): like the Shelf filter */
+.search-chip[aria-pressed]:active { transform: scale(.97); }
 .search-none { display: flex; flex-direction: column; gap: var(--space-2xs); padding: var(--space-3xs) 0; }
 .search-none__text { font-family: var(--font-body); font-size-adjust: var(--adjust-body); font-size: var(--text-base); line-height: 1.45; color: var(--c-ink-60); }
 .search-empty { padding: var(--space-3xs) 0; font-family: var(--font-display); font-size-adjust: var(--adjust-display); font-size: var(--text-xs); letter-spacing: var(--track-display); text-transform: uppercase; color: var(--c-ink-60); }
@@ -215,10 +218,12 @@
   .bnav--detail.is-tucked { transform: translateY(calc(100% + var(--bnav-gap) + env(safe-area-inset-bottom))); opacity: 0; }
   /* a docked player (Acquired episode pages) takes the whole row while the Back/Home pill is tucked away */
   :root:has(.bnav--detail.is-tucked) .player-wrap:is(.is-minimized, .is-auto) { left: var(--bnav-gap) !important; }
-  .bnav--detail .bnav__pill { flex: none; width: 120px; }
-  .bnav--detail .bnav__tab { width: 56px; }
+  /* Back (icon only) + Discover / Next (icon and label): each a full-size tap target with room between them */
+  .bnav--detail .bnav__pill { flex: none; width: auto; }
+  .bnav--detail .bnav__tab { width: 76px; }
+  .bnav--detail .bnav__tab--icon { width: 52px; }
   /* detail bar is a step smaller (56px) since it only holds two actions; the player and page padding follow --bnav-h */
-  :root:has(.bnav--detail) { --bnav-h: 56px; }
+  :root:has(.bnav--detail) { --bnav-h: 60px; }
   .bnav--detail .bnav__tab svg { width: 20px; height: 20px; }
   .bnav--detail .bnav__tab--icon svg { width: 22px; height: 22px; }
   .bnav__tab--icon svg { width: 24px; height: 24px; }
@@ -234,7 +239,7 @@
 
   /* Docked mini player: on detail pages the minimised player sits in the bar row, right of the Back/Home pill,
      same height and cream surface. Cover · title + time left · play button with a progress ring. Tap to expand. */
-  :root:has(.bnav--detail) .player-wrap:is(.is-minimized, .is-auto) { z-index: calc(var(--z-popup) + 2); left: calc(var(--bnav-gap) + 120px + var(--space-3xs)); right: var(--bnav-gap);
+  :root:has(.bnav--detail) .player-wrap:is(.is-minimized, .is-auto) { z-index: calc(var(--z-popup) + 2); left: calc(var(--bnav-gap) + 138px + var(--space-3xs)); /* pill: 52 + 76 + padding */ right: var(--bnav-gap);
     bottom: calc(var(--bnav-gap) + env(safe-area-inset-bottom)); padding: 0; }
   :root:has(.bnav--detail) .player-wrap:is(.is-minimized, .is-auto) .player { width: 100%; height: var(--bnav-h); padding: 0 6px; justify-content: center; border-radius: var(--r-full);
     background: var(--bnav-surface); color: var(--bnav-ink); border-color: var(--bnav-edge); box-shadow: var(--bnav-shadow); -webkit-backdrop-filter: blur(18px) saturate(1.4); backdrop-filter: blur(18px) saturate(1.4); }

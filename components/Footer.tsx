@@ -1,16 +1,22 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-import { site } from "@/lib/site";
-import { ArrowUpRight } from "./Icons";
 import EmailForm from "./EmailForm";
-import DriftImage from "./DriftImage";
+import filters from "@/content/filters.json";
 
-export default function Footer({ variant = "combo" }: { variant?: "combo" | "console" | "console-dark" }) {
+/* Scrollbook's footer: the weekly email, the app's pages and the top categories (each opens that Discover deck). */
+export const SB_EMAIL = { eyebrow: "Emails from Scrollbook", copy: "One great story a week, plus what's new on Scrollbook." };
+const COLUMNS = [
+  { heading: "Scrollbook", links: [{ label: "Discover", href: "/" }, { label: "Shelf", href: "/shelf" }, { label: "Library", href: "/library" }, { label: "Your profile", href: "/me" }] },
+  { heading: "Categories", links: filters.filter((f) => f.group === "category").slice(0, 4).map((f) => ({ label: f.title, href: `/?c=${f.slug}` })) },
+];
+
+// `variant` is accepted for the classic demo pages and ignored: every page gets the Scrollbook footer
+export default function Footer(_props: { variant?: string } = {}) {
   const consoleRef = useRef<HTMLDivElement>(null);
   const blobRef = useRef<HTMLDivElement>(null);
 
-  // Cursor-following glow, only while the console is on screen (live: IntersectionObserver + rAF).
+  // a soft glow that follows the cursor, only while the footer is on screen
   useEffect(() => {
     const el = consoleRef.current, blob = blobRef.current;
     if (!el || !blob || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -24,49 +30,29 @@ export default function Footer({ variant = "combo" }: { variant?: "combo" | "con
   }, []);
 
   return (
-    <footer className={`footer theme-dark ${variant === "console" ? "footer--console" : variant === "console-dark" ? "footer--console-dark" : ""}`} data-theme="hidden">
-      {variant === "combo" && <>
-      <div className="footer__bg" aria-hidden />
-      <DriftImage className="footer__photo" aria-hidden src="/images/footer.webp" alt="" fade />
-      <div className="footer__cta">
-        <div className="t-label-lg" style={{ marginBottom: "var(--space-3xs)" }}>The Acquired Community</div>
-        <h2>Still thinking about an episode?</h2>
-        <div className="spacer-xs" />
-        <div style={{ maxWidth: "var(--w-base)" }}>
-          <p className="t-body-140">Discuss the episode with other listeners and receive updates from Acquired.</p>
-          <div className="spacer-base" />
-          <Link href="/slack" className="btn btn--cream btn--lg">Join our Slack</Link>
-        </div>
-      </div>
-      </>}
+    <footer className="footer theme-dark footer--console" data-theme="hidden">
       <div ref={consoleRef} className="footer__console">
         <div ref={blobRef} className="footer__blob" aria-hidden />
         <div className="footer__content">
           <div className="footer__main">
             <div className="footer__newsletter">
-              <EmailForm id="footer-email" dark eyebrow="Emails from Ben & David" copy="Our key takeaways, research photos, hints at the next episode, and your vote on future topics." cta="subscribe" />
+              <EmailForm id="footer-email" dark eyebrow={SB_EMAIL.eyebrow} copy={SB_EMAIL.copy} cta="subscribe" />
             </div>
             <div className="footer__rule" aria-hidden />
             <nav className="footer__links" aria-label="Footer">
-              {site.footer.map((col) => (
+              {COLUMNS.map((col) => (
                 <div key={col.heading} className="footer__col">
                   <div className="t-label footer__col-head">{col.heading}</div>
                   <div className="spacer-sm" />
                   <div className="footer__col-links">
-                    {col.links.map((l) => {
-                      const ext = "external" in l && l.external;
-                      const cls = "footer__link t-label";
-                      const body = <>{l.label}{ext && <ArrowUpRight />}</>;
-                      return l.href.startsWith("/") ? <Link key={l.label} href={l.href} className={cls}>{body}</Link>
-                        : <a key={l.label} href={l.href} className={cls} target={l.href.startsWith("mailto") ? undefined : "_blank"} rel="noreferrer">{body}</a>;
-                    })}
+                    {col.links.map((l) => <Link key={l.label} href={l.href} className="footer__link t-label">{l.label}</Link>)}
                   </div>
                 </div>
               ))}
             </nav>
           </div>
           <div className="footer__bottom t-label">
-            <span>© 2026 ACQ, LLC</span><span>Every company has a story.</span>
+            <span>© 2026 Scrollbook</span><span>One great story at a time.</span>
           </div>
         </div>
       </div>

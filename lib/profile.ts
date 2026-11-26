@@ -19,6 +19,7 @@ const K = {
   goal: "scrollbook:goal",
   name: "scrollbook:name",
   activity: "scrollbook:activity",   // { "yyyy-mm-dd": [slug, …] }
+  account: "scrollbook:account",     // demo sign-in: { method, email?, at }; there are no real accounts yet
 };
 const EVT = "sb:profile";
 
@@ -42,6 +43,9 @@ export const loadGoal = () => get<number>(K.goal, 3);
 export const saveGoal = (n: number) => set(K.goal, n);
 export const loadName = () => get<string>(K.name, "");
 export const saveName = (v: string) => set(K.name, v.trim());
+export type Account = { method: "apple" | "google" | "email"; email?: string; at: number };
+export const loadAccount = () => get<Account | null>(K.account, null);
+export const saveAccount = (a: Omit<Account, "at">) => set(K.account, { ...a, at: Date.now() });
 
 /** Log a story opened today (called when a story is read). */
 export function logRead(slug: string) {

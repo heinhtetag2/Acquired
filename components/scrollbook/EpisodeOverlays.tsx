@@ -60,7 +60,7 @@ export default function EpisodeOverlays({ ep }: { ep: Episode }) {
     <>
       <Sheet id="transcript" label="Transcript" open={open === "transcript"} onClose={close} onToc={() => setDrawer("chapters")} tocLabel="Chapters"
         toc={chapters.map(([t, title]) => ({ id: `ch-${slug(title)}`, label: title, meta: formatStamp(t), onClick: () => seek(t) }))}>
-        <div className="sheet-eyebrow">Transcript · {[seasonLabel(ep.seasonCode), ep.episode ? `Episode ${ep.episode}` : ""].filter(Boolean).join(" | ")}</div>
+        <div className="sheet-eyebrow">Transcript{ep.seasonCode ? ` · ${seasonLabel(ep.seasonCode)}` : ""}</div>
         <h2 className="sheet-title">{ep.title}</h2>
         {chapters.map(([t, title]) => (
           <section key={t}>
@@ -118,8 +118,10 @@ export default function EpisodeOverlays({ ep }: { ep: Episode }) {
 
 // who published a source, and which group it belongs in (official → reference → news), from its web address
 const PUBLISHERS: [RegExp, string, "Official" | "Reference" | "News & coverage"][] = [
-  [/apple\.com/, "Apple", "Official"], [/marvel\.com/, "Marvel", "Official"], [/crunchyroll\.com/, "Crunchyroll", "Official"],
-  [/wikipedia\.org/, "Wikipedia", "Reference"],
+  [/apple\.com/, "Apple", "Official"], [/youtube\.com/, "YouTube", "Official"], [/forbes\.com/, "Forbes", "News & coverage"], [/dexerto\.com/, "Dexerto", "News & coverage"], [/bleedingcool\.com/, "Bleeding Cool", "News & coverage"], [/redbull\.com/, "Red Bull", "News & coverage"], [/marvel\.com/, "Marvel", "Official"], [/crunchyroll\.com/, "Crunchyroll", "Official"],
+  [/wikipedia\.org/, "Wikipedia", "Reference"], [/letterboxd\.com/, "Letterboxd", "Reference"],
+  [/screendaily\.com/, "Screen Daily", "News & coverage"], [/bloody-disgusting\.com/, "Bloody Disgusting", "News & coverage"],
+  [/khaosodenglish\.com/, "Khaosod English", "News & coverage"], [/screenanarchy\.com/, "ScreenAnarchy", "News & coverage"],
   [/goodmorningamerica\.com/, "Good Morning America", "News & coverage"], [/variety\.com/, "Variety", "News & coverage"],
   [/comicbook\.com/, "ComicBook.com", "News & coverage"], [/sportskeeda\.com/, "Sportskeeda", "News & coverage"], [/theverge\.com/, "The Verge", "News & coverage"],
 ];
@@ -164,14 +166,18 @@ function SourcesSheet({ open, onClose, sources, host }: { open: boolean; onClose
   return (
     <div className={`ss${open ? " is-open" : ""}${full ? " is-full" : ""}`} aria-hidden={!open} inert={!open}>
       <div className="ss__bg" onClick={onClose} />
-      <div className="ss__panel" role="dialog" aria-modal="true" aria-label="Sources" style={drag ? { transform: `translateY(calc(var(--ss-y) + ${Math.max(drag, full ? 0 : -200)}px))`, transition: "none" } : undefined}
+      <div className="ss__panel" role="dialog" aria-modal="true" aria-label="Sources" style={drag > 0 ? { transform: `translateY(${drag}px)`, transition: "none" } : undefined} /* follows the finger down; up expands on release */
         onTouchStart={onTouchStart} onTouchMove={onTouchMove}>
         <div className="ss__head" onPointerDown={(e) => { begin(e.clientY); (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId); }}
           onPointerMove={(e) => move(e.clientY)} onPointerUp={end} onPointerCancel={end}>
           <span className="ss__grab" aria-hidden />
           <div className="ss__row">
-            <h2 className="ss__title">Sources <span>{sources.length}</span></h2>
-            <button type="button" className="ss__done" onClick={onClose} onPointerDown={(e) => e.stopPropagation()}>Done</button>
+            <div>
+              <h2 className="ss__title">Sources</h2>
+              <p className="ss__sub">Where the facts in this story come from.</p>
+            </div>
+            {/* no visible close: swipe down, tap outside or Escape. Kept for screen readers and keyboards. */}
+            <button type="button" className="sr-only" onClick={onClose}>Close sources</button>
           </div>
         </div>
         {/* grouped like a reading list: just the titles, each one a link */}

@@ -35,5 +35,5 @@ export const storyImageReady = () => imgReady(".ep-art img");
 
 /** Ready check for "leaving a story page": the story's cover is gone, and if we landed on the home deck, its top card is in. */
 export const leftStoryPage = () =>
-  !document.querySelector(".ep-art") && (location.pathname !== "/" || !!document.querySelector(".deck__card--top"));
+  !document.querySelector(".ep-art") && (location.pathname !== "/" || !!document.querySelector(".deck__card--top, .deck__end"));
 export const deckImageReady = () => imgReady(".deck__card--top .deck__art img");

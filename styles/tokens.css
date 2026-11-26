@@ -384,7 +384,7 @@
    Discover and story pages are dark (each story's own colours). Everything else you open from them — search, the More sheet,
    the Shelf, the Library, your profile — uses this one deep, neutral dark, so moving around never feels like another app.
    Same tokens, flipped: "ink" is the light text, "cream" the dark background; the mixes are recomputed in this scope. */
-:is(.shelf, .lib, .me, .search-section.is-open, .bnav-sheet__panel, .sheet__panel, .drawer, .ss__panel) {
+:is(.shelf, .lib, .me, .ob, .search-section.is-open, .bnav-sheet__panel, .sheet__panel, .drawer, .ss__panel) {
   --c-ink: #ece5d8;
   --c-cream: #131517;
   --c-paper: #1b1e21;

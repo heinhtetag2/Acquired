@@ -1,22 +1,24 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { Fragment, useEffect, useMemo, useState } from "react";
 import { loadSeen, type Seen } from "@/lib/seen";
 import { allThreads, onNotesChange, type SlugThread } from "@/lib/notes";
 import { track } from "@/lib/navTrail";
+import { loadSaved, setSaved } from "@/lib/saved";
 import ShelfNotes from "./ShelfNotes";
 
-/* Shelf: everything you've saved, to come back to (same layout as the classic Episodes list).
-   Real saves (from Discover) come first, newest first. Demo mode fills the rest of the shelf as if every story
-   were already saved, with spread-out "saved … ago" dates, so the page is never empty.
-   Old unread saves get a gentle "Revisit" nudge; stories you've opened are tagged "Read". */
+/* Shelf: the one page that holds only what you chose to keep (Discover shuffles; the Shelf remembers).
+   saved: every story you kept, newest save first (opened ones are tagged "Read"; saving from a story's own page
+          counts as opening it, so reads must never hide a save). Old unread saves get a gentle "Revisit?" nudge.
+   notes: your highlights and comments.
+   read:  every story you've opened, newest first, so you can find "that one about Rolex" again. */
 
 export type ShelfItem = { slug: string; title: string; art?: string; topic: string; topicSlug?: string; teaser?: string; min: number };
 
-const SAVED_KEY = "scrollbook:saved";
-const HIDDEN_KEY = "scrollbook:shelf-hidden"; // demo items you've taken off the shelf
 const DAY = 86_400_000;
-const DEMO = true; // pretend everything is already saved (demo); set false to show only real saves
+type Tab = "saved" | "notes" | "read";
+const TABS: Tab[] = ["saved", "notes", "read"];
+const SHOWN: Tab[] = ["saved", "read"]; // notes isn't a tab: it opens from the profile's Highlights / Comments (?tab=notes)
 
 const ic = { fill: "none", stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round", strokeLinejoin: "round" } as const;
 const ArrowIcon = () => (<svg viewBox="0 0 24 24" aria-hidden><path d="M5 12h13M13 6.5l5.5 5.5-5.5 5.5" {...ic} /></svg>);
@@ -25,38 +27,49 @@ const FilterIcon = () => (<svg viewBox="0 0 24 24" aria-hidden><path d="M4 7h9M1
 const CloseIcon = () => (<svg viewBox="0 0 24 24" aria-hidden><path d="M7 7l10 10M17 7 7 17" {...ic} /></svg>);
 const SaveIcon = ({ filled }: { filled?: boolean }) => (<svg viewBox="0 0 24 24" aria-hidden><path d="M6.5 4.5h11v15l-5.5-4-5.5 4z" {...ic} fill={filled ? "currentColor" : "none"} /></svg>);
 
-const read = <T,>(k: string, d: T): T => { try { return JSON.parse(localStorage.getItem(k) || "null") ?? d; } catch { return d; } };
-const write = (k: string, v: unknown) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
-
-/** Stable pseudo "saved N days ago" for demo items (1–120 days), from the slug. */
-const demoDaysAgo = (slug: string) => { let h = 0; for (const c of slug) h = (h * 31 + c.charCodeAt(0)) >>> 0; return 1 + (h % 120); };
-const ago = (ms: number) => {
+/** Which time group a story sits under on the Shelf: when you saved it (Saved tab) or read it (Read tab). */
+function whenOf(ms: number) {
+  const start = new Date(); start.setHours(0, 0, 0, 0); // midnight today
+  const t = start.getTime();
+  if (ms >= t) return "Today";
+  if (ms >= t - DAY) return "Yesterday";
+  if (ms >= t - 6 * DAY) return "This week";
+  if (ms >= t - 29 * DAY) return "This month";
+  return "Older";
+}
+const ago = (verb: string, ms: number) => {
   const d = Math.max(0, Math.round((Date.now() - ms) / DAY));
-  if (d === 0) return "Saved today";
-  if (d === 1) return "Saved yesterday";
-  if (d < 14) return `Saved ${d} days ago`;
-  if (d < 60) return `Saved ${Math.round(d / 7)} weeks ago`;
-  return `Saved ${Math.round(d / 30)} months ago`;
+  if (d === 0) return `${verb} today`;
+  if (d === 1) return `${verb} yesterday`;
+  if (d < 14) return `${verb} ${d} days ago`;
+  if (d < 60) return `${verb} ${Math.round(d / 7)} weeks ago`;
+  return `${verb} ${Math.round(d / 30)} months ago`;
 };
 
 export default function ShelfPage({ items, topics }: { items: ShelfItem[]; topics: { slug: string; title: string }[] }) {
   const [ready, setReady] = useState(false);
-  const [saved, setSaved] = useState<string[]>([]);
-  const [hidden, setHidden] = useState<string[]>([]);
+  const [saved, setSavedList] = useState<string[]>([]);
   const [seen, setSeen] = useState<Seen>({});
   const [picked, setPicked] = useState<string[]>([]); // categories to show (several at once); none = everything
   const togglePick = (slug: string) => setPicked((p) => (p.includes(slug) ? p.filter((x) => x !== slug) : [...p, slug]));
   const [sidebar, setSidebar] = useState(false);
-  const [tab, setTab] = useState<"stories" | "notes">("stories"); // ?tab=notes opens your highlights + comments
+  const [tab, setTab] = useState<Tab>("saved"); // ?tab=notes / ?tab=read open those tabs
   const [threads, setThreads] = useState<SlugThread[]>([]);
 
-  useEffect(() => { setSaved(read(SAVED_KEY, [])); setHidden(read(HIDDEN_KEY, [])); setSeen(loadSeen());
-    setThreads(allThreads()); if (new URLSearchParams(location.search).get("tab") === "notes") setTab("notes"); setReady(true); }, []);
+  useEffect(() => {
+    const sync = () => { setSavedList(loadSaved()); setSeen(loadSeen()); };
+    sync(); setThreads(allThreads());
+    const t = new URLSearchParams(location.search).get("tab") as Tab | null;
+    if (t && TABS.includes(t)) setTab(t);
+    setReady(true);
+    window.addEventListener("sb:saved", sync); window.addEventListener("storage", sync);
+    return () => { window.removeEventListener("sb:saved", sync); window.removeEventListener("storage", sync); };
+  }, []);
   useEffect(() => onNotesChange(() => setThreads(allThreads())), []);
   // keep the tab in the address, so a story's Back button returns to the same tab
-  const pickTab = (t: "stories" | "notes") => {
+  const pickTab = (t: Tab) => {
     setTab(t); setPicked([]);
-    const url = t === "notes" ? "/episodes?tab=notes" : "/episodes";
+    const url = t === "saved" ? "/shelf" : `/shelf?tab=${t}`;
     history.replaceState(history.state, "", url); track(url);
   };
   useEffect(() => {
@@ -67,35 +80,26 @@ export default function ShelfPage({ items, topics }: { items: ShelfItem[]; topic
   }, [sidebar]);
 
   const bySlug = useMemo(() => new Map(items.map((i) => [i.slug, i])), [items]);
-  // shelf = real saves (newest first) + demo fill; each with the time it was "saved"
-  const shelf = useMemo(() => {
-    const real = [...saved].reverse().filter((s) => !hidden.includes(s)).map((s) => bySlug.get(s)).filter((x): x is ShelfItem => !!x)
-      .map((i) => ({ ...i, at: seen[i.slug]?.t ?? Date.now(), real: true }));
-    const have = new Set(real.map((r) => r.slug));
-    const demo = DEMO ? items.filter((i) => !have.has(i.slug) && !hidden.includes(i.slug))
-      .map((i) => ({ ...i, at: Date.now() - demoDaysAgo(i.slug) * DAY, real: false }))
-      .sort((a, b) => b.at - a.at) : [];
-    return [...real, ...demo];
-  }, [saved, hidden, seen, items, bySlug]);
-
-  const isRead = (slug: string) => seen[slug]?.s === "read";
-  const list = shelf.filter((i) => !picked.length || (!!i.topicSlug && picked.includes(i.topicSlug)));
+  // saved: everything you kept, newest save first ("at" = when it was saved, or last opened)
+  const savedItems = useMemo(() => [...saved].reverse().map((s) => bySlug.get(s))
+    .filter((x): x is ShelfItem => !!x).map((i) => ({ ...i, at: seen[i.slug]?.t ?? Date.now() })), [saved, seen, bySlug]);
+  // read: everything you've opened, newest first ("at" = when you read it)
+  const readItems = useMemo(() => Object.entries(seen).filter(([, v]) => v.s === "read").sort((a, b) => b[1].t - a[1].t)
+    .map(([s, v]) => { const i = bySlug.get(s); return i && { ...i, at: v.t }; }).filter((x): x is ShelfItem & { at: number } => !!x), [seen, bySlug]);
+  const shelf = tab === "read" ? readItems : savedItems;
+  // newest first, so the time headings (Today, Yesterday, This week…) each appear once
+  const list = shelf.filter((i) => !picked.length || (!!i.topicSlug && picked.includes(i.topicSlug))).sort((a, b) => b.at - a.at);
   const counts = useMemo(() => { const m = new Map<string, number>(); shelf.forEach((i) => i.topicSlug && m.set(i.topicSlug, (m.get(i.topicSlug) ?? 0) + 1)); return m; }, [shelf]);
   const titleOf = (slug: string) => topics.find((t) => t.slug === slug)?.title ?? slug;
   const notes = tab === "notes";
-  const heading = "Your shelf"; // stays put: the chips under the bar show any filter, the switch shows stories / notes
+  const heading = notes ? "Your notes" : "Your shelf"; // stays put: the chips under the bar show any filter, the switch shows stories / notes
 
-  // taking a story off the shelf: drop it from your saves and keep the demo fill from bringing it back
-  const remove = (slug: string, real: boolean) => {
-    if (real) { const s = saved.filter((x) => x !== slug); setSaved(s); write(SAVED_KEY, s); }
-    const h = [...hidden, slug]; setHidden(h); write(HIDDEN_KEY, h);
-  };
+  const remove = (slug: string) => setSaved(slug, false); // take a story off the shelf
 
-  // top-right switch: your saved stories, or the highlights and comments you made in them
+  // top-right switch: saved (read later) or read (what you've opened)
   const toggles = (
     <div className="pl-toggles" role="group" aria-label="Shelf">
-      <button className="filter-btn" aria-pressed={!notes} onClick={() => pickTab("stories")}>stories</button>
-      <button className="filter-btn" aria-pressed={notes} onClick={() => pickTab("notes")}>notes</button>
+      {SHOWN.map((t) => <button key={t} className="filter-btn" aria-pressed={tab === t} onClick={() => pickTab(t)}>{t}</button>)}
     </div>
   );
 
@@ -103,7 +107,7 @@ export default function ShelfPage({ items, topics }: { items: ShelfItem[]; topic
     <div className="pl shelf">
       <div className="pl-nav-band" data-theme="dark" aria-hidden />
       <div className="pl-bar">
-        <button className={`icon-btn shelf__filter${picked.length ? " is-on" : ""}`} aria-expanded={sidebar} aria-controls="shelf-topics" onClick={() => setSidebar(!sidebar)}>
+        <button hidden={notes || !shelf.length} className={`icon-btn shelf__filter${picked.length ? " is-on" : ""}`} aria-expanded={sidebar} aria-controls="shelf-topics" onClick={() => setSidebar(!sidebar)}>
           <FilterIcon /><span className="sr-only">{picked.length ? `Filtered by ${picked.map(titleOf).join(", ")}. Change filter` : "Filter by category"}</span>
         </button>
         <div className="pl-bar__title">{heading}</div>
@@ -130,7 +134,7 @@ export default function ShelfPage({ items, topics }: { items: ShelfItem[]; topic
               })}
             </div>
             <button type="button" className="sf__show" onClick={() => setSidebar(false)}>
-              {picked.length ? `Show ${list.length} ${list.length === 1 ? "story" : "stories"}` : `Show all ${shelf.length} stories`}
+              {picked.length ? `Show ${list.length} ${list.length === 1 ? "story" : "stories"}` : `Show all ${shelf.length} ${shelf.length === 1 ? "story" : "stories"}`}
             </button>
           </div>
         </nav>
@@ -152,16 +156,23 @@ export default function ShelfPage({ items, topics }: { items: ShelfItem[]; topic
           {toggles}
         </div>
         {ready && notes && <ShelfNotes threads={threads} bySlug={bySlug} />}
-        {ready && !notes && !list.length && <p className="pl-empty t-body">Nothing here yet. Swipe right in Discover to save a story.</p>}
+        {ready && !notes && !shelf.length && (
+          <div className="shelf__empty">
+            <p className="t-body">{tab === "read" ? "Stories you read show up here, so you can find them again." : "Nothing saved yet. Swipe right on a story in Discover to keep it here."}</p>
+            <Link href="/" className="shelf__cta t-label-xs">Go to Discover</Link>
+          </div>
+        )}
         <div className="pl-list" hidden={notes}>
-          {ready && !notes && list.map((i) => {
-            const done = isRead(i.slug);
-            // "Revisit?": saved a while ago and never opened. Kept rare so it means something:
-            // real saves after 3 weeks; demo items only a few (1 in 6) of the older ones
-            const old = !done && Date.now() - i.at > 21 * DAY;
-            const stale = old && (i.real || demoDaysAgo(i.slug + "~") % 6 === 0);
+          {ready && !notes && list.map((i, n) => {
+            const when = whenOf(i.at);
+            const newGroup = n === 0 || whenOf(list[n - 1].at) !== when;
+            const done = tab === "read";
+            const opened = seen[i.slug]?.s === "read";
+            const stale = !done && !opened && Date.now() - i.at > 21 * DAY; // "Revisit?": saved 3+ weeks ago, still unread
             return (
-              <article key={i.slug} className={`pl-row shelf__row${done ? " is-read" : ""}`}>
+              <Fragment key={i.slug}>
+              {newGroup && <h2 className="shelf__when t-label-xs">{when}</h2>}
+              <article className="pl-row shelf__row">
                 <Link prefetch={false} href={`/scrollbook/${i.slug}`} className="pl-row__link"><span className="sr-only">{i.title}</span></Link>
                 <div className="pl-art pl-art--desktop">{i.art && <img src={i.art} alt="" loading="lazy" />}</div>
                 <div className="pl-body">
@@ -177,17 +188,19 @@ export default function ShelfPage({ items, topics }: { items: ShelfItem[]; topic
                   <div className="pl-extra">
                     {i.teaser && <p className="pl-desc t-body-140">{i.teaser}</p>}
                     <div className="shelf__status t-label-xs">
-                      <span>{ago(i.at)}</span>
-                      {done && <span className="shelf__tag shelf__tag--read">Read</span>}
+                      <span>{ago(done ? "Read" : "Saved", i.at)}</span>
+                      {done && saved.includes(i.slug) && <span className="shelf__tag shelf__tag--read">Saved</span>}
+                      {!done && opened && <span className="shelf__tag shelf__tag--read">Read</span>}
                       {stale && <span className="shelf__tag shelf__tag--revisit">Revisit?</span>}
                     </div>
                   </div>
                 </div>
                 <div className="shelf__acts">
-                  <button type="button" className="shelf__unsave" onClick={() => remove(i.slug, i.real)} aria-label={`Remove ${i.title} from your shelf`}><SaveIcon filled /></button>
+                  {!done && <button type="button" className="shelf__unsave" onClick={() => remove(i.slug)} aria-label={`Remove ${i.title} from your shelf`}><SaveIcon filled /></button>}
                   <Link prefetch={false} className="pl-play" href={`/scrollbook/${i.slug}`} aria-label={`Read ${i.title}`}><ArrowIcon /></Link>
                 </div>
               </article>
+              </Fragment>
             );
           })}
         </div>

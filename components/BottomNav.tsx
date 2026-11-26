@@ -4,10 +4,9 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { site } from "@/lib/site";
 import { previousOf, track } from "@/lib/navTrail";
+import { advanceDeck, runAt } from "@/lib/deckRun";
 import { deckImageReady, leftStoryPage, navigateWithTransition } from "@/lib/viewTransition";
-import { useSaved } from "@/lib/saved";
 import { dayKey, loadGoal, loadName, onProfileChange, readsByDay } from "@/lib/profile";
-import { iconFor } from "./Icons";
 
 /* Mobile-only bottom bar (≤767px): two main tabs + "More" in a pill, and beside it a round "Today" ring (stories read vs your daily goal;
    taps open your profile). Search sits in the top bar, left of the logo.
@@ -15,23 +14,24 @@ import { iconFor } from "./Icons";
 
 const ic = { fill: "none", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round", strokeLinejoin: "round" } as const;
 // compass: the home deck is for discovering stories, not a "home" page
+// Next: a small stack of cards (back to the deck, onto the next card); the back card only peeks out, so no lines cross
+const NextIcon = () => (<svg viewBox="0 0 24 24" aria-hidden><rect x="9.5" y="3.5" width="10.5" height="14.5" rx="2" {...ic} /><path d="M9.5 6.6 6 7.3a2 2 0 0 0-1.55 2.36l1.9 9.3a2 2 0 0 0 2.36 1.56l5.6-1.14" {...ic} /></svg>);
 const DiscoverIcon = () => (<svg viewBox="0 0 24 24" aria-hidden><circle cx="12" cy="12" r="8.5" {...ic} /><path d="M15.5 8.5 13.4 13.4 8.5 15.5l2.1-4.9z" {...ic} /></svg>);
 const ShelfIcon = () => (<svg viewBox="0 0 24 24" aria-hidden><path d="M5 4.5v13M9 4.5v13M13.2 5.3l3.4 12.2M4 19.5h16" {...ic} /></svg>);
 const MoreIcon = () => (<svg viewBox="0 0 24 24" aria-hidden><circle cx="6" cy="12" r="1.4" fill="currentColor" /><circle cx="12" cy="12" r="1.4" fill="currentColor" /><circle cx="18" cy="12" r="1.4" fill="currentColor" /></svg>);
 const CloseIcon = () => (<svg viewBox="0 0 24 24" aria-hidden><path d="M7 7l10 10M17 7 7 17" {...ic} /></svg>);
-const SaveIcon = ({ filled }: { filled?: boolean }) => (<svg viewBox="0 0 24 24" aria-hidden><path d="M6.5 4.5h11v15l-5.5-4-5.5 4z" {...ic} fill={filled ? "currentColor" : "none"} /></svg>);
 
 const TABS = [
   { label: "Discover", href: "/", Icon: DiscoverIcon },
-  { label: "Shelf", href: "/episodes", Icon: ShelfIcon }, // your saved stories (the old Episodes tab)
+  { label: "Shelf", href: "/shelf", Icon: ShelfIcon }, // your saved stories
 ];
 const MAIN = new Set([...TABS.map((t) => t.href), "/me"]); // /me gets its own profile row in the More sheet
 const BackIcon = () => (<svg viewBox="0 0 24 24" aria-hidden><path d="M19 12H5M11 6l-6 6 6 6" {...ic} /></svg>);
 
 /** Detail pages get the compact bar (Back + Home). Value = where Back goes when there's no history to return to. */
 const DETAIL: [RegExp, string][] = [
-  [/^\/episodes\/[^/]+/, "/episodes"],
-  [/^\/scrollbook\/[^/]+/, "/"], // Scrollbook stories are opened from the home deck
+  [/^\/scrollbook\/[^/]+/, "/"], // stories are opened from the home deck
+  // the classic demo pages (More menu)
   [/^\/acq2-episodes\/[^/]+/, "/acq2"],
   [/^\/artifacts\/[^/]+/, "/artifacts"],
 ];
@@ -96,9 +96,25 @@ export default function BottomNav() {
     return () => { window.removeEventListener("keydown", onKey); document.documentElement.classList.remove("bnav-lock"); };
   }, [more]);
 
-  // Story pages: the second button saves the story (Back already leads out; a Discover button there was a duplicate)
-  const storySlug = /^\/scrollbook\/([^/]+)/.exec(pathname)?.[1];
-  const [isSaved, toggleSave] = useSaved(storySlug);
+  // Opened from Discover, Back returns to the card you just read; "Next" returns to the deck one card on,
+  // so you're straight onto something new and still choose what to read. From anywhere else it's Discover, the way home.
+  const [deckFrom, setDeckFrom] = useState<{ slug: string; from: string } | null>(null);
+  useEffect(() => {
+    const slug = /^\/scrollbook\/([^/]+)/.exec(pathname)?.[1];
+    const run = slug ? runAt(slug) : null;
+    const prev = previousOf(location.pathname + location.search);
+    // came here from the deck (or reloaded the story the deck just opened, which forgets in-app history).
+    // Compare paths only: a deck picked from Search ("/?c=new") changes just the query, which the trail can miss.
+    const path = (u?: string) => u?.split(/[?#]/)[0];
+    setDeckFrom(slug && run && (path(prev) === path(run.from) || (!prev && run.opened)) ? { slug, from: run.from } : null);
+  }, [pathname]);
+  const goNext = () => {
+    if (!deckFrom) return;
+    advanceDeck(deckFrom.slug); // the deck opens on the card after this story
+    // same as Back: replace (so the deck isn't stacked on this story in history), with the cover shrinking into the deck card
+    const to = deckFrom.from;
+    navigateWithTransition(() => router.replace(to, { scroll: false }), leftStoryPage, deckImageReady);
+  };
 
   const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
   const extra = site.menu.filter((l) => !MAIN.has(l.href));
@@ -122,12 +138,6 @@ export default function BottomNav() {
               <Link key={l.href} href={l.href} className="bnav-sheet__link" style={{ ["--i" as string]: i }} aria-current={isActive(l.href) ? "page" : undefined}>{l.label}</Link>
             ))}
           </nav>
-          <div className="bnav-sheet__listen">
-            <span className="t-label-xs">Listen on</span>
-            <div className="bnav-sheet__icons">
-              {site.listen.map((l) => { const Icon = iconFor(l.icon); return <a key={l.label} href={l.href} target="_blank" rel="noreferrer" aria-label={l.label}><Icon /></a>; })}
-            </div>
-          </div>
         </div>
       </div>
 
@@ -135,16 +145,14 @@ export default function BottomNav() {
         {parent ? (
           <div className="bnav__pill">
             <button type="button" className="bnav__tab bnav__tab--icon" onClick={goBack} aria-label="Back"><BackIcon /></button>
-            {storySlug ? (
-              <button type="button" className={`bnav__tab${isSaved ? " is-active" : ""}`} aria-pressed={isSaved} onClick={toggleSave}
-                aria-label={isSaved ? "Saved to your shelf. Tap to remove" : "Save to your shelf"}>
-                <SaveIcon filled={isSaved} /><span>{isSaved ? "Saved" : "Save"}</span>
-              </button>
+            {/* detail pages: Back returns to where you came from (Shelf, Library…), Discover is the way home. Save lives at the top of the story */}
+            {deckFrom ? (
+              <button type="button" className="bnav__tab" onClick={goNext} aria-label="Next: back to Discover on the next card"><NextIcon /><span>Next</span></button>
             ) : (
-              <Link href="/" className="bnav__tab" onClick={(e) => {
-                if (e.metaKey || e.ctrlKey || e.shiftKey || e.button || !document.querySelector(".ep-art")) return;
-                e.preventDefault(); navigateWithTransition(() => router.push("/"), leftStoryPage, deckImageReady);
-              }}><DiscoverIcon /><span>Discover</span></Link>
+            <Link href="/" className="bnav__tab" onClick={(e) => {
+              if (e.metaKey || e.ctrlKey || e.shiftKey || e.button || !document.querySelector(".ep-art")) return;
+              e.preventDefault(); navigateWithTransition(() => router.push("/"), leftStoryPage, deckImageReady);
+            }}><DiscoverIcon /><span>Discover</span></Link>
             )}
           </div>
         ) : (

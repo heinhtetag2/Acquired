@@ -31,9 +31,12 @@
   },
   {
    "label": "Shelf",
-   "href": "/episodes"
+   "href": "/shelf"
   },
-  { "label": "You", "href": "/me" },
+  {
+   "label": "You",
+   "href": "/me"
+  },
   {
    "label": "Library",
    "href": "/library"
@@ -159,7 +162,7 @@
    "links": [
     {
      "label": "Acquired",
-     "href": "/episodes"
+     "href": "/episodes-classic"
     },
     {
      "label": "ACQ2 Show",
@@ -243,7 +246,7 @@
    "links": [
     {
      "label": "all episodes",
-     "href": "/episodes"
+     "href": "/episodes-classic"
     },
     {
      "label": "Must-Listen",

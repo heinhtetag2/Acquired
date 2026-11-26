@@ -6,7 +6,8 @@ import BookFacts from "./BookFacts";
 import StoryBack from "./StoryBack";
 import StorySave from "./StorySave";
 import TodayProgress from "./ReadingPlan";
-import GoDeeper, { type MoreStory } from "./GoDeeper";
+import GoDeeper from "./GoDeeper";
+import StoryEnd, { type EndCard } from "./StoryEnd";
 
 function Presenting({ ep, className }: { ep: Episode; className: string }) {
   if (!ep.presentedBy) return null;
@@ -47,7 +48,7 @@ function Story({ story }: { story: NonNullable<Book["story"]> }) {
   );
 }
 
-export default function EpisodeHero({ ep, more }: { ep: Book; more?: MoreStory[] }) {
+export default function EpisodeHero({ ep, connects = [], pool = [] }: { ep: Book; connects?: EndCard[]; pool?: EndCard[] }) {
   const art = ep.image ?? ep.cover;
   return (
     <main id="main" className="ep-hero">
@@ -63,13 +64,13 @@ export default function EpisodeHero({ ep, more }: { ep: Book; more?: MoreStory[]
         <div className="spacer-lg" />
         <div className="ep-details">
           {!!ep.tags?.length && (
-            <div className="ep-badges">{ep.tags.map((t) => <Link key={t.href} href={t.href} className="badge">{t.label}</Link>)}</div>
+            <div className="ep-badges">{ep.tags.filter((t) => !/^\/(features|season)\//.test(t.href)).map((t) => <Link key={t.href} href={t.href} className="badge">{t.label}</Link>)}</div>
           )}
           <h1 className="ep-title">{ep.title}</h1>
           <div className="spacer-2xs" />
           <div className="ep-meta">
-            {ep.seasonLabel && <Link href={ep.seasonHref ?? "#"} className="badge">{ep.seasonLabel}</Link>}
-            <div className="t-label-xs">{ep.episode ? `Episode ${ep.episode} · ` : ""}<time dateTime={ep.date}>{formatLongDate(ep.date)}</time></div>
+            {/* no podcast season badge ("Season 13", "Spring 2025"): stories aren't episodes */}
+            <div className="t-label-xs"><time dateTime={ep.date}>{formatLongDate(ep.date)}</time></div>
             <StorySave slug={ep.slug} title={ep.title} />
           </div>
           <div className="spacer-base" />
@@ -78,7 +79,7 @@ export default function EpisodeHero({ ep, more }: { ep: Book; more?: MoreStory[]
             {ep.apple && <a className="ep-icon-btn" href={ep.apple} target="_blank" rel="noreferrer" aria-label="Listen on Apple Podcasts"><AppleGlyph /></a>}
             {ep.youtube && <a className="ep-icon-btn" href={ep.youtube} target="_blank" rel="noreferrer" aria-label="Watch on YouTube"><VideoIcon /></a>}
             {ep.netflix && <a className="ep-icon-btn" href={ep.netflix} target="_blank" rel="noreferrer" aria-label="Watch on Netflix"><span className="n-glyph" aria-hidden>N</span></a>}
-            {/* TikTok: the story's top TikTok (Go deeper has the rest) */}
+            {/* TikTok: the story's top TikTok */}
             {ep.deeper?.tiktok?.[0] && (
               <a className="ep-icon-btn" href={`https://www.tiktok.com/@${ep.deeper.tiktok[0].account}/video/${ep.deeper.tiktok[0].id}`} target="_blank" rel="noreferrer" aria-label={`Watch on TikTok (@${ep.deeper.tiktok[0].account})`}>
                 <svg viewBox="0 0 24 24" aria-hidden><path d="M14.5 3.5c.4 2.4 1.9 4 4.5 4.3v3c-1.7 0-3.2-.5-4.5-1.4v6.1a5 5 0 1 1-5-5h.5v3.1a2 2 0 1 0 1.5 1.9V3.5z" fill="currentColor" /></svg>
@@ -89,7 +90,14 @@ export default function EpisodeHero({ ep, more }: { ep: Book; more?: MoreStory[]
             {ep.companion && <a href="#companion" className="popup-btn">PDF Companion<PlusIcon /></a>}
             {(ep.hasTranscript || !!ep.chapters?.length) && <a href="#transcript" className="popup-btn">Transcript<PlusIcon /></a>}
             {/* Sources sits above Quick facts and opens a bottom sheet (there can be many) */}
-            {(!!ep.sources?.length || !!ep.deeper?.sources?.length) && <a href="#sources" className="popup-btn">Sources<PlusIcon /></a>}
+            {/* Sources opens a sheet (a ›), unlike Quick facts below which opens in place (a +) */}
+            {/* only real, linked sources: the clone's placeholder sections ("Source 1 placeholder") never show */}
+            {!!ep.deeper?.sources?.length && (
+              <a href="#sources" className="popup-btn popup-btn--sheet" aria-label="Sources. Opens a list">
+                <span>Sources</span>
+                <svg viewBox="0 0 16 16" aria-hidden><path d="M6 3.5 10.5 8 6 12.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              </a>
+            )}
             {!!ep.facts?.length && <BookFacts facts={ep.facts} />}
           </div>
           <Sponsors ep={ep} className="ep-desktop-only" />
@@ -105,10 +113,10 @@ export default function EpisodeHero({ ep, more }: { ep: Book; more?: MoreStory[]
         {!!ep.artifacts?.length && (
           <div className="ep-artifacts">
             <div className="ep-artifacts__head">
-              <Link href={`/artifacts`} className="t-label">Episode Artifacts</Link>
+              <Link href={`/artifacts`} className="t-label">Photos</Link>
               <ArrowUpRight width={16} height={16} />
             </div>
-            <div className="ep-artifacts__strip" tabIndex={0} role="region" aria-label="Episode artifacts">
+            <div className="ep-artifacts__strip" tabIndex={0} role="region" aria-label="Photos">
               {ep.artifacts.map((src) => <div key={src} className="ep-artifacts__frame"><img src={src} alt="" loading="lazy" fetchPriority="low" /></div>)}
             </div>
           </div>
@@ -124,22 +132,24 @@ export default function EpisodeHero({ ep, more }: { ep: Book; more?: MoreStory[]
         {ep.story?.length ? (
           <>
             <Story story={ep.story} />
-            {ep.deeper && <GoDeeper deeper={ep.deeper} more={more} />}
+            {ep.deeper && <GoDeeper deeper={ep.deeper} />}
           </>
         ) : (
           <>
             {(ep.links || ep.carveOuts) && (
               <>
-                <h2 className="ep-h2">More on the episode</h2>
+                <h2 className="ep-h2">More on this story</h2>
                 <div className="rich">
                   {ep.links && (<><h2>Links</h2><ul>{ep.links.map((l, i) => <li key={i} dangerouslySetInnerHTML={{ __html: l.html }} />)}</ul></>)}
-                  {ep.carveOuts && (<><h2>Carve Outs</h2><ul>{ep.carveOuts.map((l, i) => <li key={i} dangerouslySetInnerHTML={{ __html: l.html }} />)}</ul></>)}
+                  {ep.carveOuts && (<><h2>Picks</h2><ul>{ep.carveOuts.map((l, i) => <li key={i} dangerouslySetInnerHTML={{ __html: l.html }} />)}</ul></>)}
                 </div>
               </>
             )}
-            <p className="ep-disclaimer">Note: Acquired hosts and guests may hold assets discussed in this episode. This podcast is not investment advice, and is intended for informational and entertainment purposes only. You should do your own research and make your own independent decisions when considering any financial transactions.</p>
+            <p className="ep-disclaimer">Not investment advice. This story is for information and entertainment only.</p>
           </>
         )}
+        {/* every story ends the same way: a rabbit hole to keep going, and a reason to come back tomorrow */}
+        <StoryEnd slug={ep.slug} connects={connects} pool={pool} />
       </div>
     </main>
   );

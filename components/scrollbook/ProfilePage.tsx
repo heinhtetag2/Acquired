@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { loadSaved } from "@/lib/saved";
+import { FREE_PER_DAY, PLUS_PRICE, isPlus, onPlusChange, setPlus } from "@/lib/plus";
 import { allThreads, onNotesChange, type SlugThread } from "@/lib/notes";
 import { GOALS, dayKey, loadGoal, loadInterests, loadName, onboardedAt, onProfileChange, readsByDay, resetOnboarding, saveGoal, saveName, streak } from "@/lib/profile";
 
@@ -29,6 +30,8 @@ export default function ProfilePage({ stories, topics }: { stories: Record<strin
   const [saved, setSaved] = useState<string[]>([]);
   const [notes, setNotes] = useState<SlugThread[]>([]);
   const [since, setSince] = useState<number | null>(null);
+  const [plus, setPlusState] = useState(false);
+  useEffect(() => { const sync = () => setPlusState(isPlus()); sync(); return onPlusChange(sync); }, []);
 
   useEffect(() => {
     const load = () => {
@@ -98,10 +101,10 @@ export default function ProfilePage({ stories, topics }: { stories: Record<strin
 
         {/* numbers */}
         <section className="me__stats" aria-label="Your numbers">
-          <Link href="/episodes" className="me__stat"><b>{allRead.length}</b><span className="t-label-xs">Stories read</span></Link>
-          <Link href="/episodes" className="me__stat"><b>{saved.length}</b><span className="t-label-xs">Saved</span></Link>
-          <Link href="/episodes?tab=notes" className="me__stat"><b>{highlights}</b><span className="t-label-xs">Highlights</span></Link>
-          <Link href="/episodes?tab=notes" className="me__stat"><b>{comments}</b><span className="t-label-xs">Comments</span></Link>
+          <Link href="/shelf" className="me__stat"><b>{allRead.length}</b><span className="t-label-xs">Stories read</span></Link>
+          <Link href="/shelf" className="me__stat"><b>{saved.length}</b><span className="t-label-xs">Saved</span></Link>
+          <Link href="/shelf?tab=notes" className="me__stat"><b>{highlights}</b><span className="t-label-xs">Highlights</span></Link>
+          <Link href="/shelf?tab=notes" className="me__stat"><b>{comments}</b><span className="t-label-xs">Comments</span></Link>
         </section>
 
         {/* this week */}
@@ -163,6 +166,13 @@ export default function ProfilePage({ stories, topics }: { stories: Record<strin
               </button>
             ))}
           </div>
+        </section>
+
+        {/* membership (demo): Plus on/off, so the paywall can be shown and lifted */}
+        <section className={`me__card me__plus${plus ? " is-on" : ""}`} aria-label="Scrollbook Plus">
+          <div className="me__card-head"><h2 className="t-label-xs">Scrollbook Plus</h2><span className="t-label-xs">{plus ? "Active · demo" : "Free plan"}</span></div>
+          <p className="me__plus-main">{plus ? "Unlimited stories, audio, series and offline reading." : `${FREE_PER_DAY} full stories a day, unlimited cards. Plus is ${PLUS_PRICE.month}/month after a 7-day free trial.`}</p>
+          <button type="button" className="me__plus-btn" onClick={() => setPlus(!plus)}>{plus ? "Turn off Plus (demo)" : "Try 7 days free"}</button>
         </section>
 
         {/* the rest of the site lives in the bottom bar's More sheet; here, just the tour */}

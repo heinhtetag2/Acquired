@@ -5,10 +5,10 @@ import LibraryView, { type Shelf, type Story } from "@/components/scrollbook/Lib
 
 export const metadata: Metadata = { title: "Library | Scrollbook" };
 
-// Collections shown as stacked covers: the hand-picked lists first, then company deep-dives.
-const COLLECTIONS = ["must-listen", "niche-gems", "interviews", "disney", "nvidia", "microsoft", "alphabet", "amazon", "apple", "berkshire-hathaway"];
+// Collections shown as stacked covers: one per company, every story about it in one place.
+const COLLECTIONS = ["alphabet", "apple", "microsoft", "amazon", "nvidia", "disney", "berkshire-hathaway"];
 
-/** Library: saved stories, collections and topics (the old PDF-companion page lives at /library-classic). */
+/** Library: company collections and every category. */
 export default function LibraryPage() {
   const stories: Record<string, Story> = {};
   for (const e of episodes) {
@@ -21,7 +21,7 @@ export default function LibraryPage() {
     stories[slug] = { slug, title: b.title, art: b.image ?? b.cover ?? b.thumb, color: b.color };
   }
   const shelf = (f: (typeof filters)[number]): Shelf => ({ slug: f.slug, title: f.title, eyebrow: f.eyebrow, href: f.href, stories: f.episodes.filter((s) => stories[s]) });
-  const collections = COLLECTIONS.map((slug) => filters.find((f) => f.slug === slug && f.group !== "season")).filter((f) => !!f).map(shelf);
+  const collections = COLLECTIONS.map((slug) => filters.find((f) => f.slug === slug && f.group === "series")).filter((f) => !!f).map((f) => ({ ...shelf(f), eyebrow: "Company" }));
   const topics = filters.filter((f) => f.group === "category").map(shelf).filter((t) => t.stories.length).sort((a, b) => b.stories.length - a.stories.length);
   return <LibraryView stories={stories} collections={collections} topics={topics} />;
 }

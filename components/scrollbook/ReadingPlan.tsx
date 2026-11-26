@@ -125,7 +125,7 @@ export default function TodayProgress({ slug, articles, demoRead = 0 }: { slug: 
   return (
     <div className="sb-progress-wrap" ref={box}>
       <button type="button" className={`sb-progress${bump ? " is-bump" : ""}`} aria-describedby={tipId} onClick={() => setOpen((o) => !o)}
-        aria-label={finished ? `All ${total} articles read` : `Today: article ${cur + 1} of ${total}, ${done} read`}
+        aria-label={finished ? `All ${total} parts read` : `Today: part ${cur + 1} of ${total}, ${done} read`}
         ref={btn}>
         <span className="sb-progress__label">{finished ? "Done" : "Today"}</span>
         <svg className="sb-progress__ring" viewBox="0 0 16 16" aria-hidden>
@@ -137,11 +137,11 @@ export default function TodayProgress({ slug, articles, demoRead = 0 }: { slug: 
 
       <div id={tipId} role="tooltip" className={`sb-tip${open ? " is-open" : ""}`} style={{ "--caret": `${caret}px` } as React.CSSProperties}>
         {finished ? (
-          <span className="sb-tip__row"><CheckIcon />You finished all {total} articles in this book.</span>
+          <span className="sb-tip__row"><CheckIcon />You finished all {total} parts of this story.</span>
         ) : (
           <>
             <span className="sb-tip__row"><BookIcon /><span>Today&rsquo;s read: <b>{articles[cur].title}</b></span></span>
-            <span className="sb-tip__row"><CheckIcon /><span>{done} of {total} articles done</span></span>
+            <span className="sb-tip__row"><CheckIcon /><span>{done} of {total} parts done</span></span>
             <span className="sb-tip__row"><ClockIcon /><span>{articles[cur].min} min read</span></span>
           </>
         )}

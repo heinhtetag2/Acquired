@@ -1,4 +1,7 @@
 "use client";
+import { startRun, takeNextHint } from "@/lib/deckRun";
+import { promisedToday } from "./StoryEnd";
+import { track } from "@/lib/navTrail";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -120,7 +123,11 @@ export default function Deck({ cards: curatedCards, extra = [], topic, seenFilte
         return;
       }
     } catch {}
-    setOrder(dealOrder(cards, interests));
+    // a fresh deal; yesterday's "Come back tomorrow" story (StoryEnd) goes on top, unless you've already read it
+    const dealt = dealOrder(cards, interests);
+    const promised = promisedToday();
+    const at = promised && loadSeen()[promised]?.s !== "read" ? dealt.findIndex((i) => cards[i].slug === promised) : -1;
+    setOrder(at > 0 ? [dealt[at], ...dealt.filter((_, k) => k !== at)] : dealt);
     setRecall(pickRecall(new Set(cards.map((c) => c.slug))));
   }, [cards, sessionKey, interests]);
   useEffect(() => {
@@ -135,7 +142,9 @@ export default function Deck({ cards: curatedCards, extra = [], topic, seenFilte
   const next = showRecall ? current : order && pos + 1 < order.length ? cards[order[pos + 1]] : undefined;
   const reduced = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const say = (t: string) => { setToast(t); window.setTimeout(() => setToast((x) => (x === t ? "" : x)), 1600); };
+  const say = (t: string, ms = 1600) => { setToast(t); window.setTimeout(() => setToast((x) => (x === t ? "" : x)), ms); };
+  // first time back here through a story's Next button: say once what happened (lib/deckRun.ts)
+  useEffect(() => { if (order && takeNextHint()) say(current ? "Here's your next card: read it or swipe" : "That was the last card in this deck", 3400); }, [order]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const act = useCallback((action: "skip" | "save") => {
     if (!current || fly) return;
@@ -173,8 +182,14 @@ export default function Deck({ cards: curatedCards, extra = [], topic, seenFilte
     }
     const href = `/scrollbook/${current.slug}`;
     markSeen(current.slug, "read"); logRead(current.slug);
+    // leave the shuffle for the story page's "Next" button (lib/deckRun.ts)
+    if (order) startRun(sessionKey, location.pathname + location.search, order.map((i) => cards[i].slug), current.slug);
     navigateWithTransition(() => router.push(href), onStoryPage, storyImageReady);
-  }, [current, router, showRecall, recall]);
+  }, [current, router, showRecall, recall, order, cards, sessionKey]);
+
+  // record this deck's full address ("/?c=new") in the in-app trail: switching decks from Search only changes the query,
+  // which the bottom bar's pathname-based tracking misses, and Back / Next from a story must return to this deck
+  useEffect(() => { track(location.pathname + location.search); });
 
   // warm the next story so the transition starts straight away
   useEffect(() => { if (current) router.prefetch(`/scrollbook/${current.slug}`); }, [current, router]);
@@ -221,7 +236,7 @@ export default function Deck({ cards: curatedCards, extra = [], topic, seenFilte
         ) : (
           <span className="t-label-xs deck__eyebrow">Discover · one story at a time</span>
         )}
-        <Link href="/episodes" className="t-label-xs deck__saved" aria-live="polite" aria-label={`${saved.length} saved. Open your shelf`}><SaveIcon filled={saved.length > 0} />{saved.length} saved<span className="deck__saved-go" aria-hidden>›</span></Link>
+        <Link href="/shelf" className="t-label-xs deck__saved" aria-live="polite" aria-label={`${saved.length} saved. Open your shelf`}><SaveIcon filled={saved.length > 0} />{saved.length} saved<span className="deck__saved-go" aria-hidden>›</span></Link>
       </div>
 
       <div className="deck__stage">

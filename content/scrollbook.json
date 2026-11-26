@@ -164,6 +164,20 @@
   },
   "deck": [
     {
+      "slug": "valorant-hush",
+      "topic": "Gaming",
+      "min": 4,
+      "new": true,
+      "hook": "Valorant's new agent Hush doesn't just shoot her enemies. She lifts them into the air with her mind."
+    },
+    {
+      "slug": "inherit",
+      "topic": "Film",
+      "min": 5,
+      "new": true,
+      "hook": "Inherit's star played the ghost wife in Pee Mak, Thailand's biggest horror comedy. Now she's the monster."
+    },
+    {
       "slug": "iphone-17-pro",
       "topic": "Gadgets",
       "min": 5,
@@ -970,6 +984,398 @@
           }
         ]
       }
+    },
+    "inherit": {
+      "slug": "inherit",
+      "title": "Inherit: The Grandmother Who Came Back Young",
+      "date": "2026-11-26",
+      "color": "#8f7a4e",
+      "theme": "sand",
+      "industry": [],
+      "features": [],
+      "description": "A grandmother vanishes for fifty years, then comes home looking thirty. The new horror from the director of Shutter and Pee Mak.",
+      "cover": "/images/art/inherit.jpg",
+      "image": "/images/art/inherit.jpg",
+      "themeColors": {
+        "light": "#efe6d6",
+        "dark": "#0e0f0b",
+        "a400": "#d2b47a",
+        "a500": "#8f7a4e",
+        "a600": "#5e5034"
+      },
+      "subtitle": "In some families, evil runs in the blood.",
+      "overview": [
+        "Inherit is a Thai horror film directed and co-written by Banjong Pisanthanakun, the filmmaker behind Shutter and Pee Mak. It was made by GDH 559, Thailand's best-known film studio, and opened in Thai cinemas on 19 November 2026 before reaching more countries from 26 November.",
+        "Davika Hoorne plays Woranart, a grandmother who disappeared half a century ago and suddenly returns looking like a woman in her thirties. Her family takes her back in. Something very old comes with her."
+      ],
+      "story": [
+        {
+          "h": "A grandmother comes home young",
+          "p": [
+            "Woranart vanished fifty years ago. When she walks back into her wealthy family's house, she should be about eighty. She looks barely thirty.",
+            "Her granddaughter Oui, played by Thitiya Jirapornsilp, is the first to sense that the woman in the portrait and the woman at the dinner table are not quite the same. The film calls what she carries a centipede spirit, an ancient curse that moves through a family's blood."
+          ]
+        },
+        {
+          "quote": "She left as a young woman and came back as one. Fifty years later."
+        },
+        {
+          "h": "An old Thai horror, made new",
+          "p": [
+            "The story is not new to Thai audiences. It comes from Thayat Asun, a 1991 horror novel by Tri Aphirum that had already been adapted for television three times.",
+            "Banjong's version keeps the family curse at its heart but plays it as a darkly funny satire too: a rich family so busy guarding its inheritance that it barely notices what has moved in."
+          ]
+        },
+        {
+          "h": "The director who scared a country",
+          "p": [
+            "Banjong first became famous for Shutter in 2004, a ghost story built around strange shapes in photographs, which he co-directed. In 2013 his comedy-horror Pee Mak, also starring Davika Hoorne, became one of the biggest hits Thai cinema had ever seen.",
+            "He later directed The Medium in 2021, a possession horror shot like a documentary. Inherit reunites him with Davika more than a decade after Pee Mak, this time with her as the thing to be afraid of."
+          ]
+        },
+        {
+          "h": "From Bangkok to the world",
+          "p": [
+            "Inherit had its world premiere in the Centrepiece section of the Toronto International Film Festival on 14 September 2026, then played Busan, Sitges and the BFI London Film Festival.",
+            "Before it premiered, Barunson E&A, the Korean company behind Parasite, took on its international sales, and distributors in several countries signed up. It runs a little over two hours."
+          ]
+        }
+      ],
+      "facts": [
+        {
+          "label": "Director",
+          "value": "Banjong Pisanthanakun"
+        },
+        {
+          "label": "Studio",
+          "value": "GDH 559"
+        },
+        {
+          "label": "Starring",
+          "value": "Davika Hoorne, Thitiya Jirapornsilp"
+        },
+        {
+          "label": "Based on",
+          "value": "Thayat Asun, a 1991 novel by Tri Aphirum"
+        },
+        {
+          "label": "Premiere",
+          "value": "Toronto International Film Festival, 14 September 2026"
+        },
+        {
+          "label": "In cinemas",
+          "value": "Thailand 19 November 2026; more countries from 26 November"
+        },
+        {
+          "label": "Runtime",
+          "value": "About 2 hours 8 minutes"
+        }
+      ],
+      "articles": [
+        {
+          "title": "Fifty years gone",
+          "dek": "Woranart's disappearance, her return, and the family that decides not to ask questions.",
+          "min": 4
+        },
+        {
+          "title": "The centipede in the blood",
+          "dek": "The old curse at the centre of the story, and why it is passed down rather than caught.",
+          "min": 4
+        },
+        {
+          "title": "Thayat Asun",
+          "dek": "The 1991 novel and its three television versions, before it reached the cinema.",
+          "min": 4
+        },
+        {
+          "title": "From Shutter to Pee Mak",
+          "dek": "How Banjong Pisanthanakun became Thailand's best-known horror director.",
+          "min": 5
+        },
+        {
+          "title": "Davika returns",
+          "dek": "Pee Mak's star comes back to Banjong, this time as the monster.",
+          "min": 4
+        },
+        {
+          "title": "Toronto to Busan",
+          "dek": "A festival run, a Parasite-backed sales deal, and a release across Asia.",
+          "min": 4
+        }
+      ],
+      "demoRead": 0,
+      "tags": [
+        {
+          "label": "Film",
+          "href": "/industry/film"
+        },
+        {
+          "label": "Media/Entertainment",
+          "href": "/industry/media-entertainment"
+        }
+      ],
+      "deeper": {
+        "updated": "Nov 2026",
+        "read": [
+          {
+            "title": "Davika Hoorne and Banjong Pisanthanakun on crafting Inherit",
+            "publisher": "The Film Stage",
+            "url": "https://thefilmstage.com/davika-hoorne-and-banjong-pisanthanakun-on-crafting-their-seductive-thai-horror-hit-inherit/",
+            "note": "The star and director in conversation"
+          },
+          {
+            "title": "Thai horror classic Inherit takes its centipede demon to the world",
+            "publisher": "Khaosod English",
+            "url": "https://www.khaosodenglish.com/featured/2026/10/11/thai-horror-classic-inherit-takes-its-centipede-demon-to-the-world/amp/",
+            "note": "Where the story comes from"
+          },
+          {
+            "title": "Inherit review",
+            "publisher": "Asian Movie Pulse",
+            "url": "https://asianmoviepulse.com/2026/10/inherit-2026/",
+            "note": "Horror, mythology and social satire"
+          }
+        ],
+        "sources": [
+          {
+            "label": "Banjong Pisanthanakun",
+            "url": "https://en.wikipedia.org/wiki/Banjong_Pisanthanakun"
+          },
+          {
+            "label": "Inherit (2026)",
+            "url": "https://letterboxd.com/film/inherit-2026/"
+          },
+          {
+            "label": "Inherit scores a wave of sales ahead of its Toronto premiere",
+            "url": "https://www.screendaily.com/news/banjong-pisanthanakun-horror-inherit-scores-wave-of-sales-ahead-of-toronto-premiere/5220107.article"
+          },
+          {
+            "label": "Parasite producer Barunson E&A boards Inherit",
+            "url": "https://www.screendaily.com/news/parasite-producer-barunson-eanda-boards-thai-horror-inherit/5215371.article"
+          },
+          {
+            "label": "Inherit takes its centipede demon to the world",
+            "url": "https://www.khaosodenglish.com/featured/2026/10/11/thai-horror-classic-inherit-takes-its-centipede-demon-to-the-world/amp/"
+          },
+          {
+            "label": "Inherit review from TIFF 2026",
+            "url": "https://bloody-disgusting.com/reviews/3967149/inherit-review-davika-hoorne-steals-supernatural-thriller-from-shutter-director-tiff-2026/"
+          },
+          {
+            "label": "Busan 2026 review: Inherit",
+            "url": "https://screenanarchy.com/2026/11/busan-2026-review-inherit-seductive-thai-insect-horror.html"
+          }
+        ],
+        "more": [
+          "avengers-doomsday"
+        ],
+        "watch": [
+          {
+            "id": "ZIrtZkVLOq0",
+            "title": "Inherit, first trailer",
+            "channel": "Screen International",
+            "note": "The exclusive first look"
+          }
+        ],
+        "tiktok": [
+          {
+            "id": "7670489107608521992",
+            "account": "majorgroup",
+            "caption": "Inherit official teaser, from Major Cineplex"
+          },
+          {
+            "id": "7503890637977177351",
+            "account": "minutewithme",
+            "caption": "Who is Grandma Woranat? A fan explainer"
+          }
+        ]
+      },
+      "youtube": "https://www.youtube.com/watch?v=ZIrtZkVLOq0"
+    },
+    "valorant-hush": {
+      "slug": "valorant-hush",
+      "title": "Valorant's Hush: The Agent Who Moves Things With Her Mind",
+      "date": "2026-11-26",
+      "color": "#e0479f",
+      "theme": "pink",
+      "industry": [],
+      "features": [],
+      "description": "Valorant's newest agent doesn't just outshoot you. She lifts you off the ground. Meet Hush, the telekinetic Duelist from China.",
+      "cover": "/images/art/valorant-hush.webp",
+      "image": "/images/art/valorant-hush.webp",
+      "themeColors": {
+        "light": "#fbe6f4",
+        "dark": "#160b17",
+        "a400": "#ff7ad1",
+        "a500": "#e0479f",
+        "a600": "#a12a73"
+      },
+      "subtitle": "The newest agent in Riot's shooter fights with telekinesis.",
+      "overview": [
+        "Valorant is Riot Games' five-versus-five tactical shooter, launched in June 2020. Every player picks an agent, a character with a few special abilities on top of their guns, and agents come in four roles: Duelists, Initiators, Controllers and Sentinels.",
+        "Hush is the newest one: a Duelist from China whose powers are all telekinesis. She arrived with Season 2026 Act VI, on 27 October 2026 in the Americas and a day later everywhere else."
+      ],
+      "story": [
+        {
+          "h": "Revealed in Shanghai",
+          "p": [
+            "Riot revealed Hush on 18 October 2026, the weekend of the Valorant Champions grand final in Shanghai, the biggest event of the competitive year. Choosing a Chinese agent for a final in China was not an accident.",
+            "The reveal came with a cinematic trailer, Rise and Fall: Hush walks down a rain-soaked alley into a neon-lit restaurant full of armed enemies. Its song, It's You, is by the Taiwanese singer Karencici."
+          ]
+        },
+        {
+          "quote": "Most Duelists win fights by moving fast. Hush wins them by moving everyone else."
+        },
+        {
+          "h": "A kit built on telekinesis",
+          "p": [
+            "Flow lets her drop an anchor and then fling herself to it after a short delay. Flashbulb is a flash she can steer toward wherever she is aiming, so it can bend around corners.",
+            "Displacement, her signature ability, pulls nearby players into its centre when it detonates. Her ultimate, Suspension, is an orb she guides with her crosshair: set it off and everyone caught inside is lifted into the air, unable to hide."
+          ]
+        },
+        {
+          "h": "Why Duelists matter",
+          "p": [
+            "Duelists are the agents built to go in first and take fights. Most do it by being hard to catch, dashing or teleporting in and out.",
+            "Hush flips that. Instead of moving herself out of danger, she drags and lifts her enemies into the open, which is why players are calling her part Duelist, part Initiator."
+          ]
+        }
+      ],
+      "facts": [
+        {
+          "label": "Game",
+          "value": "Valorant, by Riot Games (2020)"
+        },
+        {
+          "label": "Role",
+          "value": "Duelist"
+        },
+        {
+          "label": "Powers",
+          "value": "Telekinesis"
+        },
+        {
+          "label": "Abilities",
+          "value": "Flow, Flashbulb, Displacement, Suspension"
+        },
+        {
+          "label": "Revealed",
+          "value": "18 October 2026, Champions Shanghai"
+        },
+        {
+          "label": "Released",
+          "value": "27 October 2026, Season 2026 Act VI"
+        }
+      ],
+      "articles": [
+        {
+          "title": "What is Valorant?",
+          "dek": "Riot's tactical shooter, its agents and why every round is a puzzle.",
+          "min": 4
+        },
+        {
+          "title": "Rise and Fall",
+          "dek": "The reveal trailer, the restaurant fight and Karencici's It's You.",
+          "min": 3
+        },
+        {
+          "title": "Flow and Flashbulb",
+          "dek": "How she moves, and a flash she can steer.",
+          "min": 4
+        },
+        {
+          "title": "Displacement",
+          "dek": "The pull that drags enemies out of cover.",
+          "min": 3
+        },
+        {
+          "title": "Suspension",
+          "dek": "An ultimate that lifts a whole team off the ground.",
+          "min": 4
+        }
+      ],
+      "demoRead": 0,
+      "tags": [
+        {
+          "label": "Gaming",
+          "href": "/industry/gaming"
+        },
+        {
+          "label": "Media/Entertainment",
+          "href": "/industry/media-entertainment"
+        }
+      ],
+      "youtube": "https://www.youtube.com/watch?v=6Vw8fbA7HmA",
+      "deeper": {
+        "updated": "Nov 2026",
+        "watch": [
+          {
+            "id": "6Vw8fbA7HmA",
+            "title": "Hush, official gameplay reveal",
+            "channel": "VALORANT",
+            "note": "Every ability, in game"
+          },
+          {
+            "id": "AfcCyTsh4ag",
+            "title": "Rise and Fall, Hush agent trailer",
+            "channel": "VALORANT",
+            "note": "The cinematic reveal"
+          }
+        ],
+        "tiktok": [
+          {
+            "id": "7697896365967330566",
+            "account": "valorclips.gg",
+            "caption": "Hush's ultimate, Suspension, lifting a whole team"
+          }
+        ],
+        "read": [
+          {
+            "title": "Valorant agent Hush: abilities, tips and strategies",
+            "publisher": "Red Bull",
+            "url": "https://www.redbull.com/int-en/valorant-agent-hush-tips-strategies",
+            "note": "How to play her"
+          },
+          {
+            "title": "New Valorant agent Hush has telekinesis powers to move enemies",
+            "publisher": "Forbes",
+            "url": "https://www.forbes.com/sites/mikestubbs/2026/10/18/new-valorant-agent-hush-has-telekinesis-powers-to-move-enemies/",
+            "note": "The reveal, explained"
+          },
+          {
+            "title": "Valorant reveals newest agent Hush, a telekinetic Duelist from China",
+            "publisher": "Dexerto",
+            "url": "https://www.dexerto.com/valorant/valorant-reveals-newest-agent-hush-a-telekinetic-duelist-from-china-3419784/"
+          }
+        ],
+        "sources": [
+          {
+            "label": "Hush official gameplay reveal",
+            "url": "https://www.youtube.com/watch?v=6Vw8fbA7HmA"
+          },
+          {
+            "label": "Rise and Fall, Hush agent trailer",
+            "url": "https://www.youtube.com/watch?v=AfcCyTsh4ag"
+          },
+          {
+            "label": "Hush has telekinesis powers to move enemies",
+            "url": "https://www.forbes.com/sites/mikestubbs/2026/10/18/new-valorant-agent-hush-has-telekinesis-powers-to-move-enemies/"
+          },
+          {
+            "label": "Valorant reveals newest agent Hush",
+            "url": "https://www.dexerto.com/valorant/valorant-reveals-newest-agent-hush-a-telekinetic-duelist-from-china-3419784/"
+          },
+          {
+            "label": "Hush arrives October 27",
+            "url": "https://bleedingcool.com/games/valorant-shows-off-latest-agent-hush-arriving-october-27/"
+          },
+          {
+            "label": "Agent Hush: abilities, tips and strategies",
+            "url": "https://www.redbull.com/int-en/valorant-agent-hush-tips-strategies"
+          }
+        ],
+        "more": []
+      }
     }
   },
   "hooks": {
@@ -1251,6 +1657,8 @@
     "netflix-part-1": "Netflix Part I",
     "episode-41-bookingcom-with-jetsetter-room-77-ceo-drew-patterson": "Booking.com",
     "special-2016-review-and-2017-predictions": "2016 Review, 2017 Predictions",
-    "special-an-acquirers-view-into-ma-with-taylor-barada-head-of-corp-dev-at-adobe": "M&A Inside Adobe"
+    "special-an-acquirers-view-into-ma-with-taylor-barada-head-of-corp-dev-at-adobe": "M&A Inside Adobe",
+    "inherit": "Inherit",
+    "valorant-hush": "Valorant: Hush"
   }
 }

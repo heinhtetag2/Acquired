@@ -30,7 +30,7 @@ export default function RelatedSlider({ episodes }: { episodes: Episode[] }) {
     <section className="slider" aria-labelledby="related-h">
       <div className="slider__label"><h2 id="related-h" className="t-label-lg muted">You may also enjoy</h2></div>
       <div className="spacer-2xs" />
-      <div ref={track} className="slider__track" tabIndex={0} role="region" aria-label="Related episodes">
+      <div ref={track} className="slider__track" tabIndex={0} role="region" aria-label="More stories">
         {episodes.map((e) => (
           <Link key={e.slug} href={`/scrollbook/${e.slug}`} className="slider-item">
             <div className="slider-item__media" style={{ background: e.color }}>{e.cover && <img src={e.cover} alt="" loading="lazy" />}</div>

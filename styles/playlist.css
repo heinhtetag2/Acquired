@@ -267,3 +267,21 @@
   font-family: var(--font-display); font-size-adjust: var(--adjust-display); font-size: var(--text-sm); letter-spacing: var(--track-display); text-transform: uppercase; }
 .shelf__active { flex-wrap: wrap; }
 @media (min-width: 768px) { .sf__grid { grid-template-columns: 1fr; } } /* the narrow side panel on wider screens: one per row */
+
+/* Shelf empty tab: a short line and a way back to Discover */
+.shelf__empty { display: flex; flex-direction: column; align-items: center; gap: var(--space-sm); padding: var(--space-2xl) 24px; text-align: center; color: var(--c-ink-60); }
+.shelf__empty p { max-width: 30ch; }
+.shelf__cta { display: inline-flex; align-items: center; height: 40px; padding: 0 18px; border-radius: var(--r-full); background: var(--c-ink); color: var(--c-cream); }
+/* three tabs (saved · notes · read) next to the title on phones: keep "Your shelf" on one line */
+.shelf .pl-bar__title { white-space: nowrap; }
+@media (max-width: 599px) { .shelf .pl-bar .pl-toggles .filter-btn { padding-left: 8px; padding-right: 8px; } }
+
+
+.me__plus-main { font-family: var(--font-body); font-size-adjust: var(--adjust-body); font-size: var(--text-sm); line-height: 1.45; color: var(--c-ink-80, var(--c-ink)); margin-bottom: 12px; }
+.me__plus-btn { height: 44px; width: 100%; border-radius: var(--r-full); cursor: pointer; border: 1px solid var(--c-ink-20); background: transparent; color: var(--c-ink);
+  font-family: var(--font-display); font-size-adjust: var(--adjust-display); font-size: var(--text-sm); letter-spacing: var(--track-display); text-transform: uppercase; }
+.me__plus:not(.is-on) .me__plus-btn { background: var(--c-ink); color: var(--c-cream); border-color: var(--c-ink); }
+
+/* Shelf: stories grouped by when you saved (or read) them, under small headings, like the filter sheet's label */
+.shelf__when { padding: var(--space-sm) var(--pl-row-pad, 20px) 6px; color: var(--c-ink-60); font-weight: 400; }
+.pl-list > .shelf__when:first-child { padding-top: var(--space-xs); }
