@@ -285,3 +285,22 @@
 /* Shelf: stories grouped by when you saved (or read) them, under small headings, like the filter sheet's label */
 .shelf__when { padding: var(--space-sm) var(--pl-row-pad, 20px) 6px; color: var(--c-ink-60); font-weight: 400; }
 .pl-list > .shelf__when:first-child { padding-top: var(--space-xs); }
+
+/* profile: a small outlined monogram, your name in sentence case; Today as one compact card (count, goal bars, streak label) */
+.me__avatar { width: 44px; height: 44px; font-size: var(--text-lg) !important; background: transparent !important; color: var(--c-ink) !important; border: 1px solid var(--c-ink-30, rgba(236, 229, 216, .3)); }
+.me__name-row { display: flex; align-items: baseline; gap: 10px; }
+.me__name { font-family: var(--font-serif); font-size-adjust: var(--adjust-serif); font-size: var(--text-2xl); line-height: 1.1; font-weight: 400; text-transform: none; cursor: default; }
+.me__edit-name { background: none; border: 0; padding: 0; cursor: pointer; color: var(--c-ink-60); text-decoration: underline; text-underline-offset: 3px; }
+.me__since { margin-top: 2px; font-family: var(--font-body); font-size-adjust: var(--adjust-body); font-size: var(--text-xs); color: var(--c-ink-60); }
+
+.me__day { display: flex; flex-direction: column; gap: 8px; padding: 14px 16px 16px; border-radius: var(--r-lg); background: var(--c-paper); color: var(--c-ink); border: 1px solid var(--c-ink-10); }
+.me__day-top { display: flex; justify-content: space-between; }
+.me__day-top .t-label-xs { color: var(--c-ink-60); }
+.me__day-top .t-label-xs.is-on { color: #9bd26a; }
+.me__day-count { font-family: var(--font-body); font-size-adjust: var(--adjust-body); font-size: var(--text-sm); color: var(--c-ink-80, var(--c-ink)); }
+.me__day-count b { font-family: var(--font-serif); font-size-adjust: var(--adjust-serif); font-size: var(--text-3xl); line-height: 1; font-weight: 400; color: var(--c-ink); margin-right: 2px; }
+.me__day-count span { color: var(--c-ink-60); }
+.me__day-bars { display: flex; align-items: center; gap: 4px; }
+.me__day-bars span { flex: 1; height: 4px; border-radius: 2px; background: var(--c-ink-10); transition: background 400ms; }
+.me__day-bars span.is-on { background: #9bd26a; }
+.me__day-bars em { flex: none; margin-left: 4px; font-style: normal; color: #9bd26a; }

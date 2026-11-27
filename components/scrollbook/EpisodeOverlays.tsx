@@ -118,7 +118,7 @@ export default function EpisodeOverlays({ ep }: { ep: Episode }) {
 
 // who published a source, and which group it belongs in (official → reference → news), from its web address
 const PUBLISHERS: [RegExp, string, "Official" | "Reference" | "News & coverage"][] = [
-  [/apple\.com/, "Apple", "Official"], [/youtube\.com/, "YouTube", "Official"], [/forbes\.com/, "Forbes", "News & coverage"], [/dexerto\.com/, "Dexerto", "News & coverage"], [/bleedingcool\.com/, "Bleeding Cool", "News & coverage"], [/redbull\.com/, "Red Bull", "News & coverage"], [/marvel\.com/, "Marvel", "Official"], [/crunchyroll\.com/, "Crunchyroll", "Official"],
+  [/apple\.com/, "Apple", "Official"], [/playvalorant\.com/, "VALORANT", "Official"], [/youtube\.com/, "YouTube", "Official"], [/forbes\.com/, "Forbes", "News & coverage"], [/dexerto\.com/, "Dexerto", "News & coverage"], [/bleedingcool\.com/, "Bleeding Cool", "News & coverage"], [/redbull\.com/, "Red Bull", "News & coverage"], [/marvel\.com/, "Marvel", "Official"], [/crunchyroll\.com/, "Crunchyroll", "Official"],
   [/wikipedia\.org/, "Wikipedia", "Reference"], [/letterboxd\.com/, "Letterboxd", "Reference"],
   [/screendaily\.com/, "Screen Daily", "News & coverage"], [/bloody-disgusting\.com/, "Bloody Disgusting", "News & coverage"],
   [/khaosodenglish\.com/, "Khaosod English", "News & coverage"], [/screenanarchy\.com/, "ScreenAnarchy", "News & coverage"],

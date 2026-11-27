@@ -168,14 +168,22 @@
       "topic": "Gaming",
       "min": 4,
       "new": true,
-      "hook": "Valorant's new agent Hush doesn't just shoot her enemies. She lifts them into the air with her mind."
+      "hook": "Valorant's new agent Hush doesn't just shoot her enemies. She lifts them into the air with her mind.",
+      "out": {
+        "date": "2026-10-27",
+        "label": "New in game"
+      }
     },
     {
       "slug": "inherit",
       "topic": "Film",
       "min": 5,
       "new": true,
-      "hook": "Inherit's star played the ghost wife in Pee Mak, Thailand's biggest horror comedy. Now she's the monster."
+      "hook": "Inherit's star played the ghost wife in Pee Mak, Thailand's biggest horror comedy. Now she's the monster.",
+      "out": {
+        "date": "2026-11-19",
+        "label": "In cinemas now"
+      }
     },
     {
       "slug": "iphone-17-pro",
@@ -189,14 +197,23 @@
       "topic": "Anime",
       "min": 5,
       "new": true,
-      "hook": "Yuno and Asta were left at the same church on the same night. Only Yuno was born with magic."
+      "hook": "Yuno and Asta were left at the same church on the same night. Only Yuno was born with magic.",
+      "out": {
+        "date": "2026-10-03",
+        "label": "Season 2 on air"
+      }
     },
     {
       "slug": "avengers-doomsday",
       "topic": "Film",
       "min": 5,
       "new": true,
-      "hook": "Robert Downey Jr., who started Marvel's films as Iron Man, returns as its biggest villain: Doctor Doom."
+      "hook": "Robert Downey Jr., who started Marvel's films as Iron Man, returns as its biggest villain: Doctor Doom.",
+      "out": {
+        "date": "2026-12-18",
+        "label": "In cinemas now",
+        "soon": "In cinemas"
+      }
     },
     {
       "slug": "disney-the-renaissance-and-the-empire",
@@ -537,7 +554,12 @@
             "caption": "December 18, 2026. #AvengersDoomsday"
           }
         ]
-      }
+      },
+      "ask": [
+        "Who plays Doctor Doom?",
+        "When does it open?",
+        "Who are the directors?"
+      ]
     },
     "black-clover-yuno": {
       "slug": "black-clover-yuno",
@@ -779,7 +801,12 @@
             "caption": "Witness a new legend. Black Clover is coming soon to Crunchyroll 🍀"
           }
         ]
-      }
+      },
+      "ask": [
+        "What is Yuno's final form?",
+        "Who gave Yuno anti-magic?",
+        "When did season 2 start?"
+      ]
     },
     "iphone-17-pro": {
       "slug": "iphone-17-pro",
@@ -983,7 +1010,12 @@
             "caption": "Hands-on with the iPhone 17 Pro: new colours, new design and the front camera."
           }
         ]
-      }
+      },
+      "ask": [
+        "Why did Apple drop titanium?",
+        "What chip does it use?",
+        "What is the vapor chamber?"
+      ]
     },
     "inherit": {
       "slug": "inherit",
@@ -1190,7 +1222,12 @@
           }
         ]
       },
-      "youtube": "https://www.youtube.com/watch?v=ZIrtZkVLOq0"
+      "youtube": "https://www.youtube.com/watch?v=ZIrtZkVLOq0",
+      "ask": [
+        "Who plays the grandmother?",
+        "Where did it premiere?",
+        "Was Davika in Pee Mak?"
+      ]
     },
     "valorant-hush": {
       "slug": "valorant-hush",
@@ -1229,9 +1266,52 @@
         {
           "h": "A kit built on telekinesis",
           "p": [
-            "Flow lets her drop an anchor and then fling herself to it after a short delay. Flashbulb is a flash she can steer toward wherever she is aiming, so it can bend around corners.",
-            "Displacement, her signature ability, pulls nearby players into its centre when it detonates. Her ultimate, Suspension, is an orb she guides with her crosshair: set it off and everyone caught inside is lifted into the air, unable to hide."
+            "Everything Hush does is mind over matter. Even her passive, Telekinesis, works that way: she can pick up weapons and the Spike, and flip switches, from further away than anyone else."
           ]
+        },
+        {
+          "video": "/videos/hush/telekinesis.webm",
+          "caption": "Passive · Telekinesis"
+        },
+        {
+          "h": "Flow",
+          "p": [
+            "Flow drops an anchor where she stands. A moment later she is pulled straight back to it, so she can push into a fight and snap back to safety. Used in mid-air, it holds her floating in place first."
+          ]
+        },
+        {
+          "video": "/videos/hush/flow.webm",
+          "caption": "Flow"
+        },
+        {
+          "h": "Flashbulb",
+          "p": [
+            "Flashbulb is a flash she can steer. She throws it, then redirects it toward wherever she is aiming, so it can curve around a corner and blind everyone looking at it."
+          ]
+        },
+        {
+          "video": "/videos/hush/flashbulb.webm",
+          "caption": "Flashbulb"
+        },
+        {
+          "h": "Displacement",
+          "p": [
+            "Her signature ability works the same way, but instead of a flash it is a pull. When it bursts, every player nearby is dragged to its centre, and anyone who slams into a wall or another player is left dazed. Two kills and she gets it back."
+          ]
+        },
+        {
+          "video": "/videos/hush/displacement.webm",
+          "caption": "Displacement · signature"
+        },
+        {
+          "h": "Suspension",
+          "p": [
+            "Her ultimate is an orb she flies forward, steering it with her crosshair. Set it off and every player inside is lifted into the air, unable to hide or dodge, while her team takes aim."
+          ]
+        },
+        {
+          "video": "/videos/hush/suspension.webm",
+          "caption": "Suspension · ultimate"
         },
         {
           "h": "Why Duelists matter",
@@ -1256,7 +1336,7 @@
         },
         {
           "label": "Abilities",
-          "value": "Flow, Flashbulb, Displacement, Suspension"
+          "value": "Telekinesis (passive), Flow, Flashbulb, Displacement, Suspension"
         },
         {
           "label": "Revealed",
@@ -1350,6 +1430,10 @@
         ],
         "sources": [
           {
+            "label": "Hush, official agent page",
+            "url": "https://playvalorant.com/en-us/agents/hush/"
+          },
+          {
             "label": "Hush official gameplay reveal",
             "url": "https://www.youtube.com/watch?v=6Vw8fbA7HmA"
           },
@@ -1375,7 +1459,12 @@
           }
         ],
         "more": []
-      }
+      },
+      "ask": [
+        "Why was Hush revealed in Shanghai?",
+        "What does her ultimate do?",
+        "Who sings the trailer song?"
+      ]
     }
   },
   "hooks": {

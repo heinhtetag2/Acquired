@@ -16,7 +16,8 @@ export function setPlus(on: boolean) {
 }
 export function onPlusChange(cb: () => void) { window.addEventListener(EVT, cb); return () => window.removeEventListener(EVT, cb); }
 
-/** Is this story past today's free allowance? (Your first 3 stories of the day are free; reopening one of them stays free.) */
+/** Is this story past today's free allowance? Free = 3 stories finished a day (reaching the end counts, opening doesn't);
+    a story you already finished today stays free to reopen. */
 export function overFreeLimit(slug: string): boolean {
   if (isPlus()) return false;
   let today: string[] = [];

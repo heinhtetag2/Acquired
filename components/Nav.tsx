@@ -7,6 +7,7 @@ import { MenuIcon, XIcon } from "./Icons";
 import { SB_EMAIL } from "./Footer";
 import EmailForm from "./EmailForm";
 import SearchModal from "./SearchModal";
+import ReadProgress from "./scrollbook/ReadProgress";
 
 type Theme = "" | "light-fill" | "dark" | "hidden" | "light-fill-mobile" | "episode" | "playlist";
 type Surface = "menu";
@@ -104,6 +105,7 @@ export default function Nav() {
   return (
     <>
       <header ref={navRef} className={`nav ${themeClass}${scrolled ? " is-scrolled" : ""}`}>
+        {pathname.startsWith("/scrollbook/") && <ReadProgress key={pathname} />}
         <nav className="nav__row" aria-label="Primary">
           <Link href="/" className="nav__logo" aria-label="Scrollbook home">
             {/* the SCROLLBOOK wordmark, fitted to the logo box */}

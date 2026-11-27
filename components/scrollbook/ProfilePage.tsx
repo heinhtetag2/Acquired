@@ -14,8 +14,6 @@ import { GOALS, dayKey, loadGoal, loadInterests, loadName, onboardedAt, onProfil
 export type StoryInfo = { title: string; art?: string; topic: string };
 
 const ic = { fill: "none", stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round", strokeLinejoin: "round" } as const;
-const PenIcon = () => (<svg viewBox="0 0 24 24" aria-hidden><path d="M15 5.5l3.5 3.5L9 18.5H5.5V15z" {...ic} /></svg>);
-const FlameIcon = () => (<svg viewBox="0 0 24 24" aria-hidden><path d="M12 3.5c.5 3-2.5 4.5-2.5 7.5 0 1 .4 1.8 1 2.3-.3-1.6.6-2.8 1.6-3.6.2 2 2.4 2.6 2.4 5a3.5 3.5 0 0 1-7 0c0-1 .2-1.8.6-2.6C6.4 13.5 6 14.8 6 16a6 6 0 0 0 12 0c0-5.5-5-7.5-6-12.5z" {...ic} /></svg>);
 const ArrowIcon = () => (<svg viewBox="0 0 24 24" aria-hidden><path d="M5 12h13M13 6.5l5.5 5.5-5.5 5.5" {...ic} /></svg>);
 const DAY = 86_400_000;
 
@@ -60,15 +58,13 @@ export default function ProfilePage({ stories, topics }: { stories: Record<strin
   }, [allRead, stories]);
   const recent = useMemo(() => Object.entries(days).sort((a, b) => (a[0] < b[0] ? 1 : -1)).flatMap(([, l]) => [...l].reverse()).filter((s, i, a) => stories[s] && a.indexOf(s) === i).slice(0, 6), [days, stories]);
 
-  const pct = Math.min(1, today / goal);
-  const R = 42, C = 2 * Math.PI * R;
   const shown = name || "Reader";
   const sinceText = since ? new Date(since).toLocaleDateString("en-US", { month: "long", year: "numeric" }) : null;
 
   return (
     <div className="me" data-theme="dark">
       <div className="me__inner">
-        {/* who */}
+        {/* who: a small serif monogram, your name in sentence case, and when you started */}
         <header className="me__head">
           <span className="me__avatar" aria-hidden>{shown[0].toUpperCase()}</span>
           <div className="me__who">
@@ -76,27 +72,29 @@ export default function ProfilePage({ stories, topics }: { stories: Record<strin
               <input className="me__name-input" autoFocus defaultValue={name} maxLength={30} placeholder="Your first name" aria-label="Your name"
                 onBlur={(e) => { saveName(e.target.value); setEditing(false); }} onKeyDown={(e) => { if (e.key === "Enter") (e.target as HTMLInputElement).blur(); if (e.key === "Escape") setEditing(false); }} />
             ) : (
-              <button type="button" className="me__name" onClick={() => setEditing(true)} aria-label="Edit your name">{ready ? shown : " "}<PenIcon /></button>
+              <div className="me__name-row">
+                <h1 className="me__name">{ready ? shown : "\u00a0"}</h1>
+                <button type="button" className="me__edit-name t-label-xs" onClick={() => setEditing(true)} aria-label="Edit your name">Edit</button>
+              </div>
             )}
-            <p className="me__since t-label-xs">{sinceText ? `Reading since ${sinceText}` : "Welcome to Scrollbook"}</p>
+            <p className="me__since">{sinceText ? `Reading since ${sinceText}` : "Welcome to Scrollbook"}</p>
           </div>
         </header>
 
-        {/* today: goal ring + streak */}
-        <section className="me__today" aria-label="Today">
-          <div className="me__ring">
-            <svg viewBox="0 0 100 100" aria-hidden>
-              <circle cx="50" cy="50" r={R} />
-              <circle cx="50" cy="50" r={R} style={{ strokeDasharray: C, strokeDashoffset: C * (1 - pct) }} />
-            </svg>
-            <span className="me__ring-n"><b>{today}</b>/{goal}</span>
-          </div>
-          <div className="me__today-text">
+        {/* today, compact: the count and where it stands on one line, the goal as thin bars, the streak as a label */}
+        <section className="me__day" aria-label="Today">
+          <div className="me__day-top">
             <p className="t-label-xs">Today</p>
-            <p className="me__today-main">{today >= goal ? "Goal done. Nice." : today ? `${goal - today} more to hit your goal` : `Read ${goal} ${goal === 1 ? "story" : "stories"} today`}</p>
-            <p className={`me__streak t-label-xs${run ? " is-on" : ""}`}><FlameIcon />{run ? `${run}-day streak` : "Start a streak today"}</p>
+            <p className={`t-label-xs${run ? " is-on" : ""}`}>{run ? `${run}-day streak` : "No streak yet"}</p>
           </div>
-          {today < goal && <Link href="/" className="me__go" aria-label="Go to Discover"><ArrowIcon /></Link>}
+          <p className="me__day-count">
+            <b>{today}</b> {today === 1 ? "story" : "stories"}
+            <span> · {today >= goal ? "goal done" : `${goal - today} to go`}</span>
+          </p>
+          <div className="me__day-bars" role="img" aria-label={`${Math.min(today, goal)} of ${goal} for today's goal`}>
+            {Array.from({ length: goal }, (_, k) => <span key={k} className={k < today ? "is-on" : ""} />)}
+            {today > goal && <em className="t-label-xs">+{today - goal}</em>}
+          </div>
         </section>
 
         {/* numbers */}

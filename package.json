@@ -9,11 +9,13 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^1.14.0",
     "@fontsource/libre-caslon-condensed": "^5.3.1",
     "gsap": "^3.12.5",
     "next": "15.5.29",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "server-only": "^0.0.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

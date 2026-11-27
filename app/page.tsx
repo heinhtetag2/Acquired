@@ -27,7 +27,7 @@ function card(slug: string, topicTitle?: string): DeckCard | null {
   return {
     slug, title: cardTitles[slug] ?? e.title,
     topic: d?.topic ?? topicTitle ?? "Story", min: d?.min ?? 7,
-    hook: d?.hook ?? extraHooks[slug] ?? teaser(e), fact: !!d || !!extraHooks[slug], isNew: !!(d && "new" in d && d.new),
+    hook: d?.hook ?? extraHooks[slug] ?? teaser(e), fact: !!d || !!extraHooks[slug], isNew: !!(d && "new" in d && d.new), out: d && "out" in d ? (d.out as DeckCard["out"]) : undefined,
     art: e.image ?? e.cover ?? e.thumb,
     motion: e.motion, // same picture as the story page's cover, so the open/close morph is seamless
     colors: t ? { dark: t.dark, light: t.light, a400: t.a400, a500: t.a500 } : FALLBACK,

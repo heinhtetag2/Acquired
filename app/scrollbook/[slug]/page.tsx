@@ -1,9 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { episodes, getBook, lite, shortTitle, storySlugs } from "@/lib/content";
-import filters from "@/content/filters.json";
-import scrollbookData from "@/content/scrollbook.json";
-import type { EndCard } from "@/components/scrollbook/StoryEnd";
+import { episodes, getBook, lite, storySlugs } from "@/lib/content";
 import EpisodeHero from "@/components/scrollbook/EpisodeHero";
 import EpisodeOverlays from "@/components/scrollbook/EpisodeOverlays";
 import RelatedSlider from "@/components/scrollbook/RelatedSlider";
@@ -12,29 +9,7 @@ import Footer, { SB_EMAIL } from "@/components/Footer";
 import MarkRead from "@/components/scrollbook/MarkRead";
 import PlusGate from "@/components/scrollbook/PlusGate";
 import StoryComments from "@/components/scrollbook/StoryComments";
-
-const categories = filters.filter((f) => f.group === "category");
-const deck = new Map(scrollbookData.deck.map((d) => [d.slug, d]));
-const hooks = scrollbookData.hooks as Record<string, string>;
-const catOf = (slug: string) => categories.find((f) => f.episodes.includes(slug));
-/** A story as a small card: title, picture, category and its one-line hook. */
-function card(slug: string): EndCard | null {
-  const b = getBook(slug); if (!b) return null;
-  return { slug, title: shortTitle(slug, b.title), art: b.image ?? b.cover ?? b.thumb, topic: deck.get(slug)?.topic ?? catOf(slug)?.title ?? "Story", hook: deck.get(slug)?.hook ?? hooks[slug] };
-}
-let cards: EndCard[] | null = null;
-const allCards = () => (cards ??= [...new Set([...storySlugs, ...scrollbookData.deck.map((d) => d.slug), ...Object.keys(hooks)])].map(card).filter((c): c is EndCard => !!c));
-/** Up to 3 stories this one leads to: its hand-picked links, then others in its category that have a hook. */
-function connectsFor(slug: string, picked: string[]): EndCard[] {
-  const out = picked.map(card).filter((c): c is EndCard => !!c);
-  const cat = catOf(slug);
-  for (const s of cat?.episodes ?? []) {
-    if (out.length >= 3) break;
-    if (s === slug || out.some((c) => c.slug === s)) continue;
-    const c = card(s); if (c?.hook) out.push(c);
-  }
-  return out.slice(0, 3);
-}
+import AskStory from "@/components/scrollbook/AskStory";
 
 export const generateStaticParams = () => [...episodes.map((e) => e.slug), ...storySlugs].map((slug) => ({ slug }));
 
@@ -47,9 +22,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function ScrollbookPage({ params }: { params: Promise<{ slug: string }> }) {
   const ep = getBook((await params).slug);
   if (!ep) notFound();
-  // the end of the story: "This connects to…" (hand-picked links first, then the same category) and tomorrow's story
-  const connects = connectsFor(ep.slug, ep.deeper?.more ?? []);
-  const pool = allCards().filter((c) => c.slug !== ep.slug);
   const related = (ep.related ?? episodes.filter((e) => e.slug !== ep.slug).slice(0, 6).map((e) => e.slug)).map(getBook).filter((e) => !!e);
   return (
     <div data-ep-theme={ep.theme}>
@@ -58,7 +30,7 @@ export default async function ScrollbookPage({ params }: { params: Promise<{ slu
         <style>{`:root:has([data-ep-theme]){--theme-light:${ep.themeColors.light};--theme-dark:${ep.themeColors.dark};--theme-a400:${ep.themeColors.a400};--theme-a500:${ep.themeColors.a500};--theme-a600:${ep.themeColors.a600};}`}</style>
       )}
       <div className="ep" data-theme="episode">
-        <EpisodeHero ep={ep} connects={connects} pool={pool} />
+        <EpisodeHero ep={ep} />
         <div className="ep-rule" aria-hidden />
         <section className="ep-cta" aria-label="Newsletter">
           <div className="ep-cta__inner">
@@ -75,6 +47,7 @@ export default async function ScrollbookPage({ params }: { params: Promise<{ slu
       <EpisodeOverlays ep={ep} />
       <MarkRead slug={ep.slug} />
       <PlusGate slug={ep.slug} />
+      {!!ep.story?.length && <AskStory slug={ep.slug} suggestions={ep.ask} />}
       <StoryComments slug={ep.slug} />
       {/* audio player hidden on Scrollbook for now; bring it back by restoring: <EpisodePlayer ep={lite(ep)} /> */}
     </div>

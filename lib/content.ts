@@ -48,8 +48,9 @@ export type Article = { title: string; dek: string; min: number; at?: number };
 export type Book = Episode & {
   articles?: Article[]; demoRead?: number;
   // the book's article, shown on the book page instead of the podcast blocks: headed sections of paragraphs, or a pull quote
-  story?: ({ h: string; p: string[] } | { quote: string })[];
+  story?: ({ h: string; p: string[] } | { quote: string } | { video: string; caption?: string })[]; // a video plays muted on a loop, like a moving picture
   facts?: { label: string; value: string }[]; // "Quick facts" card
+  ask?: string[]; // suggested questions for "Ask this story"
   deeper?: import("@/components/scrollbook/GoDeeper").Deeper & { more?: string[] }; // "Go deeper": watch / listen / read / sources
   motion?: string; // a short silent looping video that plays over the cover (the still `image` stays as its poster)
 };

@@ -1,14 +1,14 @@
 "use client";
 import { startRun, takeNextHint } from "@/lib/deckRun";
-import { promisedToday } from "./StoryEnd";
 import { track } from "@/lib/navTrail";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { navigateWithTransition, onStoryPage, storyImageReady } from "@/lib/viewTransition";
 import { forget, loadSeen, markSeen } from "@/lib/seen";
+import { daysTo, timelyTag, type Out } from "@/lib/timely";
 import { allThreads, createdAt, openNoteLater, type SlugThread } from "@/lib/notes";
-import { loadInterests, logRead, onboardedAt } from "@/lib/profile";
+import { loadInterests, onboardedAt } from "@/lib/profile";
 
 /* Home deck: one story at a time, in a random order — stories you haven't met yet come first (lib/seen.ts).
    Swipe left / ✕ = skip, swipe right / bookmark = save for later, tap the card / Read = open it, ↺ = undo.
@@ -19,13 +19,14 @@ export type DeckCard = {
   motion?: string;               // a looping silent video over the cover (plays on the top card only)
   hook?: string; fact?: boolean; // fact = the hook is a curated "did you know"; otherwise it's the story's teaser line
   isNew?: boolean;               // freshly added story: dealt first and tagged "New"
+  out?: Out;                     // tied to a release date: dealt first around it and tagged "In cinemas now" (lib/timely.ts)
   groups?: string[];             // topic slugs (industries) it belongs to, matched against your interests
   colors: { dark: string; light: string; a400: string; a500: string };
 };
 
 const SAVED_KEY = "scrollbook:saved";
 const SESSION_KEY = "scrollbook:deck"; // this tab's shuffle + position
-const DEAL_V = 2; // bump when the dealing rules change, so tabs holding an older deal get a fresh one
+const DEAL_V = 3; // bump when the dealing rules change, so tabs holding an older deal get a fresh one
 const SWIPE = 90;    // px past which a drag counts as a swipe
 const FLY_MS = 280;
 
@@ -44,16 +45,20 @@ const dealOrder = (cards: DeckCard[], interests: string[] = []) => {
   const idx = [...cards.keys()];
   const fresh = (i: number) => !seen[cards[i].slug];
   const liked = (i: number) => !!cards[i].groups?.some((g) => interests.includes(g));
-  const added = shuffleList(idx.filter((i) => cards[i].isNew));
+  // happening now (a film in cinemas, a game update): on top, the closest date first, unless you've read it
+  const now = idx.filter((i) => timelyTag(cards[i].out) && seen[cards[i].slug]?.s !== "read")
+    .sort((a, b) => Math.abs(daysTo(cards[a].out!.date)) - Math.abs(daysTo(cards[b].out!.date)));
+  const top = new Set(now);
+  const added = shuffleList(idx.filter((i) => cards[i].isNew && !top.has(i)));
   const rest = [
-    ...shuffleList(idx.filter((i) => !cards[i].isNew && fresh(i) && liked(i))),
-    ...shuffleList(idx.filter((i) => !cards[i].isNew && fresh(i) && !liked(i))),
-    ...shuffleList(idx.filter((i) => !cards[i].isNew && !fresh(i))),
+    ...shuffleList(idx.filter((i) => !cards[i].isNew && !top.has(i) && fresh(i) && liked(i))),
+    ...shuffleList(idx.filter((i) => !cards[i].isNew && !top.has(i) && fresh(i) && !liked(i))),
+    ...shuffleList(idx.filter((i) => !cards[i].isNew && !top.has(i) && !fresh(i))),
   ];
   // drop each added story into a random spot among the first few cards (about every other card)
   const order = [...rest];
   added.forEach((i, k) => order.splice(Math.min(order.length, k * 2 + Math.floor(Math.random() * 2)), 0, i));
-  return order;
+  return [...now, ...order];
 };
 const loadSaved = (): string[] => { try { return JSON.parse(localStorage.getItem(SAVED_KEY) || "[]"); } catch { return []; } };
 const storeSaved = (s: string[]) => { try { localStorage.setItem(SAVED_KEY, JSON.stringify(s)); } catch {} };
@@ -66,7 +71,9 @@ type Step = { at: number; action: "skip" | "save" };
 const RECALL_KEY = "scrollbook:recall"; // { [threadId]: last shown }
 const RECALL_AT = 2;                     // shown after this many cards
 const RECALL_DEMO = true;
+const SHOW_RECALL = false;               // off: no "Remember this?" cards (turn on to bring them back)
 const pickRecall = (slugs: Set<string>): SlugThread | null => {
+  if (!SHOW_RECALL) return null;
   let shown: Record<string, number> = {};
   try { shown = JSON.parse(localStorage.getItem(RECALL_KEY) || "{}"); } catch {}
   const now = Date.now(), DAY = 86_400_000;
@@ -119,15 +126,12 @@ export default function Deck({ cards: curatedCards, extra = [], topic, seenFilte
       const st = JSON.parse(sessionStorage.getItem(sessionKey) || "null");
       if (st && st.v === DEAL_V && Array.isArray(st.order) && st.order.length === cards.length) {
         setOrder(st.order); setPos(st.pos ?? 0); setHistory(st.history ?? []);
-        setRecallDone(!!st.recallDone); if (!st.recallDone) setRecall(allThreads().find((t) => t.id === st.recall) ?? null);
+        setRecallDone(!!st.recallDone); if (!st.recallDone && SHOW_RECALL) setRecall(allThreads().find((t) => t.id === st.recall) ?? null);
         return;
       }
     } catch {}
-    // a fresh deal; yesterday's "Come back tomorrow" story (StoryEnd) goes on top, unless you've already read it
-    const dealt = dealOrder(cards, interests);
-    const promised = promisedToday();
-    const at = promised && loadSeen()[promised]?.s !== "read" ? dealt.findIndex((i) => cards[i].slug === promised) : -1;
-    setOrder(at > 0 ? [dealt[at], ...dealt.filter((_, k) => k !== at)] : dealt);
+    // a fresh deal
+    setOrder(dealOrder(cards, interests));
     setRecall(pickRecall(new Set(cards.map((c) => c.slug))));
   }, [cards, sessionKey, interests]);
   useEffect(() => {
@@ -181,7 +185,7 @@ export default function Deck({ cards: curatedCards, extra = [], topic, seenFilte
       return;
     }
     const href = `/scrollbook/${current.slug}`;
-    markSeen(current.slug, "read"); logRead(current.slug);
+    markSeen(current.slug, "open"); // it counts as read only once you reach its end (ReadEnd)
     // leave the shuffle for the story page's "Next" button (lib/deckRun.ts)
     if (order) startRun(sessionKey, location.pathname + location.search, order.map((i) => cards[i].slug), current.slug);
     navigateWithTransition(() => router.push(href), onStoryPage, storyImageReady);
@@ -293,6 +297,7 @@ export default function Deck({ cards: curatedCards, extra = [], topic, seenFilte
 }
 
 function Face({ card, shared }: { card: DeckCard; shared?: boolean }) {
+  const when = timelyTag(card.out);
   return (
     <>
       <div className="deck__art" style={{ background: card.colors.a500, viewTransitionName: shared ? "sb-art" : undefined }}>
@@ -300,7 +305,7 @@ function Face({ card, shared }: { card: DeckCard; shared?: boolean }) {
         {card.motion && shared && <video className="deck__motion" src={card.motion} poster={card.art} autoPlay muted loop playsInline preload="auto" aria-hidden />}
       </div>
       <div className="deck__body" style={{ viewTransitionName: shared ? "sb-card-body" : undefined }}>
-        <div className="deck__meta t-label-xs">{card.isNew && <span className="deck__new">New</span>}<span className="deck__topic">{card.topic}</span><span>{card.min} min read</span></div>
+        <div className="deck__meta t-label-xs">{when ? <span className="deck__new is-timely">{when}</span> : card.isNew && <span className="deck__new">New</span>}<span className="deck__topic">{card.topic}</span><span>{card.min} min read</span></div>
         <h2 className="deck__title">{card.title}</h2>
         {card.hook && <p className="deck__hook">{card.fact && <span className="deck__dyk">Did you know?</span>} {card.hook}</p>}
       </div>

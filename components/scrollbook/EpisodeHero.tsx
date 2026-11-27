@@ -5,9 +5,10 @@ import ArtZoom from "./ArtZoom";
 import BookFacts from "./BookFacts";
 import StoryBack from "./StoryBack";
 import StorySave from "./StorySave";
-import TodayProgress from "./ReadingPlan";
 import GoDeeper from "./GoDeeper";
-import StoryEnd, { type EndCard } from "./StoryEnd";
+import ReadEnd from "./ReadEnd";
+import TodayProgress from "./TodayProgress";
+import StoryVideo from "./StoryVideo";
 
 function Presenting({ ep, className }: { ep: Episode; className: string }) {
   if (!ep.presentedBy) return null;
@@ -35,7 +36,10 @@ function Story({ story }: { story: NonNullable<Book["story"]> }) {
   return (
     <article className="sb-story">
       {story.map((block, i) =>
-        "quote" in block ? (
+        "video" in block ? (
+          // a clip between paragraphs: a thumbnail with a play button; tap to play with sound and controls
+          <StoryVideo key={i} src={block.video} caption={block.caption} />
+        ) : "quote" in block ? (
           <blockquote key={i} className="sb-story__quote"><p data-cid={`q${i}`}>{block.quote}</p></blockquote>
         ) : (
           <section key={i}>
@@ -48,7 +52,7 @@ function Story({ story }: { story: NonNullable<Book["story"]> }) {
   );
 }
 
-export default function EpisodeHero({ ep, connects = [], pool = [] }: { ep: Book; connects?: EndCard[]; pool?: EndCard[] }) {
+export default function EpisodeHero({ ep }: { ep: Book }) {
   const art = ep.image ?? ep.cover;
   return (
     <main id="main" className="ep-hero">
@@ -56,7 +60,7 @@ export default function EpisodeHero({ ep, connects = [], pool = [] }: { ep: Book
         <div className="ep-left__top">
           <div className="sb-top-row">
             <StoryBack />
-            {!!ep.articles?.length && <TodayProgress slug={ep.slug} articles={ep.articles} demoRead={ep.demoRead} />}
+            <TodayProgress slug={ep.slug} />
           </div>
           <div className="spacer-sm" />
         </div>
@@ -148,8 +152,7 @@ export default function EpisodeHero({ ep, connects = [], pool = [] }: { ep: Book
             <p className="ep-disclaimer">Not investment advice. This story is for information and entertainment only.</p>
           </>
         )}
-        {/* every story ends the same way: a rabbit hole to keep going, and a reason to come back tomorrow */}
-        <StoryEnd slug={ep.slug} connects={connects} pool={pool} />
+        <ReadEnd slug={ep.slug} />
       </div>
     </main>
   );

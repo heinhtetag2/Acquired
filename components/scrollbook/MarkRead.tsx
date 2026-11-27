@@ -1,11 +1,10 @@
 "use client";
 import { useEffect } from "react";
 import { markSeen } from "@/lib/seen";
-import { logRead } from "@/lib/profile";
 
-/** Opening a story page counts as reading it (Discover then deals it last; the Library tags it "Read";
-    the profile counts it toward today's goal and your streak). */
+/** Opening a story marks it as started (Discover then deals it later). It only counts as read, for the Shelf, your goal,
+    your streak and the free allowance, once you reach its end: see ReadEnd. */
 export default function MarkRead({ slug }: { slug: string }) {
-  useEffect(() => { markSeen(slug, "read"); logRead(slug); }, [slug]); // logRead feeds the profile's streak + week
+  useEffect(() => { markSeen(slug, "open"); }, [slug]);
   return null;
 }

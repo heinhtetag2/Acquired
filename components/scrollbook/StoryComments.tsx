@@ -2,9 +2,11 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { loadThreads, saveThreads, takeNoteToOpen, uid, type Note, type Thread } from "@/lib/notes";
+import { ASK_OPEN } from "@/lib/ask";
 
 /* Highlights and Notion-style comments on a story's text.
-   Select a passage inside any [data-cid] paragraph → "Highlight" (just mark it) or "Comment" (write a note).
+   Select a passage inside any [data-cid] paragraph → "Highlight" (just mark it), "Comment" (write a note) or "Ask"
+   (opens the story's chat, AskStory, about that passage).
    The passage stays highlighted (CSS Custom Highlight API: no DOM changes, so React's rendering is untouched);
    tap it to open the thread, add comments (each with date + time), or resolve / remove it.
    Everything is kept in this browser (lib/notes.ts) and also shows on the Shelf's Notes view. */
@@ -32,12 +34,30 @@ function rangeIn(el: Element, start: number, end: number): Range | null {
   }
   return null;
 }
+/** The current text selection as a passage (one paragraph, snapped to whole words), or null. */
+function readPick(): Anchor | null {
+  const sel = document.getSelection();
+  if (!sel || sel.isCollapsed || !sel.rangeCount) return null;
+  const r = sel.getRangeAt(0);
+  const el = cidEl(r.startContainer);
+  if (!el || el !== cidEl(r.endContainer)) return null;
+  let start = offsetIn(el, r.startContainer, r.startOffset), end = offsetIn(el, r.endContainer, r.endOffset);
+  // snap to whole words, so a sloppy drag doesn't save "s: Doomsday … film, s"
+  const text = el.textContent ?? "", word = /[\p{L}\p{N}'’]/u;
+  while (start > 0 && word.test(text[start - 1]) && word.test(text[start])) start--;
+  while (end < text.length && word.test(text[end]) && word.test(text[end - 1])) end++;
+  while (start < end && /\s/.test(text[start])) start++;
+  while (end > start && /\s/.test(text[end - 1])) end--;
+  const quote = text.slice(start, end);
+  return quote && end > start ? { cid: el.dataset.cid!, start, end, quote, rect: r.getBoundingClientRect() } : null;
+}
 const cidEl = (n: Node | null) => (n instanceof Element ? n : n?.parentElement)?.closest<HTMLElement>("[data-cid]") ?? null;
 const threadRange = (t: Thread) => { const el = document.querySelector(`[data-cid="${t.cid}"]`); return el ? rangeIn(el, t.start, t.end) : null; };
 
 const ic = { fill: "none", stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round", strokeLinejoin: "round" } as const;
 const MarkIcon = () => (<svg viewBox="0 0 24 24" aria-hidden><path d="M14.5 5.5l4 4-8 8H6.5v-4z M12.5 7.5l4 4" {...ic} /><path d="M4.5 20.5h15" {...ic} /></svg>);
 const CommentIcon = () => (<svg viewBox="0 0 24 24" aria-hidden><path d="M5 5.5h14v10H10l-4 3.5v-3.5H5z" {...ic} /></svg>);
+const AskIcon = () => (<svg viewBox="0 0 24 24" aria-hidden><path d="M12 4c.45 3.4 2.6 5.55 6 6-3.4.45-5.55 2.6-6 6-.45-3.4-2.6-5.55-6-6 3.4-.45 5.55-2.6 6-6Z" {...ic} /></svg>);
 
 export default function StoryComments({ slug }: { slug: string }) {
   const [threads, setThreads] = useState<Thread[]>([]);
@@ -97,28 +117,12 @@ export default function StoryComments({ slug }: { slug: string }) {
     return () => clearTimeout(timer);
   }, [threads]);
 
-  // watch the selection: offer Highlight / Comment for a passage inside one paragraph
+  // watch the selection: offer Highlight / Comment / Ask for a passage inside one paragraph
   useEffect(() => {
     let t: ReturnType<typeof setTimeout>;
     const onSel = () => {
       clearTimeout(t);
-      t = setTimeout(() => {
-        const sel = document.getSelection();
-        if (!sel || sel.isCollapsed || !sel.rangeCount) { setPick(null); return; }
-        const r = sel.getRangeAt(0);
-        const el = cidEl(r.startContainer);
-        if (!el || el !== cidEl(r.endContainer)) { setPick(null); return; }
-        let start = offsetIn(el, r.startContainer, r.startOffset), end = offsetIn(el, r.endContainer, r.endOffset);
-        // snap to whole words, so a sloppy drag doesn't save "s: Doomsday … film, s"
-        const text = el.textContent ?? "", word = /[\p{L}\p{N}'’]/u;
-        while (start > 0 && word.test(text[start - 1]) && word.test(text[start])) start--;
-        while (end < text.length && word.test(text[end]) && word.test(text[end - 1])) end++;
-        while (start < end && /\s/.test(text[start])) start++;
-        while (end > start && /\s/.test(text[end - 1])) end--;
-        const quote = text.slice(start, end);
-        if (!quote || end <= start) { setPick(null); return; }
-        setPick({ cid: el.dataset.cid!, start, end, quote, rect: r.getBoundingClientRect() });
-      }, 120);
+      t = setTimeout(() => setPick(readPick()), 120);
     };
     document.addEventListener("selectionchange", onSel);
     return () => { document.removeEventListener("selectionchange", onSel); clearTimeout(t); };
@@ -174,6 +178,13 @@ export default function StoryComments({ slug }: { slug: string }) {
     }
     setDraft("");
   };
+  // ask about the passage: the story's chat opens with it attached (AskStory)
+  const askAbout = () => {
+    const now = readPick() ?? pick; // the selection as it is at the tap (the toolbar's copy can lag a moment behind)
+    if (!now) return;
+    window.dispatchEvent(new CustomEvent(ASK_OPEN, { detail: { quote: now.quote } }));
+    setPick(null); document.getSelection()?.removeAllRanges();
+  };
   const resolve = (id: string) => { save(threads.filter((t) => t.id !== id)); setPop(null); };
 
   // after it renders, use the popover's real height: below the text if it fits, else above, else pinned inside the screen
@@ -207,11 +218,13 @@ export default function StoryComments({ slug }: { slug: string }) {
         </button>
       )), document.body)}
       {pick && !pop && (
-        <div className="sb-cbar" role="toolbar" aria-label="Selected text" style={{ position: "fixed", left: left(pick.rect, 232), top: pick.rect.bottom + 10 }}
+        <div className="sb-cbar" role="toolbar" aria-label="Selected text" style={{ position: "fixed", left: left(pick.rect, 300), top: pick.rect.bottom + 10 }}
           onMouseDown={(e) => e.preventDefault() /* keep the selection */}>
           <button type="button" className="sb-cbtn" onClick={highlight}><MarkIcon />Highlight</button>
           <span className="sb-cbar__sep" aria-hidden />
           <button type="button" className="sb-cbtn" onClick={startCompose}><CommentIcon />Comment</button>
+          <span className="sb-cbar__sep" aria-hidden />
+          <button type="button" className="sb-cbtn" onClick={askAbout}><AskIcon />Ask</button>
         </div>
       )}
 

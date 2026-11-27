@@ -47,7 +47,7 @@ export type Account = { method: "apple" | "google" | "email"; email?: string; at
 export const loadAccount = () => get<Account | null>(K.account, null);
 export const saveAccount = (a: Omit<Account, "at">) => set(K.account, { ...a, at: Date.now() });
 
-/** Log a story opened today (called when a story is read). */
+/** Log a story read today (called when the reader reaches its end). */
 export function logRead(slug: string) {
   const a = get<Record<string, string[]>>(K.activity, {});
   const d = dayKey();

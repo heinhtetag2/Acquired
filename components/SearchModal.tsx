@@ -8,6 +8,7 @@ import searchIndex from "@/content/search-index.json";
 import scrollbookData from "@/content/scrollbook.json";
 import { SearchIcon } from "./Icons";
 import { loadInterests } from "@/lib/profile";
+import { deckImageReady, leftStoryPage, navigateWithTransition } from "@/lib/viewTransition";
 
 // Slim client-side index (content/search-index.json): title, date, season code, art, plus filter names for matching.
 type Hit = { slug: string; title: string; date: string; seasonCode?: string; thumb?: string; cover?: string; color?: string; tags: string; href?: string; label?: string };
@@ -109,7 +110,7 @@ function search(q: string): Hit[] {
     .slice(0, MAX_RESULTS).map((x) => x.e);
 }
 
-function Item({ ep, active, onPick }: { ep: Hit; active?: boolean; onPick: () => void }) {
+function Item({ ep, active, onPick }: { ep: Hit; active?: boolean; onPick: (e: React.MouseEvent<HTMLAnchorElement>) => void }) {
   const art = ep.thumb ?? ep.cover;
   return (
     <Link href={hrefOf(ep)} className={`search-item ${active ? "is-active" : ""}`} onClick={onPick}>
@@ -176,6 +177,20 @@ export default function SearchModal() {
 
   const close = () => { setOpen(false); input.current?.blur(); };
   const pick = () => { setOpen(false); setQ(""); };
+  // open a result. From a story to Discover (a topic, a category, "New"…), it's the same move as Back: the story's cover
+  // and title morph into the deck's top card (lib/viewTransition.ts). The panel closes first so it isn't in the snapshot.
+  const go = (href: string) => {
+    flushSync(pick);
+    const toDiscover = href === "/" || href.startsWith("/?");
+    if (location.pathname.startsWith("/scrollbook/") && toDiscover)
+      navigateWithTransition(() => router.push(href, { scroll: false }), leftStoryPage, deckImageReady);
+    else router.push(href);
+  };
+  // a plain click goes through `go`; cmd / ctrl / shift / middle click keep the link's normal behaviour
+  const follow = (href: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button) { pick(); return; }
+    e.preventDefault(); go(href);
+  };
 
   const onKeyDown = (e: React.KeyboardEvent) => {
     if (!results.length) {
@@ -186,8 +201,7 @@ export default function SearchModal() {
     else if (e.key === "ArrowUp") { e.preventDefault(); setActive((a) => Math.max(a - 1, -1)); }
     else if (e.key === "Enter") {
       e.preventDefault();
-      if (active >= 0) { pick(); router.push(hrefOf(results[active])); }
-      else { pick(); router.push(hrefOf(results[0])); } // Enter opens the top match
+      go(hrefOf(results[active >= 0 ? active : 0])); // Enter opens the highlighted result, else the top match
     }
   };
 
@@ -211,25 +225,25 @@ export default function SearchModal() {
           {view === "initial" && (
             <div className="search-initial">
               <div className="search-label">shuffle by</div>
-              <div className="search-grid">{QUICK.map((f) => <Link key={f.href} href={f.href} className="search-chip" onClick={pick}>{f.label}</Link>)}</div>
+              <div className="search-grid">{QUICK.map((f) => <Link key={f.href} href={f.href} className="search-chip" onClick={follow(f.href)}>{f.label}</Link>)}</div>
               <div className="spacer-sm" /><div className="search-rule" /><div className="spacer-sm" />
               {/* one place to pick a category: each shuffles Discover to just that */}
               <div className="search-label">categories</div>
-              <div className="search-grid">{categories.map((f) => <Link key={f.href} href={f.href} className="search-chip" onClick={pick}>{f.title}</Link>)}</div>
+              <div className="search-grid">{categories.map((f) => <Link key={f.href} href={f.href} className="search-chip" onClick={follow(f.href)}>{f.title}</Link>)}</div>
               <div className="spacer-sm" /><div className="search-rule" /><div className="spacer-sm" />
               <div className="search-label">{shelf.length ? "pick up where you left off" : "today's picks"}</div>
-              {(shelf.length ? shelf : PICKS).map((ep) => <Item key={ep.slug} ep={ep} onPick={pick} />)}
+              {(shelf.length ? shelf : PICKS).map((ep) => <Item key={ep.slug} ep={ep} onPick={follow(hrefOf(ep))} />)}
             </div>
           )}
           {view === "results" && (
             <div id="search-results" className="search-results" role="listbox">
-              {results.map((ep, i) => <div key={hrefOf(ep)} id={`search-r-${i}`} role="option" aria-selected={i === active}><Item ep={ep} active={i === active} onPick={pick} /></div>)}
+              {results.map((ep, i) => <div key={hrefOf(ep)} id={`search-r-${i}`} role="option" aria-selected={i === active}><Item ep={ep} active={i === active} onPick={follow(hrefOf(ep))} /></div>)}
             </div>
           )}
           {view === "empty" && (
             <div className="search-none">
               <p className="search-none__text">Nothing by that name. Try shuffling a topic instead:</p>
-              <div className="search-grid">{TRY.map((f) => <Link key={f.href} href={f.href} className="search-chip" onClick={pick}>{f.title}</Link>)}</div>
+              <div className="search-grid">{TRY.map((f) => <Link key={f.href} href={f.href} className="search-chip" onClick={follow(f.href)}>{f.title}</Link>)}</div>
             </div>
           )}
           <div style={{ height: 20 }} />

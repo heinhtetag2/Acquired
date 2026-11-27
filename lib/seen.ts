@@ -1,10 +1,10 @@
 /* What this reader has already met, shared by Discover (home deck), story pages and the Library.
    Kept in this browser (localStorage) until there are accounts. */
-export type SeenState = "skip" | "save" | "read";
+export type SeenState = "skip" | "save" | "open" | "read"; // open = started, read = reached the end
 export type Seen = Record<string, { s: SeenState; t: number }>;
 
 const KEY = "scrollbook:seen";
-const RANK: Record<SeenState, number> = { skip: 0, save: 1, read: 2 }; // a stronger signal is never downgraded
+const RANK: Record<SeenState, number> = { skip: 0, save: 1, open: 2, read: 3 }; // a stronger signal is never downgraded
 
 export function loadSeen(): Seen {
   try { return JSON.parse(localStorage.getItem(KEY) || "{}"); } catch { return {}; }

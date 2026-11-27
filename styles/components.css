@@ -52,6 +52,11 @@
 .nav--light-fill { background: var(--c-cream); }
 .nav--dark { --bg: var(--c-teal-1000); --fg: var(--c-cream); --fg-5: var(--c-cream-5); --fg-20: color-mix(in srgb, var(--c-cream) 20%, transparent); --fg-muted: var(--c-cream-60); --fg-70: var(--c-cream-70); }
 .nav--hidden { opacity: 0; pointer-events: none; transform: translateY(-4.5rem); }
+/* reading progress on a story: fills the top bar's bottom divider as you read (ReadProgress); shows once the bar is solid */
+.nav__progress { position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; z-index: 31; pointer-events: none; background: var(--theme-a400, var(--fg));
+  transform: scaleX(var(--p, 0)); transform-origin: left; opacity: 0; transition: opacity var(--dur-base); }
+.nav.is-scrolled:not(.nav--hidden) .nav__progress { opacity: 1; }
+:root:has(.menu-section.is-open) .nav__progress { opacity: 0; }
 .nav__row {
   position: relative; z-index: 30; width: 100%; display: flex; justify-content: space-between; align-items: flex-start;
   gap: var(--space-base); padding: 0 var(--nav-pad-x); color: var(--fg);
